@@ -1,0 +1,16 @@
+// | -------------------------------------------------------------
+// | Root
+// | -------------------------------------------------------------
+
+@use "color" as *;
+
+// Light mode variables
+:root {
+  @each $color, $shades in $colors {
+    @each $shade, $value in $shades {
+      --#{$color}-#{$shade}: #{$value};
+    }
+  }
+  --outline-color: black; /* Outline color for light mode */
+  --text-color: black; /* Text color for light mode */
+}

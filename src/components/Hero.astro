@@ -1,0 +1,71 @@
+---
+import { Icon } from 'astro-icon/components'
+import '/Users/aaryamansingh/Desktop/Web/src/assets/css/styles.css';
+const { src = '/aaryamansinghphoto.png' } = Astro.props
+import '/Users/aaryamansingh/Desktop/Web/src/assets/css/animation.css';
+
+---
+<section class="hero my-24">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2YP36JNKW1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-2YP36JNKW1');
+</script>
+  <div class="container">
+    <div class="grid grid-cols-1 items-center gap-24 lg:grid-cols-2">
+      <div class="flex flex-col items-center gap-8 md:items-start">
+        <h1 class="text-center text-6xl md:text-left lg: text-6xl">
+          <slot ><span class='gradient-text' id="typing" > </span></slot>
+        </h1>
+        <script is:inline src="/js/text.js"></script>
+        <!-- Adding gradient to the new line -->
+        <div class="text-center text-xl md:text-left lg:text-2xl font-medium">
+          <span class="text-gradient">Mechanical Engineering 2026 + PEY | Minor in AI/ML & Engineering Business</span>
+        </div>
+        <div class="flex flex-col gap-3 min-[500px]:flex-row">
+
+          <a 
+          class="button has-icon color-neutral" 
+          href="https://www.linkedin.com/in/aaryamansingh/">
+            <Icon name="ion:star-outline" />
+            Linkedin
+          </a>
+          <a
+            class="button has-icon color-neutral"
+            href="https://www.instagram.com/aaryamanz/"
+          >
+            <Icon name="ion:star-outline" />
+            Instagram
+          </a>
+          <a
+            class="button has-icon color-neutral"
+            href="https://github.com/aaryamanz">
+            <Icon name="ion:star-outline" />
+            Github
+          </a>
+        </div>
+      </div>
+      {/*<img class="hidden lg:block rounded-full" src={src} alt="" decoding="async" />*/}
+    </div>
+  </div>
+
+    <!-- Light Mode: Particles -->
+    <div class='relative inset-0 block dark:hidden'>
+      <div id='particles1' class='fixed inset-0'></div>
+      <div id='particles2' class='fixed inset-0'></div>
+      <div id='particles3' class='fixed inset-0'></div>
+    </div>
+{/*
+    <!-- Dark Theme: Stars -->
+    <div class='relative inset-0 hidden dark:block'>
+      <div id='stars1' class='fixed inset-0'></div>
+      <div id='stars2' class='fixed inset-0'></div>
+      <div id='stars3' class='fixed inset-0'></div>
+    </div>
+*/}
+<script is:inline src="/js/bg.js"></script>
+</section>
