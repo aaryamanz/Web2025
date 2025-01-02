@@ -1,4 +1,4 @@
-const texts = ['Aaryaman Singh', 'Studying Mechanical Engineering'];
+const texts = ['Aaryaman Singh', 'Studying Engineering at UofT'];
 let textIndex = 0;
 let charIndex = 0;
 let typingDelay = 150;
