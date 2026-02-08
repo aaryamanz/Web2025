@@ -4,7 +4,7 @@
 
 set -e
 
-PEM_PATH="${PEM_PATH:-$HOME/Desktop/AaryamanNew.pem}"  # Or: PEM_PATH=./AaryamanNew.pem ./deploy-remote.sh
+PEM_PATH="${PEM_PATH:-$HOME/Desktop/Aaryaman Website Info/AaryamanNew.pem}"  # Or: PEM_PATH=/path/to/key.pem ./deploy-remote.sh
 EC2_HOST="ubuntu@3.130.34.6"
 
 if [ ! -f "$PEM_PATH" ]; then
