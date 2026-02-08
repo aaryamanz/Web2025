@@ -1,18 +1,342 @@
 ---
 import CallToAction from './CallToAction.astro'
+import { Icon } from 'astro-icon/components'
 
 const currentYear = new Date().getFullYear()
+
+// Footer navigation items
+const footerNav = [
+  { name: 'Home', href: '/' },
+  { name: 'Portfolio', href: '/portfolio' },
+]
+
+// Social media links with brand colors
+const socialLinks = [
+  { 
+    name: 'Instagram', 
+    href: 'https://www.instagram.com/aaryamanz', 
+    icon: 'simple-icons:instagram',
+    color: '#E4405F'
+  },
+  { 
+    name: 'LinkedIn', 
+    href: 'https://www.linkedin.com/in/aaryamansingh/', 
+    icon: 'simple-icons:linkedin',
+    color: '#0A66C2'
+  },
+  { 
+    name: 'GitHub', 
+    href: 'https://github.com/aaryamanz', 
+    icon: 'simple-icons:github',
+    color: '#181717'
+  }
+]
 ---
 
-<footer>
+<footer class="footer">
+  <div class="footer__pattern"></div>
+  <div class="footer__gradient"></div>
   <CallToAction />
-  <section class="py-8">
-    <div class="container">
-      <p>
-        &copy; {currentYear} -  Made by <a
-          href="https://www.instagram.com/aaryamanz/">Aaryaman Singh</a
-        >.
-      </p>
+  
+  <div class="footer__inner">
+    <div class="footer__main">
+      <div class="footer__brand">
+        <h3 class="footer__name">Aaryaman Singh</h3>
+        <p class="footer__tagline">Precision · Poise · Progress</p>
+      </div>
+
+      <div class="footer__sections">
+        <div class="footer__section">
+          <h4 class="footer__heading">Links</h4>
+          <ul class="footer__list">
+            {footerNav.map(item => (
+              <li>
+                <a href={item.href} class="footer__link">{item.name}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="footer__section">
+          <h4 class="footer__heading">Contact</h4>
+          <ul class="footer__list">
+            <li>
+              <a href="mailto:aaryaman.singh@mail.utoronto.ca" class="footer__link">Email</a>
+            </li>
+            <li class="footer__text">Toronto, CA</li>
+          </ul>
+        </div>
+
+        <div class="footer__section footer__section--social">
+          <h4 class="footer__heading">Connect</h4>
+          <div class="footer__socials">
+            {socialLinks.map(social => (
+              <a
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="footer__social-link"
+                aria-label={`Follow on ${social.name}`}
+                style={`color: ${social.color}`}
+              >
+                <Icon name={social.icon} class="footer__social-icon" />
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
     </div>
-  </section>
+
+    <div class="footer__bottom">
+      <p class="footer__copyright">&copy; {currentYear} Aaryaman Singh. All rights reserved.</p>
+      <div class="footer__legal">
+        <a href="/privacy" class="footer__link">Privacy</a>
+        <span class="footer__divider">·</span>
+        <a href="/terms" class="footer__link">Terms</a>
+      </div>
+    </div>
+  </div>
 </footer>
+
+<style>
+  .footer {
+    position: relative;
+    overflow: hidden;
+    border-top: 2px solid rgba(147, 51, 234, 0.15);
+  }
+
+  .footer__pattern {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    opacity: 0.4;
+    background-image: radial-gradient(circle at 1px 1px, rgba(147, 51, 234, 0.12) 1px, transparent 0);
+    background-size: 20px 20px;
+    pointer-events: none;
+  }
+
+  .footer__gradient {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background: linear-gradient(180deg, rgba(248, 250, 252, 0.98) 0%, rgba(255, 255, 255, 1) 100%);
+    pointer-events: none;
+  }
+
+  .footer__inner {
+    position: relative;
+    z-index: 1;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem 1.5rem;
+  }
+
+  .footer__main {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  @media (min-width: 640px) {
+    .footer__main {
+      grid-template-columns: 1fr 2fr;
+      gap: 3rem;
+      align-items: start;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .footer__main {
+      grid-template-columns: 220px 1fr;
+    }
+  }
+
+  .footer__brand {
+    padding-bottom: 0.5rem;
+  }
+
+  .footer__name {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0 0 0.35rem 0;
+    background: linear-gradient(135deg, #e000b3 0%, #333399 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .footer__tagline {
+    font-size: 0.9rem;
+    color: #6b7280;
+    margin: 0;
+    letter-spacing: 0.02em;
+  }
+
+  .footer__sections {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem 2rem;
+  }
+
+  @media (min-width: 480px) {
+    .footer__sections {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .footer__heading {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #374151;
+    margin: 0 0 0.75rem 0;
+  }
+
+  .footer__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .footer__list li {
+    margin-bottom: 0.4rem;
+  }
+
+  .footer__link {
+    font-size: 0.95rem;
+    color: #4b5563;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .footer__link:hover {
+    color: #9333ea;
+  }
+
+  .footer__text {
+    font-size: 0.95rem;
+    color: #4b5563;
+  }
+
+  .footer__section--social {
+    grid-column: 1 / -1;
+  }
+
+  @media (min-width: 480px) {
+    .footer__section--social {
+      grid-column: auto;
+    }
+  }
+
+  .footer__socials {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .footer__social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: rgba(147, 51, 234, 0.08);
+    transition: transform 0.2s ease, background 0.2s ease;
+  }
+
+  .footer__social-link:hover {
+    background: rgba(147, 51, 234, 0.15);
+    transform: translateY(-2px);
+  }
+
+  .footer__social-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .footer__bottom {
+    margin-top: 2rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: center;
+    text-align: center;
+  }
+
+  @media (min-width: 640px) {
+    .footer__bottom {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      text-align: left;
+    }
+  }
+
+  .footer__copyright {
+    font-size: 0.8rem;
+    color: #6b7280;
+    margin: 0;
+  }
+
+  .footer__legal {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+  }
+
+  .footer__divider {
+    color: #d1d5db;
+  }
+
+  /* Dark mode */
+  :global(.darkmode) .footer {
+    border-top-color: rgba(168, 85, 247, 0.2);
+  }
+
+  :global(.darkmode) .footer__pattern {
+    opacity: 0.2;
+    background-image: radial-gradient(circle at 1px 1px, rgba(168, 85, 247, 0.2) 1px, transparent 0);
+  }
+
+  :global(.darkmode) .footer__gradient {
+    background: linear-gradient(180deg, rgba(20, 20, 28, 0.98) 0%, rgba(15, 15, 20, 1) 100%);
+  }
+
+  :global(.darkmode) .footer__tagline,
+  :global(.darkmode) .footer__heading {
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  :global(.darkmode) .footer__link,
+  :global(.darkmode) .footer__text {
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  :global(.darkmode) .footer__link:hover {
+    color: #c084fc;
+  }
+
+  :global(.darkmode) .footer__social-link {
+    background: rgba(168, 85, 247, 0.15);
+  }
+
+  :global(.darkmode) .footer__social-link:hover {
+    background: rgba(168, 85, 247, 0.25);
+  }
+
+  :global(.darkmode) .footer__bottom {
+    border-top-color: rgba(255, 255, 255, 0.08);
+  }
+
+  :global(.darkmode) .footer__copyright {
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  :global(.darkmode) .footer__divider {
+    color: rgba(255, 255, 255, 0.2);
+  }
+</style>

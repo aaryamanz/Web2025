@@ -1,0 +1,218 @@
+---
+const { 
+  photoSrc = "aaryamansinghphoto.png",
+  uoftSrc = "logo-University-of-Toronto-removebg-preview.png" 
+} = Astro.props
+---
+
+<section class="about-section">
+  <div class="about-section__container">
+    <div class="about-section__images">
+      <div class="about-section__photo-frame">
+        <img 
+          src={`/${photoSrc}`} 
+          alt="Aaryaman Singh" 
+          class="about-section__photo"
+          loading="eager"
+        />
+        <div class="about-section__uoft-badge">
+          <img src={`/${uoftSrc}`} alt="University of Toronto" class="about-section__uoft-logo" />
+          <span>Engineering @ UofT</span>
+        </div>
+      </div>
+    </div>
+    <div class="about-section__content">
+      <h2 class="about-section__title">About Me</h2>
+      <p class="about-section__text">
+        I'm Aaryaman Singh, a third-year Mechanical Engineering student at the University of Toronto with a strong passion for engineering entrepreneurship and cutting-edge technology. Based in Toronto, I have a deep interest in startups, AI, and machine learning, and I thrive on curiosity and innovation.
+      </p>
+      <p class="about-section__text">
+        If you're looking for a driven and adaptable individual who is passionate about leveraging technology to create meaningful solutions, let's connect. Whether you're exploring new opportunities or just looking to share ideas, I'm always open to new connections and collaborations.
+      </p>
+      <div class="about-section__highlight">
+        <span class="about-section__highlight-text">Tech and Finance</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about-section {
+    margin: 3rem 0;
+    padding: 2rem 1rem;
+  }
+
+  @media (min-width: 768px) {
+    .about-section {
+      margin: 4rem 0;
+      padding: 3rem 1.5rem;
+    }
+  }
+
+  .about-section__container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  @media (min-width: 768px) {
+    .about-section__container {
+      grid-template-columns: 340px 1fr;
+      gap: 3rem;
+    }
+  }
+
+  .about-section__images {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .about-section__photo-frame {
+    position: relative;
+    padding: 0.5rem;
+    margin: 0 auto;
+    width: fit-content;
+    background: linear-gradient(135deg, rgba(224, 0, 179, 0.08) 0%, rgba(51, 51, 153, 0.1) 50%, rgba(0, 121, 145, 0.08) 100%);
+    border-radius: 20px;
+    border: 2px solid rgba(147, 51, 234, 0.2);
+    box-shadow: 0 4px 24px -4px rgba(147, 51, 234, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .about-section__photo-frame:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px -8px rgba(147, 51, 234, 0.25);
+  }
+
+  .about-section__photo {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 14px;
+    object-fit: cover;
+    aspect-ratio: 3 / 4;
+  }
+
+  @media (min-width: 768px) {
+    .about-section__photo {
+      max-width: 220px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .about-section__photo {
+      max-width: 180px;
+    }
+  }
+
+  .about-section__uoft-badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.65rem;
+    margin-top: 1rem;
+    padding: 0.6rem 1.25rem;
+    background: white;
+    border-radius: 12px;
+    border: 1px solid rgba(147, 51, 234, 0.2);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  }
+
+  .about-section__uoft-logo {
+    height: 40px;
+    width: auto;
+  }
+
+  .about-section__uoft-badge span {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: #374151;
+  }
+
+  :global(.darkmode) .about-section__uoft-badge {
+    background: rgba(30, 30, 40, 0.9);
+    border-color: rgba(168, 85, 247, 0.3);
+  }
+
+  :global(.darkmode) .about-section__uoft-badge span {
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .about-section__content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    text-align: center;
+  }
+
+  @media (min-width: 768px) {
+    .about-section__content {
+      text-align: left;
+    }
+  }
+
+  .about-section__title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+    background: linear-gradient(135deg, #e000b3 0%, #333399 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  @media (min-width: 768px) {
+    .about-section__title {
+      font-size: 1.75rem;
+    }
+  }
+
+  .about-section__text {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #4b5563;
+    margin: 0;
+  }
+
+  :global(.darkmode) .about-section__text {
+    color: rgba(255, 255, 255, 0.75);
+  }
+
+  .about-section__highlight {
+    margin-top: 0.5rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid rgba(147, 51, 234, 0.2);
+  }
+
+  .about-section__highlight-text {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #6b7280;
+    letter-spacing: 0.02em;
+  }
+
+  :global(.darkmode) .about-section__highlight-text {
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  :global(.darkmode) .about-section__photo-frame {
+    background: linear-gradient(135deg, rgba(147, 51, 234, 0.12) 0%, rgba(51, 51, 153, 0.1) 100%);
+    border-color: rgba(168, 85, 247, 0.25);
+    box-shadow: 0 4px 24px -4px rgba(0, 0, 0, 0.3);
+  }
+
+  :global(.darkmode) .about-section__highlight {
+    border-top-color: rgba(168, 85, 247, 0.2);
+  }
+</style>

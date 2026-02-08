@@ -5,7 +5,7 @@ const { src = '/aaryamansinghphoto.png' } = Astro.props
 import '/Users/aaryamansingh/Desktop/Web/src/assets/css/animation.css';
 
 ---
-<section class="hero my-24">
+<section class="hero hero--mobile">
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-2YP36JNKW1"></script>
 <script>
@@ -15,37 +15,29 @@ import '/Users/aaryamansingh/Desktop/Web/src/assets/css/animation.css';
 
   gtag('config', 'G-2YP36JNKW1');
 </script>
-  <div class="container">
-    <div class="grid grid-cols-1 items-center gap-24 lg:grid-cols-2">
-      <div class="flex flex-col items-center gap-8 md:items-start">
-        <h1 class="text-center text-6xl md:text-left lg: text-6xl">
+  <div class="container hero__container">
+    <div class="grid grid-cols-1 items-center gap-12 lg:gap-24 lg:grid-cols-2">
+      <div class="flex flex-col items-center gap-6 md:gap-8 md:items-start hero__content">
+        <h1 class="hero__title text-center text-4xl sm:text-5xl md:text-left md:text-6xl">
           <slot ><span class='gradient-text' id="typing" > </span></slot>
         </h1>
         <script is:inline src="/js/text.js"></script>
-        <!-- Adding gradient to the new line -->
-        <div class="text-center text-xl md:text-left lg:text-2xl font-medium">
-          <span class="text-gradient">Engineering @ UofT | Minor in Business | 2T6 + PEY</span>
+        <div class="hero__subtitle text-center text-base sm:text-lg md:text-left md:text-xl lg:text-2xl font-medium">
+          <span class="text-gradient">Engineering @ UofT | Minor in Business </span>
         </div>
-        <div class="flex flex-col gap-3 min-[500px]:flex-row">
+        <div class="hero__buttons flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
 
           <a 
-          class="button has-icon color-neutral" 
+          class="hero__link hero__link--linkedin" 
           href="https://www.linkedin.com/in/aaryamansingh/">
-            <Icon name="ion:star-outline" />
-            Linkedin
+            <Icon name="simple-icons:linkedin" class="hero__link-icon" />
+            LinkedIn
           </a>
-          <!-- <a
-            class="button has-icon color-neutral"
-            href="https://www.instagram.com/aaryamanz/"
-          >
-            <Icon name="ion:star-outline" />
-            Instagram
-          </a> -->
           <a
-            class="button has-icon color-neutral"
+            class="hero__link hero__link--github"
             href="https://github.com/aaryamanz">
-            <Icon name="ion:star-outline" />
-            Github
+            <Icon name="simple-icons:github" class="hero__link-icon" />
+            GitHub
           </a>
         </div>
       </div>
@@ -69,3 +61,99 @@ import '/Users/aaryamansingh/Desktop/Web/src/assets/css/animation.css';
 */}
 <script is:inline src="/js/bg.js"></script>
 </section>
+
+<style>
+  .hero {
+    margin: 5rem 0 4rem;
+    padding: 0 1rem;
+  }
+
+  @media (min-width: 768px) {
+    .hero {
+      margin: 6rem 0 5rem;
+      padding: 0;
+    }
+  }
+
+  .hero__container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  @media (min-width: 48em) {
+    .hero__container {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+
+  .hero__buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  @media (min-width: 640px) {
+    .hero__buttons {
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .hero__buttons {
+      justify-content: flex-start;
+    }
+  }
+
+  .hero__link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.65rem 1.25rem;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    border-radius: 12px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    min-width: 140px;
+  }
+
+  .hero__link:hover {
+    transform: translateY(-2px);
+  }
+
+  .hero__link-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .hero__link--linkedin {
+    background: linear-gradient(135deg, #0A66C2 0%, #004182 100%);
+    color: white;
+    box-shadow: 0 4px 14px rgba(10, 102, 194, 0.4);
+  }
+
+  .hero__link--linkedin:hover {
+    box-shadow: 0 6px 20px rgba(10, 102, 194, 0.5);
+  }
+
+  .hero__link--github {
+    background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+    color: white;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  }
+
+  .hero__link--github:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+  }
+
+  @media (max-width: 639px) {
+    .hero__link {
+      width: 100%;
+      max-width: 200px;
+    }
+  }
+</style>

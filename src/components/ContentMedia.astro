@@ -4,11 +4,11 @@ import { Media } from 'accessible-astro-components'
 const { imgSrc, reverseImg = false } = Astro.props
 ---
 
-<section class="my-64">
+<section class="mt-32 mb-32">
   <div class="container">
     <div class="grid grid-cols-1 gap-10 md:grid-cols-2">
       <!-- Image component always rendered, but positioning adjusted with CSS for desktop -->
-      <Media class={`rounded-lg ${reverseImg ? 'md:order-last' : ''}`} src={imgSrc} />
+      <Media class={`rounded-lg max-w-[400px] mx-auto ${reverseImg ? 'md:order-last' : ''}`} src={imgSrc} />
       <div class="space-content flex flex-col justify-center">
         <slot />
       </div>

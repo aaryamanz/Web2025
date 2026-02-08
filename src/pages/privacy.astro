@@ -1,0 +1,85 @@
+---
+import DefaultLayout from '../layouts/DefaultLayout.astro'
+
+const lastUpdated = new Date().toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric'
+})
+---
+
+<DefaultLayout title="Privacy Policy">
+  <section class="my-12">
+    <div class="container">
+      <h1 class="text-3xl font-bold mb-8">Privacy Policy</h1>
+      
+      <div class="prose max-w-none">
+        <p class="text-sm text-gray-600 mb-6">Last Updated: {lastUpdated}</p>
+
+        <section class="mb-8">
+          <h2 class="text-xl font-semibold mb-4">Introduction</h2>
+          <p>This Privacy Policy explains how we collect, use, and protect your personal information when you visit our website. We respect your privacy and are committed to protecting your personal data.</p>
+        </section>
+
+        <section class="mb-8">
+          <h2 class="text-xl font-semibold mb-4">Information We Collect</h2>
+          <p class="mb-4">We may collect the following types of information:</p>
+          <ul class="list-disc pl-6 mb-4">
+            <li>Contact information (such as email address) when you contact us</li>
+            <li>Usage data (such as browser type and device information)</li>
+            <li>Cookies and similar tracking technologies</li>
+          </ul>
+        </section>
+
+        <section class="mb-8">
+          <h2 class="text-xl font-semibold mb-4">How We Use Your Information</h2>
+          <p class="mb-4">We use the collected information for:</p>
+          <ul class="list-disc pl-6 mb-4">
+            <li>Providing and maintaining our website</li>
+            <li>Responding to your inquiries</li>
+            <li>Improving our services</li>
+            <li>Analyzing usage patterns</li>
+          </ul>
+        </section>
+
+        <section class="mb-8">
+          <h2 class="text-xl font-semibold mb-4">Data Security</h2>
+          <p>We implement appropriate security measures to protect your personal information. However, no method of transmission over the internet is 100% secure, and we cannot guarantee absolute security.</p>
+        </section>
+
+        <section class="mb-8">
+          <h2 class="text-xl font-semibold mb-4">Third-Party Services</h2>
+          <p>Our website may contain links to third-party websites. We are not responsible for the privacy practices or content of these websites.</p>
+        </section>
+
+        <section class="mb-8">
+          <h2 class="text-xl font-semibold mb-4">Your Rights</h2>
+          <p class="mb-4">You have the right to:</p>
+          <ul class="list-disc pl-6 mb-4">
+            <li>Access your personal data</li>
+            <li>Request correction of your personal data</li>
+            <li>Request deletion of your personal data</li>
+            <li>Object to processing of your personal data</li>
+          </ul>
+        </section>
+
+        <section class="mb-8">
+          <h2 class="text-xl font-semibold mb-4">Contact Us</h2>
+          <p>If you have any questions about this Privacy Policy, please contact us at <a href="mailto:aaryaman.singh@mail.utoronto.ca" class="text-blue-600 hover:underline">aaryaman.singh@mail.utoronto.ca</a>.</p>
+        </section>
+      </div>
+    </div>
+  </section>
+</DefaultLayout>
+
+<style>
+  .prose {
+    @apply text-gray-700 leading-relaxed;
+  }
+  .prose p {
+    @apply mb-4;
+  }
+  .prose section:last-child {
+    @apply mb-0;
+  }
+</style> 

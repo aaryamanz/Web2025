@@ -34,24 +34,24 @@
   
 #typing {
     font-family: monospace;
-    font-size: clamp(16px, 5vw, 60px);
-    white-space: nowrap; /* Prevents wrapping by default */
+    font-size: clamp(28px, 8vw, 60px);
+    white-space: nowrap;
     overflow: hidden;
-    border-right: .15em solid; /* Simulates the cursor */
+    border-right: .15em solid;
     animation: blink-caret .25s step-end infinite;
 }
 
-/* Cursor Blink Animation */
 @keyframes blink-caret {
     50% {
         border-color: transparent;
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 640px) {
     #typing {
-        font-size: 40px; /* Smaller screens */
-        white-space: normal; /* Allows text wrapping on smaller screens */
+        font-size: clamp(24px, 7vw, 36px);
+        white-space: normal;
+        word-break: break-word;
     }
 }
 

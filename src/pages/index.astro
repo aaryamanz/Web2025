@@ -1,9 +1,8 @@
 ---
 import DefaultLayout from '../layouts/DefaultLayout.astro'
 import Hero from '../components/Hero.astro'
-import Feature from '../components/Feature.astro'
-import Counter from '../components/Counter.astro'
-import ContentMedia from '../components/ContentMedia.astro'
+import ProjectCard from '../components/ProjectCard.astro'
+import AboutSection from '../components/AboutSection.astro'
 import ContentMedia2 from '../components/ContentMedia2.astro'
 import '/src/assets/css/Skills.css';
 ---
@@ -19,79 +18,120 @@ import '/src/assets/css/Skills.css';
   gtag('config', 'G-2YP36JNKW1');
 </script>
   <Hero />
-    <ContentMedia imgSrc="logo-University-of-Toronto-removebg-preview.png">
-    <h2>About Me</h2>
-    <p class="text-2l">
-I'm Aaryaman Singh, a third-year Mechanical Engineering student at the University of Toronto with a strong passion for engineering entrepreneurship and cutting-edge technology. Based in Toronto, I have a deep interest in startups, AI, and machine learning, and I thrive on curiosity and innovation.
+  <AboutSection />
 
-If you're looking for a driven and adaptable individual who is passionate about leveraging technology to create meaningful solutions, let's connect. Whether you're exploring new opportunities or just looking to share ideas, I'm always open to new connections and collaborations.
-    </p>
-  </ContentMedia>
-
-  <section class="skills">
-      <h1 class="text-center text-6xl md:text-left lg:text-8xl">
-      <slot ><span class='gradient-text'> SKILLS </span></slot>
-    </h1>
-      <p class="skills__subtitle">Here are some <span class="highlight">programming languages </span>I use for development,<br>
-       along with the <span class="highlight">technologies </span>I am skilled in utilizing across different operating systems</p>
-  <div class="skills__categories">
-    <div class="skills__category">
-      <h3 class="skills__category-title" >PROGRAMMING LANGUAGES</h3>
-      <ul class="skills__list">
-        <!-- Add your skills here -->
-        <li class="skills__item">Python</li>
-        <li class="skills__item">C</li>
-        <li class="skills__item">Java</li>
-         <li class="skills__item">JavaScript</li>
-         <li class="skills__item">MATLAB</li>
-         <li class="skills__item">SQL</li>
-        <!-- ...other skills -->
-      </ul>
-    </div>
-    <div class="skills__category">
-      <h3 class="skills__category-title">SOFTWARE & TECHNOLOGIES</h3>
-      <ul class="skills__list">
-        <!-- Add your technologies here -->
-        <li class="skills__item">GitHub</li>
-        <li class="skills__item">SolidWorks</li>
-        <li class="skills__item">AutoCAD</li>
-        <li class="skills__item">AnsysWorkBench</li>
-        <li class="skills__item">Power BI</li>
-        <li class="skills__item">Minitab</li>
-        <!-- ...other technologies -->
-      </ul>
-    </div>
-  </div>
+  <section class="skills pt-8 sm:pt-12 pb-12 sm:pb-16">
+      <div class="skills__header max-w-2xl mx-auto">
+        <h2 class="text-center text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-3 sm:mb-4">
+          <span class="gradient-text">SKILLS</span>
+        </h2>
+        <p class="skills__subtitle text-center text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed px-2">
+          Bridging <span class="highlight">engineering & technology</span> with <span class="highlight">financial analysis</span> — quantitative tools, data-driven insights, and technical problem-solving.
+        </p>
+      </div>
+      <div class="skills__grid">
+        <div class="skills__card">
+          <h3 class="skills__card-title">Quantitative & Programming</h3>
+          <ul class="skills__list-grid">
+            <li>Python</li>
+            <li>SQL</li>
+            <li>MATLAB</li>
+            <li>Excel</li>
+            <li>R</li>
+          </ul>
+          <p class="skills__card-desc">Data analysis, backtesting, and quantitative modeling</p>
+        </div>
+        <div class="skills__card">
+          <h3 class="skills__card-title">Financial Analysis</h3>
+          <ul class="skills__list-grid">
+            <li>Financial Modeling</li>
+            <li>Risk Management</li>
+            <li>Statistical Analysis</li>
+            <li>Power BI</li>
+            <li>Portfolio Optimization</li>
+          </ul>
+          <p class="skills__card-desc">Valuation, risk metrics, and data visualization</p>
+        </div>
+        <div class="skills__card">
+          <h3 class="skills__card-title">Engineering & Design</h3>
+          <ul class="skills__list-grid">
+            <li>SolidWorks</li>
+            <li>AutoCAD</li>
+            <li>Ansys</li>
+            <li>GitHub</li>
+            <li>Data Visualization</li>
+          </ul>
+          <p class="skills__card-desc">Technical design and systems thinking</p>
+        </div>
+      </div>
   </section>
 
-  <section class="my-64">
-    <div class="container">
-      <h2 class="mb-16 text-4xl" center >Projects</h2>
-      <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
-        <Feature icon="mdi:looks" title="Autonomous Driving Car with Advanced Lane and Object Detection">
-        Utilized a CNN based on NVIDIA’s model for real-time autonomous navigation in the Udacity simulator. Integrated OpenCV and YOLOv3 for accurate lane detection and object recognition, enhancing decision-making with real-time performance metrics.
-        </Feature>
-        <Feature icon="mdi:eslint" title="Music Genre Categorization Using Deep Learning">
-        Performed data augmentation on GTZAN dataset, visualized the audio signals in the time domain, 
-        analyzed the frequency components of the audio signal over 0.01-second intervals by applying FFT, 
-        and generated spectrograms for the audio samples.
-        Used feature extractor - AlexNet neural network and implemented a fully connected neural network as the classifier.
-        </Feature>
-        <Feature icon="mdi:language-markdown" title="Quantitative Trading Strategy with Backtesting and Risk Management ">
-        Developed an algorithmic trading strategy in Python using 50-day and 200-day moving average crossovers combined with an Average True Range (ATR) volatility filter to generate reliable buy/sell signals. Performed comprehensive backtesting on historical stock data to optimize strategy parameters, resulting in a 50% increase in profitability compared to traditional crossover methods.
-        </Feature>
-        <Feature icon="mdi:wheelchair-accessibility" title="Portfolio Optimization using Modern Portfolio Theory (MPT)">
-        Developed a Python model for optimizing a tech stock portfolio using Markowitz's Modern Portfolio Theory. 
-        Simulated 10,000 portfolios, calculated key financial metrics, and constructed the Efficient Frontier.  
-        Achieved maximum Sharpe ratio of 1.04, optimized portfolio allocation leading to a risk-adjusted return improvement.
-        Optimized portfolio allocation: 62.47% Google, 23.75% Tesla, and 13.77% Apple.
-        </Feature>
-        <Feature icon="mdi:tailwind" title="Anomaly Detection and Risk Scoring with GARCH-Based Volatility in Time-Series Analysis for VFV">
-          This project provides a robust framework for analyzing risk and detecting anomalies in stock data, specifically applied to the Vanguard S&P 500 Index ETF (VFV). Leveraging advanced time-series analysis and GARCH-based volatility modeling, the project aims to identify high-risk periods and potential fraudulent activity by examining volatility clusters, kurtosis, and custom risk scores.
-        </Feature>
-        <Feature icon="mdi:book-open-page-variant" title="Gearbox Design">
-        Designed a right-angle gearbox with a 3:1 reduction ratio in SolidWorks, applying GD&T. Implemented lean Six Sigma for rapid prototyping, reducing print time to under 6 hours and assembly to under 10 minutes.
-        </Feature>
+  <!-- Projects Section -->
+  <section class="projects-section relative">
+    <div class="dots-pattern absolute inset-0 z-0 opacity-50"></div>
+    <div class="container relative z-10 mx-auto max-w-6xl">
+      <div class="projects-section__header text-center mb-8 sm:mb-12">
+        <h2 class="text-4xl md:text-5xl lg:text-6xl mb-3">
+          <span class="gradient-text">Featured Projects</span>
+        </h2>
+        <p class="text-gray-600 text-base md:text-lg max-w-2xl mx-auto">
+          A mix of quantitative finance, AI, and engineering design
+        </p>
+      </div>
+      <div class="projects-grid">
+        <ProjectCard 
+          icon="mdi:car-side" 
+          title="Autonomous Driving Car"
+          description="CNN-based autonomous navigation with OpenCV & YOLOv3 for detection."
+          href="/portfolio"
+          github="https://github.com/aaryamanz/autonomous-driving"
+          tag="AI"
+          delay={0}
+        />
+        <ProjectCard 
+          icon="mdi:music" 
+          title="Music Genre Classification"
+          description="GTZAN dataset analysis with FFT & AlexNet classifier."
+          href="/portfolio"
+          github="https://github.com/aaryamanz/music-genre-categorization"
+          tag="AI"
+          delay={50}
+        />
+        <ProjectCard 
+          icon="mdi:chart-line" 
+          title="Quantitative Trading"
+          description="Moving average & ATR strategy with 50% profit increase."
+          href="/portfolio"
+          github="https://github.com/aaryamanz/Quantitative-Trading-Strategy-with-Backtesting-and-Risk-Management"
+          tag="Finance"
+          delay={100}
+        />
+        <ProjectCard 
+          icon="mdi:chart-arc" 
+          title="Portfolio Optimization"
+          description="MPT optimization, 1.04 Sharpe ratio achievement."
+          href="/portfolio"
+          github="https://github.com/aaryamanz/Investment-Portfolio-Optimization-Using-Markowitz-Modern-Portfolio-Theory"
+          tag="Finance"
+          delay={150}
+        />
+        <ProjectCard 
+          icon="mdi:chart-timeline-variant" 
+          title="Time-Series Analysis"
+          description="GARCH volatility modeling for risk analysis."
+          href="/portfolio"
+          github="https://github.com/aaryamanz/Anomaly-Detection-and-Risk-Scoring-with-GARCH-Based-Volatility-in-Time-Series-Analysis-for-VFV"
+          tag="Finance"
+          delay={200}
+        />
+        <ProjectCard 
+          icon="mdi:cog" 
+          title="Gearbox Design"
+          description="3:1 ratio design with Six Sigma optimization."
+          href="/portfolio"
+          tag="Engineering"
+          delay={250}
+        />
       </div>
     </div>
   </section>
@@ -117,3 +157,90 @@ If you're looking for a driven and adaptable individual who is passionate about 
   </section>
     */}
 </DefaultLayout>
+
+<style>
+  .projects-section {
+    background: linear-gradient(180deg, rgba(255,255,255,0.9) 0%, rgba(248,250,252,0.95) 100%);
+    padding: 2rem 1rem 3rem;
+  }
+
+  @media (min-width: 768px) {
+    .projects-section {
+      padding: 3rem 1.5rem 4rem;
+    }
+  }
+
+  .projects-section__header {
+    padding: 0 0.5rem;
+  }
+
+  .projects-section__header h2 {
+    font-size: 1.875rem;
+  }
+
+  @media (min-width: 640px) {
+    .projects-section__header h2 {
+      font-size: 2.25rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .projects-section__header h2 {
+      font-size: 3rem;
+    }
+  }
+
+  .projects-section__header p {
+    font-size: 0.875rem;
+    padding: 0 0.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .projects-section__header p {
+      font-size: 1rem;
+    }
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 0;
+  }
+
+  @media (min-width: 640px) {
+    .projects-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .projects-grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.75rem;
+    }
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0) scale(1);
+    }
+    50% {
+      transform: translateY(-10px) scale(1.02);
+    }
+  }
+
+  :global(.darkmode) .dots-pattern {
+    opacity: 0.1;
+    background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.3) 1px, transparent 0);
+  }
+
+  :global(.darkmode) .projects-section {
+    background: linear-gradient(180deg, rgba(15,15,20,0.95) 0%, rgba(20,20,30,0.98) 100%);
+  }
+
+  :global(.darkmode) .projects-section__header p {
+    color: rgba(255, 255, 255, 0.6);
+  }
+</style>

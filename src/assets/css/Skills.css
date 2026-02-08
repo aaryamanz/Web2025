@@ -1,124 +1,157 @@
 .skills {
-    background-color: #f8f8f800;
-    padding: 2rem;
-    text-align: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0);
-    max-width: 90%; 
-    margin: auto; /* Ensures that the margin is automatically applied to both left and right, centering the block */
-    display: block; 
-    box-sizing: border-box;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+  .skills {
+    padding: 0 1.5rem;
   }
-  
-  .skills h1, .skills__subtitle, .skills__categories {
-    margin: 0 auto; /* Center aligns these elements within the skills container */
-    display: inline-block; /* Makes the elements only as wide as their content */
-    text-align: center; /* Ensures text within these blocks is centered */
+}
+
+.skills__header {
+  margin-bottom: 1.5rem;
+  padding: 0 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .skills__header {
+    margin-bottom: 2.5rem;
   }
-  .skills__categories, .skills__category, .skills__list {
-    box-sizing: border-box;
+}
+
+.skills__subtitle {
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  line-height: 1.6;
+}
+
+.skills__subtitle .highlight {
+  background: linear-gradient(45deg, #662D8C, #ED1E79);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 600;
+}
+
+.skills__subtitle {
+  padding: 0 0.25rem;
+}
+
+/* 3-column grid: stacks on mobile, 3 cols on desktop */
+.skills__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+@media (min-width: 768px) {
+  .skills__grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
   }
-  .skills__title {
-    font-size: 2.5rem;
-    color: rgb(0, 0, 0);
-    margin-bottom: 1rem;
+  .skills__card {
+    padding: 1.5rem 1.25rem;
   }
-  
-  .skills__subtitle {
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-    color: #000000; /* Default text color */
-    font-size: 1.5rem; /* Size of the font */
-    font-weight: bold; /* Make text bold */
-    letter-spacing: 0.1rem; /* Adjust letter spacing */
+}
+
+@media (min-width: 1024px) {
+  .skills__grid {
+    gap: 2rem;
   }
-  .skills__subtitle .highlight {
-    background: linear-gradient(45deg, #662D8C, #ED1E79); /* Adjust gradient colors as needed */
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent; /* Make the text color transparent to reveal the background */
-    display: inline; /* Ensure the element doesn't behave like a block element */
+}
+
+/* Card styling - clean, consistent */
+.skills__card {
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 1.25rem 1rem;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.skills__card:hover {
+  border-color: #9333ea;
+  box-shadow: 0 4px 12px rgba(147, 51, 234, 0.12);
+}
+
+:global(.darkmode) .skills__card {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+:global(.darkmode) .skills__card:hover {
+  border-color: #a855f7;
+}
+
+.skills__card-title {
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #374151;
+  margin: 0 0 1rem 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+:global(.darkmode) .skills__card-title {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.skills__list-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.skills__list-grid li {
+  text-align: center;
+  padding: 0.5rem 0.75rem;
+  background: #f9fafb;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #1f2937;
+  transition: background 0.2s;
+}
+
+.skills__list-grid li:hover {
+  background: #f3f4f6;
+}
+
+:global(.darkmode) .skills__list-grid li {
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+:global(.darkmode) .skills__list-grid li:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.skills__card-desc {
+  font-size: 0.75rem;
+  color: #6b7280;
+  margin: 1rem 0 0 0;
+  text-align: center;
+  line-height: 1.4;
+}
+
+:global(.darkmode) .skills__card-desc {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+@media (max-width: 480px) {
+  .skills__list-grid {
+    grid-template-columns: 1fr;
   }
-  
-  
-  .skills__categories {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap; /* Ensures responsiveness */
-    align-items: center; /* Vertically align items in the center, if needed */
-  }
-  
-  .skills__category {
-    width: auto;
-    text-align: center; /* Center-aligns all text within each category */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0);
-    border-radius: 5px;
-    padding: 2rem;
-    margin-top: 1rem;
-    display: inline-block;
-  }
-  
-  .skills__category-title {
-    text-align: center;
-    font-size: 1.5rem;
-    color: #000000;
-    margin-bottom: 1rem;
-  }
-  
-  .skills__list {
-    list-style: none;
-    padding: 0;
-    display: flex; /* Using flexbox to center items */
-    flex-direction: column; /* Stack items vertically */
-    align-items: center; /* Center items horizontally */
-    width: 100%; /* Ensure the list uses the full width of its container */
-  }
-  
-  .skills__item {
-    margin-bottom: 0.5rem;
-    position: relative;
-    width: 100%; /* Match width to ensure alignment */
-    display: flex; /* Use flex to align icon and text */
-    justify-content: center; /* Center everything horizontally */
-    line-height: 1.5;
-    color: #000000;
-    padding-left: 0; /* Remove padding if using flexbox for alignment */
-    text-align: center; /* Center align the text */
-  }
-  
-  .skills__item::before {
-    content: '✔'; /* Unicode character for a check mark */
-    margin-right: 10px; /* Space between the icon and text */
-    color: #4CAF50; /* Icon color */
-  }
-  
-  
-  /* Optional: Add a hover effect to category titles for interactivity */
-  .skills__category-title:hover {
-    color: #9300b8; /* Change color on hover */
-    transition: color 0.03s;
-  }
-  @media (max-width: 768px) {
-    .skills__categories {
-      flex-direction: column;
-      align-items: center; /* Strengthen alignment settings for mobile */
-    }
-  
-    .skills__category {
-      width: 100%; /* Using full width to ensure proper alignment */
-      margin: auto; /* Centering horizontally */
-      padding: 1rem; /* Adjust padding if necessary */
-      text-align: center; /* Centering text within the category */
-      box-sizing: border-box; /* Includes padding and border in the element's total width */
-    }
-  
-    .skills__category-title {
-      text-align: center; /* Ensuring the title is centered */
-    }
-  
-    .skills__item {
-      justify-content: center; /* Centering content within the item */
-    }
-  }
+}
   

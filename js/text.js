@@ -5,9 +5,15 @@ let typingDelay = 150;
 let erasingDelay = 100;
 let newTextDelay = 1000;
 let initialText = "I'm ";
-let element = document.getElementById('typing');
+let element = null;
+let isAnimating = false;
 
 function type() {
+  if (!element) {
+    element = document.getElementById('typing');
+    if (!element) return;
+  }
+  
   if (charIndex < texts[textIndex].length) {
     element.textContent = initialText + texts[textIndex].substring(0, charIndex + 1);
     charIndex++;
@@ -18,6 +24,8 @@ function type() {
 }
 
 function erase() {
+  if (!element) return;
+  
   if (charIndex > 0) {
     element.textContent = initialText + texts[textIndex].substring(0, charIndex - 1);
     charIndex--;
@@ -29,18 +37,30 @@ function erase() {
   }
 }
 
-document.addEventListener("DOMContentLoaded", function() {
-  console.log("DOMContentLoaded event triggered");
+function startTyping() {
+  if (isAnimating) return;
+  
+  element = document.getElementById('typing');
+  if (!element) return;
+  
+  isAnimating = true;
   element.textContent = initialText;
+  charIndex = 0;
   setTimeout(type, typingDelay);
+}
+
+// Initial page load
+document.addEventListener('DOMContentLoaded', startTyping);
+
+// Astro view transitions
+document.addEventListener('astro:page-load', () => {
+  isAnimating = false;
+  startTyping();
 });
 
-document.addEventListener("pageshow", function(event) {
-  console.log("Page show event triggered", event);
-  if (!element || !element.textContent.includes(texts[textIndex])) {
-    console.log("Restarting typing effect");
-    element = document.getElementById('typing');  // Re-fetch the element to avoid any stale references
-    element.textContent = initialText;
-    setTimeout(type, typingDelay);
+// Regular navigation fallback
+document.addEventListener('pageshow', (event) => {
+  if (!isAnimating) {
+    startTyping();
   }
 });

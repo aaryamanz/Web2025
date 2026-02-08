@@ -1,3 +1,5 @@
+@use "sass:map";
+
 // | -------------------------------------------------------------
 // | Breakpoint
 // | -------------------------------------------------------------
@@ -10,17 +12,15 @@ $breakpoints: (
 ) !default;
 
 @mixin breakpoint($breakpoint) {
-  @if map-has-key($breakpoints, $breakpoint) {
-    @media (min-width: map-get($breakpoints, $breakpoint)) {
+  @if map.has-key($breakpoints, $breakpoint) {
+    @media (min-width: map.get($breakpoints, $breakpoint)) {
       @content;
     }
-  } @else if (type_of($breakpoint) == number) {
-    // Correctly add "px" to a number using interpolation
-    @media (min-width: #{$breakpoint} + "px") {
+  } @else if type-of($breakpoint) == number {
+    @media (min-width: #{$breakpoint}px) {
       @content;
     }
-  }
-  @else {
-    @error "Not a correct value, check _base-breakpoints for available values.";
+  } @else {
+    @error "Invalid breakpoint value. Check $breakpoints map for available values.";
   }
 }

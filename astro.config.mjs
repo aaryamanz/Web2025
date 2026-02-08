@@ -7,7 +7,29 @@ import icon from "astro-icon"
 // https://astro.build/config
 export default defineConfig({
   compressHTML: true,
-  integrations: [mdx(), icon(), tailwind({
-    applyBaseStyles: false,
-  }), compress()],
+  vite: {
+    css: {
+      preprocessorOptions: {
+        scss: {
+          implementation: 'sass'
+        }
+      }
+    },
+    ssr: {
+      external: ["svgo"]
+    }
+  },
+  integrations: [
+    mdx(), 
+    icon({
+      include: {
+        'simple-icons': ["*"],
+        'mdi': ["*"]
+      }
+    }), 
+    tailwind({
+      applyBaseStyles: false,
+    }), 
+    compress()
+  ],
 })
