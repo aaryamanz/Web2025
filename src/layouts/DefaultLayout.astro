@@ -1,6 +1,7 @@
 ---
 import '@astrojs/tailwind/base.css'
 import '../assets/scss/globals.scss'
+import Analytics from '@vercel/analytics/astro'
 import SiteMeta from '../components/SiteMeta.astro'
 import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro'
@@ -39,6 +40,7 @@ const {
       <slot />
     </main>
     <Footer />
+    <Analytics />
     <style lang="scss" is:global>
       // theme settings
       :root {

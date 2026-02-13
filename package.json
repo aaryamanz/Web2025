@@ -33,6 +33,7 @@
     "tailwindcss": "^3.2.7"
   },
   "dependencies": {
-    "@iconify-json/simple-icons": "^1.2.27"
+    "@iconify-json/simple-icons": "^1.2.27",
+    "@vercel/analytics": "^1.6.1"
   }
 }
