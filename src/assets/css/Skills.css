@@ -80,13 +80,16 @@
   box-shadow: 0 4px 12px rgba(147, 51, 234, 0.12);
 }
 
-:global(.darkmode) .skills__card {
-  background: rgba(255, 255, 255, 0.05);
+html.darkmode .skills__card,
+.darkmode .skills__card {
+  background: rgba(30, 30, 40, 0.85);
   border-color: rgba(255, 255, 255, 0.15);
 }
 
-:global(.darkmode) .skills__card:hover {
+html.darkmode .skills__card:hover,
+.darkmode .skills__card:hover {
   border-color: #a855f7;
+  box-shadow: 0 4px 12px rgba(168, 85, 247, 0.2);
 }
 
 .skills__card-title {
@@ -99,7 +102,8 @@
   text-transform: uppercase;
 }
 
-:global(.darkmode) .skills__card-title {
+html.darkmode .skills__card-title,
+.darkmode .skills__card-title {
   color: rgba(255, 255, 255, 0.9);
 }
 
@@ -128,12 +132,14 @@
   background: #f3f4f6;
 }
 
-:global(.darkmode) .skills__list-grid li {
-  background: rgba(255, 255, 255, 0.08);
+html.darkmode .skills__list-grid li,
+.darkmode .skills__list-grid li {
+  background: rgba(255, 255, 255, 0.06);
   color: rgba(255, 255, 255, 0.9);
 }
 
-:global(.darkmode) .skills__list-grid li:hover {
+html.darkmode .skills__list-grid li:hover,
+.darkmode .skills__list-grid li:hover {
   background: rgba(255, 255, 255, 0.12);
 }
 
@@ -145,7 +151,8 @@
   line-height: 1.4;
 }
 
-:global(.darkmode) .skills__card-desc {
+html.darkmode .skills__card-desc,
+.darkmode .skills__card-desc {
   color: rgba(255, 255, 255, 0.5);
 }
 
