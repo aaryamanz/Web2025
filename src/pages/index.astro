@@ -168,7 +168,7 @@ import '/src/assets/css/Skills.css';
 
 <style>
   .home-content {
-    max-width: 1440px;
+    max-width: 1600px;
   }
 
   .home-content .about-section {
@@ -188,6 +188,8 @@ import '/src/assets/css/Skills.css';
 
   .projects-container {
     max-width: 100%;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
   }
 
   .home-content .projects-section {
@@ -240,7 +242,7 @@ import '/src/assets/css/Skills.css';
   .projects-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 1rem;
+    gap: 1.25rem;
     padding: 0;
   }
 
@@ -251,9 +253,15 @@ import '/src/assets/css/Skills.css';
     }
   }
 
-  @media (min-width: 1024px) {
+  @media (min-width: 768px) {
     .projects-grid {
       grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .projects-grid {
       gap: 1.75rem;
     }
   }

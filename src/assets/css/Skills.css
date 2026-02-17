@@ -1,5 +1,5 @@
 .skills {
-  max-width: 1320px;
+  max-width: 1600px;
   margin: 0 auto;
   padding: 2rem 1rem;
   box-sizing: border-box;
@@ -44,8 +44,15 @@
 .skills__grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.5rem;
+  gap: 1.25rem;
   align-items: stretch;
+}
+
+@media (min-width: 640px) {
+  .skills__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
 }
 
 @media (min-width: 768px) {
@@ -60,7 +67,7 @@
 
 @media (min-width: 1024px) {
   .skills__grid {
-    gap: 2rem;
+    gap: 1.75rem;
   }
 }
 
