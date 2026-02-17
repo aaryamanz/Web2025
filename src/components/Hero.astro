@@ -18,12 +18,16 @@ import '../assets/css/animation.css';
   <div class="container hero__container">
     <div class="grid grid-cols-1 items-center gap-12 lg:gap-24 lg:grid-cols-2">
       <div class="flex flex-col items-center gap-6 md:gap-8 md:items-start hero__content">
-        <h1 class="hero__title text-center text-4xl sm:text-5xl md:text-left md:text-6xl">
-          <slot ><span class='gradient-text' id="typing" > </span></slot>
-        </h1>
+        <div class="hero__typing-box">
+          <h1 class="hero__title text-center text-4xl sm:text-5xl md:text-left md:text-6xl">
+            <slot ><span class='gradient-text' id="typing" > </span></slot>
+          </h1>
+        </div>
         <script is:inline src="/js/text.js"></script>
-        <div class="hero__subtitle text-center text-base sm:text-lg md:text-left md:text-xl lg:text-2xl font-medium max-w-4xl">
-          <span class="text-gradient">Process Engineering Analyst @ CIBC | Engineering & Business @ UofT | Capital Markets, Quantitative Strategy & R&D</span>
+        <div class="hero__subtitle-box">
+          <div class="hero__subtitle text-center text-base sm:text-lg md:text-left md:text-xl lg:text-2xl font-medium">
+            <span class="text-gradient">Process Engineering Analyst @ CIBC | Engineering & Business @ UofT | Capital Markets, Quantitative Strategy & R&D</span>
+          </div>
         </div>
         <div class="hero__buttons flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
 
@@ -85,6 +89,62 @@ import '../assets/css/animation.css';
       padding-left: 2rem;
       padding-right: 2rem;
     }
+  }
+
+  .hero__content {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  @media (min-width: 1024px) {
+    .hero__content {
+      max-width: min(100%, 36rem);
+    }
+  }
+
+  .hero__typing-box {
+    width: 100%;
+    max-width: 32rem;
+    padding: 1rem 1.25rem;
+    background: transparent;
+    border: none;
+    border-radius: 12px;
+    box-sizing: border-box;
+    box-shadow: none !important;
+  }
+
+  :global(.darkmode) .hero__typing-box,
+  :global(html.darkmode) .hero__typing-box {
+    background: transparent;
+    border: none;
+    box-shadow: none !important;
+  }
+
+  .hero__typing-box .hero__title {
+    margin: 0;
+  }
+
+  .hero__subtitle-box {
+    width: 100%;
+    max-width: 36rem;
+    padding: 1rem 1.25rem;
+    background: transparent;
+    border: none;
+    border-radius: 12px;
+    box-sizing: border-box;
+    box-shadow: none !important;
+  }
+
+  :global(.darkmode) .hero__subtitle-box,
+  :global(html.darkmode) .hero__subtitle-box {
+    background: transparent;
+    border: none;
+    box-shadow: none !important;
+  }
+
+  .hero__subtitle {
+    margin: 0;
+    line-height: 1.5;
   }
 
   .hero__buttons {

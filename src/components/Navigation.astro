@@ -47,10 +47,25 @@ import logo from '../assets/img/logo.svg'
           <button
             id="drawer-theme-button"
             type="button"
-            class="theme-toggle"
+            class="theme-toggle darkmode-toggle"
             aria-label="Toggle dark mode"
+            title="Toggle dark mode"
           >
-            <span>Toggle dark/light mode</span>
+            <svg class="theme-icon-sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="5"/>
+              <line x1="12" y1="1" x2="12" y2="3"/>
+              <line x1="12" y1="21" x2="12" y2="23"/>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+              <line x1="1" y1="12" x2="3" y2="12"/>
+              <line x1="21" y1="12" x2="23" y2="12"/>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+            </svg>
+            <svg class="theme-icon-moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+            </svg>
+            <span class="darkmode-toggle-label">Light / Dark mode</span>
           </button>
         </li>
         <slot />
@@ -365,6 +380,9 @@ import logo from '../assets/img/logo.svg'
     }
 
     .darkmode-toggle-mobile button {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
       background: none;
       border: none;
       font: inherit;
@@ -373,6 +391,26 @@ import logo from '../assets/img/logo.svg'
       width: 100%;
       text-align: left;
       color: var(--action-color);
+    }
+
+    .darkmode-toggle-mobile .theme-icon-sun,
+    .darkmode-toggle-mobile .theme-icon-moon {
+      width: 24px;
+      height: 24px;
+      stroke: var(--action-color);
+      flex-shrink: 0;
+    }
+
+    .darkmode-toggle-mobile .theme-icon-moon {
+      display: none;
+    }
+
+    :global(.darkmode) .darkmode-toggle-mobile .theme-icon-sun {
+      display: none;
+    }
+
+    :global(.darkmode) .darkmode-toggle-mobile .theme-icon-moon {
+      display: block;
     }
 
     .darkmode-toggle-mobile button:hover {
@@ -521,6 +559,11 @@ import logo from '../assets/img/logo.svg'
     .darkmode-toggle:hover .theme-icon-sun,
     .darkmode-toggle:hover .theme-icon-moon {
       stroke: rgba(255, 255, 255, 0.8) !important;
+    }
+
+    .darkmode-toggle-mobile .theme-icon-sun,
+    .darkmode-toggle-mobile .theme-icon-moon {
+      stroke: white !important;
     }
   }
 </style>

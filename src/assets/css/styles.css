@@ -35,8 +35,9 @@
 #typing {
     font-family: monospace;
     font-size: clamp(28px, 8vw, 60px);
-    white-space: nowrap;
-    overflow: hidden;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
     border-right: .15em solid;
     animation: blink-caret .25s step-end infinite;
 }
@@ -50,8 +51,6 @@
 @media (max-width: 640px) {
     #typing {
         font-size: clamp(24px, 7vw, 36px);
-        white-space: normal;
-        word-break: break-word;
     }
 }
 
