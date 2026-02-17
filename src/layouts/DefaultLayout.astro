@@ -20,6 +20,16 @@ const {
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- Theme: run before paint to prevent flash -->
+    <script is:inline>
+      (function(){
+        var t=localStorage.getItem('theme');
+        var d=!(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches);
+        if(t==='dark')document.documentElement.classList.add('darkmode');
+        else if(t==='light')document.documentElement.classList.remove('darkmode');
+        else document.documentElement.classList.toggle('darkmode',!d);
+      })();
+    </script>
 
     <!-- favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -41,9 +51,11 @@ const {
     </main>
     <Footer />
     <Analytics />
+    <script is:inline src="/js/theme.js"></script>
     <style lang="scss" is:global>
       // theme settings
       :root {
+        color-scheme: light;
         --radius-small: 3px;
         --radius-large: 6px;
         --gap-default: 2rem;
@@ -60,6 +72,9 @@ const {
       }
 
       // dark color scheme overrides
+      html.darkmode {
+        color-scheme: dark;
+      }
       .darkmode {
         --font-color: var(--neutral-100);
         --action-color: var(--secondary-100);

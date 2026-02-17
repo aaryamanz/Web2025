@@ -70,6 +70,7 @@
       height: 1px;
       border-radius: 50%;
       box-shadow: ${starsSmall};
+      animation: animStar 50s linear infinite, twinkling 3s ease-in-out infinite alternate;
       `;
     }
 
@@ -79,6 +80,7 @@
       height: 2px;
       border-radius: 50%;
       box-shadow: ${starsMedium};
+      animation: animateParticle 100s linear infinite, twinkling 3s ease-in-out infinite alternate;
       `;
     }
 
@@ -88,6 +90,7 @@
       height: 3px;
       border-radius: 50%;
       box-shadow: ${starsLarge};
+      animation: animateParticle 150s linear infinite, twinkling 3s ease-in-out infinite alternate;
       `;
     }
   }
