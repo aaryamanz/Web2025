@@ -18,6 +18,7 @@ import '/src/assets/css/Skills.css';
   gtag('config', 'G-2YP36JNKW1');
 </script>
   <Hero />
+  <div class="home-content container">
   <AboutSection />
 
   <section class="skills pt-8 sm:pt-12 pb-12 sm:pb-16">
@@ -26,42 +27,48 @@ import '/src/assets/css/Skills.css';
           <span class="gradient-text">SKILLS</span>
         </h2>
         <p class="skills__subtitle text-center text-sm sm:text-base md:text-lg text-gray-600 dark:text-gray-300 leading-relaxed px-2">
-          Bridging <span class="highlight">engineering & technology</span> with <span class="highlight">financial analysis</span> — quantitative tools, data-driven insights, and technical problem-solving.
+          <span class="highlight">Capital markets</span> depth, <span class="highlight">strategic analytics</span>, and <span class="highlight">engineering R&D </span>—unified by an entrepreneurial drive to build and optimize.
         </p>
       </div>
       <div class="skills__grid">
         <div class="skills__card">
-          <h3 class="skills__card-title">Quantitative & Programming</h3>
+          <h3 class="skills__card-title">Capital Markets & Quantitative Strategy</h3>
           <ul class="skills__list-grid">
-            <li>Python</li>
-            <li>SQL</li>
-            <li>MATLAB</li>
-            <li>Excel</li>
-            <li>R</li>
-          </ul>
-          <p class="skills__card-desc">Data analysis, backtesting, and quantitative modeling</p>
-        </div>
-        <div class="skills__card">
-          <h3 class="skills__card-title">Financial Analysis</h3>
-          <ul class="skills__list-grid">
+            <li>Python (Pandas, NumPy)</li>
             <li>Financial Modeling</li>
-            <li>Risk Management</li>
-            <li>Statistical Analysis</li>
-            <li>Power BI</li>
+            <li>Derivatives & Options</li>
+            <li>Risk Management (VaR)</li>
             <li>Portfolio Optimization</li>
+            <li>MATLAB</li>
+            <li>Excel (VBA)</li>
           </ul>
-          <p class="skills__card-desc">Valuation, risk metrics, and data visualization</p>
+          <p class="skills__card-desc">Leveraging statistical methods and algorithmic strategies to uncover market value and optimize capital allocation.</p>
         </div>
         <div class="skills__card">
-          <h3 class="skills__card-title">Engineering & Design</h3>
+          <h3 class="skills__card-title">Strategy, Operations & Business Analytics</h3>
           <ul class="skills__list-grid">
-            <li>SolidWorks</li>
-            <li>AutoCAD</li>
-            <li>Ansys</li>
-            <li>GitHub</li>
+            <li>SQL</li>
+            <li>Power BI / Tableau</li>
             <li>Data Visualization</li>
+            <li>Statistical Analysis</li>
+            <li>Process Optimization</li>
+            <li>Market Research</li>
+            <li>Stakeholder Management</li>
           </ul>
-          <p class="skills__card-desc">Technical design and systems thinking</p>
+          <p class="skills__card-desc">Translating complex datasets into actionable business insights and streamlined operational strategies.</p>
+        </div>
+        <div class="skills__card">
+          <h3 class="skills__card-title">Engineering R&D & Product Innovation</h3>
+          <ul class="skills__list-grid">
+            <li>SolidWorks (CAD)</li>
+            <li>Ansys (FEA)</li>
+            <li>Mechatronics</li>
+            <li>Control Systems</li>
+            <li>EV Powertrain Design</li>
+            <li>AutoCAD</li>
+            <li>Rapid Prototyping</li>
+          </ul>
+          <p class="skills__card-desc">Designing robust physical systems and prototyping scalable hardware solutions from 0 to 1.</p>
         </div>
       </div>
   </section>
@@ -69,7 +76,7 @@ import '/src/assets/css/Skills.css';
   <!-- Projects Section -->
   <section class="projects-section relative">
     <div class="dots-pattern absolute inset-0 z-0 opacity-50"></div>
-    <div class="container relative z-10 mx-auto max-w-6xl">
+    <div class="container projects-container relative z-10 mx-auto">
       <div class="projects-section__header text-center mb-8 sm:mb-12">
         <h2 class="text-4xl md:text-5xl lg:text-6xl mb-3">
           <span class="gradient-text">Featured Projects</span>
@@ -80,54 +87,54 @@ import '/src/assets/css/Skills.css';
       </div>
       <div class="projects-grid">
         <ProjectCard 
-          icon="mdi:car-side" 
-          title="Autonomous Driving Car"
-          description="CNN-based autonomous navigation with OpenCV & YOLOv3 for detection."
-          href="/portfolio"
-          github="https://github.com/aaryamanz/autonomous-driving"
-          tag="AI"
-          delay={0}
-        />
-        <ProjectCard 
-          icon="mdi:music" 
-          title="Music Genre Classification"
-          description="GTZAN dataset analysis with FFT & AlexNet classifier."
-          href="/portfolio"
-          github="https://github.com/aaryamanz/music-genre-categorization"
-          tag="AI"
-          delay={50}
-        />
-        <ProjectCard 
           icon="mdi:chart-line" 
           title="Quantitative Trading"
-          description="Moving average & ATR strategy with 50% profit increase."
+          description="50% profit increase with MA/ATR strategy. Risk metrics: Sharpe Ratio, Max Drawdown, VaR."
           href="/portfolio"
           github="https://github.com/aaryamanz/Quantitative-Trading-Strategy-with-Backtesting-and-Risk-Management"
           tag="Finance"
-          delay={100}
+          delay={0}
         />
         <ProjectCard 
           icon="mdi:chart-arc" 
           title="Portfolio Optimization"
-          description="MPT optimization, 1.04 Sharpe ratio achievement."
+          description="MPT optimization with Pandas, NumPy & SciPy. 1.04 Sharpe ratio, Efficient Frontier."
           href="/portfolio"
           github="https://github.com/aaryamanz/Investment-Portfolio-Optimization-Using-Markowitz-Modern-Portfolio-Theory"
           tag="Finance"
-          delay={150}
+          delay={50}
         />
         <ProjectCard 
           icon="mdi:chart-timeline-variant" 
-          title="Time-Series Analysis"
-          description="GARCH volatility modeling for risk analysis."
+          title="Market Volatility Modeling"
+          description="GARCH-based volatility and risk scoring for VFV. Industry-specific market analysis."
           href="/portfolio"
           github="https://github.com/aaryamanz/Anomaly-Detection-and-Risk-Scoring-with-GARCH-Based-Volatility-in-Time-Series-Analysis-for-VFV"
-          tag="Finance"
+          tag="Data & Strategy"
+          delay={100}
+        />
+        <ProjectCard 
+          icon="mdi:music" 
+          title="Music Genre Classification"
+          description="FFT & AlexNet on GTZAN. Translating raw data into classification insights."
+          href="/portfolio"
+          github="https://github.com/aaryamanz/music-genre-categorization"
+          tag="Data & Strategy"
+          delay={150}
+        />
+        <ProjectCard 
+          icon="mdi:car-side" 
+          title="Autonomous Driving Car"
+          description="High-performance system design: CNN navigation, OpenCV & YOLOv3 for real-time detection."
+          href="/portfolio"
+          github="https://github.com/aaryamanz/autonomous-driving"
+          tag="Engineering"
           delay={200}
         />
         <ProjectCard 
           icon="mdi:cog" 
           title="Gearbox Design"
-          description="3:1 ratio design with Six Sigma optimization."
+          description="Complex math & physics: 3:1 ratio, Six Sigma optimization. Translates to derivatives pricing rigor."
           href="/portfolio"
           tag="Engineering"
           delay={250}
@@ -135,6 +142,7 @@ import '/src/assets/css/Skills.css';
       </div>
     </div>
   </section>
+  </div>
 {/*
   <ContentMedia imgSrc="/wcag-compliant.webp" reverseImg={true}>
     <h2>WCAG 2.1 AA Compliant</h2>
@@ -159,6 +167,34 @@ import '/src/assets/css/Skills.css';
 </DefaultLayout>
 
 <style>
+  .home-content {
+    max-width: 1440px;
+  }
+
+  .home-content .about-section {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .home-content .about-section__container,
+  .home-content .skills {
+    max-width: 100%;
+  }
+
+  .home-content .skills {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .projects-container {
+    max-width: 100%;
+  }
+
+  .home-content .projects-section {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
   .projects-section {
     background: transparent;
     padding: 2rem 1rem 3rem;

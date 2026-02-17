@@ -84,6 +84,13 @@ const {
         --neutral-background: var(--neutral-900);
       }
 
+      /* Header/nav: white in dark mode */
+      html.darkmode header,
+      .darkmode header {
+        --action-color: rgba(255, 255, 255, 0.95);
+        --action-color-state: white;
+      }
+
       // sticky footer on low content pages
       html {
         overflow-x: hidden;

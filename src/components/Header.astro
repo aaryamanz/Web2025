@@ -80,4 +80,10 @@ import { Icon } from 'astro-icon/components'
       }
     }
   }
+
+  /* Dark mode: white icons */
+  :global(.darkmode) header .type-icon a [data-icon] path,
+  html.darkmode header .type-icon a [data-icon] path {
+    fill: white !important;
+  }
 </style>

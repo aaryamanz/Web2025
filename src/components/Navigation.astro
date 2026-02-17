@@ -489,4 +489,38 @@ import logo from '../assets/img/logo.svg'
       }
     }
   }
+
+  /* Dark mode: white navigation */
+  :global(.darkmode) #main-navigation,
+  html.darkmode #main-navigation {
+    .container > a,
+    .container > a span,
+    nav a,
+    nav button {
+      color: white !important;
+    }
+
+    .container > a img,
+    .container > a svg,
+    .container > a [data-astro-icon],
+    .container > a [data-astro-icon] path,
+    .container > a svg path {
+      filter: brightness(0) invert(1);
+    }
+
+    .type-icon [data-icon] path,
+    .type-icon a path {
+      fill: white !important;
+    }
+
+    .darkmode-toggle .theme-icon-sun,
+    .darkmode-toggle .theme-icon-moon {
+      stroke: white !important;
+    }
+
+    .darkmode-toggle:hover .theme-icon-sun,
+    .darkmode-toggle:hover .theme-icon-moon {
+      stroke: rgba(255, 255, 255, 0.8) !important;
+    }
+  }
 </style>

@@ -29,30 +29,26 @@ import '/src/assets/css/styles.css';
   <section class="portfolio-hero">
     <div class="portfolio-hero__inner">
       <h1 class="portfolio-hero__title">Portfolio</h1>
-      <p class="portfolio-hero__subtitle">Projects spanning financial engineering, AI, and mechanical design</p>
+      <p class="portfolio-hero__subtitle">Quantitative Finance • Data & Strategy • Engineering R&D</p>
       <div class="portfolio-stats">
         <div class="portfolio-stat">
-          <span class="portfolio-stat__number">3</span>
-          <span class="portfolio-stat__label">Financial</span>
+          <span class="portfolio-stat__number">2</span>
+          <span class="portfolio-stat__label">Quant Finance</span>
         </div>
         <div class="portfolio-stat">
           <span class="portfolio-stat__number">2</span>
-          <span class="portfolio-stat__label">AI / ML</span>
+          <span class="portfolio-stat__label">Data & Strategy</span>
         </div>
         <div class="portfolio-stat">
-          <span class="portfolio-stat__number">4</span>
-          <span class="portfolio-stat__label">Engineering</span>
-        </div>
-        <div class="portfolio-stat">
-          <span class="portfolio-stat__number">3</span>
-          <span class="portfolio-stat__label">Technical</span>
+          <span class="portfolio-stat__number">8</span>
+          <span class="portfolio-stat__label">Engineering R&D</span>
         </div>
       </div>
     </div>
   </section>
 
   <div class="portfolio-content">
-    <h2 class="portfolio-section-title">Financial Engineering</h2>
+    <h2 class="portfolio-section-title">Quantitative Finance</h2>
     
     <PortfolioProject 
       imgSrc="/portfolio/trading.png" 
@@ -60,8 +56,8 @@ import '/src/assets/css/styles.css';
       github="https://github.com/aaryamanz/Quantitative-Trading-Strategy-with-Backtesting-and-Risk-Management"
       reverseImg={true}
     >
-      <p>Developed an algorithmic trading strategy in Python using 50-day and 200-day moving average crossovers combined with an Average True Range (ATR) volatility filter to generate reliable buy/sell signals. Performed comprehensive backtesting on historical stock data to optimize strategy parameters, resulting in a 50% increase in profitability compared to traditional crossover methods.</p>
-      <p>Prepared risk management techniques, including position sizing and stop-loss orders, to minimize potential losses and improve the strategy's risk-adjusted returns.</p>
+      <p>Developed an algorithmic trading strategy in Python using 50-day and 200-day moving average crossovers combined with an Average True Range (ATR) volatility filter to generate reliable buy/sell signals. Performed comprehensive backtesting on historical stock data, resulting in a 50% increase in profitability compared to traditional crossover methods.</p>
+      <p>Implemented rigorous risk management: Sharpe Ratio, Max Drawdown, and VaR metrics for capital markets–grade evaluation. Position sizing and stop-loss orders to minimize potential losses and improve risk-adjusted returns.</p>
     </PortfolioProject>
 
     <PortfolioProject 
@@ -70,39 +66,39 @@ import '/src/assets/css/styles.css';
       github="https://github.com/aaryamanz/Investment-Portfolio-Optimization-Using-Markowitz-Modern-Portfolio-Theory"
       reverseImg={false}
     >
-      <p>Developed a Python model for optimizing a tech stock portfolio using Markowitz's Modern Portfolio Theory. Simulated 10,000 portfolios, calculated key financial metrics, and constructed the Efficient Frontier.</p>
+      <p>Built a Python model using Pandas, NumPy, and SciPy for optimizing a tech stock portfolio with Markowitz's Modern Portfolio Theory. Simulated 10,000 portfolios, calculated key financial metrics, and constructed the Efficient Frontier.</p>
       <p>Achieved maximum Sharpe ratio of 1.04 with optimized allocation: 62.47% Google, 23.75% Tesla, and 13.77% Apple.</p>
     </PortfolioProject>
 
+    <h2 class="portfolio-section-title">Data & Strategy</h2>
+
     <PortfolioProject 
       imgSrc="/portfolio/vfv.png" 
-      title="Anomaly Detection and Risk Scoring with GARCH-Based Volatility for VFV"
+      title="Market Volatility Modeling: GARCH-Based Risk Scoring for VFV"
       github="https://github.com/aaryamanz/Anomaly-Detection-and-Risk-Scoring-with-GARCH-Based-Volatility-in-Time-Series-Analysis-for-VFV"
       reverseImg={true}
     >
-      <p>Robust framework for analyzing risk and detecting anomalies in stock data, applied to the Vanguard S&P 500 Index ETF (VFV). Leveraging GARCH-based volatility modeling to identify high-risk periods and potential fraudulent activity through volatility clusters, kurtosis, and custom risk scores.</p>
+      <p>Industry-specific framework for market volatility analysis, applied to the Vanguard S&P 500 Index ETF (VFV). GARCH-based volatility modeling to identify high-risk periods and potential anomalies through volatility clusters, kurtosis, and custom risk scores. Translates complex time-series data into actionable risk insights.</p>
     </PortfolioProject>
-
-    <h2 class="portfolio-section-title">Artificial Intelligence</h2>
 
     <PortfolioProject 
       imgSrc="/portfolio/music1.png" 
       title="Music Genre Categorization: Deep Learning"
       github="https://github.com/aaryamanz/music-genre-categorization"
     >
-      <p>Enhanced the GTZAN dataset through data augmentation and conducted detailed analysis of audio signals. Visualized signals in the time domain and examined frequency components using FFT. Utilized AlexNet as a feature extractor on spectrograms, then implemented a fully connected neural network for classification.</p>
+      <p>Enhanced the GTZAN dataset through data augmentation and conducted detailed analysis of audio signals. Visualized signals in the time domain and examined frequency components using FFT. Utilized AlexNet as a feature extractor on spectrograms, then implemented a fully connected neural network for classification—translating raw data into strategic insights.</p>
     </PortfolioProject>
+
+    <h2 class="portfolio-section-title">Engineering R&D & High-Performance Systems</h2>
 
     <PortfolioProject 
       imgSrc="/portfolio/output1.png" 
-      title="Autonomous Driving Car with Lane and Object Detection"
+      title="Autonomous Driving Car: High-Performance System Design"
       github="https://github.com/aaryamanz/autonomous-driving"
       reverseImg={true}
     >
-      <p>CNN based on NVIDIA's model for real-time autonomous navigation in the Udacity simulator. Integrated OpenCV and YOLOv3 for accurate lane detection and object recognition, enhancing decision-making with real-time performance metrics.</p>
+      <p>High-performance system design for real-time autonomous navigation. CNN based on NVIDIA's model in the Udacity simulator. Integrated OpenCV and YOLOv3 for accurate lane detection and object recognition—engineering robust decision-making with real-time performance metrics.</p>
     </PortfolioProject>
-
-    <h2 class="portfolio-section-title">Engineering Design</h2>
 
     <PortfolioProject 
       imgSrc="/portfolio/machine.png" 
@@ -124,7 +120,7 @@ import '/src/assets/css/styles.css';
       title="Gearbox Design: Rapid-Prototyping"
       reverseImg={true}
     >
-      <p>Achieved 3:1 speed reduction in a right-angle gearbox with 90° input/output shafts without worm gears. Utilized SolidWorks with GD&T, pins for assembly, and toolbox gears. Design optimized for 3D printing with fabrication under 6 hours.</p>
+      <p>Achieved 3:1 speed reduction in a right-angle gearbox with 90° input/output shafts without worm gears. Complex math and physics—kinematic analysis, torque calculations, and Six Sigma optimization. This rigor in quantitative design translates directly to derivatives pricing and structured products. Utilized SolidWorks with GD&T; design optimized for 3D printing with fabrication under 6 hours.</p>
     </PortfolioProject>
 
     <PortfolioProject 
@@ -133,8 +129,6 @@ import '/src/assets/css/styles.css';
     >
       <p>Designed a complete air-compressed piston engine from an aluminium block using isometric drawings. Utilized CNC milling, lathe, and drill press. Optimized center of gravity through design calculations. Completed assembly in under two days.</p>
     </PortfolioProject>
-
-    <h2 class="portfolio-section-title">Technical</h2>
 
     <PortfolioProject 
       imgSrc="/portfolio/bracelet3.jpg" 
@@ -180,7 +174,7 @@ import '/src/assets/css/styles.css';
   }
 
   .portfolio-hero__inner {
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
     text-align: center;
   }
@@ -215,15 +209,14 @@ import '/src/assets/css/styles.css';
 
   .portfolio-stats {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
-    max-width: 500px;
+    max-width: 520px;
     margin: 0 auto;
   }
 
   @media (min-width: 640px) {
     .portfolio-stats {
-      grid-template-columns: repeat(4, 1fr);
       gap: 1.5rem;
     }
   }
@@ -265,7 +258,7 @@ import '/src/assets/css/styles.css';
   }
 
   .portfolio-content {
-    max-width: 1100px;
+    max-width: 1320px;
     margin: 0 auto;
     padding: 0 1rem;
   }
