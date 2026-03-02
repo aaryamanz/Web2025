@@ -1,0 +1,142 @@
+---
+---
+
+<canvas id="shooting-star-layer" aria-hidden="true"></canvas>
+
+<script is:inline>
+  (function () {
+    if (window.__shootingStarsInitialized) return;
+    window.__shootingStarsInitialized = true;
+
+    const canvas = document.getElementById('shooting-star-layer');
+    if (!canvas) return;
+
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) return;
+
+    // Tune these values to control frequency and trail behavior.
+    const SPAWN_RATE_PER_SECOND = 0.085; // Probabilistic event rate (Poisson process)
+    const STAR_SPEED_MIN = 8;
+    const STAR_SPEED_MAX = 13;
+    const STAR_LENGTH_MIN = 85;
+    const STAR_LENGTH_MAX = 150;
+
+    const stars = [];
+    let rafId = null;
+    let width = 0;
+    let height = 0;
+    let lastTs = 0;
+    let nextSpawnAt = 0;
+
+    const sampleInterArrivalMs = (ratePerSecond) => {
+      const u = Math.max(1e-6, Math.random());
+      return (-Math.log(1 - u) / ratePerSecond) * 1000;
+    };
+
+    const isDark = () => document.documentElement.classList.contains('darkmode');
+
+    const resize = () => {
+      width = window.innerWidth;
+      height = window.innerHeight;
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      canvas.width = Math.floor(width * dpr);
+      canvas.height = Math.floor(height * dpr);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    };
+
+    const spawnStar = (now) => {
+      const startX = Math.random() * width * 0.8;
+      const startY = Math.random() * height * 0.45;
+      const angle = Math.PI / 4 + (Math.random() - 0.5) * 0.22;
+      const speed = STAR_SPEED_MIN + Math.random() * (STAR_SPEED_MAX - STAR_SPEED_MIN);
+      const length = STAR_LENGTH_MIN + Math.random() * (STAR_LENGTH_MAX - STAR_LENGTH_MIN);
+      const life = 850 + Math.random() * 700;
+      const darkMode = isDark();
+
+      stars.push({
+        x: startX,
+        y: startY,
+        vx: Math.cos(angle) * speed,
+        vy: Math.sin(angle) * speed,
+        length,
+        bornAt: now,
+        life,
+        colorHead: darkMode ? 'rgba(255,255,255,0.95)' : 'rgba(15,23,42,0.9)',
+        colorTail: darkMode ? 'rgba(255,255,255,0)' : 'rgba(15,23,42,0)'
+      });
+    };
+
+    const animate = (ts) => {
+      if (!lastTs) lastTs = ts;
+      const dt = Math.min(32, ts - lastTs);
+      lastTs = ts;
+
+      ctx.clearRect(0, 0, width, height);
+
+      if (ts >= nextSpawnAt) {
+        spawnStar(ts);
+        nextSpawnAt = ts + sampleInterArrivalMs(SPAWN_RATE_PER_SECOND);
+      }
+
+      for (let i = stars.length - 1; i >= 0; i -= 1) {
+        const s = stars[i];
+        const age = ts - s.bornAt;
+        const t = Math.min(1, age / s.life);
+
+        if (t >= 1 || s.x - s.length > width || s.y - s.length > height) {
+          stars.splice(i, 1);
+          continue;
+        }
+
+        s.x += s.vx * (dt / 16.666);
+        s.y += s.vy * (dt / 16.666);
+
+        const opacity = 1 - t;
+        const tailX = s.x - (s.vx / STAR_SPEED_MAX) * s.length;
+        const tailY = s.y - (s.vy / STAR_SPEED_MAX) * s.length;
+
+        const gradient = ctx.createLinearGradient(s.x, s.y, tailX, tailY);
+        gradient.addColorStop(0, s.colorHead.replace(/[\d.]+\)$/g, `${0.95 * opacity})`));
+        gradient.addColorStop(1, s.colorTail);
+
+        ctx.strokeStyle = gradient;
+        ctx.lineWidth = 1.6;
+        ctx.beginPath();
+        ctx.moveTo(s.x, s.y);
+        ctx.lineTo(tailX, tailY);
+        ctx.stroke();
+      }
+
+      rafId = requestAnimationFrame(animate);
+    };
+
+    const start = () => {
+      resize();
+      nextSpawnAt = performance.now() + sampleInterArrivalMs(SPAWN_RATE_PER_SECOND);
+      if (rafId !== null) cancelAnimationFrame(rafId);
+      rafId = requestAnimationFrame(animate);
+    };
+
+    window.addEventListener('resize', resize, { passive: true });
+    document.addEventListener('astro:page-load', start);
+    document.addEventListener('astro:after-swap', start);
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', start);
+    } else {
+      start();
+    }
+  })();
+</script>
+
+<style>
+  #shooting-star-layer {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+  }
+</style>

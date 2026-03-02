@@ -43,22 +43,45 @@
 
   .responsive-toggle {
     display: none;
+    width: 32px;
+    height: 32px;
     padding: 0;
-    margin-top: 6px;
+    margin-top: 0;
     border: none;
+    background: transparent;
+    line-height: 1;
+    align-items: center;
+    justify-content: center;
 
     svg {
-      width: 30px;
+      width: 26px;
+      height: 21px;
+      display: block;
 
       path {
-        transition: fill 0.2s ease-in-out;
+        fill: #000000;
+        stroke: #000000;
+        transition: fill 0.2s ease-in-out, stroke 0.2s ease-in-out;
       }
     }
 
     &:hover {
       svg path {
-        fill: var(--primary-400);
+        fill: #111111;
+        stroke: #111111;
       }
     }
+  }
+
+  :global(html.darkmode) .responsive-toggle svg path,
+  :global(html.dark) .responsive-toggle svg path {
+    fill: #ffffff;
+    stroke: #ffffff;
+  }
+
+  :global(html.darkmode) .responsive-toggle:hover svg path,
+  :global(html.dark) .responsive-toggle:hover svg path {
+    fill: rgba(255, 255, 255, 0.85);
+    stroke: rgba(255, 255, 255, 0.85);
   }
 </style>

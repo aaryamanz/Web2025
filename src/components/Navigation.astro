@@ -400,17 +400,19 @@ import { DarkMode } from 'accessible-astro-components'
 
     .mobile-menu {
       flex-basis: 100%;
-      padding: 1.5rem 0 2rem;
+      padding: 0.95rem 0 1.15rem;
       order: 3;
       width: 100%;
       border-top: 1px solid rgba(0, 0, 0, 0.08);
 
       > ul {
         flex-direction: column;
+        gap: 0.25rem;
+        width: 100%;
 
         ul {
           position: relative;
-          margin-top: 1rem;
+          margin-top: 0.5rem;
         }
       }
 
@@ -418,7 +420,8 @@ import { DarkMode } from 'accessible-astro-components'
       button {
         display: block;
         width: 100%;
-        padding: 0.5rem 0;
+        padding: 0.72rem 0.85rem;
+        border-radius: 10px;
       }
     }
 
@@ -435,10 +438,13 @@ import { DarkMode } from 'accessible-astro-components'
       border: none;
       font: inherit;
       cursor: pointer;
-      padding: 0.5rem 0;
+      padding: 0.68rem 0.85rem;
       width: 100%;
       text-align: left;
       color: #000000;
+      border-radius: 10px;
+      border: 1px solid rgba(15, 23, 42, 0.12);
+      background: rgba(148, 163, 184, 0.08);
     }
 
     .darkmode-toggle-mobile .theme-icon-sun,
@@ -465,10 +471,8 @@ import { DarkMode } from 'accessible-astro-components'
 
     .darkmode-toggle-mobile button:hover {
       color: #111111;
-      text-decoration: underline;
-      text-decoration-thickness: 1px;
-      text-decoration-style: wavy;
-      text-underline-offset: 7px;
+      background: rgba(148, 163, 184, 0.16);
+      text-decoration: none;
     }
 
     .has-dropdown {
@@ -543,7 +547,10 @@ import { DarkMode } from 'accessible-astro-components'
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    width: 32px;
+    height: 32px;
     padding: 0;
+    margin-top: 2px;
     border: none;
     background: transparent;
     cursor: pointer;
@@ -634,6 +641,25 @@ import { DarkMode } from 'accessible-astro-components'
 
     .container > a img.site-logo {
       filter: none !important;
+    }
+
+    .mobile-menu a,
+    .mobile-menu button {
+      color: rgba(255, 255, 255, 0.92) !important;
+    }
+
+    .mobile-menu a:hover {
+      background: rgba(148, 163, 184, 0.16);
+      text-decoration: none;
+    }
+
+    .darkmode-toggle-mobile button {
+      border-color: rgba(148, 163, 184, 0.34);
+      background: rgba(30, 41, 59, 0.58);
+    }
+
+    .darkmode-toggle-mobile button:hover {
+      background: rgba(51, 65, 85, 0.76);
     }
   }
 </style>

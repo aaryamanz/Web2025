@@ -5,6 +5,7 @@ import Analytics from '@vercel/analytics/astro'
 import SiteMeta from '../components/SiteMeta.astro'
 import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro'
+import ShootingStar from '../components/ShootingStar.astro'
 
 const {
   title = 'Aaryaman Singh',
@@ -45,6 +46,7 @@ const {
   </head>
   <body>
     <div id="pointer-glow" aria-hidden="true"></div>
+    <ShootingStar />
     <Header />
     <main id="main-content" transition:animate="fade">
       <slot />
@@ -112,6 +114,90 @@ const {
           visible = false;
           ensureAnimation();
         });
+      })();
+    </script>
+    <script is:inline>
+      (function () {
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+        const getRevealTargets = () => {
+          return document.querySelectorAll(
+            'main section, main .skills__card, main .project-card, main .work-item, main .cert-item, main .contact-shell, main .contact-channel'
+          );
+        };
+
+        if (window.__scrollRevealInitialized) {
+          if (typeof window.__refreshScrollReveal === 'function') {
+            window.__refreshScrollReveal();
+          }
+          return;
+        }
+        window.__scrollRevealInitialized = true;
+
+        const observed = new WeakSet();
+        let observer = null;
+
+        const markAllVisible = () => {
+          const targets = getRevealTargets();
+          targets.forEach((el) => {
+            el.classList.add('reveal-on-scroll', 'is-visible');
+            el.style.removeProperty('--reveal-delay');
+          });
+        };
+
+        const ensureObserver = () => {
+          if (observer) return observer;
+          observer = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  entry.target.classList.add('is-visible');
+                  observer.unobserve(entry.target);
+                }
+              });
+            },
+            {
+              threshold: 0.12,
+              rootMargin: '0px 0px -8% 0px'
+            }
+          );
+          return observer;
+        };
+
+        const refreshScrollReveal = () => {
+          if (prefersReducedMotion.matches) {
+            markAllVisible();
+            return;
+          }
+
+          const io = ensureObserver();
+          const targets = getRevealTargets();
+          targets.forEach((el, index) => {
+            el.classList.add('reveal-on-scroll');
+            if (!el.style.getPropertyValue('--reveal-delay')) {
+              el.style.setProperty('--reveal-delay', `${Math.min((index % 8) * 45, 315)}ms`);
+            }
+            if (!observed.has(el)) {
+              observed.add(el);
+              io.observe(el);
+            }
+          });
+        };
+
+        window.__refreshScrollReveal = refreshScrollReveal;
+
+        if (typeof prefersReducedMotion.addEventListener === 'function') {
+          prefersReducedMotion.addEventListener('change', refreshScrollReveal);
+        }
+
+        document.addEventListener('astro:page-load', refreshScrollReveal);
+        document.addEventListener('astro:after-swap', refreshScrollReveal);
+
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', refreshScrollReveal);
+        } else {
+          refreshScrollReveal();
+        }
       })();
     </script>
     <style lang="scss" is:global>
@@ -227,6 +313,33 @@ const {
           svg path {
             stroke: white;
           }
+        }
+      }
+
+      .reveal-on-scroll {
+        opacity: 0;
+        transform: translate3d(0, 20px, 0);
+        filter: blur(2px);
+        transition:
+          opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+          transform 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+          filter 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+        transition-delay: var(--reveal-delay, 0ms);
+        will-change: opacity, transform;
+      }
+
+      .reveal-on-scroll.is-visible {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+        filter: blur(0);
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .reveal-on-scroll {
+          opacity: 1 !important;
+          transform: none !important;
+          filter: none !important;
+          transition: none !important;
         }
       }
     </style>
