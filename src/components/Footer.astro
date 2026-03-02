@@ -4,14 +4,20 @@ import { Icon } from 'astro-icon/components'
 
 const currentYear = new Date().getFullYear()
 
-// Footer navigation items
-const footerNav = [
-  { name: 'Home', href: '/' },
-  { name: 'Portfolio', href: '/portfolio' },
-]
-
 // Social media links with brand colors
 const socialLinks = [
+  { 
+    name: 'YouTube', 
+    href: 'https://www.youtube.com/@AaryamanSingh?', 
+    icon: 'simple-icons:youtube',
+    color: '#FF0000'
+  },
+  { 
+    name: 'X', 
+    href: 'https://x.com/Aaryamanz', 
+    icon: 'simple-icons:x',
+    color: '#111111'
+  },
   { 
     name: 'Instagram', 
     href: 'https://www.instagram.com/aaryamanz', 
@@ -45,55 +51,24 @@ const socialLinks = [
         <p class="footer__tagline">Precision · Poise · Progress</p>
       </div>
 
-      <div class="footer__sections">
-        <div class="footer__section">
-          <h4 class="footer__heading">Links</h4>
-          <ul class="footer__list">
-            {footerNav.map(item => (
-              <li>
-                <a href={item.href} class="footer__link">{item.name}</a>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <div class="footer__section">
-          <h4 class="footer__heading">Contact</h4>
-          <ul class="footer__list">
-            <li>
-              <a href="mailto:aaryaman.singh@mail.utoronto.ca" class="footer__link">Email</a>
-            </li>
-            <li class="footer__text">Toronto, CA</li>
-          </ul>
-        </div>
-
-        <div class="footer__section footer__section--social">
-          <h4 class="footer__heading">Connect</h4>
-          <div class="footer__socials">
-            {socialLinks.map(social => (
-              <a
-                href={social.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="footer__social-link"
-                aria-label={`Follow on ${social.name}`}
-                style={`color: ${social.color}`}
-              >
-                <Icon name={social.icon} class="footer__social-icon" />
-              </a>
-            ))}
-          </div>
-        </div>
+      <div class="footer__socials">
+        {socialLinks.map(social => (
+          <a
+            href={social.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="footer__social-link"
+            aria-label={`Follow on ${social.name}`}
+            style={`color: ${social.color}`}
+          >
+            <Icon name={social.icon} class="footer__social-icon" />
+          </a>
+        ))}
       </div>
     </div>
 
     <div class="footer__bottom">
       <p class="footer__copyright">&copy; {currentYear} Aaryaman Singh. All rights reserved.</p>
-      <div class="footer__legal">
-        <a href="/privacy" class="footer__link">Privacy</a>
-        <span class="footer__divider">·</span>
-        <a href="/terms" class="footer__link">Terms</a>
-      </div>
     </div>
   </div>
 </footer>
@@ -128,45 +103,31 @@ const socialLinks = [
     z-index: 1;
     max-width: 1600px;
     margin: 0 auto;
-    padding: 1rem 1rem 0.75rem;
+    padding: 0.5rem 0.9rem 0.45rem;
   }
 
   .footer__main {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-
-  @media (min-width: 640px) {
-    .footer__main {
-      grid-template-columns: 1fr 2fr;
-      gap: 1.5rem;
-      align-items: start;
-    }
-  }
-
-  @media (min-width: 768px) {
-    .footer__main {
-      grid-template-columns: 180px 1fr;
-    }
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
   }
 
   .footer__brand {
-    padding-bottom: 0.25rem;
+    padding-bottom: 0;
   }
 
   .footer__name {
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 700;
-    margin: 0 0 0.2rem 0;
-    background: linear-gradient(135deg, #e000b3 0%, #333399 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+    margin: 0;
+    background: none;
+    color: #000000;
   }
 
   .footer__tagline {
-    font-size: 0.8rem;
+    display: none;
+    font-size: 0.7rem;
     color: #6b7280;
     margin: 0;
     letter-spacing: 0.02em;
@@ -238,9 +199,9 @@ const socialLinks = [
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 32px;
-    height: 32px;
-    border-radius: 10px;
+    width: 26px;
+    height: 26px;
+    border-radius: 8px;
     background: rgba(147, 51, 234, 0.08);
     transition: transform 0.2s ease, background 0.2s ease;
   }
@@ -251,32 +212,24 @@ const socialLinks = [
   }
 
   .footer__social-icon {
-    width: 16px;
-    height: 16px;
+    width: 13px;
+    height: 13px;
   }
 
   .footer__bottom {
-    margin-top: 0.75rem;
-    padding-top: 0.5rem;
+    margin-top: 0.3rem;
+    padding-top: 0.3rem;
     border-top: 1px solid rgba(0, 0, 0, 0.06);
     display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
+    flex-direction: row;
+    gap: 0;
     align-items: center;
+    justify-content: center;
     text-align: center;
   }
 
-  @media (min-width: 640px) {
-    .footer__bottom {
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-      text-align: left;
-    }
-  }
-
   .footer__copyright {
-    font-size: 0.75rem;
+    font-size: 0.68rem;
     color: #6b7280;
     margin: 0;
   }
@@ -309,6 +262,10 @@ const socialLinks = [
   :global(.darkmode) .footer__tagline,
   :global(.darkmode) .footer__heading {
     color: rgba(255, 255, 255, 0.7);
+  }
+
+  :global(.darkmode) .footer__name {
+    color: #ffffff;
   }
 
   :global(.darkmode) .footer__link,

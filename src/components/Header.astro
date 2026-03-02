@@ -4,7 +4,7 @@ import { SkipLinks } from 'accessible-astro-components'
 import { Icon } from 'astro-icon/components'
 ---
 
-<header>
+<header class="!bg-white dark:!bg-black">
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-2YP36JNKW1"></script>
 <script>
@@ -18,6 +18,24 @@ import { Icon } from 'astro-icon/components'
   <Navigation>
     <li class="menu-item">
       <a href="/">Home</a>
+    </li>
+    <li class="menu-item">
+      <a href="/#about">About</a>
+    </li>
+    <li class="menu-item">
+      <a href="/#skills">Skills</a>
+    </li>
+    <li class="menu-item">
+      <a href="/#work-experience">Work</a>
+    </li>
+    <li class="menu-item">
+      <a href="/#certifications">Certifications</a>
+    </li>
+    <li class="menu-item">
+      <a href="/#projects">Projects</a>
+    </li>
+    <li class="menu-item">
+      <a href="/#contact">Contact</a>
     </li>
 {/*    <li class="menu-item">
       <a href="/blog/"> Blog </a>
@@ -48,11 +66,6 @@ import { Icon } from 'astro-icon/components'
       <a href="https://accessible-astro.dev" title="external link" rel="external noopener noreferrer">External Link</a>
     </li>
     */}
-    <li class="menu-item type-icon">
-      <a href="https://github.com/aaryamanz" title="Go to the GitHub page">
-        <Icon name="ion:logo-github" />
-      </a>
-    </li>
   </Navigation>
 </header>
 
@@ -60,6 +73,8 @@ import { Icon } from 'astro-icon/components'
   @use '../assets/scss/base/outline' as *;
 
   header {
+    background: #ffffff !important;
+
     .type-icon a {
       display: block;
 
@@ -82,8 +97,13 @@ import { Icon } from 'astro-icon/components'
   }
 
   /* Dark mode: white icons */
-  :global(.darkmode) header .type-icon a [data-icon] path,
-  html.darkmode header .type-icon a [data-icon] path {
+  html.darkmode header .type-icon a [data-icon] path,
+  html.dark header .type-icon a [data-icon] path {
     fill: white !important;
+  }
+
+  html.darkmode header,
+  html.dark header {
+    background: #000000 !important;
   }
 </style>

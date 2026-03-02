@@ -1,7 +1,7 @@
 ---
 ---
 
-<section class="about-section">
+<section id="about" class="about-section">
   <div class="about-section__container">
     <div class="about-section__content">
       <h2 class="about-section__title text-center text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-4"><span class="gradient-text">About Me</span></h2>
@@ -11,8 +11,39 @@
       <p class="about-section__text">
         My goal is to leverage my technical background in Capital Markets, using quantitative methods to uncover value. Simultaneously, my experience in Process Engineering allows me to decompose complex business challenges into actionable strategies. I am an entrepreneur at heart, driven by building scalable solutions.
       </p>
-      <div class="about-section__highlight">
-        <span class="about-section__highlight-text">Capital Markets, Quantitative Strategy & R&D</span>
+      <div class="about-section__links">
+        <a
+          href="https://www.amazon.ca/dp/1685099394/ref=cm_cr_arp_d_bdcrb_top?ie=UTF8"
+          class="about-section__book-btn"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Check out my book
+        </a>
+        <a
+          href="https://www.instagram.com/aaryamanz"
+          class="about-section__social-btn"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Instagram
+        </a>
+        <a
+          href="https://www.youtube.com/@AaryamanSingh"
+          class="about-section__social-btn"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          YouTube
+        </a>
+        <a
+          href="https://x.com/aaryamanz"
+          class="about-section__social-btn"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          X
+        </a>
       </div>
     </div>
   </div>
@@ -21,13 +52,13 @@
 <style>
   .about-section {
     margin: 3rem 0;
-    padding: 2rem 1rem;
+    padding: 1rem 1rem 2rem;
   }
 
   @media (min-width: 768px) {
     .about-section {
       margin: 4rem 0;
-      padding: 3rem 1.5rem;
+      padding: 1.5rem 1.5rem 3rem;
     }
   }
 
@@ -47,7 +78,7 @@
     flex-direction: column;
     gap: 1.25rem;
     text-align: center;
-    width: 100%;
+    width: min(100%, 52rem);
     margin: 0 auto;
   }
 
@@ -62,28 +93,65 @@
     margin: 0;
   }
 
+  .about-section__links {
+    align-self: center;
+    margin-top: 0.35rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.55rem;
+  }
+
+  .about-section__book-btn,
+  .about-section__social-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 0.85rem;
+    border-radius: 999px;
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: #7e22ce;
+    border: 1px solid rgba(147, 51, 234, 0.35);
+    background: rgba(147, 51, 234, 0.08);
+    transition: transform 0.2s ease, border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+  }
+
+  .about-section__book-btn:visited,
+  .about-section__social-btn:visited {
+    color: #7e22ce;
+  }
+
+  .about-section__book-btn:hover,
+  .about-section__social-btn:hover {
+    transform: translateY(-1px);
+    color: #6b21a8;
+    border-color: rgba(147, 51, 234, 0.55);
+    background: rgba(147, 51, 234, 0.16);
+  }
+
   :global(.darkmode) .about-section__text {
     color: rgba(255, 255, 255, 0.75);
   }
 
-  .about-section__highlight {
-    margin-top: 0.5rem;
-    padding-top: 1.25rem;
-    border-top: 1px solid rgba(147, 51, 234, 0.2);
+  :global(.darkmode) .about-section__book-btn,
+  :global(.darkmode) .about-section__social-btn {
+    color: #d8b4fe;
+    border-color: rgba(192, 132, 252, 0.45);
+    background: rgba(88, 28, 135, 0.24);
   }
 
-  .about-section__highlight-text {
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: #6b7280;
-    letter-spacing: 0.02em;
+  :global(.darkmode) .about-section__book-btn:visited,
+  :global(.darkmode) .about-section__social-btn:visited {
+    color: #d8b4fe;
   }
 
-  :global(.darkmode) .about-section__highlight-text {
-    color: rgba(255, 255, 255, 0.6);
+  :global(.darkmode) .about-section__book-btn:hover,
+  :global(.darkmode) .about-section__social-btn:hover {
+    color: #f3e8ff;
+    border-color: rgba(192, 132, 252, 0.6);
+    background: rgba(107, 33, 168, 0.34);
   }
 
-  :global(.darkmode) .about-section__highlight {
-    border-top-color: rgba(168, 85, 247, 0.2);
-  }
 </style>

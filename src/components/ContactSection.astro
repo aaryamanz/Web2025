@@ -1,0 +1,324 @@
+---
+import { Icon } from 'astro-icon/components';
+---
+
+<section id="contact" class="contact-section">
+  <div class="contact-section__header">
+    <h2 class="contact-section__title text-center text-4xl sm:text-5xl md:text-6xl">Contact</h2>
+    <p class="contact-section__subtitle">Let's connect for opportunities in capital markets, analytics, and product building.</p>
+  </div>
+
+  <article class="contact-shell">
+    <div class="contact-shell__intro">
+      <p class="contact-shell__eyebrow">Get In Touch</p>
+      <h3 class="contact-shell__title">Open to collaborations, internships, and high-impact projects.</h3>
+      <p class="contact-shell__text">
+        If you're building something at the intersection of engineering, finance, and analytics, I'd love to hear from you.
+      </p>
+      <div class="contact-shell__quick-actions">
+        <a href="mailto:aaryaman.singh@mail.utoronto.ca" class="contact-pill contact-pill--primary">
+          <Icon name="mdi:email-fast-outline" />
+          Email Me
+        </a>
+        <a href="https://www.linkedin.com/in/aaryamansingh/" target="_blank" rel="noopener noreferrer" class="contact-pill">
+          <Icon name="mdi:linkedin" />
+          LinkedIn
+        </a>
+      </div>
+    </div>
+
+    <div class="contact-shell__channels">
+      <a href="mailto:aaryaman.singh@mail.utoronto.ca" class="contact-channel">
+        <div class="contact-channel__icon">
+          <Icon name="mdi:email-outline" />
+        </div>
+        <div>
+          <p class="contact-channel__label">Email</p>
+          <p class="contact-channel__value">aaryaman.singh@mail.utoronto.ca</p>
+        </div>
+      </a>
+
+      <a href="https://www.linkedin.com/in/aaryamansingh/" target="_blank" rel="noopener noreferrer" class="contact-channel">
+        <div class="contact-channel__icon">
+          <Icon name="mdi:linkedin" />
+        </div>
+        <div>
+          <p class="contact-channel__label">LinkedIn</p>
+          <p class="contact-channel__value">/in/aaryamansingh</p>
+        </div>
+      </a>
+
+      <div class="contact-channel">
+        <div class="contact-channel__icon">
+          <Icon name="mdi:map-marker-outline" />
+        </div>
+        <div>
+          <p class="contact-channel__label">Location</p>
+          <p class="contact-channel__value">Toronto, Ontario</p>
+        </div>
+      </div>
+
+      <div class="contact-shell__social-row">
+        <a href="https://x.com/aaryamanz" target="_blank" rel="noopener noreferrer" aria-label="X profile" class="contact-social">
+          <Icon name="simple-icons:x" />
+        </a>
+        <a href="https://www.instagram.com/aaryamanz" target="_blank" rel="noopener noreferrer" aria-label="Instagram profile" class="contact-social">
+          <Icon name="simple-icons:instagram" />
+        </a>
+        <a href="https://www.youtube.com/@AaryamanSingh" target="_blank" rel="noopener noreferrer" aria-label="YouTube profile" class="contact-social">
+          <Icon name="simple-icons:youtube" />
+        </a>
+      </div>
+    </div>
+  </article>
+</section>
+
+<style>
+  .contact-section {
+    padding: 1.5rem 0 3.5rem;
+  }
+
+  .contact-section__header {
+    margin-bottom: 1.5rem;
+  }
+
+  .contact-section__title {
+    margin: 0 0 0.6rem;
+    color: #1f2937;
+    font-weight: 700;
+  }
+
+  .contact-section__subtitle {
+    margin: 0 auto;
+    max-width: 50rem;
+    text-align: center;
+    color: #6b7280;
+  }
+
+  .contact-shell {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.1rem;
+    border: 1px solid rgba(15, 23, 42, 0.14);
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 1.1rem;
+  }
+
+  @media (min-width: 980px) {
+    .contact-shell {
+      grid-template-columns: 1.1fr 1fr;
+      align-items: stretch;
+      padding: 1.3rem;
+    }
+  }
+
+  .contact-shell__intro {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    justify-content: center;
+    padding: 0.35rem;
+  }
+
+  .contact-shell__eyebrow {
+    margin: 0;
+    font-size: 0.76rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #64748b;
+    font-weight: 700;
+  }
+
+  .contact-shell__title {
+    margin: 0;
+    color: #1f2937;
+    font-size: 1.32rem;
+    line-height: 1.35;
+    font-weight: 700;
+  }
+
+  .contact-shell__text {
+    margin: 0;
+    color: #6b7280;
+    line-height: 1.65;
+  }
+
+  .contact-shell__quick-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.6rem;
+    margin-top: 0.35rem;
+  }
+
+  @media (min-width: 560px) {
+    .contact-shell__quick-actions {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .contact-pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    font-size: 0.84rem;
+    border: 1px solid rgba(15, 23, 42, 0.2);
+    color: #334155;
+    border-radius: 999px;
+    padding: 0.7rem 0.9rem;
+    background: rgba(255, 255, 255, 0.88);
+  }
+
+  .contact-pill--primary {
+    background: #1f2937;
+    color: #ffffff;
+    border-color: #1f2937;
+  }
+
+  .contact-pill--primary:hover {
+    background: #0f172a;
+    border-color: #0f172a;
+    color: #ffffff;
+  }
+
+  .contact-shell__channels {
+    display: grid;
+    gap: 0.7rem;
+    border: 1px solid rgba(15, 23, 42, 0.12);
+    border-radius: 12px;
+    padding: 0.8rem;
+    background: rgba(248, 250, 252, 0.7);
+  }
+
+  .contact-channel {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.7rem;
+    align-items: center;
+    text-decoration: none;
+    padding: 0.45rem;
+    border-radius: 10px;
+  }
+
+  .contact-channel__icon {
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(15, 23, 42, 0.15);
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(15, 23, 42, 0.68);
+  }
+
+  .contact-channel__label {
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-size: 0.74rem;
+    color: #6b7280;
+    font-weight: 700;
+  }
+
+  .contact-channel__value {
+    margin: 0.08rem 0 0;
+    color: #1f2937;
+    font-size: 0.9rem;
+  }
+
+  .contact-shell__social-row {
+    display: flex;
+    gap: 0.55rem;
+    padding-top: 0.35rem;
+  }
+
+  .contact-social {
+    width: 36px;
+    height: 36px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    border: 1px solid rgba(15, 23, 42, 0.2);
+    color: #334155;
+    background: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+  }
+
+  .contact-social:visited {
+    color: #334155;
+  }
+
+  :global(.darkmode) .contact-section__title {
+    color: #f8fafc;
+  }
+
+  :global(.darkmode) .contact-section__subtitle {
+    color: rgba(226, 232, 240, 0.7);
+  }
+
+  :global(.darkmode) .contact-shell {
+    border-color: rgba(148, 163, 184, 0.3);
+    background: rgba(2, 6, 23, 0.56);
+  }
+
+  :global(.darkmode) .contact-shell__eyebrow {
+    color: #93c5fd;
+  }
+
+  :global(.darkmode) .contact-shell__title {
+    color: #f8fafc;
+  }
+
+  :global(.darkmode) .contact-shell__text {
+    color: rgba(226, 232, 240, 0.74);
+  }
+
+  :global(.darkmode) .contact-pill {
+    color: #e2e8f0;
+    border-color: rgba(148, 163, 184, 0.4);
+    background: rgba(30, 41, 59, 0.58);
+  }
+
+  :global(.darkmode) .contact-pill--primary {
+    color: #020617;
+    background: #f8fafc;
+    border-color: #f8fafc;
+  }
+
+  :global(.darkmode) .contact-pill--primary:hover {
+    background: #e2e8f0;
+    border-color: #e2e8f0;
+    color: #020617;
+  }
+
+  :global(.darkmode) .contact-shell__channels {
+    border-color: rgba(148, 163, 184, 0.3);
+    background: rgba(15, 23, 42, 0.54);
+  }
+
+  :global(.darkmode) .contact-channel__icon {
+    border-color: rgba(148, 163, 184, 0.3);
+    color: rgba(226, 232, 240, 0.84);
+  }
+
+  :global(.darkmode) .contact-channel__label {
+    color: rgba(226, 232, 240, 0.62);
+  }
+
+  :global(.darkmode) .contact-channel__value {
+    color: #f8fafc;
+  }
+
+  :global(.darkmode) .contact-social {
+    border-color: rgba(148, 163, 184, 0.56);
+    color: #e2e8f0;
+    background: rgba(30, 41, 59, 0.65);
+  }
+
+  :global(.darkmode) .contact-social:visited {
+    color: #e2e8f0;
+  }
+</style>

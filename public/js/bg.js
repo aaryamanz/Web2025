@@ -20,9 +20,9 @@
   }
 
   function initBG() {
-    let particlesSmall = generateParticles(700);
-    let particlesMedium = generateParticles(200);
-    let particlesLarge = generateParticles(100);
+    let particlesSmall = generateParticles(60);
+    let particlesMedium = generateParticles(22);
+    let particlesLarge = generateParticles(11);
     let particles1 = document.getElementById('particles1');
     let particles2 = document.getElementById('particles2');
     let particles3 = document.getElementById('particles3');
@@ -57,9 +57,9 @@
       `;
     }
 
-    let starsSmall = generateStars(500);
-    let starsMedium = generateStars(200);
-    let starsLarge = generateStars(100);
+    let starsSmall = generateStars(60);
+    let starsMedium = generateStars(22);
+    let starsLarge = generateStars(11);
     let stars1 = document.getElementById('stars1');
     let stars2 = document.getElementById('stars2');
     let stars3 = document.getElementById('stars3');

@@ -73,7 +73,7 @@
 
 /* Card styling - clean, consistent */
 .skills__card {
-  background: white;
+  background: transparent;
   border: 2px solid #e5e7eb;
   border-radius: 12px;
   padding: 1.25rem 1rem;
@@ -89,7 +89,7 @@
 
 html.darkmode .skills__card,
 .darkmode .skills__card {
-  background: rgba(30, 30, 40, 0.85);
+  background: transparent;
   border-color: rgba(255, 255, 255, 0.15);
 }
 
@@ -127,7 +127,7 @@ html.darkmode .skills__card-title,
 .skills__list-grid li {
   text-align: center;
   padding: 0.5rem 0.75rem;
-  background: #f9fafb;
+  background: transparent;
   border-radius: 8px;
   font-size: 0.9rem;
   font-weight: 500;
@@ -136,12 +136,12 @@ html.darkmode .skills__card-title,
 }
 
 .skills__list-grid li:hover {
-  background: #f3f4f6;
+  background: rgba(148, 163, 184, 0.12);
 }
 
 html.darkmode .skills__list-grid li,
 .darkmode .skills__list-grid li {
-  background: rgba(255, 255, 255, 0.06);
+  background: transparent;
   color: rgba(255, 255, 255, 0.9);
 }
 

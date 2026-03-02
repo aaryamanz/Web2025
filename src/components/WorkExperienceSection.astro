@@ -1,0 +1,200 @@
+---
+import { workExperience } from '../data/homeSections.js';
+---
+
+<section id="work-experience" class="work-section">
+  <div class="work-section__header">
+    <h2 class="text-center text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-3 sm:mb-4">
+      <span class="gradient-text">Work Experience</span>
+    </h2>
+    <p class="work-section__subtitle text-center text-sm sm:text-base md:text-lg text-gray-600 dark:text-gray-300 leading-relaxed px-2">
+      A timeline of impact across engineering, analytics, and execution.
+    </p>
+  </div>
+
+  <div class="work-timeline">
+    {workExperience.map((item, index) => (
+      <article class={`work-item ${index % 2 === 0 ? 'work-item--left' : 'work-item--right'}`}>
+        <div class="work-item__dot" aria-hidden="true"></div>
+        <div class="work-item__card">
+          <div class="work-item__meta">
+            <p class="work-item__period">{item.period}</p>
+            <p class="work-item__location">{item.location}</p>
+          </div>
+          <h3 class="work-item__title">{item.role}</h3>
+          <p class="work-item__company">{item.company}</p>
+        </div>
+      </article>
+    ))}
+  </div>
+</section>
+
+<style>
+  .work-section {
+    padding: 2rem 0 2.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .work-section {
+      padding: 2.5rem 0 3rem;
+    }
+  }
+
+  .work-section__header {
+    margin-bottom: 1.5rem;
+    padding: 0 0.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .work-section__header {
+      margin-bottom: 2.25rem;
+    }
+  }
+
+  .work-section__subtitle {
+    max-width: 52rem;
+    margin: 0 auto;
+  }
+
+  .work-timeline {
+    position: relative;
+    display: grid;
+    gap: 0.9rem;
+    padding-left: 1.6rem;
+  }
+
+  @media (min-width: 1024px) {
+    .work-timeline {
+      max-width: 76rem;
+      margin: 0 auto;
+      padding-left: 0;
+    }
+
+    .work-timeline::before {
+      left: 50% !important;
+      transform: translateX(-50%) !important;
+    }
+
+    .work-item {
+      width: calc(50% - 1.25rem);
+    }
+
+    .work-item--left {
+      margin-right: auto;
+      text-align: right;
+    }
+
+    .work-item--right {
+      margin-left: auto;
+      text-align: left;
+    }
+
+    .work-item--left .work-item__meta {
+      justify-content: flex-end;
+    }
+
+    .work-item--left .work-item__dot {
+      left: auto;
+      right: -1.58rem;
+    }
+
+    .work-item--right .work-item__dot {
+      left: -1.58rem;
+    }
+  }
+
+  .work-timeline::before {
+    content: '';
+    position: absolute;
+    left: 0.5rem;
+    top: 0.2rem;
+    bottom: 0.2rem;
+    width: 2px;
+    background: linear-gradient(180deg, rgba(147, 51, 234, 0.45) 0%, rgba(99, 102, 241, 0.35) 100%);
+  }
+
+  .work-item {
+    position: relative;
+  }
+
+  .work-item__dot {
+    position: absolute;
+    left: -1.58rem;
+    top: 0.6rem;
+    width: 12px;
+    height: 12px;
+    border-radius: 999px;
+    background: #a855f7;
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.14);
+  }
+
+  .work-item__card {
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    padding: 0.1rem 0 0.75rem;
+  }
+
+  @media (min-width: 768px) {
+    .work-item__card {
+      padding: 0.2rem 0 0.95rem;
+    }
+  }
+
+  :global(.darkmode) .work-timeline::before {
+    background: linear-gradient(180deg, rgba(168, 85, 247, 0.5) 0%, rgba(129, 140, 248, 0.42) 100%);
+  }
+
+  :global(.darkmode) .work-item__dot {
+    background: #c084fc;
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 0 3px rgba(192, 132, 252, 0.18);
+  }
+
+  .work-item__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 0.75rem;
+    margin-bottom: 0.2rem;
+    font-size: 0.78rem;
+  }
+
+  .work-item__period {
+    color: #9333ea;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  .work-item__location {
+    color: #6b7280;
+    margin: 0;
+  }
+
+  :global(.darkmode) .work-item__location {
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  .work-item__title {
+    margin: 0;
+    font-size: 1rem;
+    color: #111827;
+    font-weight: 700;
+    line-height: 1.35;
+  }
+
+  .work-item__company {
+    margin: 0.1rem 0 0;
+    color: #374151;
+    font-weight: 600;
+    font-size: 0.93rem;
+  }
+
+  :global(.darkmode) .work-item__title {
+    color: rgba(255, 255, 255, 0.92);
+  }
+
+  :global(.darkmode) .work-item__company {
+    color: rgba(255, 255, 255, 0.78);
+  }
+</style>

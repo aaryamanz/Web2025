@@ -29,19 +29,24 @@ import '../assets/css/animation.css';
             <span class="text-gradient">Process Engineering Analyst @ CIBC | Engineering & Business @ UofT | Capital Markets, Quantitative Strategy & R&D</span>
           </div>
         </div>
-        <div class="hero__buttons flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
-
-          <a 
-          class="hero__link hero__link--linkedin" 
-          href="https://www.linkedin.com/in/aaryamansingh/">
-            <Icon name="simple-icons:linkedin" class="hero__link-icon" />
-            LinkedIn
-          </a>
-          <a
-            class="hero__link hero__link--github"
-            href="https://github.com/aaryamanz">
-            <Icon name="simple-icons:github" class="hero__link-icon" />
-            GitHub
+        <div class="hero__actions">
+          <div class="hero__buttons flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
+            <a 
+            class="hero__link hero__link--linkedin" 
+            href="https://www.linkedin.com/in/aaryamansingh/">
+              <Icon name="simple-icons:linkedin" class="hero__link-icon" />
+              LinkedIn
+            </a>
+            <a
+              class="hero__link hero__link--github"
+              href="https://github.com/aaryamanz">
+              <Icon name="simple-icons:github" class="hero__link-icon" />
+              GitHub
+            </a>
+          </div>
+          <a class="hero__scroll-down" href="#about" aria-label="Scroll down to About section">
+            Scroll down
+            <Icon name="mdi:chevron-down" class="hero__scroll-icon" />
           </a>
         </div>
       </div>
@@ -64,6 +69,28 @@ import '../assets/css/animation.css';
       <div id='stars3' class='fixed inset-0'></div>
     </div>
 <script is:inline src="/js/bg.js"></script>
+<script is:inline>
+  function initHeroScrollDown() {
+    const scrollDownLink = document.querySelector('.hero__scroll-down');
+    if (!scrollDownLink || scrollDownLink.dataset.bound === 'true') return;
+
+    scrollDownLink.addEventListener('click', (event) => {
+      event.preventDefault();
+      const target = document.querySelector('#about');
+      if (!target) return;
+
+      target.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    });
+
+    scrollDownLink.dataset.bound = 'true';
+  }
+
+  document.addEventListener('DOMContentLoaded', initHeroScrollDown);
+  document.addEventListener('astro:page-load', initHeroScrollDown);
+</script>
 </section>
 
 <style>
@@ -154,6 +181,14 @@ import '../assets/css/animation.css';
     gap: 0.75rem;
   }
 
+  .hero__actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+    width: 100%;
+  }
+
   @media (min-width: 640px) {
     .hero__buttons {
       flex-direction: row;
@@ -164,6 +199,13 @@ import '../assets/css/animation.css';
   @media (min-width: 768px) {
     .hero__buttons {
       justify-content: flex-start;
+    }
+
+    .hero__actions {
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 0.85rem;
     }
   }
 
@@ -226,6 +268,64 @@ import '../assets/css/animation.css';
     .hero__link {
       width: 100%;
       max-width: 200px;
+    }
+  }
+
+  .hero__scroll-down {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    margin-top: 0;
+    color: #0f172a !important;
+    text-shadow: 0 0 6px rgba(15, 23, 42, 0.2);
+    text-decoration: none;
+    font-size: 0.88rem;
+    letter-spacing: 0.01em;
+    transition: color 0.2s ease, transform 0.2s ease;
+  }
+
+  .hero__scroll-icon {
+    width: 18px;
+    height: 18px;
+    color: #0f172a;
+    filter: drop-shadow(0 0 4px rgba(15, 23, 42, 0.3));
+    animation: heroScrollPulse 1.4s ease-in-out infinite;
+  }
+
+  .hero__scroll-down:hover {
+    color: #020617 !important;
+    transform: translateY(1px);
+  }
+
+  @media (min-width: 768px) {
+    .hero__scroll-down {
+      align-self: center;
+    }
+  }
+
+  :global(.darkmode) .hero__scroll-down,
+  :global(html.darkmode) .hero__scroll-down {
+    color: #ffffff !important;
+    text-shadow: 0 0 8px rgba(168, 85, 247, 0.65), 0 0 16px rgba(168, 85, 247, 0.35);
+  }
+
+  :global(.darkmode) .hero__scroll-icon,
+  :global(html.darkmode) .hero__scroll-icon {
+    color: #ffffff;
+    filter: drop-shadow(0 0 6px rgba(168, 85, 247, 0.8));
+  }
+
+  :global(.darkmode) .hero__scroll-down:hover,
+  :global(html.darkmode) .hero__scroll-down:hover {
+    color: #ffffff !important;
+  }
+
+  @keyframes heroScrollPulse {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(3px);
     }
   }
 

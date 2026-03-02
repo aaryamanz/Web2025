@@ -24,15 +24,14 @@ const {
     <script is:inline>
       (function(){
         var t=localStorage.getItem('theme');
-        var d=!(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches);
-        if(t==='dark')document.documentElement.classList.add('darkmode');
-        else if(t==='light')document.documentElement.classList.remove('darkmode');
-        else document.documentElement.classList.toggle('darkmode',!d);
+        if(t==='light')document.documentElement.classList.remove('darkmode');
+        else document.documentElement.classList.add('darkmode');
       })();
     </script>
 
     <!-- favicon -->
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
 
     <SiteMeta
       title={title}
@@ -45,6 +44,7 @@ const {
     />
   </head>
   <body>
+    <div id="pointer-glow" aria-hidden="true"></div>
     <Header />
     <main id="main-content" transition:animate="fade">
       <slot />
@@ -52,6 +52,68 @@ const {
     <Footer />
     <Analytics />
     <script is:inline src="/js/theme.js"></script>
+    <script is:inline>
+      (function () {
+        if (window.__pointerGlowInitialized) return;
+        window.__pointerGlowInitialized = true;
+
+        const glow = document.getElementById('pointer-glow');
+        if (!glow) return;
+
+        // Skip for touch-only devices.
+        if (!window.matchMedia('(pointer: fine)').matches) {
+          glow.style.display = 'none';
+          return;
+        }
+
+        let targetX = window.innerWidth / 2;
+        let targetY = window.innerHeight / 2;
+        let x = targetX;
+        let y = targetY;
+        let velocity = 0;
+        let rafId = null;
+        let visible = false;
+        const baseSize = 112;
+
+        const animate = () => {
+          const dx = targetX - x;
+          const dy = targetY - y;
+          x += dx * 0.14;
+          y += dy * 0.14;
+          velocity = Math.min(1, Math.hypot(dx, dy) / 48);
+
+          const scale = 1 + velocity * 0.12;
+          const size = baseSize * scale;
+          const alpha = visible ? (0.16 + velocity * 0.06) : 0;
+          glow.style.transform = `translate3d(${x - size / 2}px, ${y - size / 2}px, 0) scale(${scale})`;
+          glow.style.opacity = String(alpha);
+
+          if (visible || Math.abs(dx) > 0.2 || Math.abs(dy) > 0.2) {
+            rafId = requestAnimationFrame(animate);
+          } else {
+            rafId = null;
+          }
+        };
+
+        const ensureAnimation = () => {
+          if (rafId === null) {
+            rafId = requestAnimationFrame(animate);
+          }
+        };
+
+        window.addEventListener('mousemove', (event) => {
+          targetX = event.clientX;
+          targetY = event.clientY;
+          visible = true;
+          ensureAnimation();
+        }, { passive: true });
+
+        window.addEventListener('mouseleave', () => {
+          visible = false;
+          ensureAnimation();
+        });
+      })();
+    </script>
     <style lang="scss" is:global>
       // theme settings
       :root {
@@ -79,7 +141,7 @@ const {
         --font-color: var(--neutral-100);
         --action-color: var(--secondary-100);
         --action-color-state: var(--secondary-500);
-        --background: var(--dark-100);
+        --background: #000000;
         --primary-background: var(--primary-500);
         --neutral-background: var(--neutral-900);
       }
@@ -94,6 +156,13 @@ const {
       // sticky footer on low content pages
       html {
         overflow-x: hidden;
+        scroll-behavior: smooth;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
       }
 
       html,
@@ -118,6 +187,30 @@ const {
         footer {
           flex-shrink: 0;
         }
+      }
+
+      #pointer-glow {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 112px;
+        height: 112px;
+        border-radius: 999px;
+        pointer-events: none;
+        z-index: 9999;
+        opacity: 0;
+        transform: translate3d(-300px, -300px, 0) scale(1);
+        transform-origin: center;
+        background: radial-gradient(circle, rgba(15, 23, 42, 0.2) 0%, rgba(51, 65, 85, 0.1) 46%, transparent 74%);
+        filter: blur(14px);
+        mix-blend-mode: multiply;
+        will-change: transform, opacity;
+      }
+
+      :global(.darkmode) #pointer-glow,
+      :global(html.darkmode) #pointer-glow {
+        background: radial-gradient(circle, rgba(186, 141, 255, 0.22) 0%, rgba(154, 123, 208, 0.08) 46%, transparent 74%);
+        mix-blend-mode: screen;
       }
 
       pre {

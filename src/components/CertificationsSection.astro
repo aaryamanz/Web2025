@@ -1,0 +1,185 @@
+---
+import { certificationBuckets } from '../data/homeSections.js';
+---
+
+<section id="certifications" class="certs-section">
+  <div class="certs-section__header">
+    <h2 class="text-center text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-3 sm:mb-4">
+      <span class="gradient-text">Certifications</span>
+    </h2>
+    <p class="certs-section__subtitle text-center text-sm sm:text-base md:text-lg text-gray-600 dark:text-gray-300 leading-relaxed px-2">
+      Credentials across finance, analytics, and engineering.
+    </p>
+  </div>
+
+  <div class="certs-columns">
+    {certificationBuckets.map((bucket) => (
+      <section class="cert-bucket">
+        <h3 class="cert-bucket__title">{bucket.title}</h3>
+        <ul class="cert-bucket__list">
+          {bucket.items.map((cert) => (
+            <li class="cert-item">
+              <div class="cert-item__icon-wrap" aria-hidden="true">
+                <img class="cert-item__logo" src={cert.logo} alt={`${cert.issuer} logo`} loading="lazy" decoding="async" />
+              </div>
+              <div class="cert-item__content">
+                <p class="cert-item__title">{cert.title}</p>
+                <p class="cert-item__meta">{cert.issuer}</p>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </section>
+    ))}
+  </div>
+</section>
+
+<style>
+  .certs-section {
+    padding: 1rem 0 2.75rem;
+  }
+
+  @media (min-width: 768px) {
+    .certs-section {
+      padding: 1.25rem 0 3.5rem;
+    }
+  }
+
+  .certs-section__header {
+    margin-bottom: 1.5rem;
+    padding: 0 0.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .certs-section__header {
+      margin-bottom: 2rem;
+    }
+  }
+
+  .certs-section__subtitle {
+    max-width: 50rem;
+    margin: 0 auto;
+  }
+
+  .certs-columns {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  @media (min-width: 640px) {
+    .certs-columns {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .certs-columns {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+  }
+
+  .cert-bucket {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+    border: 1px solid rgba(148, 163, 184, 0.28);
+    border-radius: 12px;
+    padding: 0.85rem 0.85rem 0.75rem;
+    background: transparent;
+  }
+
+  .cert-bucket__title {
+    margin: 0;
+    font-size: 0.96rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #374151;
+    text-align: center;
+    text-shadow: 0 0 7px rgba(168, 85, 247, 0.28);
+  }
+
+  .cert-bucket__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.55rem;
+    justify-items: center;
+  }
+
+  :global(.darkmode) .cert-bucket {
+    border-color: rgba(148, 163, 184, 0.36);
+  }
+
+  :global(.darkmode) .cert-bucket__title {
+    color: rgba(255, 255, 255, 0.86);
+  }
+
+  .cert-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.35rem 0;
+    width: min(100%, 22rem);
+  }
+
+  .cert-item + .cert-item {
+    border-top: 1px dashed rgba(148, 163, 184, 0.22);
+  }
+
+  :global(.darkmode) .cert-item + .cert-item {
+    border-top-color: rgba(148, 163, 184, 0.25);
+  }
+
+  .cert-item__icon-wrap {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 0.02rem;
+  }
+
+  .cert-item__logo {
+    width: 52px;
+    height: 52px;
+    object-fit: contain;
+  }
+
+  .cert-item__content {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .cert-item__title {
+    margin: 0;
+    color: #111827;
+    font-weight: 600;
+    line-height: 1.3;
+    font-size: 0.84rem;
+  }
+
+  .cert-item__meta {
+    margin: 0.05rem 0 0;
+    color: #6b7280;
+    font-size: 0.78rem;
+    font-weight: 500;
+    line-height: 1.35;
+  }
+
+  :global(.darkmode) .cert-item__title {
+    color: rgba(255, 255, 255, 0.92);
+  }
+
+  :global(.darkmode) .cert-item__meta {
+    color: rgba(255, 255, 255, 0.72);
+  }
+</style>

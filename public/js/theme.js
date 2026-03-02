@@ -2,10 +2,6 @@
   const THEME_KEY = 'theme';
   const DARKMODE_CLASS = 'darkmode';
 
-  function getSystemTheme() {
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-  }
-
   function getStoredTheme() {
     try {
       return localStorage.getItem(THEME_KEY);
@@ -28,7 +24,7 @@
     if (stored === 'light' || stored === 'dark') {
       return stored;
     }
-    return getSystemTheme();
+    return 'dark';
   }
 
   function changeTheme() {
@@ -62,14 +58,6 @@
   function initTheme() {
     preloadTheme();
 
-    // Listen for system theme changes (when user hasn't set a preference)
-    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    mediaQuery.addEventListener('change', () => {
-      if (!getStoredTheme()) {
-        applyTheme(getSystemTheme());
-      }
-    });
-
     // Attach toggle button listeners
     function initButtons() {
       const btns = document.querySelectorAll('#header-theme-button, #drawer-theme-button, .theme-toggle');
@@ -86,7 +74,7 @@
     }
     document.addEventListener('astro:page-load', () => {
       initButtons();
-      preloadTheme(); // Re-apply theme after navigation (html element gets reset)
+      preloadTheme();
     });
     document.addEventListener('astro:after-swap', preloadTheme);
   }
