@@ -58,7 +58,7 @@ export const certificationBuckets = [
         logo: '/logos/jpmorgan.png'
       },
       {
-        title: 'Think on You Feet',
+        title: 'Think on Your Feet',
         issuer: 'McLuhan & Davies Communication, Inc',
         date: 'Month YYYY',
         credentialId: 'Credential ID',
