@@ -121,6 +121,43 @@ import { DarkMode } from 'accessible-astro-components'
       })
     }
 
+    const bindSmoothSectionLinks = () => {
+      const sectionLinks = [...mainNav.querySelectorAll('a[href^="/#"], a[href^="#"]')] as HTMLAnchorElement[]
+
+      sectionLinks.forEach((link) => {
+        if (link.dataset.smoothBound === 'true') return
+
+        link.addEventListener('click', (event) => {
+          const currentPath = window.location.pathname.replace(/\/+$/, '') || '/'
+          const linkPath = (link.pathname || '').replace(/\/+$/, '') || '/'
+          const targetHash = link.hash
+          const isHomeTopLink = linkPath === '/' && !targetHash
+          const isHomeSectionLink = linkPath === '/' && !!targetHash
+
+          // Only intercept same-page navigation on the homepage.
+          if (currentPath !== '/' || (!isHomeTopLink && !isHomeSectionLink)) return
+
+          event.preventDefault()
+
+          if (isHomeTopLink) {
+            history.replaceState(null, '', '/')
+            window.scrollTo({ top: 0, behavior: 'smooth' })
+            setActiveMenuItem()
+            return
+          }
+
+          const target = document.querySelector(targetHash)
+          if (!target) return
+
+          history.replaceState(null, '', targetHash)
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' })
+          setActiveMenuItem()
+        })
+
+        link.dataset.smoothBound = 'true'
+      })
+    }
+
     const checkMenuSize = () => {
       const mainNavWidth = mainNav.getBoundingClientRect().width
       const desktopMenuWidth = document.querySelector('.desktop-menu').getBoundingClientRect().width
@@ -270,6 +307,7 @@ import { DarkMode } from 'accessible-astro-components'
       })
 
     setActiveMenuItem()
+    bindSmoothSectionLinks()
     checkMenuSize()
 
     window.addEventListener('resize', checkMenuSize)
