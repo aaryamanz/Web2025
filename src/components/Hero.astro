@@ -16,16 +16,16 @@ import '../assets/css/animation.css';
   gtag('config', 'G-2YP36JNKW1');
 </script>
   <div class="container hero__container">
-    <div class="grid grid-cols-1 items-center gap-12 lg:gap-24 lg:grid-cols-2">
-      <div class="flex flex-col items-center gap-6 md:gap-8 md:items-start hero__content">
+    <div class="grid grid-cols-1 items-center justify-items-center gap-10">
+      <div class="flex flex-col items-center gap-6 md:gap-8 hero__content">
         <div class="hero__typing-box">
-          <h1 class="hero__title text-center text-4xl sm:text-5xl md:text-left md:text-6xl">
+          <h1 class="hero__title text-center text-4xl sm:text-5xl md:text-6xl">
             <slot ><span class='gradient-text' id="typing" > </span></slot>
           </h1>
         </div>
         <script is:inline src="/js/text.js"></script>
         <div class="hero__subtitle-box">
-          <div class="hero__subtitle text-center text-base sm:text-lg md:text-left md:text-xl lg:text-2xl font-medium">
+          <div class="hero__subtitle text-center text-base sm:text-lg md:text-xl lg:text-2xl font-medium">
             <span class="text-gradient">Process Engineering Analyst @ CIBC | Engineering & Business @ UofT | Capital Markets, Quantitative Strategy & R&D</span>
           </div>
         </div>
@@ -49,9 +49,6 @@ import '../assets/css/animation.css';
             <Icon name="mdi:chevron-down" class="hero__scroll-icon" />
           </a>
         </div>
-      </div>
-      <div class="hero__photo-wrap hidden lg:flex justify-center items-center">
-        <img class="hero__photo rounded-2xl" src={src} alt="Aaryaman Singh" decoding="async" />
       </div>
     </div>
   </div>
@@ -121,17 +118,19 @@ import '../assets/css/animation.css';
   .hero__content {
     min-width: 0;
     max-width: 100%;
+    align-items: center;
+    text-align: center;
   }
 
   @media (min-width: 1024px) {
     .hero__content {
-      max-width: min(100%, 36rem);
+      max-width: min(100%, 42rem);
     }
   }
 
   .hero__typing-box {
     width: 100%;
-    max-width: 32rem;
+    max-width: 40rem;
     padding: 1rem 1.25rem;
     background: transparent;
     border: none;
@@ -198,13 +197,13 @@ import '../assets/css/animation.css';
 
   @media (min-width: 768px) {
     .hero__buttons {
-      justify-content: flex-start;
+      justify-content: center;
     }
 
     .hero__actions {
       flex-direction: row;
       align-items: center;
-      justify-content: flex-start;
+      justify-content: center;
       gap: 0.85rem;
     }
   }
@@ -329,16 +328,8 @@ import '../assets/css/animation.css';
     }
   }
 
-  .hero__photo-wrap {
-    justify-content: center;
-    align-items: center;
-  }
-
+  .hero__photo-wrap,
   .hero__photo {
-    width: 100%;
-    max-width: 280px;
-    height: auto;
-    object-fit: cover;
-    aspect-ratio: 3 / 4;
+    display: none;
   }
 </style>

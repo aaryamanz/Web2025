@@ -1,0 +1,2095 @@
+---
+import DefaultLayout from '../layouts/DefaultLayout.astro';
+import { Icon } from 'astro-icon/components';
+---
+
+<DefaultLayout title="CFA Level I">
+  <!-- HERO + STATS (FREE) -->
+  <section class="cfa-hero reveal">
+    <div class="cfa-hero__inner">
+      <p class="cfa-hero__eyebrow">
+        CFA® Level I Journey · Feb 2026 Exam · Aaryaman Singh
+      </p>
+      <h1 class="cfa-hero__title text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
+        Turning engineering intuition into capital markets signal.
+      </h1>
+      <p class="cfa-hero__text">
+        I prepared for CFA Level I as a Mechanical Engineering student at UofT, working full-time at CIBC — not with a
+        finance degree, but with a systems-thinking, quantitative lens. This is exactly how I did it.
+      </p>
+    </div>
+
+    <div class="cfa-stats reveal">
+      <div class="cfa-stats__grid">
+        <div class="cfa-stat" data-target="300">
+          <p class="cfa-stat__label">Study Hours</p>
+          <p class="cfa-stat__value"><span class="cfa-stat__number">0</span>+</p>
+        </div>
+        <div class="cfa-stat" data-target="10">
+          <p class="cfa-stat__label">Topics Covered</p>
+          <p class="cfa-stat__value"><span class="cfa-stat__number">0</span></p>
+        </div>
+        <div class="cfa-stat" data-target="6">
+          <p class="cfa-stat__label">Mock Exams</p>
+          <p class="cfa-stat__value"><span class="cfa-stat__number">0</span></p>
+        </div>
+        <div class="cfa-stat" data-target="500">
+          <p class="cfa-stat__label">Practice Questions</p>
+          <p class="cfa-stat__value"><span class="cfa-stat__number">0</span>+</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STORY (FREE) -->
+  <section id="story" class="cfa-story reveal">
+    <div class="cfa-story__grid">
+      <article class="cfa-story__main">
+        <p>
+          When I committed to CFA Level I for February 2026, I was in the middle of my Mechanical Engineering degree
+          (Mechatronics) at UofT and working full-time as a Process Engineering Analyst at CIBC. That meant long days,
+          trading desks, and late-night problem sets — not exactly a traditional “finance major” pipeline.
+        </p>
+        <p>
+          So I didn’t treat the curriculum like a collection of facts to memorize. I treated it like an engineered
+          system: inputs, constraints, failure modes, and a target output (passing on the first attempt while not
+          burning out). Ethics, FSA, and Fixed Income weren’t just topics — they were subsystems with different weights
+          and failure probabilities.
+        </p>
+        <p>
+          My primary resource was Kaplan Schweser: the Core package from day one, and the Practice Pack added roughly
+          six weeks out when mocks became the main driver. I built an Excel tracker that treated each reading like a
+          node in a network — with time estimates, difficulty, and dependency structure. It told me where to push and
+          where to accept &ldquo;good enough&rdquo;.
+        </p>
+        <p>
+          The hardest parts of the journey were FSA and Fixed Income. FSA forced me to slow down and build flowcharts
+          for how statements connected instead of brute-forcing ratios. Fixed Income only clicked when I reframed it as
+          a control system and Taylor expansion problem — duration and convexity as approximations, not magic.
+        </p>
+        <blockquote class="cfa-story__quote">
+          “I didn't approach this as a finance student would. I approached it as an engineer — decompose the system,
+          identify the critical path, optimize for signal not noise.”
+        </blockquote>
+      </article>
+
+      <aside class="cfa-story__aside reveal">
+        <div class="cfa-facts">
+          <h3 class="cfa-facts__title">Quick Facts</h3>
+          <dl class="cfa-facts__list">
+            <div>
+              <dt>Background</dt>
+              <dd>Mechanical Engineering (Mechatronics), UofT</dd>
+            </div>
+            <div>
+              <dt>Role During Study</dt>
+              <dd>Process Engineering Analyst, CIBC</dd>
+            </div>
+            <div>
+              <dt>Primary Resource</dt>
+              <dd>Kaplan Schweser Core + Practice Pack</dd>
+            </div>
+            <div>
+              <dt>Study Period</dt>
+              <dd>~5 months · Sept 2025 – Feb 2026</dd>
+            </div>
+            <div>
+              <dt>Exam Date</dt>
+              <dd>February 2026</dd>
+            </div>
+            <div>
+              <dt>Hardest Topics</dt>
+              <dd>FSA, Fixed Income</dd>
+            </div>
+            <div>
+              <dt>Mock Strategy</dt>
+              <dd>Started 4 weeks out, Excel error log, 3-day review loop</dd>
+            </div>
+            <div>
+              <dt>Mocks Used</dt>
+              <dd>Schweser Core (2) + Practice Pack set</dd>
+            </div>
+          </dl>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- TIMELINE (FREE) -->
+  <section id="timeline" class="cfa-timeline reveal">
+    <header class="cfa-section-header">
+      <h2 class="cfa-section-title">Timeline: Sept 2025 → Feb 2026</h2>
+      <p class="cfa-section-subtitle">
+        Five distinct phases — each with a different objective, tempo, and failure mode.
+      </p>
+    </header>
+
+    <div class="cfa-timeline__tabs">
+      <button class="cfa-timeline__tab is-active" data-phase="1">Phase 1 · Foundation</button>
+      <button class="cfa-timeline__tab" data-phase="2">Phase 2 · Deep Content</button>
+      <button class="cfa-timeline__tab" data-phase="3">Phase 3 · Mocks Begin</button>
+      <button class="cfa-timeline__tab" data-phase="4">Phase 4 · Final Sprint</button>
+      <button class="cfa-timeline__tab" data-phase="5">Phase 5 · Exam Day</button>
+    </div>
+
+    <div class="cfa-timeline__panes">
+      <!-- Phase 1 -->
+      <article class="cfa-phase is-active" data-phase="1">
+        <div class="cfa-phase__meta">
+          <span class="cfa-phase__number">01</span>
+          <div>
+            <p class="cfa-phase__range">Sept – Oct 2025</p>
+            <h3 class="cfa-phase__title">Foundation: Ethics, Quant, and the tracker</h3>
+          </div>
+        </div>
+        <p class="cfa-phase__text">
+          I started with Ethics and Quantitative Methods, treating them as the language of the exam. I built my Excel
+          tracker in this phase — each reading as a row, with estimated hours, difficulty, and links to questions. Most
+          study blocks were 1–1.5 hours on weekdays, usually carved out around commuting and evenings.
+        </p>
+        <div class="cfa-phase__details">
+          <div class="cfa-phase-card">
+            <h4>Ethics first</h4>
+            <p>Quick first pass to understand Standards language and how vignettes are structured.</p>
+          </div>
+          <div class="cfa-phase-card">
+            <h4>Quant as toolbox</h4>
+            <p>TVM, statistics, and distributions framed as tools I’d reuse across the rest of the curriculum.</p>
+          </div>
+          <div class="cfa-phase-card">
+            <h4>Excel tracker</h4>
+            <p>Columns for topic, reading, hours, status, score, and notes — updated after every session.</p>
+          </div>
+          <div class="cfa-phase-card">
+            <h4>Lessons learned</h4>
+            <p>Consistency beats intensity; an imperfect but daily 60–90 minutes moved the needle most.</p>
+          </div>
+        </div>
+        <ul class="cfa-phase__lessons">
+          <li>📌 Building a tracker early gave me a control panel for the rest of the journey.</li>
+          <li>🧠 Quant concepts became far easier when tied to real examples, not just formulas.</li>
+          <li>⏱ 1–1.5 hours/day was sustainable alongside engineering and CIBC.</li>
+        </ul>
+      </article>
+
+      <!-- Phase 2 -->
+      <article class="cfa-phase" data-phase="2">
+        <div class="cfa-phase__meta">
+          <span class="cfa-phase__number">02</span>
+          <div>
+            <p class="cfa-phase__range">Nov – Dec 2025</p>
+            <h3 class="cfa-phase__title">Deep Content: FSA, Fixed Income, Equity</h3>
+          </div>
+        </div>
+        <p class="cfa-phase__text">
+          This was the heavy lift: FSA and Fixed Income, with Equity as the bridge between textbook and Bloomberg. I
+          built flowcharts for FSA and treated Fixed Income as a control systems problem, which helped me keep the
+          moving parts straight.
+        </p>
+        <div class="cfa-phase__details">
+          <div class="cfa-phase-card">
+            <h4>FSA flowcharts</h4>
+            <p>Mapping how income statement, balance sheet, and cash flow linked — not memorizing ratios blindly.</p>
+          </div>
+          <div class="cfa-phase-card">
+            <h4>Fixed Income reframed</h4>
+            <p>Duration/convexity as approximations, similar to Taylor expansions and system responses.</p>
+          </div>
+          <div class="cfa-phase-card">
+            <h4>Equity &amp; Bloomberg</h4>
+            <p>Connecting DDM/FCFF models to actual tickers I saw at CIBC gave the formulas context.</p>
+          </div>
+          <div class="cfa-phase-card">
+            <h4>Lessons learned</h4>
+            <p>Deep work here paid off later: mocks exposed gaps, but nothing felt completely foreign.</p>
+          </div>
+        </div>
+        <ul class="cfa-phase__lessons">
+          <li>📊 Visualization (flowcharts, diagrams) beat linear notes for FSA retention.</li>
+          <li>📉 Fixed Income became manageable when I stopped treating formulas as black boxes.</li>
+          <li>🏦 Seeing concepts on Bloomberg screens anchored the theory.</li>
+        </ul>
+      </article>
+
+      <!-- Phase 3 -->
+      <article class="cfa-phase" data-phase="3">
+        <div class="cfa-phase__meta">
+          <span class="cfa-phase__number">03</span>
+          <div>
+            <p class="cfa-phase__range">January 2026</p>
+            <h3 class="cfa-phase__title">Mocks Begin: error log and Practice Pack</h3>
+          </div>
+        </div>
+        <p class="cfa-phase__text">
+          The first full mock was humbling. Instead of just staring at the score, I built an Excel error log:
+          topic/subtopic, error type, root cause, and takeaway. Around this time I bought the Schweser Practice Pack —
+          the closest thing to exam feel.
+        </p>
+        <div class="cfa-phase__details">
+          <div class="cfa-phase-card">
+            <h4>Error log design</h4>
+            <p>Each mistake tagged as concept, process, or carelessness — patterns drove my review blocks.</p>
+          </div>
+          <div class="cfa-phase-card">
+            <h4>Practice Pack</h4>
+            <p>Higher-quality mocks with better item-set construction; treated as dress rehearsals.</p>
+          </div>
+          <div class="cfa-phase-card">
+            <h4>3-day protocol</h4>
+            <p>Day 1 exam, Day 2 deep debrief, Day 3 targeted repair and light re-testing.</p>
+          </div>
+          <div class="cfa-phase-card">
+            <h4>Lessons learned</h4>
+            <p>Mistakes are only useful if they become data — not just frustration.</p>
+          </div>
+        </div>
+        <ul class="cfa-phase__lessons">
+          <li>📈 Score trends mattered more than any single mock.</li>
+          <li>🧾 The error log turned &ldquo;I’m bad at FSA&rdquo; into specific, fixable weaknesses.</li>
+          <li>🧪 Practice Pack felt closest to exam difficulty and structure.</li>
+        </ul>
+      </article>
+
+      <!-- Phase 4 -->
+      <article class="cfa-phase" data-phase="4">
+        <div class="cfa-phase__meta">
+          <span class="cfa-phase__number">04</span>
+          <div>
+            <p class="cfa-phase__range">Late Jan – Feb 2026</p>
+            <h3 class="cfa-phase__title">Final Sprint: high-frequency only</h3>
+          </div>
+        </div>
+        <p class="cfa-phase__text">
+          In the final four weeks I shifted to a high-frequency-only mindset: Ethics, FSA, Fixed Income, and Equity
+          were treated as ~55% of the exam. Everything else got time, but not at their expense. I tapered like an
+          athlete instead of cramming like a student.
+        </p>
+        <div class="cfa-phase__details">
+          <div class="cfa-phase-card">
+            <h4>Topic weighting</h4>
+            <p>Study hours roughly matched exam weight — especially for Ethics, FSA, FI, and Equity.</p>
+          </div>
+          <div class="cfa-phase-card">
+            <h4>Formula sheets</h4>
+            <p>One handwritten sheet per major topic; rewriting forced consolidation, not memorization.</p>
+          </div>
+          <div class="cfa-phase-card">
+            <h4>Anxiety journaling</h4>
+            <p>Short nightly entries capturing worries and reframing them into concrete actions.</p>
+          </div>
+          <div class="cfa-phase-card">
+            <h4>Lessons learned</h4>
+            <p>Quality of rest in the last week mattered as much as marginal study hours.</p>
+          </div>
+        </div>
+        <ul class="cfa-phase__lessons">
+          <li>🎯 High-weight topics received disproportionate attention by design.</li>
+          <li>🧾 Formula sheets helped during mocks, not just the final week.</li>
+          <li>🧘‍♂️ Managing anxiety was a daily practice, not a night-before fix.</li>
+        </ul>
+      </article>
+
+      <!-- Phase 5 -->
+      <article class="cfa-phase" data-phase="5">
+        <div class="cfa-phase__meta">
+          <span class="cfa-phase__number">05</span>
+          <div>
+            <p class="cfa-phase__range">Exam Day · Feb 2026</p>
+            <h3 class="cfa-phase__title">Exam Day: execution only</h3>
+          </div>
+        </div>
+        <p class="cfa-phase__text">
+          By exam day, my only job was to execute. I had a clear hour-by-hour plan, in-exam tactics, and anxiety
+          protocols I’d rehearsed during mocks.
+        </p>
+        <div class="cfa-phase__details">
+          <div class="cfa-phase-card">
+            <h4>6:00–7:30 AM</h4>
+            <p>Wake up, light breakfast, no new content. Quick scan of formula sheet + Ethics checklist.</p>
+          </div>
+          <div class="cfa-phase-card">
+            <h4>7:30–8:30 AM</h4>
+            <p>Arrive early, short walk outside, 3 deep breaths. No discussion of questions with anyone.</p>
+          </div>
+          <div class="cfa-phase-card">
+            <h4>In-exam tactics</h4>
+            <p>
+              90 seconds/question, Ethics first, flag-and-move, no answer changes unless you find a concrete error in
+              your reasoning.
+            </p>
+          </div>
+          <div class="cfa-phase-card">
+            <h4>Lessons learned</h4>
+            <p>The calmer I stayed, the more I could hear the patterns I’d practiced for months.</p>
+          </div>
+        </div>
+        <ul class="cfa-phase__lessons">
+          <li>⌚ Time discipline came from mocks, not from willpower on exam day.</li>
+          <li>🧠 Pre-written &ldquo;confidence lists&rdquo; the night before helped anchor belief.</li>
+          <li>🚶‍♂️ Short walks and breathing were as important as any last-minute review.</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <!-- TOPIC BREAKDOWN (FREE) -->
+  <section id="topics" class="cfa-topics reveal">
+    <header class="cfa-section-header">
+      <h2 class="cfa-section-title">Topic Breakdown</h2>
+      <p class="cfa-section-subtitle">
+        10 topics, different weights — not all of them deserve equal time.
+      </p>
+    </header>
+
+    <div class="cfa-topics__grid">
+      <!-- Ethics -->
+      <article class="cfa-topic" data-topic="ethics">
+        <button class="cfa-topic__header" type="button">
+          <div>
+            <h3 class="cfa-topic__name">Ethics</h3>
+            <p class="cfa-topic__meta">15–20% · Difficulty: <span class="cfa-tag cfa-tag--green">Manageable</span></p>
+          </div>
+          <Icon name="mdi:chevron-down" class="cfa-topic__chevron" />
+        </button>
+        <div class="cfa-topic__bar">
+          <span style="width: 70%;"></span>
+        </div>
+        <div class="cfa-topic__body">
+          <p>
+            Daily small bites. I treated Ethics like a language, not a chapter — constant exposure, vignettes from
+            Schweser and CFAI, and a dedicated checklist of Standards to review in the final week.
+          </p>
+        </div>
+      </article>
+
+      <!-- Quant -->
+      <article class="cfa-topic" data-topic="quant">
+        <button class="cfa-topic__header" type="button">
+          <div>
+            <h3 class="cfa-topic__name">Quantitative Methods</h3>
+            <p class="cfa-topic__meta">8–12% · Difficulty: <span class="cfa-tag cfa-tag--accent">Medium</span></p>
+          </div>
+          <Icon name="mdi:chevron-down" class="cfa-topic__chevron" />
+        </button>
+        <div class="cfa-topic__bar">
+          <span style="width: 60%;"></span>
+        </div>
+        <div class="cfa-topic__body">
+          <p>
+            I leaned on my engineering math background: connecting TVM, distributions, and regression to real data. Lots
+            of short question blocks, very little passive reading.
+          </p>
+        </div>
+      </article>
+
+      <!-- Economics -->
+      <article class="cfa-topic" data-topic="econ">
+        <button class="cfa-topic__header" type="button">
+          <div>
+            <h3 class="cfa-topic__name">Economics</h3>
+            <p class="cfa-topic__meta">8–12% · Difficulty: <span class="cfa-tag cfa-tag--accent">Medium</span></p>
+          </div>
+          <Icon name="mdi:chevron-down" class="cfa-topic__chevron" />
+        </button>
+        <div class="cfa-topic__bar">
+          <span style="width: 55%;"></span>
+        </div>
+        <div class="cfa-topic__body">
+          <p>
+            Focused on diagrams and intuition: IS-LM, supply/demand shifts, and policy lags. I skipped deep derivations
+            and prioritized question-driven learning.
+          </p>
+        </div>
+      </article>
+
+      <!-- FSA -->
+      <article class="cfa-topic" data-topic="fsa">
+        <button class="cfa-topic__header" type="button">
+          <div>
+            <h3 class="cfa-topic__name">Financial Statement Analysis (FSA)</h3>
+            <p class="cfa-topic__meta">
+              13–17% · Difficulty: <span class="cfa-tag cfa-tag--hard">Hardest</span>
+            </p>
+          </div>
+          <Icon name="mdi:chevron-down" class="cfa-topic__chevron" />
+        </button>
+        <div class="cfa-topic__bar">
+          <span style="width: 85%;"></span>
+        </div>
+        <div class="cfa-topic__body">
+          <p>
+            Most of my deep work went here: multi-pass reading, custom flowcharts, and question sets tagged by
+            statement type. Every FSA miss went into the error log with full explanation.
+          </p>
+        </div>
+      </article>
+
+      <!-- Corp Fin -->
+      <article class="cfa-topic" data-topic="corpfin">
+        <button class="cfa-topic__header" type="button">
+          <div>
+            <h3 class="cfa-topic__name">Corporate Finance</h3>
+            <p class="cfa-topic__meta">
+              8–12% · Difficulty: <span class="cfa-tag cfa-tag--green">Manageable</span>
+            </p>
+          </div>
+          <Icon name="mdi:chevron-down" class="cfa-topic__chevron" />
+        </button>
+        <div class="cfa-topic__bar">
+          <span style="width: 55%;"></span>
+        </div>
+        <div class="cfa-topic__body">
+          <p>
+            Treated this as an extension of engineering economics: WACC, capital budgeting, and leverage framed as
+            design decisions with trade-offs.
+          </p>
+        </div>
+      </article>
+
+      <!-- Equity -->
+      <article class="cfa-topic" data-topic="equity">
+        <button class="cfa-topic__header" type="button">
+          <div>
+            <h3 class="cfa-topic__name">Equity</h3>
+            <p class="cfa-topic__meta">10–12% · Difficulty: <span class="cfa-tag cfa-tag--accent">Medium</span></p>
+          </div>
+          <Icon name="mdi:chevron-down" class="cfa-topic__chevron" />
+        </button>
+        <div class="cfa-topic__bar">
+          <span style="width: 70%;"></span>
+        </div>
+        <div class="cfa-topic__body">
+          <p>
+            I tied every valuation model (DDM, FCFE, multiples) back to examples from CIBC and public company filings,
+            turning formulas into stories.
+          </p>
+        </div>
+      </article>
+
+      <!-- Fixed Income -->
+      <article class="cfa-topic" data-topic="fi">
+        <button class="cfa-topic__header" type="button">
+          <div>
+            <h3 class="cfa-topic__name">Fixed Income</h3>
+            <p class="cfa-topic__meta">
+              10–12% · Difficulty: <span class="cfa-tag cfa-tag--hard">Very Hard</span>
+            </p>
+          </div>
+          <Icon name="mdi:chevron-down" class="cfa-topic__chevron" />
+        </button>
+        <div class="cfa-topic__bar">
+          <span style="width: 80%;"></span>
+        </div>
+        <div class="cfa-topic__body">
+          <p>
+            I reframed bonds as control systems: yield curve shifts as inputs, duration/convexity as response
+            approximations. Heavy focus on question banks and error log entries.
+          </p>
+        </div>
+      </article>
+
+      <!-- Derivatives -->
+      <article class="cfa-topic" data-topic="derivatives">
+        <button class="cfa-topic__header" type="button">
+          <div>
+            <h3 class="cfa-topic__name">Derivatives</h3>
+            <p class="cfa-topic__meta">
+              5–8% · Difficulty: <span class="cfa-tag cfa-tag--green">Manageable</span>
+            </p>
+          </div>
+          <Icon name="mdi:chevron-down" class="cfa-topic__chevron" />
+        </button>
+        <div class="cfa-topic__bar">
+          <span style="width: 45%;"></span>
+        </div>
+        <div class="cfa-topic__body">
+          <p>
+            Focused on payoff diagrams and intuition: long/short calls, puts, and basic strategies. Minimal formula
+            memorization beyond what was necessary.
+          </p>
+        </div>
+      </article>
+
+      <!-- Portfolio Mgmt -->
+      <article class="cfa-topic" data-topic="pm">
+        <button class="cfa-topic__header" type="button">
+          <div>
+            <h3 class="cfa-topic__name">Portfolio Management</h3>
+            <p class="cfa-topic__meta">
+              5–8% · Difficulty: <span class="cfa-tag cfa-tag--green">Manageable</span>
+            </p>
+          </div>
+          <Icon name="mdi:chevron-down" class="cfa-topic__chevron" />
+        </button>
+        <div class="cfa-topic__bar">
+          <span style="width: 50%;"></span>
+        </div>
+        <div class="cfa-topic__body">
+          <p>
+            CAPM, efficient frontier, and risk/return trade-offs mapped nicely to engineering optimization logic,
+            making this one of the smoother topics.
+          </p>
+        </div>
+      </article>
+
+      <!-- Alternatives -->
+      <article class="cfa-topic" data-topic="alts">
+        <button class="cfa-topic__header" type="button">
+          <div>
+            <h3 class="cfa-topic__name">Alternative Investments</h3>
+            <p class="cfa-topic__meta">
+              5–8% · Difficulty: <span class="cfa-tag cfa-tag--green">Manageable</span>
+            </p>
+          </div>
+          <Icon name="mdi:chevron-down" class="cfa-topic__chevron" />
+        </button>
+        <div class="cfa-topic__bar">
+          <span style="width: 40%;"></span>
+        </div>
+        <div class="cfa-topic__body">
+          <p>
+            Treated as targeted memorization of structures and risk/return profiles. Kept it tight, leaning on summary
+            tables instead of long notes.
+          </p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- LOCKED PREVIEW (FREE) -->
+  <section class="cfa-preview reveal">
+    <header class="cfa-section-header">
+      <h2 class="cfa-section-title">Everything locked inside the guide</h2>
+      <p class="cfa-section-subtitle">
+        The premium side of this page houses the exact systems, templates, and notes I used to prepare.
+      </p>
+    </header>
+
+    <ul class="cfa-preview__list">
+      <li class="cfa-preview__item">
+        <Icon name="mdi:lock-outline" class="cfa-preview__icon" />
+        <div>
+          <div class="cfa-preview__row">
+            <p class="cfa-preview__item-title">Complete 12-Week Study Roadmap</p>
+            <span class="cfa-chip">Strategy Guide</span>
+          </div>
+          <p class="cfa-preview__item-text">
+            Week-by-week, day-by-day structure that balances work, engineering coursework, and CFA prep.
+          </p>
+        </div>
+      </li>
+      <li class="cfa-preview__item">
+        <Icon name="mdi:lock-outline" class="cfa-preview__icon" />
+        <div>
+          <div class="cfa-preview__row">
+            <p class="cfa-preview__item-title">FSA Deep Dive — Full System Breakdown</p>
+            <span class="cfa-chip">Topic Deep Dive</span>
+          </div>
+          <p class="cfa-preview__item-text">
+            Flowcharts, statement links, and ratio groupings that turned FSA from chaos into a navigable map.
+          </p>
+        </div>
+      </li>
+      <li class="cfa-preview__item">
+        <Icon name="mdi:lock-outline" class="cfa-preview__icon" />
+        <div>
+          <div class="cfa-preview__row">
+            <p class="cfa-preview__item-title">Fixed Income — Engineer's Translation</p>
+            <span class="cfa-chip">Topic Deep Dive</span>
+          </div>
+          <p class="cfa-preview__item-text">
+            The control-systems framing I used to finally make sense of duration, convexity, and yield curve risk.
+          </p>
+        </div>
+      </li>
+      <li class="cfa-preview__item">
+        <Icon name="mdi:lock-outline" class="cfa-preview__icon" />
+        <div>
+          <div class="cfa-preview__row">
+            <p class="cfa-preview__item-title">The Exact Resource Stack Ranked by ROI</p>
+            <span class="cfa-chip">Resources</span>
+          </div>
+          <p class="cfa-preview__item-text">
+            What I’d absolutely buy again, what I’d skip, and how I’d sequence it if I were starting today.
+          </p>
+        </div>
+      </li>
+      <li class="cfa-preview__item">
+        <Icon name="mdi:lock-outline" class="cfa-preview__icon" />
+        <div>
+          <div class="cfa-preview__row">
+            <p class="cfa-preview__item-title">Mock Exam Framework + Error Log Template</p>
+            <span class="cfa-chip">Tool + Template</span>
+          </div>
+          <p class="cfa-preview__item-text">
+            The exact Excel layout I used to track topic-level progress and convert misses into targeted sessions.
+          </p>
+        </div>
+      </li>
+      <li class="cfa-preview__item">
+        <Icon name="mdi:lock-outline" class="cfa-preview__icon" />
+        <div>
+          <div class="cfa-preview__row">
+            <p class="cfa-preview__item-title">Exam Day Tactics + Anxiety Protocol</p>
+            <span class="cfa-chip">Exam Strategy</span>
+          </div>
+          <p class="cfa-preview__item-text">
+            Scripts, checklists, and breathing routines I rehearsed so execution felt familiar on the actual day.
+          </p>
+        </div>
+      </li>
+      <li class="cfa-preview__item">
+        <Icon name="mdi:lock-outline" class="cfa-preview__icon" />
+        <div>
+          <div class="cfa-preview__row">
+            <p class="cfa-preview__item-title">Master Formula Reference Sheet</p>
+            <span class="cfa-chip">Reference Sheet</span>
+          </div>
+          <p class="cfa-preview__item-text">
+            Condensed formula summary that ties equations back to context and question types, not just symbols.
+          </p>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- PAYWALL GATE (FREE) -->
+  <section id="premium" class="cfa-paywall reveal">
+    <div id="paywall-gate" class="cfa-paywall__inner">
+      <div class="cfa-paywall__top">
+        <div>
+          <h2 class="cfa-paywall__price">$29</h2>
+          <p class="cfa-paywall__meta">One-time · Instant access · No subscription</p>
+        </div>
+        <a href="#" class="cfa-paywall__cta" target="_blank" rel="noopener noreferrer">
+          GET INSTANT ACCESS →
+        </a>
+      </div>
+
+      <ul class="cfa-paywall__features">
+        <li>✔ Complete 12-Week Study Roadmap</li>
+        <li>✔ FSA Deep Dive — Full System Breakdown</li>
+        <li>✔ Fixed Income — Engineer's Translation</li>
+        <li>✔ Ranked Resource Stack with ROI perspective</li>
+        <li>✔ Mock Exam Framework + Error Log Template</li>
+        <li>✔ Exam Day Tactics + Anxiety Protocol</li>
+        <li>✔ Master Formula Reference Sheet</li>
+      </ul>
+
+      <form class="cfa-paywall__unlock" onsubmit="return false;">
+        <label for="cfa-key-input" class="cfa-paywall__label">Enter Access Key</label>
+        <div class="cfa-paywall__row">
+          <input
+            id="cfa-key-input"
+            type="text"
+            class="cfa-paywall__input"
+            placeholder="XXXX-XXXX-XXXX"
+            autocomplete="off"
+          />
+          <button id="cfa-key-submit" type="button" class="cfa-paywall__button">UNLOCK</button>
+        </div>
+        <p id="cfa-key-error" class="cfa-paywall__error" aria-live="polite"></p>
+        <p class="cfa-paywall__note">Your key was emailed upon purchase.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- PREMIUM SECTION (HIDDEN BY DEFAULT) -->
+  <section id="premium-content" class="cfa-premium-full" style="display: none;">
+    <!-- 12-WEEK ROADMAP -->
+    <section class="cfa-roadmap reveal">
+      <header class="cfa-section-header">
+        <h2 class="cfa-section-title">12-Week Study Roadmap</h2>
+        <p class="cfa-section-subtitle">
+          A structured plan that respects work, engineering coursework, and real-life energy levels.
+        </p>
+      </header>
+
+      <div class="cfa-accordion">
+        <article class="cfa-week is-open" data-week="1">
+          <button class="cfa-week__header" type="button">
+            <div>
+              <p class="cfa-week__range">Weeks 01–02</p>
+              <h3 class="cfa-week__title">Ethics + Quantitative Methods</h3>
+            </div>
+            <Icon name="mdi:chevron-down" class="cfa-week__chevron" />
+          </button>
+          <div class="cfa-week__body">
+            <ul class="cfa-week__days">
+              <li>Day 1–2: Ethics Standards overview + light vignette practice.</li>
+              <li>Day 3: TVM and cash flow problems (question-first learning).</li>
+              <li>Day 4: Distributions + central limit intuition.</li>
+              <li>Day 5: Hypothesis testing scaffolding.</li>
+              <li>Day 6: Short mixed set from Schweser QBank.</li>
+              <li>Day 7: Review tracker, identify weak Ethics + Quant points.</li>
+            </ul>
+            <p class="cfa-week__tip">
+              Pro tip: Treat Ethics examples like case studies you can retell, not rules you’re trying to memorize.
+            </p>
+          </div>
+        </article>
+
+        <article class="cfa-week" data-week="2">
+          <button class="cfa-week__header" type="button">
+            <div>
+              <p class="cfa-week__range">Weeks 03–04</p>
+              <h3 class="cfa-week__title">Quant continuation + Economics (Micro)</h3>
+            </div>
+            <Icon name="mdi:chevron-down" class="cfa-week__chevron" />
+          </button>
+          <div class="cfa-week__body">
+            <ul class="cfa-week__days">
+              <li>Day 1–2: Regression, correlation, and practical examples.</li>
+              <li>Day 3–4: Micro supply/demand, elasticity, and surplus diagrams.</li>
+              <li>Day 5: Question-driven review of Quant + Micro mix.</li>
+              <li>Day 6: Short topic summaries written in your own words.</li>
+              <li>Day 7: Light review + tracker update.</li>
+            </ul>
+            <p class="cfa-week__tip">Pro tip: When in doubt, draw the diagram. It forces precision in understanding.</p>
+          </div>
+        </article>
+
+        <article class="cfa-week" data-week="3">
+          <button class="cfa-week__header" type="button">
+            <div>
+              <p class="cfa-week__range">Weeks 05–06</p>
+              <h3 class="cfa-week__title">Macro Economics + FSA Part 1</h3>
+            </div>
+            <Icon name="mdi:chevron-down" class="cfa-week__chevron" />
+          </button>
+          <div class="cfa-week__body">
+            <ul class="cfa-week__days">
+              <li>Day 1–2: IS-LM, AD-AS, and policy tools.</li>
+              <li>Day 3–4: FSA income statement and cash flow basics.</li>
+              <li>Day 5: Ratio families (profitability, liquidity, leverage).</li>
+              <li>Day 6–7: Mixed question sets with full solutions written out.</li>
+            </ul>
+            <p class="cfa-week__tip">
+              Warning: Don’t underestimate how often FSA shows up across mocks — treat every reading as foundational.
+            </p>
+          </div>
+        </article>
+
+        <article class="cfa-week" data-week="4">
+          <button class="cfa-week__header" type="button">
+            <div>
+              <p class="cfa-week__range">Weeks 07–08</p>
+              <h3 class="cfa-week__title">FSA Deep Dive + Corporate Finance</h3>
+            </div>
+            <Icon name="mdi:chevron-down" class="cfa-week__chevron" />
+          </button>
+          <div class="cfa-week__body">
+            <ul class="cfa-week__days">
+              <li>Day 1–3: Advanced FSA topics (inventory, long-lived assets, taxes).</li>
+              <li>Day 4–5: Corporate Finance capital budgeting + WACC.</li>
+              <li>Day 6: Mixed vignette practice (FSA heavy).</li>
+              <li>Day 7: Rewrite FSA flowcharts and summaries.</li>
+            </ul>
+            <p class="cfa-week__tip">
+              Pro tip: Anchor WACC in intuition — it’s the hurdle rate for capital allocation decisions.
+            </p>
+          </div>
+        </article>
+
+        <article class="cfa-week" data-week="5">
+          <button class="cfa-week__header" type="button">
+            <div>
+              <p class="cfa-week__range">Weeks 09–10</p>
+              <h3 class="cfa-week__title">Equity + Fixed Income</h3>
+            </div>
+            <Icon name="mdi:chevron-down" class="cfa-week__chevron" />
+          </button>
+          <div class="cfa-week__body">
+            <ul class="cfa-week__days">
+              <li>Day 1–2: Equity valuation models (DDM, FCFE, multiples).</li>
+              <li>Day 3–5: Bond math, duration, convexity, and term structure.</li>
+              <li>Day 6–7: Mixed set focusing on Equity + FI together.</li>
+            </ul>
+            <p class="cfa-week__tip">
+              Pro tip: Treat Fixed Income questions as signal-processing problems — what is the yield curve telling you?
+            </p>
+          </div>
+        </article>
+
+        <article class="cfa-week" data-week="6">
+          <button class="cfa-week__header" type="button">
+            <div>
+              <p class="cfa-week__range">Week 11</p>
+              <h3 class="cfa-week__title">Derivatives, PM, Alternatives</h3>
+            </div>
+            <Icon name="mdi:chevron-down" class="cfa-week__chevron" />
+          </button>
+          <div class="cfa-week__body">
+            <ul class="cfa-week__days">
+              <li>Day 1–2: Options basics + payoff diagrams.</li>
+              <li>Day 3: Futures/forwards and basic hedging.</li>
+              <li>Day 4: Portfolio Management (CAPM, frontier).</li>
+              <li>Day 5–7: Alternatives overview and summary tables.</li>
+            </ul>
+            <p class="cfa-week__tip">
+              Pro tip: Time-box these topics; they matter, but not as much as Ethics, FSA, FI, and Equity.
+            </p>
+          </div>
+        </article>
+
+        <article class="cfa-week" data-week="7">
+          <button class="cfa-week__header" type="button">
+            <div>
+              <p class="cfa-week__range">Week 12</p>
+              <h3 class="cfa-week__title">Final Sprint</h3>
+            </div>
+            <Icon name="mdi:chevron-down" class="cfa-week__chevron" />
+          </button>
+          <div class="cfa-week__body">
+            <ul class="cfa-week__days">
+              <li>Day 1: Full mock under exam conditions.</li>
+              <li>Day 2–3: Error log debrief + targeted review.</li>
+              <li>Day 4: Formula sheet consolidation.</li>
+              <li>Day 5: Ethics and high-frequency topic revision only.</li>
+              <li>Day 6: Light questions + rest.</li>
+              <li>Day 7: Mindset work, logistics check, early night.</li>
+            </ul>
+            <p class="cfa-week__tip">
+              Mindset tip: You’re not trying to become a new person in the final week — you’re preserving the work
+              you’ve already done.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- RESOURCE STACK -->
+    <section class="cfa-resources reveal">
+      <header class="cfa-section-header">
+        <h2 class="cfa-section-title">Resource Stack</h2>
+        <p class="cfa-section-subtitle">
+          Every resource I used, exactly how I’d rank it on ROI if I were starting again.
+        </p>
+      </header>
+
+      <div class="cfa-resources__grid">
+        <article class="cfa-resource">
+          <p class="cfa-resource__tier">Tier 1 · BUY</p>
+          <h3 class="cfa-resource__name">Kaplan Schweser Core</h3>
+          <p class="cfa-resource__desc">
+            Main readings + question bank. Clear explanations and efficient coverage — my primary text from day one.
+          </p>
+          <span class="cfa-resource__verdict cfa-resource__verdict--buy">BUY</span>
+        </article>
+        <article class="cfa-resource">
+          <p class="cfa-resource__tier">Tier 1 · BUY</p>
+          <h3 class="cfa-resource__name">Schweser Practice Pack</h3>
+          <p class="cfa-resource__desc">
+            Higher-fidelity mocks and practice exams. Best representation of exam-style vignettes in my stack.
+          </p>
+          <span class="cfa-resource__verdict cfa-resource__verdict--buy">BUY (best add-on)</span>
+        </article>
+        <article class="cfa-resource">
+          <p class="cfa-resource__tier">Essential · USE</p>
+          <h3 class="cfa-resource__name">CFA Institute Practice Questions</h3>
+          <p class="cfa-resource__desc">
+            Official item sets that reveal exam flavor. I used these to sanity-check my Schweser-based prep.
+          </p>
+          <span class="cfa-resource__verdict cfa-resource__verdict--use">USE</span>
+        </article>
+        <article class="cfa-resource">
+          <p class="cfa-resource__tier">Selective · SKIP</p>
+          <h3 class="cfa-resource__name">CFA Official Readings (Full)</h3>
+          <p class="cfa-resource__desc">
+            Too dense to be primary study material. I only dipped into Ethics explanations when something felt unclear.
+          </p>
+          <span class="cfa-resource__verdict cfa-resource__verdict--skip">SKIP (except Ethics explanations)</span>
+        </article>
+        <article class="cfa-resource">
+          <p class="cfa-resource__tier">Supplemental · OPTIONAL</p>
+          <h3 class="cfa-resource__name">Bloomberg Market Concepts (BMC)</h3>
+          <p class="cfa-resource__desc">
+            Helpful for intuition and context but not necessary to pass. Use if you want extra market color.
+          </p>
+          <span class="cfa-resource__verdict cfa-resource__verdict--optional">OPTIONAL</span>
+        </article>
+        <article class="cfa-resource">
+          <p class="cfa-resource__tier">Template · USE</p>
+          <h3 class="cfa-resource__name">Excel Mock Tracker</h3>
+          <p class="cfa-resource__desc">
+            The backbone of my review process — topic-level stats, error tagging, and trend tracking across all mocks.
+          </p>
+          <span class="cfa-resource__verdict cfa-resource__verdict--use">USE (template included)</span>
+        </article>
+      </div>
+    </section>
+
+    <!-- MOCK EXAM FRAMEWORK -->
+    <section class="cfa-mocks reveal">
+      <header class="cfa-section-header">
+        <h2 class="cfa-section-title">Mock Exam Framework</h2>
+        <p class="cfa-section-subtitle">
+          A 3-day loop: exam → debrief → targeted repair. No wasted effort, just compounding signal.
+        </p>
+      </header>
+
+      <div class="cfa-mocks__layout">
+        <div class="cfa-mocks__left">
+          <h3 class="cfa-mocks__subtitle">3-Day Protocol</h3>
+          <ol class="cfa-mocks__steps">
+            <li><strong>Day 1 · Exam:</strong> Full mock under timed conditions, no interruptions.</li>
+            <li>
+              <strong>Day 2 · Debrief:</strong> Every miss logged in the error tracker with topic, subtopic, error type,
+              and takeaway.
+            </li>
+            <li>
+              <strong>Day 3 · Repair:</strong> Short, high-intensity blocks targeting common error patterns and weak
+              topics.
+            </li>
+          </ol>
+          <p class="cfa-mocks__callout">
+            FSA and Fixed Income were my persistent low-scorers. Identifying this from Mock 1 let me allocate
+            disproportionate time there.
+          </p>
+        </div>
+
+        <div class="cfa-mocks__table-wrap">
+          <table class="cfa-mocks__table">
+            <thead>
+              <tr>
+                <th>Mock</th>
+                <th>Session</th>
+                <th>Ethics</th>
+                <th>Quant</th>
+                <th>Econ</th>
+                <th>FSA</th>
+                <th>CorpFin</th>
+                <th>Equity</th>
+                <th>FI</th>
+                <th>Deriv</th>
+                <th>Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Mock 1</td>
+                <td>AM</td>
+                <td data-score="68">68%</td>
+                <td data-score="70">70%</td>
+                <td data-score="62">62%</td>
+                <td data-score="55">55%</td>
+                <td data-score="64">64%</td>
+                <td data-score="66">66%</td>
+                <td data-score="52">52%</td>
+                <td data-score="60">60%</td>
+                <td data-score="63">63%</td>
+              </tr>
+              <tr>
+                <td>Mock 2</td>
+                <td>PM</td>
+                <td data-score="70">70%</td>
+                <td data-score="72">72%</td>
+                <td data-score="65">65%</td>
+                <td data-score="58">58%</td>
+                <td data-score="66">66%</td>
+                <td data-score="69">69%</td>
+                <td data-score="56">56%</td>
+                <td data-score="62">62%</td>
+                <td data-score="66">66%</td>
+              </tr>
+              <tr>
+                <td>Mock 3</td>
+                <td>AM</td>
+                <td data-score="72">72%</td>
+                <td data-score="74">74%</td>
+                <td data-score="67">67%</td>
+                <td data-score="62">62%</td>
+                <td data-score="68">68%</td>
+                <td data-score="72">72%</td>
+                <td data-score="60">60%</td>
+                <td data-score="64">64%</td>
+                <td data-score="70">70%</td>
+              </tr>
+              <tr>
+                <td>Mock 4</td>
+                <td>PM</td>
+                <td data-score="74">74%</td>
+                <td data-score="75">75%</td>
+                <td data-score="69">69%</td>
+                <td data-score="64">64%</td>
+                <td data-score="70">70%</td>
+                <td data-score="74">74%</td>
+                <td data-score="63">63%</td>
+                <td data-score="66">66%</td>
+                <td data-score="72">72%</td>
+              </tr>
+              <tr>
+                <td>Mock 5</td>
+                <td>AM</td>
+                <td data-score="76">76%</td>
+                <td data-score="76">76%</td>
+                <td data-score="70">70%</td>
+                <td data-score="67">67%</td>
+                <td data-score="72">72%</td>
+                <td data-score="76">76%</td>
+                <td data-score="66">66%</td>
+                <td data-score="68">68%</td>
+                <td data-score="74">74%</td>
+              </tr>
+              <tr>
+                <td>Mock 6</td>
+                <td>PM</td>
+                <td data-score="78">78%</td>
+                <td data-score="78">78%</td>
+                <td data-score="72">72%</td>
+                <td data-score="70">70%</td>
+                <td data-score="74">74%</td>
+                <td data-score="78">78%</td>
+                <td data-score="69">69%</td>
+                <td data-score="70">70%</td>
+                <td data-score="75">75%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXAM DAY PROTOCOL -->
+    <section class="cfa-exam reveal">
+      <header class="cfa-section-header">
+        <h2 class="cfa-section-title">Exam Day Full Protocol</h2>
+        <p class="cfa-section-subtitle">
+          A calm, repeatable script from wake-up to walking out of the exam centre.
+        </p>
+      </header>
+
+      <div class="cfa-exam__grid">
+        <div class="cfa-exam__col">
+          <h3>In-Exam Tactics</h3>
+          <ul class="cfa-exam__list">
+            <li>90 seconds per question as a soft cap, moving on before sinking time.</li>
+            <li>Ethics first, then high-weight topics, leaving lower-weight topics for later blocks.</li>
+            <li>Flag-and-move: mark uncertain questions and revisit only if time allows.</li>
+            <li>No answer changes unless you find a concrete mistake in your reasoning.</li>
+          </ul>
+        </div>
+        <div class="cfa-exam__col">
+          <h3>Anxiety Management</h3>
+          <ul class="cfa-exam__list">
+            <li>Night-before confidence list: 5 reasons you’re prepared, written in your own words.</li>
+            <li>Structured breathing: 3 deep breaths before starting each new item set.</li>
+            <li>Micro-breaks: short glances away from the screen to reset, especially after hard questions.</li>
+            <li>Post-exam decompression plan so the stakes don’t feel infinite.</li>
+          </ul>
+        </div>
+      </div>
+
+      <figure class="cfa-exam__quote">
+        <blockquote>
+          “The anxiety I felt walking in was the most intense I've experienced for any exam. What helped most was
+          realizing my job wasn’t to be perfect — it was to execute a script I’d already rehearsed during mocks.”
+        </blockquote>
+        <figcaption>— Aaryaman, February 2026</figcaption>
+      </figure>
+
+      <div class="cfa-exam__timeline">
+        <h3 class="cfa-exam__timeline-title">Hour-by-Hour Timeline</h3>
+        <ul class="cfa-exam__timeline-list">
+          <li><span>6:00</span> Wake up, light breakfast, review Ethics checklist + formula sheet skim.</li>
+          <li><span>7:30</span> Arrive near test centre, short walk, no last-minute cramming.</li>
+          <li><span>8:30</span> Check-in, settle, 3 deep breaths, recall confidence list.</li>
+          <li><span>9:00–12:00</span> AM session, Ethics first, strict pacing, flag-and-move.</li>
+          <li><span>12:00–13:00</span> Lunch break, walk outside, no question discussion, hydrate.</li>
+          <li><span>13:00–16:00</span> PM session, repeat pacing and tactics, finish with easier topics.</li>
+          <li><span>After</span> Short decompression walk, no immediate score speculation.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- CONSULTATION BOOKING CARDS -->
+    <section class="cfa-consults reveal">
+      <header class="cfa-section-header">
+        <h2 class="cfa-section-title">Work through it with me directly</h2>
+        <p class="cfa-section-subtitle">
+          Two ways to get direct, focused help on your own CFA Level I path.
+        </p>
+      </header>
+
+      <div class="cfa-consults__grid">
+        <article class="cfa-consult-card">
+          <p class="cfa-consult-card__duration">30 min · $49</p>
+          <h3 class="cfa-consult-card__title">Quick Session</h3>
+          <p class="cfa-consult-card__body">
+            High-impact call to pressure-test your current plan, clarify topic questions, or refine exam-day strategy.
+          </p>
+          <ul class="cfa-consult-card__list">
+            <li>Study plan calibration</li>
+            <li>Topic-specific Q&amp;A</li>
+            <li>Exam-day tactics review</li>
+          </ul>
+          <a href="#" target="_blank" rel="noopener noreferrer" class="cfa-consult-card__button">
+            Book 30-min Session
+          </a>
+        </article>
+
+        <article class="cfa-consult-card">
+          <p class="cfa-consult-card__duration">60 min · $89</p>
+          <h3 class="cfa-consult-card__title">Deep Session</h3>
+          <p class="cfa-consult-card__body">
+            Full-curriculum review and personalized roadmap, including mock debriefs and FSA/FI breakdowns.
+          </p>
+          <ul class="cfa-consult-card__list">
+            <li>Personalized 12-week roadmap</li>
+            <li>Mock exam debrief and error log review</li>
+            <li>Deep dive on FSA/FI or your choice of topic</li>
+          </ul>
+          <a href="#" target="_blank" rel="noopener noreferrer" class="cfa-consult-card__button">
+            Book 60-min Session
+          </a>
+        </article>
+      </div>
+    </section>
+  </section>
+</DefaultLayout>
+
+<script is:inline>
+  (function () {
+    if (window.__cfaPageInitialized) return;
+    window.__cfaPageInitialized = true;
+
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const UNLOCK_KEY = 'cfaPremiumUnlocked';
+
+    function animateCounters() {
+      const stats = document.querySelectorAll('.cfa-stat');
+      if (!stats.length) return;
+
+      const io = new IntersectionObserver(
+        (entries, observer) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+
+            const el = entry.target;
+            observer.unobserve(el);
+
+            const target = Number(el.getAttribute('data-target') || 0);
+            const numberEl = el.querySelector('.cfa-stat__number');
+            if (!numberEl || !target || Number.isNaN(target)) return;
+
+            if (prefersReducedMotion.matches) {
+              numberEl.textContent = String(target);
+              return;
+            }
+
+            let current = 0;
+            const duration = 1200;
+            const start = performance.now();
+
+            const step = (ts) => {
+              const t = Math.min(1, (ts - start) / duration);
+              const eased = 1 - Math.pow(1 - t, 3);
+              current = Math.floor(target * eased);
+              numberEl.textContent = String(current);
+              if (t < 1) requestAnimationFrame(step);
+            };
+
+            requestAnimationFrame(step);
+          });
+        },
+        { threshold: 0.2 }
+      );
+
+      stats.forEach((stat) => io.observe(stat));
+    }
+
+    function initTimelineTabs() {
+      const tabs = document.querySelectorAll('.cfa-timeline__tab');
+      const phases = document.querySelectorAll('.cfa-phase');
+      if (!tabs.length || !phases.length) return;
+
+      tabs.forEach((tab) => {
+        tab.addEventListener('click', () => {
+          const phaseId = tab.getAttribute('data-phase');
+          tabs.forEach((t) => t.classList.remove('is-active'));
+          tab.classList.add('is-active');
+          phases.forEach((pane) => {
+            pane.classList.toggle('is-active', pane.getAttribute('data-phase') === phaseId);
+          });
+        });
+      });
+    }
+
+    function initTopics() {
+      const topics = document.querySelectorAll('.cfa-topic');
+      if (!topics.length) return;
+
+      topics.forEach((topic) => {
+        const header = topic.querySelector('.cfa-topic__header');
+        if (!header) return;
+
+        header.addEventListener('click', () => {
+          const isOpen = topic.classList.contains('is-open');
+          topics.forEach((t) => t.classList.remove('is-open'));
+          if (!isOpen) topic.classList.add('is-open');
+        });
+      });
+    }
+
+    function initWeeks() {
+      const weeks = document.querySelectorAll('.cfa-week');
+      if (!weeks.length) return;
+
+      weeks.forEach((week) => {
+        const header = week.querySelector('.cfa-week__header');
+        if (!header) return;
+
+        header.addEventListener('click', () => {
+          const isOpen = week.classList.contains('is-open');
+          weeks.forEach((w) => w.classList.remove('is-open'));
+          if (!isOpen) week.classList.add('is-open');
+        });
+      });
+    }
+
+    function colorMockTable() {
+      const cells = document.querySelectorAll('.cfa-mocks__table td[data-score]');
+      cells.forEach((cell) => {
+        const score = Number(cell.getAttribute('data-score') || 0);
+        if (score >= 70) {
+          cell.classList.add('score-good');
+        } else if (score >= 60) {
+          cell.classList.add('score-mid');
+        } else {
+          cell.classList.add('score-low');
+        }
+      });
+    }
+
+    function showPremium() {
+      const premium = document.getElementById('premium-content');
+      const gate = document.getElementById('paywall-gate');
+      const error = document.getElementById('cfa-key-error');
+      if (premium) premium.style.display = '';
+      if (gate) gate.style.display = 'none';
+      if (error) error.textContent = '';
+    }
+
+    async function verifyKey(key) {
+      const res = await fetch('/api/verify-key', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ key })
+      });
+
+      if (!res.ok) return { valid: false };
+      return res.json();
+    }
+
+    function initUnlock() {
+      const input = document.getElementById('cfa-key-input');
+      const button = document.getElementById('cfa-key-submit');
+      const error = document.getElementById('cfa-key-error');
+      const premium = document.getElementById('premium-content');
+      const gate = document.getElementById('paywall-gate');
+      if (!input || !button || !error || !premium || !gate) return;
+
+      const unlocked = sessionStorage.getItem(UNLOCK_KEY) === 'true';
+      if (unlocked) {
+        showPremium();
+        return;
+      }
+
+      const attemptUnlock = async () => {
+        const key = (input.value || '').trim();
+        if (!key) {
+          error.textContent = 'Please enter your access key.';
+          return;
+        }
+
+        error.textContent = 'Verifying key...';
+        button.disabled = true;
+
+        try {
+          const result = await verifyKey(key);
+          if (result && result.valid) {
+            sessionStorage.setItem(UNLOCK_KEY, 'true');
+            showPremium();
+          } else {
+            error.textContent = 'Invalid access key. Please check your purchase email.';
+          }
+        } catch {
+          error.textContent = 'Unable to verify key right now. Please try again shortly.';
+        } finally {
+          button.disabled = false;
+        }
+      };
+
+      if (!button.dataset.bound) {
+        button.addEventListener('click', attemptUnlock);
+        input.addEventListener('keydown', (event) => {
+          if (event.key === 'Enter') {
+            event.preventDefault();
+            attemptUnlock();
+          }
+        });
+        button.dataset.bound = 'true';
+      }
+    }
+
+    function initPage() {
+      animateCounters();
+      initTimelineTabs();
+      initTopics();
+      initWeeks();
+      colorMockTable();
+      initUnlock();
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initPage);
+    } else {
+      initPage();
+    }
+
+    document.addEventListener('astro:page-load', initPage);
+  })();
+</script>
+
+<style>
+  .cfa-hero {
+    padding: 4rem 1.25rem 2.5rem;
+  }
+  @media (min-width: 768px) {
+    .cfa-hero {
+      padding: 5rem 1.75rem 3.25rem;
+    }
+  }
+  .cfa-hero__inner {
+    max-width: 52rem;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .cfa-hero__eyebrow {
+    margin: 0 0 0.5rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(148, 163, 184, 0.95);
+  }
+  .cfa-hero__title {
+    margin: 0 0 1rem;
+    font-weight: 700;
+  }
+  .cfa-hero__text {
+    margin: 0.4rem auto 0;
+    max-width: 48rem;
+    line-height: 1.7;
+    font-size: 0.98rem;
+  }
+
+  .cfa-stats {
+    margin-top: 1.4rem;
+  }
+  .cfa-stats__grid {
+    max-width: 52rem;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+  @media (min-width: 768px) {
+    .cfa-stats__grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+  .cfa-stat {
+    border-radius: 999px;
+    padding: 0.6rem 1.1rem;
+    border: 1px solid rgba(148, 163, 184, 0.4);
+    text-align: center;
+  }
+  .cfa-stat__label {
+    margin: 0;
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0.8;
+  }
+  .cfa-stat__value {
+    margin: 0.1rem 0 0;
+    font-size: 1.15rem;
+    font-weight: 700;
+  }
+
+  .cfa-story {
+    padding: 0 1.25rem 3rem;
+  }
+  .cfa-story__grid {
+    max-width: 72rem;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  @media (min-width: 900px) {
+    .cfa-story__grid {
+      grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+      align-items: flex-start;
+    }
+  }
+  .cfa-story__main p {
+    margin: 0 0 0.9rem;
+    line-height: 1.7;
+  }
+  .cfa-story__quote {
+    margin: 1.2rem 0 0;
+    padding: 0.9rem 1rem;
+    border-left: 3px solid rgba(148, 163, 184, 0.8);
+    font-style: italic;
+  }
+  .cfa-story__aside {
+    position: sticky;
+    top: 6.5rem;
+  }
+  .cfa-facts {
+    border-radius: 16px;
+    border: 1px solid rgba(148, 163, 184, 0.4);
+    padding: 1.1rem 1.2rem;
+  }
+  .cfa-facts__title {
+    margin: 0 0 0.7rem;
+    font-size: 1rem;
+    font-weight: 700;
+  }
+  .cfa-facts__list {
+    margin: 0;
+    padding: 0;
+  }
+  .cfa-facts__list div {
+    margin-bottom: 0.55rem;
+  }
+  .cfa-facts__list dt {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    opacity: 0.8;
+    margin-bottom: 0.08rem;
+  }
+  .cfa-facts__list dd {
+    margin: 0;
+    font-size: 0.92rem;
+  }
+
+  .cfa-timeline,
+  .cfa-topics,
+  .cfa-preview,
+  .cfa-paywall {
+    padding: 0 1.25rem 3rem;
+  }
+  .cfa-timeline {
+    background: rgba(148, 163, 184, 0.03);
+  }
+  .cfa-section-header {
+    max-width: 52rem;
+    margin: 0 auto 1.3rem;
+  }
+  .cfa-section-title {
+    margin: 0 0 0.3rem;
+    font-weight: 700;
+  }
+  .cfa-section-subtitle {
+    margin: 0;
+    opacity: 0.86;
+  }
+
+  .cfa-timeline__tabs {
+    max-width: 52rem;
+    margin: 0 auto 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+  .cfa-timeline__tab {
+    padding: 0.35rem 0.8rem;
+    border-radius: 999px;
+    border: 1px solid rgba(148, 163, 184, 0.6);
+    background: transparent;
+    font-size: 0.82rem;
+    cursor: pointer;
+  }
+  .cfa-timeline__tab.is-active {
+    background: var(--action-color);
+    border-color: var(--action-color);
+    color: #ffffff;
+  }
+  .cfa-timeline__panes {
+    max-width: 52rem;
+    margin: 0 auto;
+  }
+  .cfa-phase {
+    display: none;
+    padding: 1rem 0 0;
+  }
+  .cfa-phase.is-active {
+    display: block;
+  }
+  .cfa-phase__meta {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+    margin-bottom: 0.6rem;
+  }
+  .cfa-phase__number {
+    font-weight: 700;
+    letter-spacing: 0.16em;
+  }
+  .cfa-phase__range {
+    margin: 0;
+    font-size: 0.82rem;
+    opacity: 0.8;
+  }
+  .cfa-phase__title {
+    margin: 0.1rem 0 0;
+    font-size: 1.1rem;
+    font-weight: 700;
+  }
+  .cfa-phase__text {
+    margin: 0 0 0.9rem;
+  }
+  .cfa-phase__details {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.7rem;
+  }
+  @media (min-width: 768px) {
+    .cfa-phase__details {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  .cfa-phase-card {
+    border-radius: 12px;
+    border: 1px solid rgba(148, 163, 184, 0.4);
+    padding: 0.7rem 0.85rem;
+  }
+  .cfa-phase-card h4 {
+    margin: 0 0 0.25rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+  .cfa-phase-card p {
+    margin: 0;
+    font-size: 0.88rem;
+  }
+  .cfa-phase__lessons {
+    margin: 0.9rem 0 0;
+    padding-left: 1.1rem;
+    font-size: 0.92rem;
+  }
+
+  .cfa-topics__grid {
+    max-width: 72rem;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.9rem;
+  }
+  @media (min-width: 768px) {
+    .cfa-topics__grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  .cfa-topic {
+    border-radius: 14px;
+    border: 1px solid rgba(148, 163, 184, 0.5);
+    padding: 0.75rem 0.9rem 0.85rem;
+  }
+  .cfa-topic__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 0;
+    text-align: left;
+    cursor: pointer;
+  }
+  .cfa-topic__name {
+    margin: 0 0 0.15rem;
+    font-size: 0.98rem;
+    font-weight: 600;
+  }
+  .cfa-topic__meta {
+    margin: 0;
+    font-size: 0.82rem;
+    opacity: 0.85;
+  }
+  .cfa-topic__chevron {
+    width: 18px;
+    height: 18px;
+    transition: transform 0.2s ease;
+  }
+  .cfa-topic__bar {
+    margin: 0.55rem 0 0.35rem;
+    height: 4px;
+    border-radius: 999px;
+    background: rgba(148, 163, 184, 0.35);
+    overflow: hidden;
+  }
+  .cfa-topic__bar span {
+    display: block;
+    height: 100%;
+    border-radius: 999px;
+    background: var(--action-color);
+  }
+  .cfa-topic__body {
+    display: none;
+    font-size: 0.9rem;
+  }
+  .cfa-topic.is-open .cfa-topic__body {
+    display: block;
+  }
+  .cfa-topic.is-open .cfa-topic__chevron {
+    transform: rotate(180deg);
+  }
+
+  .cfa-tag {
+    display: inline-block;
+    padding: 0.1rem 0.4rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+  }
+  .cfa-tag--hard {
+    background: rgba(239, 68, 68, 0.12);
+    color: rgb(185, 28, 28);
+  }
+  .cfa-tag--accent {
+    background: rgba(59, 130, 246, 0.12);
+    color: rgb(37, 99, 235);
+  }
+  .cfa-tag--green {
+    background: rgba(16, 185, 129, 0.12);
+    color: rgb(5, 122, 85);
+  }
+
+  .cfa-preview__list {
+    max-width: 72rem;
+    margin: 0 auto;
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+  .cfa-preview__item {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.8rem;
+    padding: 0.8rem 1rem;
+    border-radius: 12px;
+    border: 1px dashed rgba(148, 163, 184, 0.6);
+  }
+  .cfa-preview__icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 999px;
+    border: 1px solid rgba(148, 163, 184, 0.6);
+    padding: 0.35rem;
+  }
+  .cfa-preview__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+  .cfa-preview__item-title {
+    margin: 0 0 0.15rem;
+    font-weight: 600;
+  }
+  .cfa-preview__item-text {
+    margin: 0;
+    font-size: 0.9rem;
+  }
+  .cfa-chip {
+    padding: 0.1rem 0.45rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    border: 1px solid rgba(148, 163, 184, 0.7);
+  }
+
+  .cfa-paywall__inner {
+    max-width: 56rem;
+    margin: 0 auto;
+    border-radius: 18px;
+    border: 1px solid rgba(148, 163, 184, 0.6);
+    padding: 1.1rem 1.2rem 1.3rem;
+  }
+  .cfa-paywall__top {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.7rem;
+    margin-bottom: 0.9rem;
+  }
+  .cfa-paywall__price {
+    margin: 0;
+    font-size: 1.6rem;
+    font-weight: 700;
+  }
+  .cfa-paywall__meta {
+    margin: 0.1rem 0 0;
+    font-size: 0.85rem;
+    opacity: 0.8;
+  }
+  .cfa-paywall__cta {
+    padding: 0.55rem 1.1rem;
+    border-radius: 999px;
+    border: 1px solid var(--action-color);
+    background: var(--action-color);
+    color: #ffffff;
+    font-size: 0.88rem;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .cfa-paywall__features {
+    margin: 0 0 0.9rem;
+    padding-left: 1.1rem;
+    font-size: 0.9rem;
+  }
+  .cfa-paywall__label {
+    display: block;
+    margin: 0 0 0.25rem;
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  .cfa-paywall__row {
+    display: grid;
+    grid-template-columns: 1.6fr auto;
+    gap: 0.6rem;
+    margin-bottom: 0.4rem;
+  }
+  @media (max-width: 520px) {
+    .cfa-paywall__row {
+      grid-template-columns: 1fr;
+    }
+  }
+  .cfa-paywall__input {
+    border-radius: 999px;
+    border: 1px solid rgba(148, 163, 184, 0.8);
+    padding: 0.6rem 0.9rem;
+    font-size: 0.9rem;
+  }
+  .cfa-paywall__button {
+    border-radius: 999px;
+    border: 1px solid #111827;
+    background: #111827;
+    color: #ffffff;
+    font-size: 0.86rem;
+    padding: 0.6rem 1.1rem;
+    cursor: pointer;
+  }
+  .cfa-paywall__button:disabled {
+    opacity: 0.7;
+    cursor: default;
+  }
+  .cfa-paywall__error {
+    margin: 0;
+    font-size: 0.8rem;
+    color: rgb(185, 28, 28);
+  }
+  .cfa-paywall__note {
+    margin: 0.25rem 0 0;
+    font-size: 0.8rem;
+    opacity: 0.75;
+  }
+
+  .cfa-premium-full {
+    padding: 0 1.25rem 3.5rem;
+  }
+  .cfa-roadmap,
+  .cfa-resources,
+  .cfa-mocks,
+  .cfa-exam,
+  .cfa-consults {
+    max-width: 72rem;
+    margin: 0 auto 2.5rem;
+  }
+  .cfa-accordion {
+    display: grid;
+    gap: 0.7rem;
+  }
+  .cfa-week {
+    border-radius: 14px;
+    border: 1px solid rgba(148, 163, 184, 0.7);
+    padding: 0.7rem 0.9rem;
+  }
+  .cfa-week__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    text-align: left;
+  }
+  .cfa-week__range {
+    margin: 0;
+    font-size: 0.82rem;
+    opacity: 0.8;
+  }
+  .cfa-week__title {
+    margin: 0.1rem 0 0;
+    font-size: 0.98rem;
+    font-weight: 600;
+  }
+  .cfa-week__chevron {
+    width: 18px;
+    height: 18px;
+    transition: transform 0.2s ease;
+  }
+  .cfa-week__body {
+    display: none;
+    margin-top: 0.55rem;
+  }
+  .cfa-week.is-open .cfa-week__body {
+    display: block;
+  }
+  .cfa-week.is-open .cfa-week__chevron {
+    transform: rotate(180deg);
+  }
+  .cfa-week__days {
+    margin: 0 0 0.6rem;
+    padding-left: 1.1rem;
+    font-size: 0.9rem;
+  }
+  .cfa-week__tip {
+    margin: 0;
+    font-size: 0.88rem;
+    font-style: italic;
+  }
+
+  .cfa-resources__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.9rem;
+  }
+  @media (min-width: 768px) {
+    .cfa-resources__grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  .cfa-resource {
+    border-radius: 14px;
+    border: 1px solid rgba(148, 163, 184, 0.7);
+    padding: 0.8rem 0.9rem;
+  }
+  .cfa-resource__tier {
+    margin: 0 0 0.2rem;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    opacity: 0.9;
+  }
+  .cfa-resource__name {
+    margin: 0 0 0.35rem;
+    font-size: 0.98rem;
+    font-weight: 600;
+  }
+  .cfa-resource__desc {
+    margin: 0 0 0.55rem;
+    font-size: 0.9rem;
+  }
+  .cfa-resource__verdict {
+    font-size: 0.78rem;
+    padding: 0.12rem 0.5rem;
+    border-radius: 999px;
+  }
+  .cfa-resource__verdict--buy {
+    background: rgba(16, 185, 129, 0.15);
+  }
+  .cfa-resource__verdict--use {
+    background: rgba(59, 130, 246, 0.15);
+  }
+  .cfa-resource__verdict--skip {
+    background: rgba(239, 68, 68, 0.15);
+  }
+  .cfa-resource__verdict--optional {
+    background: rgba(148, 163, 184, 0.18);
+  }
+
+  .cfa-mocks__layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  @media (min-width: 960px) {
+    .cfa-mocks__layout {
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.2fr);
+      align-items: flex-start;
+    }
+  }
+  .cfa-mocks__subtitle {
+    margin: 0 0 0.4rem;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  .cfa-mocks__steps {
+    margin: 0 0 0.7rem;
+    padding-left: 1.1rem;
+    font-size: 0.9rem;
+  }
+  .cfa-mocks__callout {
+    margin: 0;
+    font-size: 0.9rem;
+    font-style: italic;
+  }
+  .cfa-mocks__table-wrap {
+    overflow-x: auto;
+  }
+  .cfa-mocks__table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.8rem;
+    min-width: 600px;
+  }
+  .cfa-mocks__table th,
+  .cfa-mocks__table td {
+    padding: 0.35rem 0.45rem;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.35);
+    text-align: right;
+  }
+  .cfa-mocks__table th:first-child,
+  .cfa-mocks__table td:first-child {
+    text-align: left;
+  }
+  .cfa-mocks__table th:nth-child(2),
+  .cfa-mocks__table td:nth-child(2) {
+    text-align: left;
+  }
+  .cfa-mocks__table th {
+    font-weight: 600;
+    font-size: 0.78rem;
+  }
+  .score-good {
+    background: rgba(16, 185, 129, 0.18);
+  }
+  .score-mid {
+    background: rgba(59, 130, 246, 0.18);
+  }
+  .score-low {
+    background: rgba(239, 68, 68, 0.18);
+  }
+
+  .cfa-exam__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  @media (min-width: 900px) {
+    .cfa-exam__grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  .cfa-exam__col h3 {
+    margin: 0 0 0.4rem;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  .cfa-exam__list {
+    margin: 0;
+    padding-left: 1.1rem;
+    font-size: 0.9rem;
+  }
+  .cfa-exam__quote {
+    margin: 1.3rem 0 0.9rem;
+    padding: 0.9rem 1rem;
+    border-radius: 12px;
+    border: 1px dashed rgba(148, 163, 184, 0.7);
+  }
+  .cfa-exam__quote blockquote {
+    margin: 0 0 0.4rem;
+    font-style: italic;
+  }
+  .cfa-exam__quote figcaption {
+    margin: 0;
+    font-size: 0.84rem;
+    opacity: 0.85;
+  }
+  .cfa-exam__timeline-title {
+    margin: 0 0 0.4rem;
+    font-size: 0.98rem;
+    font-weight: 600;
+  }
+  .cfa-exam__timeline-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 0.9rem;
+  }
+  .cfa-exam__timeline-list li {
+    display: flex;
+    gap: 0.6rem;
+    margin-bottom: 0.3rem;
+  }
+  .cfa-exam__timeline-list span {
+    min-width: 4.2rem;
+    font-weight: 600;
+  }
+
+  .cfa-consults__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.9rem;
+  }
+  @media (min-width: 900px) {
+    .cfa-consults__grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  .cfa-consult-card {
+    border-radius: 16px;
+    border: 1px solid rgba(148, 163, 184, 0.7);
+    padding: 0.9rem 1rem 1rem;
+  }
+  .cfa-consult-card__duration {
+    margin: 0 0 0.1rem;
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    opacity: 0.85;
+  }
+  .cfa-consult-card__title {
+    margin: 0 0 0.35rem;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  .cfa-consult-card__body {
+    margin: 0 0 0.4rem;
+    font-size: 0.9rem;
+  }
+  .cfa-consult-card__list {
+    margin: 0 0 0.55rem;
+    padding-left: 1.1rem;
+    font-size: 0.9rem;
+  }
+  .cfa-consult-card__button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1rem;
+    border-radius: 999px;
+    border: 1px solid var(--action-color);
+    background: var(--action-color);
+    color: #ffffff;
+    font-size: 0.88rem;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :global(html.darkmode) .cfa-timeline {
+      background: rgba(15, 23, 42, 0.75);
+    }
+  }
+</style>
+
