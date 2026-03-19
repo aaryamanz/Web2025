@@ -42,7 +42,7 @@ export const certificationBuckets = [
     title: 'CAPITAL MARKETS & FINANCE',
     items: [
       {
-        title: 'CFA Level I',
+        title: 'CFA Level I - Passed',
         issuer: 'CFA Institute',
         date: 'Month YYYY',
         credentialId: 'Credential ID',
