@@ -42,6 +42,14 @@ export const certificationBuckets = [
     title: 'CAPITAL MARKETS & FINANCE',
     items: [
       {
+        title: 'CFA Level I',
+        issuer: 'CFA Institute',
+        date: 'Month YYYY',
+        credentialId: 'Credential ID',
+        url: 'https://credentials.cfainstitute.org/2242b3cc-6926-4214-9204-a982c56c7eef#acc.tH30dkYB',
+        logo: '/logos/cfa-institute.png'
+      },
+      {
         title: 'Bloomberg Market Concepts (BMC)',
         issuer: 'Bloomberg LP',
         date: 'Month YYYY',
