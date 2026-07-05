@@ -1,7 +1,7 @@
 export const workExperience = [
   {
     role: 'Finance Director',
-    company: 'UTCA',
+    company: 'University of Toronto Consulting Association',
     period: 'March 2026 - Present',
     location: 'Toronto, ON'
   },
