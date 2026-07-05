@@ -15,9 +15,18 @@ import '../assets/css/animation.css';
 
   gtag('config', 'G-2YP36JNKW1');
 </script>
+  <div class="hero__aurora" aria-hidden="true">
+    <div class="hero__orb hero__orb--1"></div>
+    <div class="hero__orb hero__orb--2"></div>
+    <div class="hero__orb hero__orb--3"></div>
+  </div>
   <div class="container hero__container">
     <div class="grid grid-cols-1 items-center justify-items-center gap-10">
       <div class="flex flex-col items-center gap-6 md:gap-8 hero__content">
+        <a href="#contact" class="hero__badge">
+          <span class="hero__badge-dot" aria-hidden="true"></span>
+          Open to opportunities · Toronto
+        </a>
         <div class="hero__typing-box">
           <h1 class="hero__title text-center text-4xl sm:text-5xl md:text-6xl">
             <slot ><span class='gradient-text' id="typing" > </span></slot>
@@ -25,14 +34,36 @@ import '../assets/css/animation.css';
         </div>
         <script is:inline src="/js/text.js"></script>
         <div class="hero__subtitle-box">
-          <div class="hero__subtitle text-center text-base sm:text-lg md:text-xl lg:text-2xl font-medium">
-            <span class="text-gradient">Analyst @ CIBC | Engineering & Business @ UofT | Capital Markets, Quantitative Strategy & R&D</span>
-          </div>
+          <p class="hero__roles text-center text-lg sm:text-xl md:text-2xl" aria-live="polite">
+            <span id="rotating-role" class="hero__role-text">Analyst @ CIBC</span><span class="hero__role-caret" aria-hidden="true"></span>
+          </p>
+          <p class="hero__tagline text-center text-sm sm:text-base">
+            Capital Markets · Quantitative Strategy · Engineering R&D
+          </p>
         </div>
+        <ul class="hero__stats" role="list">
+          <li class="hero__stat">
+            <Icon name="mdi:check-decagram" class="hero__stat-icon" />
+            CFA Level I — Passed
+          </li>
+          <li class="hero__stat">
+            <Icon name="mdi:school-outline" class="hero__stat-icon" />
+            Engineering & Business @ UofT
+          </li>
+          <li class="hero__stat">
+            <Icon name="mdi:book-open-page-variant-outline" class="hero__stat-icon" />
+            Published Author
+          </li>
+        </ul>
         <div class="hero__actions">
           <div class="hero__buttons flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
-            <a 
-            class="hero__link hero__link--linkedin" 
+            <a class="hero__link hero__link--primary" href="#projects">
+              <Icon name="mdi:rocket-launch-outline" class="hero__link-icon" />
+              View Projects
+              <span class="hero__link-shine" aria-hidden="true"></span>
+            </a>
+            <a
+            class="hero__link hero__link--linkedin"
             href="https://www.linkedin.com/in/aaryamansingh/">
               <Icon name="simple-icons:linkedin" class="hero__link-icon" />
               LinkedIn
@@ -88,10 +119,75 @@ import '../assets/css/animation.css';
   document.addEventListener('DOMContentLoaded', initHeroScrollDown);
   document.addEventListener('astro:page-load', initHeroScrollDown);
 </script>
+<script is:inline>
+  (function () {
+    const ROLES = [
+      'Analyst @ CIBC',
+      'Engineering & Business @ UofT',
+      'Capital Markets & Quant Strategy',
+      'Founder · Author · Builder'
+    ];
+    const TYPE_DELAY = 55;
+    const DELETE_DELAY = 28;
+    const HOLD_DELAY = 2100;
+    let roleIndex = 0;
+    let charIndex = ROLES[0].length;
+    let deleting = false;
+    let timer = null;
+
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+    function tick() {
+      const el = document.getElementById('rotating-role');
+      if (!el) return;
+
+      if (reducedMotion.matches) {
+        el.textContent = ROLES[0];
+        return;
+      }
+
+      const current = ROLES[roleIndex];
+
+      if (!deleting) {
+        charIndex++;
+        el.textContent = current.substring(0, charIndex);
+        if (charIndex >= current.length) {
+          deleting = true;
+          timer = setTimeout(tick, HOLD_DELAY);
+          return;
+        }
+        timer = setTimeout(tick, TYPE_DELAY);
+      } else {
+        charIndex--;
+        el.textContent = current.substring(0, charIndex);
+        if (charIndex <= 0) {
+          deleting = false;
+          roleIndex = (roleIndex + 1) % ROLES.length;
+        }
+        timer = setTimeout(tick, deleting ? DELETE_DELAY : TYPE_DELAY * 4);
+      }
+    }
+
+    function startRotator() {
+      if (timer) clearTimeout(timer);
+      const el = document.getElementById('rotating-role');
+      if (!el) return;
+      roleIndex = 0;
+      charIndex = ROLES[0].length;
+      deleting = true;
+      el.textContent = ROLES[0];
+      timer = setTimeout(tick, HOLD_DELAY);
+    }
+
+    document.addEventListener('DOMContentLoaded', startRotator);
+    document.addEventListener('astro:page-load', startRotator);
+  })();
+</script>
 </section>
 
 <style>
   .hero {
+    position: relative;
     margin: 5rem 0 4rem;
     padding: 0 1rem;
   }
@@ -103,7 +199,86 @@ import '../assets/css/animation.css';
     }
   }
 
+  /* ---- Aurora backdrop ---- */
+  .hero__aurora {
+    position: absolute;
+    inset: -6rem 0 -4rem;
+    overflow: visible;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .hero__orb {
+    position: absolute;
+    border-radius: 999px;
+    filter: blur(90px);
+    opacity: 0.5;
+    will-change: transform;
+    animation: heroOrbFloat 14s ease-in-out infinite alternate;
+  }
+
+  .hero__orb--1 {
+    width: 420px;
+    height: 420px;
+    top: -8%;
+    left: 8%;
+    background: radial-gradient(circle, rgba(224, 0, 179, 0.28) 0%, transparent 70%);
+    animation-duration: 16s;
+  }
+
+  .hero__orb--2 {
+    width: 380px;
+    height: 380px;
+    top: 20%;
+    right: 6%;
+    background: radial-gradient(circle, rgba(51, 51, 153, 0.32) 0%, transparent 70%);
+    animation-duration: 19s;
+    animation-delay: -6s;
+  }
+
+  .hero__orb--3 {
+    width: 300px;
+    height: 300px;
+    bottom: -14%;
+    left: 38%;
+    background: radial-gradient(circle, rgba(0, 121, 145, 0.24) 0%, transparent 70%);
+    animation-duration: 22s;
+    animation-delay: -11s;
+  }
+
+  :global(.darkmode) .hero__orb--1,
+  :global(html.darkmode) .hero__orb--1 {
+    background: radial-gradient(circle, rgba(224, 0, 179, 0.22) 0%, transparent 70%);
+  }
+
+  :global(.darkmode) .hero__orb--2,
+  :global(html.darkmode) .hero__orb--2 {
+    background: radial-gradient(circle, rgba(129, 140, 248, 0.2) 0%, transparent 70%);
+  }
+
+  :global(.darkmode) .hero__orb--3,
+  :global(html.darkmode) .hero__orb--3 {
+    background: radial-gradient(circle, rgba(45, 212, 191, 0.14) 0%, transparent 70%);
+  }
+
+  @keyframes heroOrbFloat {
+    0% {
+      transform: translate3d(0, 0, 0) scale(1);
+    }
+    100% {
+      transform: translate3d(40px, -30px, 0) scale(1.12);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero__orb {
+      animation: none;
+    }
+  }
+
   .hero__container {
+    position: relative;
+    z-index: 1;
     padding-left: 1rem;
     padding-right: 1rem;
   }
@@ -124,14 +299,80 @@ import '../assets/css/animation.css';
 
   @media (min-width: 1024px) {
     .hero__content {
-      max-width: min(100%, 42rem);
+      max-width: min(100%, 46rem);
     }
+  }
+
+  /* ---- Availability badge ---- */
+  .hero__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.45rem 1rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    color: #6b21a8;
+    border: 1px solid rgba(147, 51, 234, 0.3);
+    background: rgba(147, 51, 234, 0.07);
+    backdrop-filter: blur(8px);
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .hero__badge:hover {
+    transform: translateY(-2px);
+    border-color: rgba(147, 51, 234, 0.55);
+    box-shadow: 0 6px 20px rgba(147, 51, 234, 0.18);
+    color: #6b21a8;
+  }
+
+  .hero__badge-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 999px;
+    background: #22c55e;
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.6);
+    animation: heroBadgePulse 2s ease-out infinite;
+  }
+
+  @keyframes heroBadgePulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.55);
+    }
+    70% {
+      box-shadow: 0 0 0 8px rgba(34, 197, 94, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero__badge-dot {
+      animation: none;
+    }
+  }
+
+  :global(.darkmode) .hero__badge,
+  :global(html.darkmode) .hero__badge {
+    color: #e9d5ff;
+    border-color: rgba(192, 132, 252, 0.4);
+    background: rgba(88, 28, 135, 0.28);
+  }
+
+  :global(.darkmode) .hero__badge:hover,
+  :global(html.darkmode) .hero__badge:hover {
+    color: #f3e8ff;
+    border-color: rgba(192, 132, 252, 0.7);
+    box-shadow: 0 6px 24px rgba(168, 85, 247, 0.3);
   }
 
   .hero__typing-box {
     width: 100%;
     max-width: 40rem;
-    padding: 1rem 1.25rem;
+    padding: 0.5rem 1.25rem;
     background: transparent;
     border: none;
     border-radius: 12px;
@@ -150,27 +391,126 @@ import '../assets/css/animation.css';
     margin: 0;
   }
 
+  /* ---- Rotating roles ---- */
   .hero__subtitle-box {
     width: 100%;
-    max-width: 36rem;
-    padding: 1rem 1.25rem;
+    max-width: 38rem;
+    padding: 0 1.25rem;
     background: transparent;
     border: none;
-    border-radius: 12px;
     box-sizing: border-box;
-    box-shadow: none !important;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
   }
 
-  :global(.darkmode) .hero__subtitle-box,
-  :global(html.darkmode) .hero__subtitle-box {
-    background: transparent;
-    border: none;
-    box-shadow: none !important;
-  }
-
-  .hero__subtitle {
+  .hero__roles {
     margin: 0;
-    line-height: 1.5;
+    min-height: 1.6em;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+
+  .hero__role-text {
+    background-image: linear-gradient(45deg, #e000b3, #333399);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  :global(.darkmode) .hero__role-text,
+  :global(html.darkmode) .hero__role-text {
+    background-image: linear-gradient(45deg, #f472b6, #a5b4fc);
+  }
+
+  .hero__role-caret {
+    display: inline-block;
+    width: 2px;
+    height: 1.05em;
+    margin-left: 3px;
+    vertical-align: text-bottom;
+    background: #9333ea;
+    animation: heroCaretBlink 1s step-end infinite;
+  }
+
+  :global(.darkmode) .hero__role-caret,
+  :global(html.darkmode) .hero__role-caret {
+    background: #c084fc;
+  }
+
+  @keyframes heroCaretBlink {
+    50% {
+      opacity: 0;
+    }
+  }
+
+  .hero__tagline {
+    margin: 0;
+    color: #64748b;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+  }
+
+  :global(.darkmode) .hero__tagline,
+  :global(html.darkmode) .hero__tagline {
+    color: rgba(255, 255, 255, 0.62);
+  }
+
+  /* ---- Stat chips ---- */
+  .hero__stats {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  .hero__stat {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.42rem 0.85rem;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #334155;
+    border: 1px solid rgba(15, 23, 42, 0.12);
+    background: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(8px);
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .hero__stat:hover {
+    transform: translateY(-2px);
+    border-color: rgba(147, 51, 234, 0.4);
+    box-shadow: 0 6px 16px rgba(147, 51, 234, 0.12);
+  }
+
+  .hero__stat-icon {
+    width: 15px;
+    height: 15px;
+    color: #9333ea;
+    flex-shrink: 0;
+  }
+
+  :global(.darkmode) .hero__stat,
+  :global(html.darkmode) .hero__stat {
+    color: rgba(255, 255, 255, 0.85);
+    border-color: rgba(255, 255, 255, 0.14);
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  :global(.darkmode) .hero__stat:hover,
+  :global(html.darkmode) .hero__stat:hover {
+    border-color: rgba(192, 132, 252, 0.5);
+    box-shadow: 0 6px 20px rgba(168, 85, 247, 0.22);
+  }
+
+  :global(.darkmode) .hero__stat-icon,
+  :global(html.darkmode) .hero__stat-icon {
+    color: #c084fc;
   }
 
   .hero__buttons {
@@ -184,7 +524,7 @@ import '../assets/css/animation.css';
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.6rem;
+    gap: 0.9rem;
     width: 100%;
   }
 
@@ -201,14 +541,15 @@ import '../assets/css/animation.css';
     }
 
     .hero__actions {
-      flex-direction: row;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 0.85rem;
+      gap: 1rem;
     }
   }
 
   .hero__link {
+    position: relative;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -218,6 +559,7 @@ import '../assets/css/animation.css';
     font-size: 0.95rem;
     text-decoration: none;
     border-radius: 12px;
+    overflow: hidden;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     min-width: 140px;
   }
@@ -229,6 +571,63 @@ import '../assets/css/animation.css';
   .hero__link-icon {
     width: 20px;
     height: 20px;
+  }
+
+  .hero__link--primary {
+    background: linear-gradient(135deg, #e000b3 0%, #9333ea 50%, #333399 100%);
+    background-size: 180% 180%;
+    color: white !important;
+    box-shadow: 0 4px 16px rgba(147, 51, 234, 0.45);
+    animation: heroGradientShift 6s ease infinite;
+  }
+
+  .hero__link--primary:hover {
+    color: white !important;
+    box-shadow: 0 8px 26px rgba(147, 51, 234, 0.55);
+  }
+
+  .hero__link--primary .hero__link-icon {
+    color: white;
+  }
+
+  @keyframes heroGradientShift {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  .hero__link-shine {
+    position: absolute;
+    top: 0;
+    left: -80%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(105deg, transparent 0%, rgba(255, 255, 255, 0.35) 50%, transparent 100%);
+    transform: skewX(-20deg);
+    pointer-events: none;
+  }
+
+  .hero__link--primary:hover .hero__link-shine {
+    animation: heroShineSweep 0.8s ease forwards;
+  }
+
+  @keyframes heroShineSweep {
+    to {
+      left: 130%;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero__link--primary {
+      animation: none;
+    }
+
+    .hero__link--primary:hover .hero__link-shine {
+      animation: none;
+    }
   }
 
   .hero__link--linkedin {
@@ -266,7 +665,7 @@ import '../assets/css/animation.css';
   @media (max-width: 639px) {
     .hero__link {
       width: 100%;
-      max-width: 200px;
+      max-width: 220px;
     }
   }
 

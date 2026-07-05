@@ -45,7 +45,14 @@ const {
     />
   </head>
   <body>
+    <div id="scroll-progress" aria-hidden="true"></div>
     <div id="pointer-glow" aria-hidden="true"></div>
+    <button id="back-to-top" aria-label="Back to top" title="Back to top">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M12 19V5" />
+        <path d="M5 12l7-7 7 7" />
+      </svg>
+    </button>
     <ShootingStar />
     <Header />
     <main id="main-content" transition:animate="fade">
@@ -54,6 +61,46 @@ const {
     <Footer />
     <Analytics />
     <script is:inline src="/js/theme.js"></script>
+    <script is:inline>
+      (function () {
+        if (window.__scrollUiInitialized) return;
+        window.__scrollUiInitialized = true;
+
+        var ticking = false;
+
+        function update() {
+          ticking = false;
+          var bar = document.getElementById('scroll-progress');
+          var topBtn = document.getElementById('back-to-top');
+          var doc = document.documentElement;
+          var scrollTop = window.scrollY || doc.scrollTop;
+          var max = doc.scrollHeight - window.innerHeight;
+          var pct = max > 0 ? Math.min(1, scrollTop / max) : 0;
+
+          if (bar) bar.style.transform = 'scaleX(' + pct + ')';
+          if (topBtn) topBtn.classList.toggle('is-visible', scrollTop > 600);
+        }
+
+        window.addEventListener('scroll', function () {
+          if (!ticking) {
+            ticking = true;
+            requestAnimationFrame(update);
+          }
+        }, { passive: true });
+
+        window.addEventListener('resize', update, { passive: true });
+        document.addEventListener('astro:page-load', update);
+
+        document.addEventListener('click', function (event) {
+          var btn = event.target.closest && event.target.closest('#back-to-top');
+          if (!btn) return;
+          var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+          window.scrollTo({ top: 0, behavior: reduced ? 'auto' : 'smooth' });
+        });
+
+        update();
+      })();
+    </script>
     <script is:inline>
       (function () {
         if (window.__pointerGlowInitialized) return;
@@ -273,6 +320,102 @@ const {
         footer {
           flex-shrink: 0;
         }
+      }
+
+      ::selection {
+        background: rgba(147, 51, 234, 0.28);
+      }
+
+      .darkmode ::selection {
+        background: rgba(192, 132, 252, 0.35);
+      }
+
+      // animated shimmer on gradient headings
+      .gradient-text {
+        background-size: 200% auto;
+        animation: gradientTextFlow 7s ease-in-out infinite;
+      }
+
+      @keyframes gradientTextFlow {
+        0%,
+        100% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .gradient-text {
+          animation: none;
+        }
+      }
+
+      #scroll-progress {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        z-index: 10000;
+        background: linear-gradient(90deg, #e000b3 0%, #9333ea 50%, #333399 100%);
+        transform: scaleX(0);
+        transform-origin: left;
+        pointer-events: none;
+        will-change: transform;
+      }
+
+      #back-to-top {
+        position: fixed;
+        right: 1.25rem;
+        bottom: 1.25rem;
+        width: 44px;
+        height: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 999px;
+        border: 1px solid rgba(147, 51, 234, 0.35);
+        background: rgba(255, 255, 255, 0.85);
+        color: #7e22ce;
+        cursor: pointer;
+        z-index: 9998;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(12px);
+        backdrop-filter: blur(8px);
+        box-shadow: 0 6px 20px rgba(147, 51, 234, 0.2);
+        transition:
+          opacity 0.3s ease,
+          visibility 0.3s ease,
+          transform 0.3s ease,
+          box-shadow 0.3s ease,
+          border-color 0.3s ease;
+      }
+
+      #back-to-top.is-visible {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+
+      #back-to-top:hover {
+        transform: translateY(-3px);
+        border-color: rgba(147, 51, 234, 0.6);
+        box-shadow: 0 10px 28px rgba(147, 51, 234, 0.3);
+      }
+
+      .darkmode #back-to-top {
+        background: rgba(15, 23, 42, 0.8);
+        color: #d8b4fe;
+        border-color: rgba(192, 132, 252, 0.4);
+        box-shadow: 0 6px 24px rgba(168, 85, 247, 0.28);
+      }
+
+      .darkmode #back-to-top:hover {
+        border-color: rgba(192, 132, 252, 0.7);
+        box-shadow: 0 10px 32px rgba(168, 85, 247, 0.4);
       }
 
       #pointer-glow {

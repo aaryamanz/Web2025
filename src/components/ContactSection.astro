@@ -4,7 +4,7 @@ import { Icon } from 'astro-icon/components';
 
 <section id="contact" class="contact-section">
   <div class="contact-section__header">
-    <h2 class="contact-section__title text-center text-4xl sm:text-5xl md:text-6xl">Contact</h2>
+    <h2 class="contact-section__title text-center text-4xl sm:text-5xl md:text-6xl"><span class="gradient-text">Contact</span></h2>
     <p class="contact-section__subtitle">Let's connect for opportunities in capital markets, analytics, and product building.</p>
   </div>
 
@@ -96,6 +96,7 @@ import { Icon } from 'astro-icon/components';
   }
 
   .contact-shell {
+    position: relative;
     display: grid;
     grid-template-columns: 1fr;
     gap: 1.1rem;
@@ -103,6 +104,25 @@ import { Icon } from 'astro-icon/components';
     border-radius: 14px;
     background: rgba(255, 255, 255, 0.8);
     padding: 1.1rem;
+    overflow: hidden;
+    backdrop-filter: blur(8px);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .contact-shell::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent 0%, #e000b3 30%, #9333ea 50%, #333399 70%, transparent 100%);
+    opacity: 0.7;
+  }
+
+  .contact-shell:hover {
+    border-color: rgba(147, 51, 234, 0.32);
+    box-shadow: 0 14px 36px rgba(147, 51, 234, 0.1);
   }
 
   @media (min-width: 980px) {
@@ -126,7 +146,10 @@ import { Icon } from 'astro-icon/components';
     font-size: 0.76rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: #64748b;
+    background: linear-gradient(45deg, #e000b3, #333399);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
     font-weight: 700;
   }
 
@@ -169,18 +192,28 @@ import { Icon } from 'astro-icon/components';
     border-radius: 999px;
     padding: 0.7rem 0.9rem;
     background: rgba(255, 255, 255, 0.88);
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease;
+  }
+
+  .contact-pill:hover {
+    transform: translateY(-2px);
+    border-color: rgba(147, 51, 234, 0.45);
+    box-shadow: 0 6px 18px rgba(147, 51, 234, 0.14);
+    color: #6b21a8;
   }
 
   .contact-pill--primary {
-    background: #1f2937;
+    background: linear-gradient(135deg, #e000b3 0%, #9333ea 55%, #333399 100%);
     color: #ffffff;
-    border-color: #1f2937;
+    border-color: transparent;
+    box-shadow: 0 4px 14px rgba(147, 51, 234, 0.35);
   }
 
   .contact-pill--primary:hover {
-    background: #0f172a;
-    border-color: #0f172a;
+    background: linear-gradient(135deg, #e000b3 0%, #9333ea 55%, #333399 100%);
+    border-color: transparent;
     color: #ffffff;
+    box-shadow: 0 8px 24px rgba(147, 51, 234, 0.5);
   }
 
   .contact-shell__channels {
@@ -200,6 +233,14 @@ import { Icon } from 'astro-icon/components';
     text-decoration: none;
     padding: 0.45rem;
     border-radius: 10px;
+    border: 1px solid transparent;
+    transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+  }
+
+  a.contact-channel:hover {
+    background: rgba(147, 51, 234, 0.06);
+    border-color: rgba(147, 51, 234, 0.25);
+    transform: translateX(4px);
   }
 
   .contact-channel__icon {
@@ -211,6 +252,13 @@ import { Icon } from 'astro-icon/components';
     align-items: center;
     justify-content: center;
     color: rgba(15, 23, 42, 0.68);
+    transition: color 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+  }
+
+  a.contact-channel:hover .contact-channel__icon {
+    color: #9333ea;
+    border-color: rgba(147, 51, 234, 0.4);
+    background: rgba(147, 51, 234, 0.08);
   }
 
   .contact-channel__label {
@@ -245,6 +293,15 @@ import { Icon } from 'astro-icon/components';
     color: #334155;
     background: rgba(255, 255, 255, 0.9);
     text-decoration: none;
+    transition: transform 0.2s ease, color 0.2s ease, border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .contact-social:hover {
+    transform: translateY(-3px);
+    color: #9333ea;
+    border-color: rgba(147, 51, 234, 0.45);
+    background: rgba(147, 51, 234, 0.08);
+    box-shadow: 0 6px 16px rgba(147, 51, 234, 0.18);
   }
 
   .contact-social:visited {
@@ -265,7 +322,10 @@ import { Icon } from 'astro-icon/components';
   }
 
   :global(.darkmode) .contact-shell__eyebrow {
-    color: #93c5fd;
+    background: linear-gradient(45deg, #f472b6, #a5b4fc);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
   }
 
   :global(.darkmode) .contact-shell__title {
@@ -282,16 +342,47 @@ import { Icon } from 'astro-icon/components';
     background: rgba(30, 41, 59, 0.58);
   }
 
+  :global(.darkmode) .contact-pill:hover {
+    color: #f3e8ff;
+    border-color: rgba(192, 132, 252, 0.5);
+    box-shadow: 0 6px 20px rgba(168, 85, 247, 0.24);
+  }
+
   :global(.darkmode) .contact-pill--primary {
-    color: #020617;
-    background: #f8fafc;
-    border-color: #f8fafc;
+    color: #ffffff;
+    background: linear-gradient(135deg, #e000b3 0%, #9333ea 55%, #333399 100%);
+    border-color: transparent;
+    box-shadow: 0 4px 16px rgba(168, 85, 247, 0.4);
   }
 
   :global(.darkmode) .contact-pill--primary:hover {
-    background: #e2e8f0;
-    border-color: #e2e8f0;
-    color: #020617;
+    background: linear-gradient(135deg, #e000b3 0%, #9333ea 55%, #333399 100%);
+    border-color: transparent;
+    color: #ffffff;
+    box-shadow: 0 8px 26px rgba(168, 85, 247, 0.55);
+  }
+
+  :global(.darkmode) .contact-shell:hover {
+    border-color: rgba(192, 132, 252, 0.4);
+    box-shadow: 0 14px 40px rgba(168, 85, 247, 0.18);
+  }
+
+  :global(.darkmode) a.contact-channel:hover {
+    background: rgba(168, 85, 247, 0.1);
+    border-color: rgba(192, 132, 252, 0.32);
+  }
+
+  :global(.darkmode) a.contact-channel:hover .contact-channel__icon {
+    color: #d8b4fe;
+    border-color: rgba(192, 132, 252, 0.45);
+    background: rgba(168, 85, 247, 0.14);
+  }
+
+  :global(.darkmode) .contact-social:hover {
+    color: #e9d5ff;
+    border-color: rgba(192, 132, 252, 0.6);
+    background: rgba(168, 85, 247, 0.16);
+    box-shadow: 0 6px 20px rgba(168, 85, 247, 0.28);
   }
 
   :global(.darkmode) .contact-shell__channels {

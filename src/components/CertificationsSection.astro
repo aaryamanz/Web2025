@@ -94,13 +94,56 @@ import { certificationBuckets } from '../data/homeSections.js';
   }
 
   .cert-bucket {
+    position: relative;
     display: flex;
     flex-direction: column;
     gap: 0.65rem;
     border: 1px solid rgba(148, 163, 184, 0.28);
     border-radius: 12px;
     padding: 0.85rem 0.85rem 0.75rem;
-    background: transparent;
+    background: rgba(255, 255, 255, 0.45);
+    overflow: hidden;
+    backdrop-filter: blur(6px);
+    transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+  }
+
+  .cert-bucket::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #e000b3 0%, #9333ea 50%, #333399 100%);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.35s ease;
+  }
+
+  .cert-bucket:hover {
+    border-color: rgba(147, 51, 234, 0.4);
+    box-shadow: 0 12px 28px rgba(147, 51, 234, 0.12);
+    transform: translateY(-3px);
+  }
+
+  .cert-bucket:hover::before {
+    transform: scaleX(1);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cert-bucket,
+    .cert-bucket::before {
+      transition: none;
+    }
+
+    .cert-bucket:hover {
+      transform: none;
+    }
+  }
+
+  :global(.darkmode) .cert-bucket:hover {
+    border-color: rgba(192, 132, 252, 0.45);
+    box-shadow: 0 12px 32px rgba(168, 85, 247, 0.2);
   }
 
   .cert-bucket__title {
@@ -125,6 +168,7 @@ import { certificationBuckets } from '../data/homeSections.js';
 
   :global(.darkmode) .cert-bucket {
     border-color: rgba(148, 163, 184, 0.36);
+    background: rgba(255, 255, 255, 0.03);
   }
 
   :global(.darkmode) .cert-bucket__title {
@@ -162,6 +206,12 @@ import { certificationBuckets } from '../data/homeSections.js';
     width: 52px;
     height: 52px;
     object-fit: contain;
+    transition: transform 0.25s ease, filter 0.25s ease;
+  }
+
+  .cert-item:hover .cert-item__logo {
+    transform: scale(1.08);
+    filter: drop-shadow(0 4px 10px rgba(147, 51, 234, 0.25));
   }
 
   .cert-item__content {
@@ -198,6 +248,12 @@ import { certificationBuckets } from '../data/homeSections.js';
     line-height: 1;
     opacity: 0.65;
     transform: translateY(-0.05em);
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+
+  .cert-item__title-link:hover .cert-item__external {
+    opacity: 1;
+    transform: translate(2px, -2px);
   }
 
   .cert-item__meta {

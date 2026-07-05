@@ -1,7 +1,7 @@
 ---
 import { Icon } from 'astro-icon/components'
 
-const { 
+const {
   icon = 'mdi:rocket',
   title = 'Project Title',
   description = 'Project description',
@@ -10,15 +10,18 @@ const {
   tag = 'Tech',
   delay = 0
 } = Astro.props
+
+const tagSlug = tag.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
 ---
 
-<div 
+<div
   class="project-card"
   style={`--delay: ${delay}ms`}
 >
   <div class="project-card__glow"></div>
   <div class="project-card__inner">
-    <span class="project-card__tag">{tag}</span>
+    <div class="project-card__spotlight" aria-hidden="true"></div>
+    <span class={`project-card__tag project-card__tag--${tagSlug}`}>{tag}</span>
     <a href={href} class="project-card__content" target={href.startsWith('http') ? '_blank' : undefined} rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}>
       <div class="project-card__icon-wrap">
         <Icon name={icon} class="project-card__icon" />
@@ -36,6 +39,31 @@ const {
     )}
   </div>
 </div>
+
+<script>
+  function initCardSpotlight() {
+    if ((window as any).__cardSpotlightInitialized) return
+    ;(window as any).__cardSpotlightInitialized = true
+
+    if (!window.matchMedia('(pointer: fine)').matches) return
+
+    document.addEventListener(
+      'mousemove',
+      (event) => {
+        const target = event.target as Element | null
+        const inner = target && target.closest ? target.closest('.project-card__inner') : null
+        if (!inner) return
+        const rect = inner.getBoundingClientRect()
+        ;(inner as HTMLElement).style.setProperty('--mx', `${event.clientX - rect.left}px`)
+        ;(inner as HTMLElement).style.setProperty('--my', `${event.clientY - rect.top}px`)
+      },
+      { passive: true }
+    )
+  }
+
+  initCardSpotlight()
+  document.addEventListener('astro:page-load', initCardSpotlight)
+</script>
 
 <style>
   .project-card {
@@ -72,14 +100,42 @@ const {
   .project-card__inner {
     position: relative;
     z-index: 1;
-    background: transparent;
+    background: rgba(255, 255, 255, 0.45);
     border: 2px solid #e5e7eb;
     border-radius: 12px;
     padding: 1.25rem 1rem 2.25rem;
     height: 100%;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
+    backdrop-filter: blur(6px);
     transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .project-card__spotlight {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0;
+    background: radial-gradient(
+      340px circle at var(--mx, 50%) var(--my, 50%),
+      rgba(147, 51, 234, 0.1),
+      transparent 65%
+    );
+    transition: opacity 0.35s ease;
+    z-index: 0;
+  }
+
+  .project-card:hover .project-card__spotlight {
+    opacity: 1;
+  }
+
+  :global(.darkmode) .project-card__spotlight {
+    background: radial-gradient(
+      340px circle at var(--mx, 50%) var(--my, 50%),
+      rgba(192, 132, 252, 0.14),
+      transparent 65%
+    );
   }
 
   .project-card:hover .project-card__glow {
@@ -99,7 +155,7 @@ const {
   }
 
   :global(.darkmode) .project-card__inner {
-    background: transparent;
+    background: rgba(255, 255, 255, 0.03);
     border-color: rgba(255, 255, 255, 0.1);
   }
 
@@ -119,6 +175,37 @@ const {
     background: rgba(147, 51, 234, 0.12);
     padding: 0.2rem 0.5rem;
     border-radius: 6px;
+    z-index: 1;
+  }
+
+  .project-card__tag--finance {
+    color: #db2777;
+    background: rgba(219, 39, 119, 0.12);
+  }
+
+  .project-card__tag--data-strategy {
+    color: #4f46e5;
+    background: rgba(79, 70, 229, 0.12);
+  }
+
+  .project-card__tag--engineering {
+    color: #0d9488;
+    background: rgba(13, 148, 136, 0.12);
+  }
+
+  :global(.darkmode) .project-card__tag--finance {
+    color: #f9a8d4;
+    background: rgba(219, 39, 119, 0.2);
+  }
+
+  :global(.darkmode) .project-card__tag--data-strategy {
+    color: #a5b4fc;
+    background: rgba(99, 102, 241, 0.2);
+  }
+
+  :global(.darkmode) .project-card__tag--engineering {
+    color: #5eead4;
+    background: rgba(20, 184, 166, 0.18);
   }
 
   .project-card__icon-wrap {
@@ -130,11 +217,12 @@ const {
     align-items: center;
     justify-content: center;
     margin-bottom: 1rem;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
 
   .project-card:hover .project-card__icon-wrap {
-    transform: scale(1.1);
+    transform: scale(1.1) rotate(-3deg);
+    box-shadow: 0 6px 16px rgba(147, 51, 234, 0.22);
   }
 
   .project-card__icon {
@@ -162,6 +250,8 @@ const {
   }
 
   .project-card__content {
+    position: relative;
+    z-index: 1;
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -188,6 +278,10 @@ const {
     display: inline-flex;
     align-items: center;
     gap: 0.25rem;
+  }
+
+  :global(.darkmode) .project-card__link {
+    color: #c084fc;
   }
 
   .project-card:hover .project-card__arrow {

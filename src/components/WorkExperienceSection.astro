@@ -59,7 +59,7 @@ import { workExperience } from '../data/homeSections.js';
   .work-timeline {
     position: relative;
     display: grid;
-    gap: 0.9rem;
+    gap: 1.1rem;
     padding-left: 1.6rem;
   }
 
@@ -127,19 +127,56 @@ import { workExperience } from '../data/homeSections.js';
     background: #a855f7;
     border: 2px solid rgba(255, 255, 255, 0.15);
     box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.14);
+    animation: workDotPulse 2.6s ease-out infinite;
+  }
+
+  @keyframes workDotPulse {
+    0% {
+      box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.18);
+    }
+    60% {
+      box-shadow: 0 0 0 8px rgba(168, 85, 247, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 3px rgba(168, 85, 247, 0);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .work-item__dot {
+      animation: none;
+    }
   }
 
   .work-item__card {
-    background: transparent;
-    border: none;
-    border-radius: 0;
-    padding: 0.1rem 0 0.75rem;
+    background: rgba(255, 255, 255, 0.45);
+    border: 1px solid rgba(148, 163, 184, 0.28);
+    border-radius: 12px;
+    padding: 0.75rem 0.95rem 0.85rem;
+    backdrop-filter: blur(6px);
+    transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+  }
+
+  .work-item__card:hover {
+    border-color: rgba(147, 51, 234, 0.4);
+    box-shadow: 0 10px 24px rgba(147, 51, 234, 0.12);
+    transform: translateY(-2px);
   }
 
   @media (min-width: 768px) {
     .work-item__card {
-      padding: 0.2rem 0 0.95rem;
+      padding: 0.85rem 1.1rem 0.95rem;
     }
+  }
+
+  :global(.darkmode) .work-item__card {
+    background: rgba(255, 255, 255, 0.03);
+    border-color: rgba(255, 255, 255, 0.12);
+  }
+
+  :global(.darkmode) .work-item__card:hover {
+    border-color: rgba(192, 132, 252, 0.45);
+    box-shadow: 0 10px 28px rgba(168, 85, 247, 0.2);
   }
 
   :global(.darkmode) .work-timeline::before {
@@ -164,6 +201,16 @@ import { workExperience } from '../data/homeSections.js';
     color: #9333ea;
     font-weight: 700;
     margin: 0;
+    padding: 0.12rem 0.55rem;
+    border-radius: 999px;
+    background: rgba(147, 51, 234, 0.1);
+    border: 1px solid rgba(147, 51, 234, 0.22);
+  }
+
+  :global(.darkmode) .work-item__period {
+    color: #d8b4fe;
+    background: rgba(168, 85, 247, 0.14);
+    border-color: rgba(192, 132, 252, 0.3);
   }
 
   .work-item__location {

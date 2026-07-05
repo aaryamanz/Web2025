@@ -1,4 +1,5 @@
 ---
+import { Icon } from 'astro-icon/components'
 import DefaultLayout from '../layouts/DefaultLayout.astro'
 import Hero from '../components/Hero.astro'
 import ProjectCard from '../components/ProjectCard.astro'
@@ -38,6 +39,9 @@ import '/src/assets/css/Skills.css';
       </div>
       <div class="skills__grid">
         <div class="skills__card">
+          <div class="skills__card-icon" aria-hidden="true">
+            <Icon name="mdi:finance" />
+          </div>
           <h3 class="skills__card-title">Capital Markets & Quantitative Strategy</h3>
           <ul class="skills__list-grid">
             <li>Python (Pandas, NumPy)</li>
@@ -51,6 +55,9 @@ import '/src/assets/css/Skills.css';
           <p class="skills__card-desc">Leveraging statistical methods and algorithmic strategies to uncover market value and optimize capital allocation.</p>
         </div>
         <div class="skills__card">
+          <div class="skills__card-icon" aria-hidden="true">
+            <Icon name="mdi:chart-box-outline" />
+          </div>
           <h3 class="skills__card-title">Strategy, Operations & Business Analytics</h3>
           <ul class="skills__list-grid">
             <li>SQL</li>
@@ -64,6 +71,9 @@ import '/src/assets/css/Skills.css';
           <p class="skills__card-desc">Translating complex datasets into actionable business insights and streamlined operational strategies.</p>
         </div>
         <div class="skills__card">
+          <div class="skills__card-icon" aria-hidden="true">
+            <Icon name="mdi:cog-outline" />
+          </div>
           <h3 class="skills__card-title">Engineering R&D & Product Innovation</h3>
           <ul class="skills__list-grid">
             <li>SolidWorks (CAD)</li>

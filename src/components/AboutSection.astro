@@ -1,16 +1,37 @@
 ---
+import { Icon } from 'astro-icon/components'
 ---
 
 <section id="about" class="about-section">
   <div class="about-section__container">
     <div class="about-section__content">
       <h2 class="about-section__title text-center text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-4"><span class="gradient-text">About Me</span></h2>
-      <p class="about-section__text">
-        A fourth-year Mechanical Engineering student specializing in Mechatronics and Data Analysis, with a minor in Engineering Business. Currently working as a Process Engineering Analyst at CIBC, I apply engineering principles (structured problem solving, statistical modelling, and system design) to financial ecosystems.
-      </p>
-      <p class="about-section__text">
-        My goal is to leverage my technical background in Capital Markets, using quantitative methods to uncover value. Simultaneously, my experience in Process Engineering allows me to decompose complex business challenges into actionable strategies. I am an entrepreneur at heart, driven by building scalable solutions.
-      </p>
+      <ul class="about-section__facts" role="list">
+        <li class="about-section__fact">
+          <Icon name="mdi:map-marker-outline" class="about-section__fact-icon" />
+          Toronto, ON
+        </li>
+        <li class="about-section__fact">
+          <Icon name="mdi:bank-outline" class="about-section__fact-icon" />
+          Analyst @ CIBC
+        </li>
+        <li class="about-section__fact">
+          <Icon name="mdi:school-outline" class="about-section__fact-icon" />
+          Mechanical Engineering @ UofT
+        </li>
+        <li class="about-section__fact">
+          <Icon name="mdi:lightbulb-on-outline" class="about-section__fact-icon" />
+          Entrepreneur
+        </li>
+      </ul>
+      <div class="about-section__panel">
+        <p class="about-section__text">
+          A fourth-year Mechanical Engineering student specializing in Mechatronics and Data Analysis, with a minor in Engineering Business. Currently working as a Process Engineering Analyst at CIBC, I apply engineering principles (structured problem solving, statistical modelling, and system design) to financial ecosystems.
+        </p>
+        <p class="about-section__text">
+          My goal is to leverage my technical background in Capital Markets, using quantitative methods to uncover value. Simultaneously, my experience in Process Engineering allows me to decompose complex business challenges into actionable strategies. I am an entrepreneur at heart, driven by building scalable solutions.
+        </p>
+      </div>
       <div class="about-section__links">
         <a
           href="https://www.amazon.ca/dp/1685099394/ref=cm_cr_arp_d_bdcrb_top?ie=UTF8"
@@ -18,6 +39,7 @@
           target="_blank"
           rel="noopener noreferrer"
         >
+          <Icon name="mdi:book-open-page-variant-outline" class="about-section__btn-icon" />
           Check out my book
         </a>
         <a
@@ -26,6 +48,7 @@
           target="_blank"
           rel="noopener noreferrer"
         >
+          <Icon name="simple-icons:instagram" class="about-section__btn-icon" />
           Instagram
         </a>
         <a
@@ -34,6 +57,7 @@
           target="_blank"
           rel="noopener noreferrer"
         >
+          <Icon name="simple-icons:youtube" class="about-section__btn-icon" />
           YouTube
         </a>
         <a
@@ -42,6 +66,7 @@
           target="_blank"
           rel="noopener noreferrer"
         >
+          <Icon name="simple-icons:x" class="about-section__btn-icon" />
           X
         </a>
       </div>
@@ -86,6 +111,104 @@
     margin: 0;
   }
 
+  .about-section__facts {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  .about-section__fact {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.4rem 0.85rem;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #334155;
+    border: 1px solid rgba(15, 23, 42, 0.12);
+    background: rgba(255, 255, 255, 0.55);
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .about-section__fact:hover {
+    transform: translateY(-2px);
+    border-color: rgba(147, 51, 234, 0.4);
+    box-shadow: 0 6px 16px rgba(147, 51, 234, 0.12);
+  }
+
+  .about-section__fact-icon {
+    width: 15px;
+    height: 15px;
+    color: #9333ea;
+    flex-shrink: 0;
+  }
+
+  :global(.darkmode) .about-section__fact {
+    color: rgba(255, 255, 255, 0.85);
+    border-color: rgba(255, 255, 255, 0.14);
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  :global(.darkmode) .about-section__fact:hover {
+    border-color: rgba(192, 132, 252, 0.5);
+    box-shadow: 0 6px 20px rgba(168, 85, 247, 0.22);
+  }
+
+  :global(.darkmode) .about-section__fact-icon {
+    color: #c084fc;
+  }
+
+  .about-section__panel {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+    padding: 1.4rem 1.3rem;
+    border-radius: 16px;
+    border: 1px solid rgba(148, 163, 184, 0.3);
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(8px);
+    overflow: hidden;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .about-section__panel::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent 0%, #e000b3 30%, #9333ea 50%, #333399 70%, transparent 100%);
+    opacity: 0.7;
+  }
+
+  .about-section__panel:hover {
+    border-color: rgba(147, 51, 234, 0.35);
+    box-shadow: 0 12px 32px rgba(147, 51, 234, 0.1);
+  }
+
+  @media (min-width: 768px) {
+    .about-section__panel {
+      padding: 1.75rem 2rem;
+    }
+  }
+
+  :global(.darkmode) .about-section__panel {
+    border-color: rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.03);
+  }
+
+  :global(.darkmode) .about-section__panel:hover {
+    border-color: rgba(168, 85, 247, 0.4);
+    box-shadow: 0 12px 36px rgba(168, 85, 247, 0.16);
+  }
+
   .about-section__text {
     font-size: 1rem;
     line-height: 1.7;
@@ -102,11 +225,18 @@
     gap: 0.55rem;
   }
 
+  .about-section__btn-icon {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+  }
+
   .about-section__book-btn,
   .about-section__social-btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    gap: 0.45rem;
     padding: 0.5rem 0.85rem;
     border-radius: 999px;
     text-decoration: none;
@@ -115,7 +245,7 @@
     color: #7e22ce;
     border: 1px solid rgba(147, 51, 234, 0.35);
     background: rgba(147, 51, 234, 0.08);
-    transition: transform 0.2s ease, border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+    transition: transform 0.2s ease, border-color 0.2s ease, color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
   }
 
   .about-section__book-btn:visited,
@@ -125,10 +255,11 @@
 
   .about-section__book-btn:hover,
   .about-section__social-btn:hover {
-    transform: translateY(-1px);
+    transform: translateY(-2px);
     color: #6b21a8;
     border-color: rgba(147, 51, 234, 0.55);
     background: rgba(147, 51, 234, 0.16);
+    box-shadow: 0 6px 16px rgba(147, 51, 234, 0.16);
   }
 
   :global(.darkmode) .about-section__text {
@@ -152,6 +283,7 @@
     color: #f3e8ff;
     border-color: rgba(192, 132, 252, 0.6);
     background: rgba(107, 33, 168, 0.34);
+    box-shadow: 0 6px 20px rgba(168, 85, 247, 0.24);
   }
 
 </style>
