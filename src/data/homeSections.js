@@ -6,6 +6,12 @@ export const workExperience = [
     location: 'Toronto, ON'
   },
   {
+    role: 'Finance Director',
+    company: 'University of Toronto Consulting Association',
+    period: 'March 2026 - Present',
+    location: 'Toronto, ON'
+  },
+  {
     role: 'Co-Founder & President',
     company: 'University of Toronto Supply Chain and Intelligence Management',
     period: 'December 2023 - May 2025',
