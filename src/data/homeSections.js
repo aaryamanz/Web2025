@@ -1,14 +1,14 @@
 export const workExperience = [
   {
-    role: 'Analyst: E2E Optimization & Process Engineering',
-    company: 'CIBC',
-    period: 'May 2025 - Present',
-    location: 'Toronto, ON'
-  },
-  {
     role: 'Finance Director',
     company: 'University of Toronto Consulting Association',
     period: 'March 2026 - Present',
+    location: 'Toronto, ON'
+  },
+  {
+    role: 'Analyst: E2E Optimization & Process Engineering',
+    company: 'CIBC',
+    period: 'May 2025 - Present',
     location: 'Toronto, ON'
   },
   {
