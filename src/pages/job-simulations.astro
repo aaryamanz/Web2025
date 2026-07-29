@@ -1,0 +1,434 @@
+---
+const pageTitle = 'Virtual Job Simulations — the free list, sorted by major | Aaryaman Singh'
+const pageDescription =
+  'Free virtual job simulations from JPMorgan, Goldman Sachs, BCG and 125+ other companies — sorted by major, with the one setting most students miss.'
+const pageUrl = 'https://aaryamansingh.com/job-simulations'
+const forageCatalogUrl = 'https://www.theforage.com/simulations'
+const notifyEmail = 'aaryaman710@gmail.com'
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{pageTitle}</title>
+<meta name="description" content={pageDescription}>
+<meta name="author" content="Aaryaman Singh">
+<link rel="canonical" href={pageUrl}>
+<meta property="og:title" content={pageTitle}>
+<meta property="og:description" content={pageDescription}>
+<meta property="og:type" content="website">
+<meta property="og:url" content={pageUrl}>
+<meta property="og:image" content="https://aaryamansingh.com/social-preview-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#23201D;
+    --paper:#FFFFFF;
+    --bg:#F0EEEA;
+    --blue:#0057FF;
+    --flag:#E4572E;
+    --muted:#6B655F;
+    --hairline:#DDD8D1;
+    --done:#1F7A4D;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Archivo',system-ui,-apple-system,sans-serif;
+    background:var(--bg);color:var(--ink);line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:680px;margin:0 auto;padding:0 20px}
+  .mono{font-family:'Space Mono',monospace}
+
+  header{background:var(--ink);color:#fff;padding:38px 0 42px}
+  .eyebrow{
+    font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.14em;
+    text-transform:uppercase;color:#A29B92;display:flex;justify-content:space-between;
+    border-bottom:1px solid rgba(255,255,255,.14);padding-bottom:12px;margin-bottom:26px;
+  }
+  .eyebrow span:last-child{color:var(--flag)}
+  h1{font-weight:900;font-size:clamp(29px,7.2vw,44px);line-height:1.07;letter-spacing:-.015em;margin-bottom:14px}
+  h1 em{font-style:normal;color:#7FA5FF}
+  .sub{color:#CFC9C1;font-size:16px;max-width:54ch;margin-bottom:18px}
+  .sub strong{color:#fff;font-weight:600}
+  .hero-cta{
+    display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;
+    text-decoration:none;font-weight:600;font-size:14px;padding:11px 18px;border-radius:8px;
+    transition:filter .15s ease;
+  }
+  .hero-cta:hover{filter:brightness(1.08)}
+  .hero-cta:focus-visible{outline:3px solid var(--flag);outline-offset:2px}
+
+  .spec{
+    display:grid;grid-template-columns:repeat(2,1fr);gap:1px;
+    background:var(--hairline);border:1px solid var(--hairline);
+    border-radius:12px;overflow:hidden;margin:26px 0 8px;
+  }
+  .spec div{background:var(--paper);padding:13px 14px}
+  .spec dt{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:3px}
+  .spec dd{font-size:15px;font-weight:600}
+  @media(min-width:560px){.spec{grid-template-columns:repeat(4,1fr)}}
+
+  .sec-label{
+    font-family:'Space Mono',monospace;font-size:11px;font-weight:700;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--muted);margin:38px 0 14px;
+    display:flex;align-items:center;gap:10px;
+  }
+  .sec-label::after{content:"";flex:1;height:1px;background:var(--hairline)}
+  p.body{color:var(--muted);font-size:15px;max-width:58ch;margin-bottom:10px}
+  p.body strong{color:var(--ink)}
+
+  ol.steps{list-style:none;counter-reset:s;background:var(--paper);border:1px solid var(--hairline);border-radius:12px;overflow:hidden}
+  ol.steps li{
+    counter-increment:s;display:flex;gap:13px;align-items:flex-start;
+    padding:14px 16px;font-size:15px;border-top:1px solid var(--hairline);
+  }
+  ol.steps li:first-child{border-top:none}
+  ol.steps li::before{
+    content:counter(s);font-family:'Space Mono',monospace;font-size:11px;font-weight:700;
+    color:#fff;background:var(--ink);min-width:22px;height:22px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;margin-top:2px;
+  }
+  ol.steps li span{color:var(--muted);font-size:14px;display:block}
+  ol.steps li b{display:block;margin-bottom:2px}
+
+  .setting{
+    background:var(--blue);color:#fff;border-radius:14px;padding:22px 20px;margin-bottom:6px;
+  }
+  .setting .tag{
+    font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;
+    background:rgba(255,255,255,.18);padding:4px 8px;border-radius:5px;display:inline-block;margin-bottom:10px;
+  }
+  .setting h2{font-size:21px;font-weight:900;line-height:1.2;margin-bottom:8px}
+  .setting p{font-size:14.5px;color:#DCE6FF;max-width:56ch}
+  .setting p+p{margin-top:8px}
+
+  .card{
+    background:var(--paper);border:1px solid var(--hairline);border-radius:14px;
+    margin-bottom:18px;overflow:hidden;
+  }
+  .card-top{
+    display:flex;justify-content:space-between;align-items:center;gap:10px;
+    padding:13px 16px;border-bottom:1px solid var(--hairline);background:#FBFAF8;
+  }
+  .card-top h3{font-size:17px;font-weight:900;letter-spacing:-.01em}
+  .hrs{font-family:'Space Mono',monospace;font-size:11px;color:var(--muted);white-space:nowrap}
+  .card-body{padding:14px 16px}
+  .firms{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
+  .firm{
+    font-size:13px;background:var(--bg);border:1px solid var(--hairline);
+    border-radius:6px;padding:3px 9px;
+  }
+  .tasks{list-style:none;margin-bottom:12px}
+  .tasks li{
+    font-size:14px;color:var(--muted);padding:5px 0 5px 22px;position:relative;
+  }
+  .tasks li::before{
+    content:"";position:absolute;left:0;top:11px;width:11px;height:11px;
+    border:1.5px solid var(--done);border-radius:3px;
+  }
+  .tasks li b{color:var(--ink);font-weight:600}
+  .go{
+    display:inline-flex;align-items:center;gap:7px;background:var(--ink);color:#fff;
+    text-decoration:none;font-weight:600;font-size:14px;padding:9px 16px;border-radius:8px;
+    transition:background .15s ease;
+  }
+  .go:hover{background:#3A3530}
+  .go:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+
+  .resume{background:var(--ink);color:#fff;border-radius:14px;padding:22px 20px}
+  .resume h2{font-size:20px;font-weight:900;margin-bottom:8px}
+  .resume p{font-size:14px;color:#CFC9C1;max-width:56ch;margin-bottom:14px}
+  .sample{
+    background:#2E2A26;border-left:3px solid var(--flag);border-radius:0 8px 8px 0;
+    padding:13px 15px;font-size:13.5px;line-height:1.7;
+  }
+  .sample .co{font-weight:700;display:block;margin-bottom:2px}
+  .sample .ro{font-family:'Space Mono',monospace;font-size:11px;color:#A29B92;display:block;margin-bottom:8px}
+  .sample ul{list-style:none;color:#E6E1DA}
+  .sample ul li{padding-left:13px;position:relative;margin-bottom:4px}
+  .sample ul li::before{content:"—";position:absolute;left:0;color:var(--flag)}
+  .resume .warn{font-size:13px;color:#A29B92;margin-top:12px;margin-bottom:0}
+
+  ul.tips{list-style:none}
+  ul.tips li{font-size:14px;color:var(--muted);padding:11px 0;border-top:1px solid var(--hairline);max-width:60ch}
+  ul.tips li strong{color:var(--ink)}
+
+  .verify{
+    font-family:'Space Mono',monospace;font-size:12px;color:var(--muted);line-height:1.75;
+    background:var(--paper);border:1px solid var(--hairline);border-radius:10px;
+    padding:14px 16px;margin:30px 0;
+  }
+  .verify b{color:var(--ink)}
+
+  footer{background:var(--ink);color:#fff;margin-top:44px;padding:34px 0 42px}
+  footer h3{font-size:19px;font-weight:900;margin-bottom:6px}
+  footer p{font-size:14px;color:#CFC9C1;margin-bottom:14px;max-width:48ch}
+  .email-row{display:flex;gap:8px;flex-wrap:wrap}
+  .email-row input[type="email"]{
+    flex:1;min-width:200px;font-family:inherit;font-size:14px;padding:11px 14px;
+    border-radius:8px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.08);color:#fff;
+  }
+  .email-row input[type="email"]::placeholder{color:#8E877E}
+  .email-row button{
+    font-family:inherit;font-weight:600;font-size:14px;cursor:pointer;border:none;
+    background:var(--flag);color:#fff;border-radius:8px;padding:11px 18px;
+  }
+  .email-row button:disabled{opacity:.7;cursor:wait}
+  .hp{position:absolute;left:-9999px;opacity:0;height:0;width:0;overflow:hidden}
+  .form-status{
+    margin-top:12px;font-size:13px;min-height:1.2em;
+    font-family:'Space Mono',monospace;
+  }
+  .form-status[data-state="ok"]{color:#9BE7C4}
+  .form-status[data-state="err"]{color:#FFB4A8}
+  .credit{
+    margin-top:28px;padding-top:18px;border-top:1px solid rgba(255,255,255,.14);
+    font-family:'Space Mono',monospace;font-size:12px;color:#A29B92;line-height:2;
+  }
+  .credit a{color:#fff;text-decoration:none;border-bottom:1px solid var(--flag)}
+
+  @media (prefers-reduced-motion:no-preference){
+    .card{animation:rise .35s ease both}
+    @keyframes rise{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="eyebrow"><span>@byaaryaman · the list</span><span>verified jul 29 2026</span></div>
+    <h1>Do the work first.<br>Get the offer <em>3x</em> more often.</h1>
+    <p class="sub">Virtual job simulations are free, take a few hours, and the companies that built them can see your finished work. <strong>Here's the list, sorted by major — plus the one setting most students never turn on.</strong></p>
+    <a class="hero-cta" href={forageCatalogUrl} target="_blank" rel="noopener">Browse all simulations on Forage →</a>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <dl class="spec">
+    <div><dt>Cost</dt><dd>$0 — always</dd></div>
+    <div><dt>To start</dt><dd>No application</dd></div>
+    <div><dt>Time</dt><dd>1–6 hours</dd></div>
+    <div><dt>Who</dt><dd>Any country</dd></div>
+  </dl>
+  <p class="body" style="margin-top:12px"><strong>Why this one is different:</strong> no deadline, no resume screen, no rejection — and unlike most opportunities on this site, there's no geographic restriction. Students anywhere in the world can enroll, including high schoolers 16+, undergrads and grad students.</p>
+
+  <div class="sec-label">How it actually works</div>
+  <ol class="steps">
+    <li><b>Make a free account on Forage<span>No application, no resume, no waiting to hear back. You enroll and start.</span></b></li>
+    <li><b>Pick a simulation from a company you'd actually apply to<span>The advantage is company-specific — it counts with the employer whose program you completed.</span></b></li>
+    <li><b>Work through the real tasks<span>Short videos, then the actual deliverable: build the DCF, write the client memo, debug the code. You compare your work against the model answer.</span></b></li>
+    <li><b>Finish and get the certificate<span>Branded by the company. Goes on your resume and LinkedIn immediately.</span></b></li>
+  </ol>
+
+  <div class="sec-label">The setting nobody turns on</div>
+  <section class="setting">
+    <span class="tag">do this one</span>
+    <h2>Let the company see your completed work.</h2>
+    <p>It's an option at the end, and most students skip past it. It's the entire reason the numbers are what they are — you stop being an anonymous application and become someone whose work they've already seen.</p>
+    <p>Forage's own data: completing a simulation makes you roughly <strong>2x more likely to get the interview</strong> and <strong>3x more likely to get the offer</strong> at that company. Some of their figures put it as high as 3.3x. The boost is specific to the employer whose simulation you did — so choose the company, not just the topic.</p>
+  </section>
+
+  <div class="sec-label">Sorted by major</div>
+
+  <article class="card">
+    <div class="card-top"><h3>Finance & Investment Banking</h3><span class="hrs">≈ 4–6 hrs</span></div>
+    <div class="card-body">
+      <div class="firms"><span class="firm">J.P. Morgan</span><span class="firm">Goldman Sachs</span><span class="firm">Citi</span><span class="firm">Bloomberg</span><span class="firm">Wells Fargo</span></div>
+      <ul class="tasks">
+        <li><b>Find an M&A target</b> — screen five companies on strategic and financial fit</li>
+        <li><b>Build a DCF model</b> — then revise it when the scenario changes</li>
+        <li><b>Create a client-facing company profile</b> in Excel</li>
+      </ul>
+      <a class="go" href="https://www.theforage.com/simulations?companies=jpmorgan" target="_blank" rel="noopener">J.P. Morgan programs →</a>
+    </div>
+  </article>
+
+  <article class="card">
+    <div class="card-top"><h3>Consulting & Strategy</h3><span class="hrs">≈ 3–5 hrs</span></div>
+    <div class="card-body">
+      <div class="firms"><span class="firm">BCG</span><span class="firm">Accenture</span><span class="firm">Deloitte</span></div>
+      <ul class="tasks">
+        <li><b>Scope a real client problem</b> and structure the approach</li>
+        <li><b>Run the quantitative analysis</b> behind the recommendation</li>
+        <li><b>Build the client deck</b> — the deliverable consultants actually ship</li>
+      </ul>
+      <a class="go" href="https://www.theforage.com/simulations?companies=bcg" target="_blank" rel="noopener">BCG programs →</a>
+    </div>
+  </article>
+
+  <article class="card">
+    <div class="card-top"><h3>Software, Data & Quant</h3><span class="hrs">≈ 3–6 hrs</span></div>
+    <div class="card-body">
+      <div class="firms"><span class="firm">J.P. Morgan</span><span class="firm">Goldman Sachs</span><span class="firm">Electronic Arts</span><span class="firm">Tata</span></div>
+      <ul class="tasks">
+        <li><b>Set up and debug a real repo</b> against a team spec</li>
+        <li><b>Build a data visualisation</b> for a business stakeholder</li>
+        <li><b>Quantitative research tasks</b> — modelling and interpretation</li>
+      </ul>
+      <a class="go" href="https://www.theforage.com/simulations?companies=goldman-sachs" target="_blank" rel="noopener">Goldman Sachs programs →</a>
+    </div>
+  </article>
+
+  <article class="card">
+    <div class="card-top"><h3>Accounting & Audit</h3><span class="hrs">≈ 2–4 hrs</span></div>
+    <div class="card-body">
+      <div class="firms"><span class="firm">KPMG</span><span class="firm">Deloitte</span><span class="firm">PwC-style programs</span></div>
+      <ul class="tasks">
+        <li><b>A day in audit and assurance</b> — working papers and testing</li>
+        <li><b>Risk assessment</b> on a client scenario</li>
+      </ul>
+      <a class="go" href="https://www.theforage.com/simulations?companies=kpmg" target="_blank" rel="noopener">KPMG programs →</a>
+    </div>
+  </article>
+
+  <article class="card">
+    <div class="card-top"><h3>Marketing, Sales & Media</h3><span class="hrs">≈ 2–4 hrs</span></div>
+    <div class="card-body">
+      <div class="firms"><span class="firm">Red Bull</span><span class="firm">lululemon</span><span class="firm">The New York Times</span></div>
+      <ul class="tasks">
+        <li><b>Build a campaign brief</b> for a real brand problem</li>
+        <li><b>Segment an audience</b> and defend the positioning</li>
+      </ul>
+      <a class="go" href={forageCatalogUrl} target="_blank" rel="noopener">Browse the catalog →</a>
+    </div>
+  </article>
+
+  <article class="card">
+    <div class="card-top"><h3>Law, Healthcare & Engineering</h3><span class="hrs">≈ 2–5 hrs</span></div>
+    <div class="card-body">
+      <div class="firms"><span class="firm">Pfizer</span><span class="firm">Johnson & Johnson</span><span class="firm">GE Aerospace</span><span class="firm">BCLP</span></div>
+      <ul class="tasks">
+        <li><b>Interview preparation and case work</b> for law programs</li>
+        <li><b>Life sciences and engineering tasks</b> built by the employer's own teams</li>
+      </ul>
+      <a class="go" href={forageCatalogUrl} target="_blank" rel="noopener">Browse the catalog →</a>
+    </div>
+  </article>
+
+  <p class="body" style="margin-top:4px">There are 300+ simulations from 125+ employers — if your target company isn't listed here, <a href={forageCatalogUrl} target="_blank" rel="noopener" style="color:var(--blue);font-weight:600">search their name on Forage</a> before assuming they don't have one.</p>
+
+  <div class="sec-label">How to put it on your resume</div>
+  <section class="resume">
+    <h2>Don't list it as a course.</h2>
+    <p>The mistake is burying it under "Certifications." It's project work — so write it like project work, with the deliverable and the tool, not the completion.</p>
+    <div class="sample">
+      <span class="co">J.P. Morgan — Investment Banking Job Simulation (Forage)</span>
+      <span class="ro">Remote · 2026</span>
+      <ul>
+        <li>Screened five acquisition targets against strategic and financial criteria; recommended one for client pursuit</li>
+        <li>Built a DCF valuation in Excel and stress-tested it against a downside operating scenario</li>
+        <li>Produced a client-ready company profile summarising financials, valuation and shareholder base</li>
+      </ul>
+    </div>
+    <p class="warn">Never imply it was paid employment or an internship. Keep "Job Simulation (Forage)" in the title — recruiters know exactly what it is, and honesty here is what makes the rest of your resume credible.</p>
+  </section>
+
+  <div class="sec-label">Three things before you start</div>
+  <ul class="tips">
+    <li><strong>One good one beats five rushed ones.</strong> The point is being able to talk about the work in an interview. Finish one properly at a company you'd genuinely apply to.</li>
+    <li><strong>Save your actual outputs.</strong> Keep the model, the memo, the code. That's your interview story — "here's what I built and where my answer differed from theirs" is a better answer than anything rehearsed.</li>
+    <li><strong>Do it before applications open, not after.</strong> It only helps if it's on the resume when they screen you.</li>
+  </ul>
+
+  <div class="verify">
+    <b>A note on accuracy:</b> program names, lengths and company availability change as employers add and retire simulations. Everything here was checked against official sources on the date stamped above — always confirm on the <a href={forageCatalogUrl} target="_blank" rel="noopener" style="color:var(--ink);font-weight:600">Forage catalog</a>. Something out of date? DM me @byaaryaman and I'll fix it.
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <h3>New programs get added constantly.</h3>
+    <p>Drop your email and I'll send it when notable companies add simulations worth doing — nothing else.</p>
+    <form id="notify-form" class="email-row" action={`https://formsubmit.co/ajax/${notifyEmail}`} method="POST" novalidate>
+      <input type="hidden" name="_subject" value="Job simulation alert signup">
+      <input type="hidden" name="_template" value="table">
+      <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <input type="email" name="email" placeholder="your@email.com" aria-label="Email address" required autocomplete="email">
+      <button type="submit" id="notify-submit">Notify me</button>
+    </form>
+    <p id="notify-status" class="form-status" role="status" aria-live="polite"></p>
+    <div class="credit">
+      made by <a href="https://instagram.com/byaaryaman" target="_blank" rel="noopener">@byaaryaman</a> — follow for more of these<br>
+      building <a href="https://getarcai.com" target="_blank" rel="noopener">ArcAI</a> · your money, handled by AI
+    </div>
+  </div>
+</footer>
+
+<script is:inline>
+  (function () {
+    var form = document.getElementById('notify-form');
+    var statusEl = document.getElementById('notify-status');
+    var submitBtn = document.getElementById('notify-submit');
+    if (!form || !statusEl || !submitBtn) return;
+
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      var emailInput = form.querySelector('input[name="email"]');
+      var honey = form.querySelector('input[name="_honey"]');
+      var email = emailInput && emailInput.value ? emailInput.value.trim() : '';
+
+      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        statusEl.dataset.state = 'err';
+        statusEl.textContent = 'Enter a valid email address.';
+        return;
+      }
+
+      if (honey && honey.value) {
+        statusEl.dataset.state = 'ok';
+        statusEl.textContent = "You're on the list.";
+        form.reset();
+        return;
+      }
+
+      submitBtn.disabled = true;
+      statusEl.dataset.state = '';
+      statusEl.textContent = 'Sending…';
+
+      fetch(form.action, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json'
+        },
+        body: JSON.stringify({
+          email: email,
+          _subject: 'Job simulation alert signup',
+          _template: 'table',
+          source: 'aaryamansingh.com/job-simulations'
+        })
+      })
+        .then(function (res) {
+          if (!res.ok) throw new Error('Request failed');
+          return res.json().catch(function () { return {}; });
+        })
+        .then(function () {
+          statusEl.dataset.state = 'ok';
+          statusEl.textContent = "You're on the list. Watch your inbox.";
+          form.reset();
+        })
+        .catch(function () {
+          statusEl.dataset.state = 'err';
+          statusEl.textContent = 'Something went wrong — try again in a minute.';
+        })
+        .finally(function () {
+          submitBtn.disabled = false;
+        });
+    });
+  })();
+</script>
+
+</body>
+</html>
