@@ -1,0 +1,423 @@
+---
+const pageTitle = 'Your recruiting calendar — by graduation year | Aaryaman Singh'
+const pageDescription =
+  "What's already closed, what's open now, and what opens next — sorted by the year you graduate."
+const pageUrl = 'https://aaryamansingh.com/recruiting-calendar'
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{pageTitle}</title>
+<meta name="description" content={pageDescription}>
+<meta name="author" content="Aaryaman Singh">
+<link rel="canonical" href={pageUrl}>
+<meta property="og:title" content={pageTitle}>
+<meta property="og:description" content={pageDescription}>
+<meta property="og:type" content="website">
+<meta property="og:url" content={pageUrl}>
+<meta property="og:image" content="https://aaryamansingh.com/social-preview-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Public+Sans:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ground:#F7F6F3;
+    --ink:#1C1B19;
+    --open:#17603F;
+    --soon:#A8620A;
+    --shut:#9A9691;
+    --rule:#DFDDD7;
+    --dim:#6B6862;
+    --card:#FFFFFF;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;background:var(--ground);color:var(--ink);
+    font-family:"Public Sans",-apple-system,BlinkMacSystemFont,sans-serif;
+    font-size:16.5px;line-height:1.58;-webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:660px;margin:0 auto;padding:0 20px 110px}
+
+  .mast{
+    display:flex;justify-content:space-between;align-items:baseline;padding:20px 0 0;
+    font-family:"DM Mono",monospace;font-size:10.5px;letter-spacing:.11em;
+    text-transform:uppercase;color:var(--dim);
+  }
+  .mast span{white-space:nowrap}
+  .mast b{color:var(--ink);font-weight:500}
+  .today{font-family:"DM Mono",monospace}
+
+  h1{
+    font-family:"Bricolage Grotesque",sans-serif;font-weight:800;
+    font-size:clamp(29px,7.8vw,44px);line-height:1.03;letter-spacing:-.03em;
+    margin:34px 0 10px;
+  }
+  .sub{font-size:16px;color:var(--dim);margin:0 0 26px;max-width:46ch}
+
+  .tabs{
+    display:flex;gap:8px;margin:0 0 8px;
+  }
+  .tab{
+    flex:1;appearance:none;border:1.5px solid var(--ink);background:transparent;
+    color:var(--ink);border-radius:2px;padding:13px 6px 11px;cursor:pointer;
+    font-family:"DM Mono",monospace;font-size:15px;font-weight:500;letter-spacing:.02em;
+  }
+  .tab .cap{
+    display:block;font-size:9px;letter-spacing:.13em;text-transform:uppercase;
+    color:var(--dim);margin-top:4px;
+  }
+  .tab[aria-selected="true"]{background:var(--ink);color:var(--ground)}
+  .tab[aria-selected="true"] .cap{color:rgba(247,246,243,.62)}
+  .tab:focus-visible{outline:2px solid var(--soon);outline-offset:2px}
+  .tabhint{
+    font-family:"DM Mono",monospace;font-size:11px;color:var(--dim);
+    margin:0 0 30px;letter-spacing:.02em;
+  }
+
+  .verdict{
+    background:var(--ink);color:var(--ground);border-radius:3px;
+    padding:22px 22px 24px;margin:0 0 34px;
+  }
+  .verdict .eyebrow{
+    font-family:"DM Mono",monospace;font-size:10px;letter-spacing:.14em;
+    text-transform:uppercase;color:rgba(247,246,243,.6);margin:0 0 9px;
+  }
+  .verdict p{
+    font-family:"Bricolage Grotesque",sans-serif;font-weight:600;
+    font-size:clamp(19px,4.6vw,24px);line-height:1.24;letter-spacing:-.017em;margin:0;
+  }
+  .verdict .cyc{
+    font-family:"DM Mono",monospace;font-size:12px;letter-spacing:.02em;
+    color:rgba(247,246,243,.72);margin:12px 0 0;line-height:1.5;
+  }
+
+  h2{
+    font-family:"Bricolage Grotesque",sans-serif;font-weight:600;
+    font-size:20px;letter-spacing:-.018em;margin:0 0 4px;
+  }
+  .h2note{font-size:14px;color:var(--dim);margin:0 0 18px}
+
+  .rail{list-style:none;margin:0;padding:0}
+  .row{
+    display:flex;gap:13px;padding:15px 0;border-top:1px solid var(--rule);
+  }
+  .rail .row:last-child{border-bottom:1px solid var(--rule)}
+  .chip{
+    flex:0 0 auto;width:11px;height:11px;border-radius:50%;margin-top:6px;
+  }
+  .chip.open{background:var(--open)}
+  .chip.soon{background:var(--soon)}
+  .chip.shut{background:transparent;border:1.5px solid var(--shut)}
+  .body{flex:1;min-width:0}
+  .who{
+    font-family:"Bricolage Grotesque",sans-serif;font-weight:600;font-size:16.5px;
+    letter-spacing:-.011em;line-height:1.3;
+  }
+  .when{
+    font-family:"DM Mono",monospace;font-size:12px;color:var(--dim);
+    margin-top:3px;letter-spacing:.01em;
+  }
+  .why{font-size:14.5px;color:var(--dim);margin-top:6px;line-height:1.5}
+  .row.gone .who,.row.gone .when{color:var(--shut)}
+  .row.gone .who{text-decoration:line-through;text-decoration-thickness:1px}
+  .st{
+    display:inline-block;font-family:"DM Mono",monospace;font-size:9.5px;
+    letter-spacing:.12em;text-transform:uppercase;padding:2px 6px;border-radius:2px;
+    margin-left:7px;vertical-align:2px;
+  }
+  .st.open{background:var(--open);color:#fff}
+  .st.soon{background:var(--soon);color:#fff}
+  .st.shut{background:var(--rule);color:var(--dim)}
+
+  .here{
+    display:flex;align-items:center;gap:11px;margin:8px 0;padding:0;
+  }
+  .here span{
+    font-family:"DM Mono",monospace;font-size:10.5px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--ink);white-space:nowrap;font-weight:500;
+  }
+  .here::before,.here::after{
+    content:"";height:1.5px;background:var(--ink);flex:1;
+  }
+  .here::before{flex:0 0 24px}
+
+  .acts{list-style:none;margin:0;padding:0;counter-reset:a}
+  .acts li{
+    counter-increment:a;position:relative;padding:0 0 16px 34px;font-size:15.5px;
+  }
+  .acts li::before{
+    content:counter(a);position:absolute;left:0;top:1px;
+    font-family:"DM Mono",monospace;font-size:12px;color:var(--ground);
+    background:var(--ink);width:21px;height:21px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .acts b{font-weight:600}
+
+  section{padding:34px 0 0;border-top:1px solid var(--rule);margin-top:34px}
+  section:first-of-type{border-top:0;margin-top:0;padding-top:0}
+
+  .why-note{
+    background:var(--card);border:1px solid var(--rule);border-radius:3px;
+    padding:18px 20px;margin-top:26px;
+  }
+  .why-note .eyebrow{
+    font-family:"DM Mono",monospace;font-size:10px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--dim);margin:0 0 8px;
+  }
+  .why-note p{margin:0;font-size:15px}
+  .why-note p + p{margin-top:10px}
+
+  footer{margin-top:38px;padding-top:22px;border-top:1px solid var(--rule);
+    font-size:14px;color:var(--dim)}
+  footer a{color:var(--ink)}
+  .src{font-family:"DM Mono",monospace;font-size:10.5px;line-height:1.65;margin-top:14px}
+
+  .hide{display:none}
+  @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="mast">
+    <span><b>Recruiting calendar</b></span>
+    <span class="today" id="today">—</span>
+  </div>
+
+  <h1>Your graduation year decides everything.</h1>
+  <p class="sub">Not your GPA. Pick your year — everything above the line has already happened.</p>
+
+  <div class="tabs" role="tablist">
+    <button class="tab" role="tab" data-y="2027" aria-selected="false">2027<span class="cap">grad</span></button>
+    <button class="tab" role="tab" data-y="2028" aria-selected="false">2028<span class="cap">grad</span></button>
+    <button class="tab" role="tab" data-y="2029" aria-selected="false">2029<span class="cap">grad</span></button>
+  </div>
+  <p class="tabhint">Graduating later than 2029? Your cycle hasn't been announced. Use the 2029 tab as the shape of it.</p>
+
+  <!-- ================= 2028 ================= -->
+  <div class="year hide" id="y2028">
+    <div class="verdict">
+      <p class="eyebrow">Class of 2028</p>
+      <p>Half your cycle already happened. The other half opens in the next eight weeks.</p>
+      <p class="cyc">Your cycle is Summer 2027 — the internship that converts to a full-time offer.</p>
+    </div>
+
+    <section>
+      <h2>Every window, in order</h2>
+      <p class="h2note">Struck through means gone for this cycle.</p>
+      <ul class="rail">
+        <li class="row gone"><span class="chip shut"></span><div class="body">
+          <div class="who">US bulge bracket IB<span class="st shut">closed</span></div>
+          <div class="when">Opened Dec 2025 · closed Jan 2026</div>
+          <div class="why">Goldman, JPMorgan, Citi, BofA, Morgan Stanley, Barclays, UBS, Wells. Classes were filled and offers out by May 2026.</div>
+        </div></li>
+        <li class="row gone"><span class="chip shut"></span><div class="body">
+          <div class="who">Elite boutiques<span class="st shut">closed</span></div>
+          <div class="when">Opened autumn 2025</div>
+          <div class="why">Moved earlier than the bulge brackets. Some started a full year before the internship.</div>
+        </div></li>
+      </ul>
+
+      <div class="here"><span>you are here</span></div>
+
+      <ul class="rail">
+        <li class="row"><span class="chip open"></span><div class="body">
+          <div class="who">Amazon — finance, accounting, tax<span class="st open">open</span></div>
+          <div class="when">Live since June 2026 · rolling</div>
+          <div class="why">Amazon posts before almost anyone. Rolling review, so week one matters more than the deadline.</div>
+        </div></li>
+        <li class="row"><span class="chip open"></span><div class="body">
+          <div class="who">London / EMEA banking<span class="st open">open</span></div>
+          <div class="when">Aug–Sept 2026 · rolling</div>
+          <div class="why">If you're eligible to work in the UK or EU, this window is live now and it closes on volume, not on a date.</div>
+        </div></li>
+        <li class="row"><span class="chip open"></span><div class="body">
+          <div class="who">Middle-market banking<span class="st open">open</span></div>
+          <div class="when">Some 2027 roles live as of July 2026</div>
+          <div class="why">Stifel and William Blair had live Summer 2027 postings. Smaller names, same work, far less competition.</div>
+        </div></li>
+        <li class="row"><span class="chip soon"></span><div class="body">
+          <div class="who">Microsoft — software<span class="st soon">days away</span></div>
+          <div class="when">Opened 15 Aug last cycle</div>
+          <div class="why">Microsoft has held mid-August for several years running. Have the resume finished before it posts, not after.</div>
+        </div></li>
+        <li class="row"><span class="chip soon"></span><div class="body">
+          <div class="who">Big 4 advisory &amp; consulting<span class="st soon">this month</span></div>
+          <div class="when">Aug–Sept 2026</div>
+          <div class="why">PwC, Deloitte, EY, KPMG. The largest intern classes anywhere, and the least talked-about window on this list.</div>
+        </div></li>
+        <li class="row"><span class="chip soon"></span><div class="body">
+          <div class="who">Meta — product<span class="st soon">this month</span></div>
+          <div class="when">Late Aug 2026</div>
+          <div class="why">The RPM programme opens before Meta's engineering roles do.</div>
+        </div></li>
+        <li class="row"><span class="chip soon"></span><div class="body">
+          <div class="who">Amazon — software<span class="st soon">weeks away</span></div>
+          <div class="when">Aug–Oct 2026 expected</div>
+          <div class="why">One of the biggest intern classes in tech, released in waves rather than all at once. Check weekly.</div>
+        </div></li>
+        <li class="row"><span class="chip soon"></span><div class="body">
+          <div class="who">Meta — software<span class="st soon">next month</span></div>
+          <div class="when">Sept–Oct 2026</div>
+        </div></li>
+        <li class="row"><span class="chip soon"></span><div class="body">
+          <div class="who">Google — software<span class="st soon">october</span></div>
+          <div class="when">Opens mid-Oct · closes in 2–4 weeks</div>
+          <div class="why">The shortest window that matters. Google opens, fills, and closes inside a month. Miss it and it's next year — there is no late application.</div>
+        </div></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>What to do this week</h2>
+      <ul class="acts">
+        <li><b>Finish the resume before Microsoft posts.</b> Not the week after. Every one of these is rolling, which means the queue you join is decided by your speed, not your quality.</li>
+        <li><b>Apply to Big 4 the week it opens.</b> Biggest classes, least competition per seat, and almost nobody in your year is watching for it.</li>
+        <li><b>Put Google in your calendar for 1 October.</b> Two to four weeks is the entire opportunity. Treat it like an exam date.</li>
+      </ul>
+    </section>
+  </div>
+
+  <!-- ================= 2029 ================= -->
+  <div class="year hide" id="y2029">
+    <div class="verdict">
+      <p class="eyebrow">Class of 2029</p>
+      <p>You have four months before anything opens. That's the only real head start anyone gets.</p>
+      <p class="cyc">Your cycle is Summer 2028 — banking opens from December 2026.</p>
+    </div>
+
+    <section>
+      <h2>Every window, in order</h2>
+      <p class="h2note">Nothing on your main cycle has closed yet. Read that again.</p>
+      <ul class="rail">
+        <li class="row"><span class="chip open"></span><div class="body">
+          <div class="who">Sophomore &amp; early-insight programmes<span class="st open">open</span></div>
+          <div class="when">Rolling through autumn 2026</div>
+          <div class="why">Spring weeks, insight days, first-year programmes. Most convert directly into a junior-summer interview, which is the actual point of them.</div>
+        </div></li>
+      </ul>
+
+      <div class="here"><span>you are here</span></div>
+
+      <ul class="rail">
+        <li class="row"><span class="chip soon"></span><div class="body">
+          <div class="who">US banking — Summer 2028<span class="st soon">december</span></div>
+          <div class="when">Opens from Dec 2026</div>
+          <div class="why">This is your cycle. Morgan Stanley's 2028 window is expected around 1 January 2027 and closing mid-February. Others move within weeks of each other.</div>
+        </div></li>
+        <li class="row"><span class="chip soon"></span><div class="body">
+          <div class="who">Tech — Summer 2028<span class="st soon">next summer</span></div>
+          <div class="when">Summer–autumn 2027</div>
+          <div class="why">Same shape as this year: Amazon and Microsoft first, Google last and shortest.</div>
+        </div></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>What to do with four months</h2>
+      <ul class="acts">
+        <li><b>Build one thing that exists in public.</b> This is the only window in your entire degree where you can build something before anyone's judging you on it. In December that stops being true.</li>
+        <li><b>Do the free credentials now, not in December.</b> When applications open you'll want the whole month for applications, not for coursework.</li>
+        <li><b>Apply to sophomore programmes this autumn.</b> They convert into junior-summer interviews and almost nobody in your year knows they exist.</li>
+      </ul>
+    </section>
+  </div>
+
+  <!-- ================= 2027 ================= -->
+  <div class="year hide" id="y2027">
+    <div class="verdict">
+      <p class="eyebrow">Class of 2027</p>
+      <p>You're on full-time now, and it started earlier than you think.</p>
+      <p class="cyc">Your internships are done. Everything from here is a start date, not a summer.</p>
+    </div>
+
+    <section>
+      <h2>Where you stand</h2>
+      <ul class="rail">
+        <li class="row gone"><span class="chip shut"></span><div class="body">
+          <div class="who">Summer 2026 internships<span class="st shut">done</span></div>
+          <div class="when">Ended Aug 2026</div>
+          <div class="why">If you interned this summer, the return-offer conversation is the highest-value thing available to you and it has a deadline you probably weren't told.</div>
+        </div></li>
+      </ul>
+
+      <div class="here"><span>you are here</span></div>
+
+      <ul class="rail">
+        <li class="row"><span class="chip open"></span><div class="body">
+          <div class="who">Return offer follow-up<span class="st open">now</span></div>
+          <div class="when">Immediately</div>
+          <div class="why">Ask your manager directly what the process is and when the decision lands. If the answer is no, ask what would have made it a yes — that answer is worth more than the offer.</div>
+        </div></li>
+        <li class="row"><span class="chip open"></span><div class="body">
+          <div class="who">Graduate &amp; new-grad applications<span class="st open">autumn</span></div>
+          <div class="when">Autumn 2026 for 2027 starts</div>
+          <div class="why">Most large employers open graduate hiring in the autumn before the start date, on the same rolling basis the internships used. Confirm each employer's page — new-grad timing varies far more than internship timing.</div>
+        </div></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>What to do this week</h2>
+      <ul class="acts">
+        <li><b>Have the return-offer conversation now</b> if you haven't. Waiting reads as not wanting it.</li>
+        <li><b>Write down your own numbers before you lose system access.</b> What you built, what it saved, what it moved. You cannot reconstruct this in October in front of a blank resume.</li>
+        <li><b>Get the recommendation in writing</b> while people still remember your project name.</li>
+      </ul>
+    </section>
+  </div>
+
+  <div class="why-note">
+    <p class="eyebrow">The part that applies to every year</p>
+    <p><strong>It's all rolling.</strong> Nobody waits for the deadline to start reading. By the time a mid-January deadline arrives, somewhere between 60 and 80 percent of the seats are already committed.</p>
+    <p>Which means there is no deadline that matters. There's an opening date, and you're either there or you're not.</p>
+  </div>
+
+  <footer>
+    <p>Built by <a href="https://instagram.com/byaaryaman" target="_blank" rel="noopener">@byaaryaman</a> — I post these before they close.</p>
+    <p class="src">Verified 9 Aug 2026 against employer career pages and current-cycle reporting. Dates marked "expected" are based on the same employer's previous cycle and are not confirmed. Timelines move — check the employer's own page before you rely on any single date here.</p>
+  </footer>
+</div>
+
+<script is:inline>
+(function(){
+  var d = new Date();
+  document.getElementById('today').textContent =
+    d.toLocaleDateString(undefined,{day:'numeric',month:'short',year:'numeric'});
+
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('.tab'));
+  var years = ['2027','2028','2029'];
+
+  function show(y){
+    if(years.indexOf(y) === -1){ y = '2028'; }
+    years.forEach(function(k){
+      document.getElementById('y'+k).classList.toggle('hide', k !== y);
+    });
+    tabs.forEach(function(t){
+      t.setAttribute('aria-selected', t.dataset.y === y ? 'true' : 'false');
+    });
+    if(history.replaceState){ history.replaceState(null,'','#'+y); }
+  }
+
+  tabs.forEach(function(t){
+    t.addEventListener('click', function(){ show(t.dataset.y); });
+  });
+
+  var hash = (location.hash || '').replace('#','');
+  show(years.indexOf(hash) !== -1 ? hash : '2028');
+
+  window.addEventListener('hashchange', function(){
+    var h = (location.hash || '').replace('#','');
+    if(years.indexOf(h) !== -1){ show(h); }
+  });
+})();
+</script>
+</body>
+</html>
