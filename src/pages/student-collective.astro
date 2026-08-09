@@ -1,0 +1,400 @@
+---
+const pageTitle = 'OpenAI Student Collective — application checklist | Aaryaman Singh'
+const pageDescription =
+  'Everything you need to submit the OpenAI Student Collective application. Deadline, eligibility check, the actual video prompts.'
+const pageUrl = 'https://aaryamansingh.com/student-collective'
+const applyUrl = 'https://openai.com/student-collective/'
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{pageTitle}</title>
+<meta name="description" content={pageDescription}>
+<meta name="author" content="Aaryaman Singh">
+<link rel="canonical" href={pageUrl}>
+<meta property="og:title" content={pageTitle}>
+<meta property="og:description" content={pageDescription}>
+<meta property="og:type" content="website">
+<meta property="og:url" content={pageUrl}>
+<meta property="og:image" content="https://aaryamansingh.com/social-preview-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;800&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#16181D;
+    --paper:#FBFBF9;
+    --rule:#E2E1DC;
+    --blue:#1B3FA0;
+    --flag:#C8342A;
+    --dim:#6E6E68;
+    --wash:#F2F2EE;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font-family:"Instrument Sans",-apple-system,BlinkMacSystemFont,sans-serif;
+    font-size:16.5px;line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:640px;margin:0 auto;padding:0 22px 140px}
+
+  .mast{
+    display:flex;justify-content:space-between;align-items:baseline;
+    padding:22px 0 0;font-family:"IBM Plex Mono",monospace;
+    font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);
+  }
+  .mast b{color:var(--ink);font-weight:500}
+  .mast span{white-space:nowrap}
+  @media(max-width:400px){.mast{font-size:10px}}
+
+  .hero{padding:40px 0 34px;border-bottom:1px solid var(--rule)}
+  .kicker{
+    font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--flag);margin:0 0 18px;font-weight:500;
+  }
+  h1{
+    font-family:"Archivo",sans-serif;font-weight:800;
+    font-size:clamp(30px,8.4vw,46px);line-height:1.02;letter-spacing:-.028em;
+    margin:0 0 26px;
+  }
+  h1 em{font-style:normal;color:var(--blue)}
+
+  .clock{
+    display:flex;gap:0;border:1px solid var(--ink);border-radius:3px;
+    overflow:hidden;background:#fff;
+  }
+  .unit{
+    flex:1;padding:15px 6px 12px;text-align:center;
+    border-right:1px solid var(--rule);
+  }
+  .unit:last-child{border-right:0}
+  .unit .n{
+    display:block;font-family:"IBM Plex Mono",monospace;font-weight:600;
+    font-size:clamp(26px,7.6vw,38px);line-height:1;letter-spacing:-.03em;
+    font-variant-numeric:tabular-nums;
+  }
+  .unit .l{
+    display:block;margin-top:8px;font-family:"IBM Plex Mono",monospace;
+    font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);
+  }
+  .clock.urgent .n{color:var(--flag)}
+  .deadline{
+    margin:12px 0 0;font-family:"IBM Plex Mono",monospace;font-size:12px;
+    color:var(--dim);letter-spacing:.01em;
+  }
+  .closed{
+    border:1px solid var(--flag);background:#fff;border-radius:3px;
+    padding:18px;font-family:"IBM Plex Mono",monospace;font-size:13px;color:var(--flag);
+  }
+
+  section{padding:38px 0;border-bottom:1px solid var(--rule)}
+  .label{
+    font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--dim);margin:0 0 14px;
+  }
+  h2{
+    font-family:"Archivo",sans-serif;font-weight:600;
+    font-size:clamp(21px,5vw,27px);line-height:1.14;letter-spacing:-.02em;
+    margin:0 0 14px;
+  }
+  h3{
+    font-family:"Archivo",sans-serif;font-weight:600;font-size:16.5px;
+    letter-spacing:-.01em;margin:26px 0 8px;
+  }
+  p{margin:0 0 14px}
+  p:last-child{margin-bottom:0}
+  .dim{color:var(--dim)}
+  .sm{font-size:14.5px}
+
+  .check{list-style:none;margin:0;padding:0}
+  .check li{
+    display:flex;gap:13px;align-items:flex-start;
+    padding:14px 0;border-top:1px solid var(--rule);
+  }
+  .check li:last-child{border-bottom:1px solid var(--rule)}
+  .check input{
+    appearance:none;-webkit-appearance:none;flex:0 0 auto;
+    width:21px;height:21px;margin:2px 0 0;border:1.5px solid var(--ink);
+    border-radius:2px;background:#fff;cursor:pointer;position:relative;
+  }
+  .check input:checked{background:var(--blue);border-color:var(--blue)}
+  .check input:checked::after{
+    content:"";position:absolute;left:6px;top:2px;width:6px;height:11px;
+    border:solid #fff;border-width:0 2px 2px 0;transform:rotate(42deg);
+  }
+  .check input:focus-visible{outline:2px solid var(--flag);outline-offset:2px}
+  .check label{cursor:pointer;font-size:15.5px;line-height:1.5}
+  .check .note{display:block;margin-top:3px;font-size:13.5px;color:var(--dim)}
+
+  .verdict{
+    margin-top:20px;padding:16px 18px;border-radius:3px;
+    font-family:"IBM Plex Mono",monospace;font-size:13px;line-height:1.55;
+    background:var(--wash);color:var(--dim);
+  }
+  .verdict.go{background:#0E3D2A;color:#EAF7F0}
+  .verdict.partial{background:#fff;color:var(--flag);border:1px solid var(--flag)}
+
+  .prompt{
+    background:#fff;border:1px solid var(--rule);border-left:3px solid var(--blue);
+    border-radius:3px;padding:18px 20px;margin:0 0 16px;
+  }
+  .prompt .q{
+    font-family:"Archivo",sans-serif;font-weight:600;font-size:17px;
+    line-height:1.32;letter-spacing:-.012em;margin:0 0 10px;
+  }
+  .prompt .meta{
+    font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.11em;
+    text-transform:uppercase;color:var(--dim);margin:0 0 10px;
+  }
+  .prompt p{font-size:15px;margin:0}
+
+  .warn{
+    background:#fff;border:1px solid var(--flag);border-radius:3px;padding:20px;
+  }
+  .warn .label{color:var(--flag);margin-bottom:10px}
+
+  .perks{list-style:none;margin:0;padding:0;
+    display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule);
+    border:1px solid var(--rule);border-radius:3px;overflow:hidden}
+  .perks li{background:#fff;padding:15px 16px;font-size:14.5px;line-height:1.4}
+  .perks li b{
+    display:block;font-family:"IBM Plex Mono",monospace;font-size:10px;
+    letter-spacing:.12em;text-transform:uppercase;color:var(--dim);
+    font-weight:500;margin-bottom:5px;
+  }
+  @media(max-width:420px){.perks{grid-template-columns:1fr}}
+
+  .bar{
+    position:fixed;left:0;right:0;bottom:0;z-index:20;
+    background:var(--paper);border-top:1px solid var(--rule);
+    padding:11px 22px calc(11px + env(safe-area-inset-bottom));
+  }
+  .bar-in{max-width:640px;margin:0 auto;display:flex;gap:12px;align-items:center}
+  .cta{
+    flex:1;display:block;text-align:center;background:var(--ink);color:var(--paper);
+    text-decoration:none;padding:15px 18px;border-radius:3px;
+    font-family:"Archivo",sans-serif;font-weight:600;font-size:16px;letter-spacing:-.01em;
+  }
+  .cta:hover{background:var(--blue)}
+  .cta:focus-visible{outline:2px solid var(--flag);outline-offset:2px}
+  .barnote{
+    font-family:"IBM Plex Mono",monospace;font-size:10.5px;line-height:1.35;
+    color:var(--dim);text-align:right;flex:0 0 82px;
+  }
+
+  footer{padding:34px 0 0;font-size:14px;color:var(--dim)}
+  footer a{color:var(--blue)}
+  .src{font-family:"IBM Plex Mono",monospace;font-size:11px;line-height:1.6;color:var(--dim);margin-top:16px}
+
+  @media (prefers-reduced-motion:reduce){
+    *{transition:none!important;animation:none!important}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="mast">
+    <span><b>Student Collective</b> &middot; 2026&ndash;27</span>
+    <span>@byaaryaman</span>
+  </div>
+
+  <div class="hero">
+    <p class="kicker" id="kicker">Applications close</p>
+    <h1>You have <em>this long</em> to submit it.</h1>
+
+    <div class="clock" id="clock">
+      <div class="unit"><span class="n" id="d">–</span><span class="l">days</span></div>
+      <div class="unit"><span class="n" id="h">–</span><span class="l">hours</span></div>
+      <div class="unit"><span class="n" id="m">–</span><span class="l">mins</span></div>
+      <div class="unit"><span class="n" id="s">–</span><span class="l">secs</span></div>
+    </div>
+    <p class="deadline">Closes 10 Aug 2026, 11:59pm PT · <span id="local">converting to your time…</span></p>
+  </div>
+
+  <section>
+    <p class="label">Step 01</p>
+    <h2>Check you can actually apply</h2>
+    <p class="sm dim">Tick every line that's true for you. All seven have to be true — OpenAI lists them as requirements, not preferences.</p>
+
+    <ul class="check" id="elig">
+      <li>
+        <input type="checkbox" id="c1" data-key="core">
+        <label for="c1">I'm 18 or older</label>
+      </li>
+      <li>
+        <input type="checkbox" id="c2" data-key="core">
+        <label for="c2">I'm enrolled in an undergraduate program as of August 2026
+        <span class="note">Undergrad only. Master's and PhD students aren't eligible.</span></label>
+      </li>
+      <li>
+        <input type="checkbox" id="c3" data-key="core">
+        <label for="c3">I expect to graduate <em>after</em> December 2027
+        <span class="note">This rules out anyone finishing in 2027. Check your actual expected date.</span></label>
+      </li>
+      <li>
+        <input type="checkbox" id="c4" data-key="core">
+        <label for="c4">I can commit 4–6 hours a week from August 2026 to June 2027</label>
+      </li>
+      <li>
+        <input type="checkbox" id="c5" data-key="country">
+        <label for="c5">I study in the US, Canada, UK, France, Germany, India, Japan or South Korea
+        <span class="note">Studying elsewhere? You can still submit to register interest — they'll contact you when it opens in your country.</span></label>
+      </li>
+      <li>
+        <input type="checkbox" id="c6" data-key="core">
+        <label for="c6">I have work authorisation in the country where I study
+        <span class="note">The requirement almost nobody mentions. If you're an international student, check your permit covers paid work before you spend an hour on this.</span></label>
+      </li>
+      <li>
+        <input type="checkbox" id="c7" data-key="core">
+        <label for="c7">I'm not currently an ambassador or intern at another AI company or program</label>
+      </li>
+    </ul>
+
+    <div class="verdict" id="verdict">Tick the boxes above and I'll tell you where you stand.</div>
+
+    <h3>What isn't required</h3>
+    <p class="sm">No portfolio. No prior Codex experience. Any major — OpenAI says every discipline is encouraged. They've stated they're screening for curiosity and community instincts, not a technical résumé.</p>
+  </section>
+
+  <section>
+    <p class="label">Step 02</p>
+    <h2>The two videos</h2>
+    <p class="sm dim">These are the actual prompts on the form. Sixty seconds or less each, submitted as links.</p>
+
+    <div class="prompt">
+      <p class="meta">Video 1 · 60 seconds max</p>
+      <p class="q">"What's one way you use AI that you think more students should know about?"</p>
+      <p class="dim">Pick one specific workflow, not a tour of features. Something you'd actually demo to a friend. "I use ChatGPT to reverse-engineer past exams into practice sets" beats "I use it for studying."</p>
+    </div>
+
+    <div class="prompt">
+      <p class="meta">Video 2 · 60 seconds max</p>
+      <p class="q">"What's something you helped make happen on campus? Tell us about it in video format."</p>
+      <p class="dim">This is the one that decides it. Say what <em>you</em> did, not what the club did. It doesn't have to be big — a study group you started, an event you filled, a group chat that turned into something. They're filtering for organising credibility.</p>
+    </div>
+
+    <h3>Also on the form</h3>
+    <p class="sm">Name, university, major, expected graduation date, which OpenAI products you currently use, your LinkedIn, and how you heard about the role. Plus a couple of short written reflections — reported ones include what you think is the most important issue facing young people, and something that recently changed your mind. Some fields cap at 500 characters, so lead with the point and explain second.</p>
+  </section>
+
+  <section>
+    <div class="warn">
+      <p class="label">Read this before you submit</p>
+      <p><strong>Your video links must be viewable by anyone with the link.</strong> OpenAI states it cannot review videos that require special access permissions — a locked link is a silent rejection, not a follow-up email.</p>
+      <p class="sm" style="margin-bottom:0">Open each link in a private or incognito window before you submit. If it asks you to sign in or request access, fix it.</p>
+    </div>
+  </section>
+
+  <section>
+    <p class="label">Step 03</p>
+    <h2>What the role actually is</h2>
+    <p class="sm">Two Campus Leads per school, working as a pair. Four workshops a semester, weekly studio hours where students build their own projects, one campus showcase a semester, and an ongoing community. Roughly 4–6 hours a week, August through June.</p>
+
+    <h3>What you get</h3>
+    <ul class="perks">
+      <li><b>Paid</b>Cash stipend each semester</li>
+      <li><b>Tools</b>ChatGPT subscription + Codex credits</li>
+      <li><b>Budget</b>Funding and resources for your events</li>
+      <li><b>Access</b>Training and guidance from the OpenAI team</li>
+      <li><b>Network</b>Global network of Campus Leads</li>
+      <li><b>Merch</b>Swag, if you care about that</li>
+    </ul>
+    <p class="sm dim" style="margin-top:16px">Shortlisted applicants move to an interview in August 2026.</p>
+  </section>
+
+  <section style="border-bottom:0">
+    <p class="label">The honest note</p>
+    <p class="sm">This is a recruiting pipeline as much as a student program, and that's fine — it's a good one to be in. But it's also 4–6 hours a week for ten months. If you can't hold that alongside your degree, a half-finished commitment on a résumé is worse than not applying.</p>
+    <p class="sm">If you can, apply. It closes and doesn't reopen until next year.</p>
+  </section>
+
+  <footer>
+    <p>Built by <a href="https://instagram.com/byaaryaman" target="_blank" rel="noopener">@byaaryaman</a> — I post recruiting deadlines before they close.</p>
+    <p class="src">Details from <a href={applyUrl} target="_blank" rel="noopener">openai.com/student-collective</a> and the application form. Deadline and requirements verified 9 Aug 2026. Programs change — confirm on OpenAI's page before you rely on anything here.</p>
+  </footer>
+</div>
+
+<div class="bar">
+  <div class="bar-in">
+    <a class="cta" href={applyUrl} target="_blank" rel="noopener">Open the application</a>
+    <span class="barnote" id="barnote">closes<br>10 Aug</span>
+  </div>
+</div>
+
+<script is:inline>
+(function(){
+  // 10 Aug 2026 11:59pm PT = PDT (UTC-7) → 11 Aug 06:59 UTC
+  var END = new Date("2026-08-11T06:59:00Z");
+  var clock = document.getElementById('clock');
+
+  try{
+    document.getElementById('local').textContent =
+      "that's " + END.toLocaleString(undefined,{
+        weekday:'short', day:'numeric', month:'short',
+        hour:'numeric', minute:'2-digit'
+      }) + " your time";
+  }catch(e){
+    document.getElementById('local').textContent = "check your local time";
+  }
+
+  function pad(n){ return n < 10 ? "0"+n : ""+n; }
+
+  function tick(){
+    var left = END - new Date();
+    if(left <= 0){
+      clock.outerHTML = '<div class="closed">Applications closed on 10 Aug 2026. The next cycle has not been announced — check OpenAI\'s page for updates.</div>';
+      document.getElementById('kicker').textContent = "Closed";
+      document.getElementById('barnote').innerHTML = "closed";
+      return;
+    }
+    var s = Math.floor(left/1000);
+    var d = Math.floor(s/86400);
+    var h = Math.floor((s%86400)/3600);
+    var m = Math.floor((s%3600)/60);
+    document.getElementById('d').textContent = d;
+    document.getElementById('h').textContent = pad(h);
+    document.getElementById('m').textContent = pad(m);
+    document.getElementById('s').textContent = pad(s%60);
+    if(d < 2){ clock.classList.add('urgent'); }
+    setTimeout(tick, 1000);
+  }
+  tick();
+
+  var boxes = Array.prototype.slice.call(document.querySelectorAll('#elig input'));
+  var out = document.getElementById('verdict');
+
+  function judge(){
+    var ticked = boxes.filter(function(b){ return b.checked; });
+    var country = document.getElementById('c5').checked;
+    var coreBoxes = boxes.filter(function(b){ return b.dataset.key === 'core'; });
+    var coreDone = coreBoxes.every(function(b){ return b.checked; });
+
+    out.className = 'verdict';
+
+    if(ticked.length === 0){
+      out.textContent = "Tick the boxes above and I'll tell you where you stand.";
+    } else if(coreDone && country){
+      out.classList.add('go');
+      out.textContent = "You're eligible. Nothing here is stopping you — go record the two videos.";
+    } else if(coreDone && !country){
+      out.classList.add('partial');
+      out.textContent = "You meet every requirement except the country list. Submit anyway — OpenAI uses those applications to register interest and will contact you when the Collective opens where you study.";
+    } else {
+      out.textContent = ticked.length + " of 7. Every unticked line is a hard requirement, so check the ones you skipped before you spend an hour on the videos.";
+    }
+  }
+  boxes.forEach(function(b){ b.addEventListener('change', judge); });
+})();
+</script>
+</body>
+</html>
