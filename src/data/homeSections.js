@@ -8,7 +8,7 @@ export const workExperience = [
   {
     role: 'Analyst: E2E Optimization & Process Engineering',
     company: 'CIBC',
-    period: 'May 2025 - Present',
+    period: 'May 2025 - August 2026',
     location: 'Toronto, ON'
   },
   {
