@@ -1,0 +1,773 @@
+---
+const pageTitle = 'The 2027 Internship Recruiting Playbook — Live Status | Aaryaman Singh'
+const pageDescription =
+  'A live, dated status board for Summer 2027 internship recruiting across Canada and the U.S. Verified trackers, real deadlines, and a repeatable application system. Updated continuously.'
+const pageUrl = 'https://aaryamansingh.com/playbook'
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{pageTitle}</title>
+<meta name="description" content={pageDescription}>
+<meta name="author" content="Aaryaman Singh">
+<link rel="canonical" href={pageUrl}>
+<meta property="og:title" content={pageTitle}>
+<meta property="og:description" content={pageDescription}>
+<meta property="og:type" content="website">
+<meta property="og:url" content={pageUrl}>
+<meta property="og:image" content="https://aaryamansingh.com/social-preview-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/playbook.css">
+</head>
+<body>
+<div class="ticker" role="status">
+  <div class="wrap">
+    <span class="tk-label">Closing now</span>
+    <span><b>Bain Associate Consultant Intern, Deadline 2 — 31 August 2026.</b> Second and final ACI window of the 2027 cycle. <a href="https://www.bain.com/careers/work-with-us/internships-programs/associate-consultant-internship/" target="_blank" rel="noopener">Confirm on Bain's page</a></span>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap">
+    <a class="brand" href="/"><span class="livedot" aria-hidden="true"></span>Aaryaman Singh</a>
+    <div class="stamp">Live status · <b id="today-stamp">30 Aug 2026</b></div>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Career playbook · Canada + U.S.</p>
+    <h1>The 2027 internship recruiting <em>playbook</em></h1>
+    <p class="deck">Not a list of final deadlines. A <strong>monitoring system</strong> for finding roles early, confirming them on official career pages, and applying before rolling pipelines quietly fill. Every status on this page recalculates against today's date, so it does not go stale the way a PDF does.</p>
+
+    <div class="stats">
+      <div class="stat"><span class="n">776</span><span class="l">Summer 2027 finance postings tracked through end of July 2026</span></div>
+      <div class="stat"><span class="n">109</span><span class="l">Firms that have posted at least one Summer 2027 role</span></div>
+      <div class="stat"><span class="n">~24</span><span class="l">More firms expected to post a first role in Aug–Sep 2026</span></div>
+      <div class="stat"><span class="n">600<span style="font-size:.6em">–</span>650</span><span class="l">Further finance postings expected over the next six months</span></div>
+    </div>
+    <p class="srcline">Source: Adventis Class of 2028 Recruiting Hub, figures as published through end of July 2026. Front-office finance only (investment banking, capital markets, private equity) and heavily U.S.-weighted — do not read these numbers as the Canadian bank co-op calendar.</p>
+
+    <div class="cta-row">
+      <a class="btn btn-primary" href="#board">See the deadline board</a>
+      <a class="btn btn-ghost" href="https://instagram.com/byaaryaman" target="_blank" rel="noopener">Follow @byaaryaman</a>
+    </div>
+  </div>
+</div>
+
+<!-- ============ SIGNATURE: CYCLE BAR ============ -->
+<div class="cycle">
+  <div class="wrap">
+    <div class="cycle-head">
+      <div>
+        <p class="eyebrow" style="margin-bottom:12px">The cycle at a glance</p>
+        <h2 style="margin:0">Where you actually are</h2>
+      </div>
+      <p style="font-size:14.5px;color:var(--paper-dim);max-width:38ch;margin:0">Bands show when applications typically open and close for each lane. The marker is today. Directional — individual firms vary by office, school and role.</p>
+    </div>
+
+    <div class="cycle-scroll">
+      <div class="cycle-inner">
+        <div class="monthbar" aria-hidden="true"><span></span>
+        <div class="months">
+          <span class="yr">Jul '26</span><span>Aug</span><span>Sep</span><span>Oct</span><span>Nov</span><span>Dec</span>
+          <span class="yr">Jan '27</span><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span>
+        </div></div>
+
+        <div class="track" id="track">
+          <div class="nowline" id="nowline" style="left:18%"></div>
+
+          <div class="trackrow"><span class="nm">Finance — front office</span><div class="lane">
+            <div class="band b-tail" style="left:0%;width:45.5%">Late wave &amp; re-posts only</div></div></div>
+
+          <div class="trackrow"><span class="nm">Consulting — MBB</span><div class="lane">
+            <div class="band b-peak" style="left:9.1%;width:27.3%">Final windows &amp; sophomore round</div></div></div>
+
+          <div class="trackrow"><span class="nm">Big tech, AI &amp; data</span><div class="lane">
+            <div class="band b-live" style="left:0%;width:72.7%">Open now — peaks Sep–Nov</div></div></div>
+
+          <div class="trackrow"><span class="nm">Quant &amp; trading</span><div class="lane">
+            <div class="band b-live" style="left:9.1%;width:27.3%">Opening now</div></div></div>
+
+          <div class="trackrow"><span class="nm">Big 4 &amp; advisory</span><div class="lane">
+            <div class="band b-live" style="left:9.1%;width:36.4%">Opening now — rolling</div></div></div>
+
+          <div class="trackrow"><span class="nm">Engineering &amp; hardware</span><div class="lane">
+            <div class="band b-live" style="left:9.1%;width:63.6%">Live through winter</div></div></div>
+
+          <div class="trackrow"><span class="nm">Canadian co-op &amp; banks</span><div class="lane">
+            <div class="band b-late" style="left:18.2%;width:45.5%">Aligned to academic work terms</div></div></div>
+
+          <div class="trackrow"><span class="nm">Corporate, health, public</span><div class="lane">
+            <div class="band b-late" style="left:36.4%;width:45.5%">Broad middle of the market</div></div></div>
+
+          <div class="trackrow"><span class="nm">Startups &amp; late cycle</span><div class="lane">
+            <div class="band b-tail" style="left:54.5%;width:45.5%">Fills weeks before start</div></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="legend">
+      <span><i style="background:var(--open)"></i>Open now</span>
+      <span><i style="background:var(--closing)"></i>Closing / final window</span>
+      <span><i style="background:#4A6FA5"></i>Opens later</span>
+      <span><i style="background:rgba(233,229,220,.16)"></i>Residual or trickle</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============ BODY ============ -->
+<div class="wrap">
+<div class="shell">
+
+  <nav class="rail" aria-label="Sections">
+    <h4>Contents</h4>
+    <ol>
+      <li><a href="#status">Status right now</a></li>
+      <li><a href="#board">Deadline board</a></li>
+      <li><a href="#tech">Tech &amp; AI trackers</a></li>
+      <li><a href="#canada">Canada channels</a></li>
+      <li><a href="#finance">Finance &amp; banks</a></li>
+      <li><a href="#consulting">Consulting</a></li>
+      <li><a href="#engineering">Engineering</a></li>
+      <li><a href="#underclass">First &amp; second years</a></li>
+      <li><a href="#intl">International students</a></li>
+      <li><a href="#alerts">Alerts that work</a></li>
+      <li><a href="#system">Application system</a></li>
+      <li><a href="#tracker">Your tracker</a></li>
+      <li><a href="#resume">Resume readiness</a></li>
+      <li><a href="#queries">Search strings</a></li>
+      <li><a href="#qc">Quality control</a></li>
+      <li><a href="#register">Verification register</a></li>
+    </ol>
+  </nav>
+
+  <div>
+
+  <!-- 01 -->
+  <section id="status" class="sec">
+    <span class="sec-num">01</span>
+    <h2>Where the cycle actually is right now</h2>
+    <p class="lede">There is no single "internship season." There are separate calendars running at different speeds, and the honest answer to "am I late?" depends entirely on which one you are standing in.</p>
+
+    <h3>Finance — front office</h3>
+    <p>Most bulge-bracket and elite boutique Summer 2027 windows opened between December 2025 and March 2026 and have closed. That is the bad news, and it is real. The good news is that the cycle is not over: Adventis tracked 776 Summer 2027 postings from 109 firms through the end of July 2026, and expects roughly 600–650 more postings over the following six months, with around 24 firms still to post their first role in August and September. Middle-market banks, asset managers, corporate finance and Canadian bank co-ops all sit in the part of the cycle that is still ahead of you.</p>
+
+    <h3>Consulting</h3>
+    <p>MBB has compressed hard. McKinsey's Summer Business Analyst intern window closed 29 March 2026 and its U.S. full-time Business Analyst application closed 11 August 2026. Bain runs two Associate Consultant Intern windows for this cycle — 29 March and 31 August 2026 — which means the second one closes this week. BCG's undergraduate Summer Associate window for the Class of 2027 has passed; the sophomore-level round is expected in September. Big 4 advisory is the lane that is genuinely opening rather than closing.</p>
+
+    <h3>Tech, AI and data</h3>
+    <p>This is where you have the most runway. Applications open in waves from July 2026 into early 2027. Amazon and Databricks tend to post first. Google's software engineering intern posting historically opens around mid-October and stays up for a matter of weeks, not months — if you are targeting it, the alert matters more than the deadline. Almost nothing in tech has a fixed close date, which is exactly why applying in week one of a posting beats applying well in week five.</p>
+
+    <h3>Engineering, hardware and core</h3>
+    <p>Aerospace, defence, energy, manufacturing and automotive roles are live now and stay live into winter. These are consistently under-covered by the general software trackers, which is both the problem and the opportunity.</p>
+
+    <div class="callout">
+      <span class="k">The rule that matters most</span>
+      <p>A third-party tracker is a discovery tool, never the source of truth. Confirm eligibility, location, deadline and application status on the employer's own site before you spend an hour tailoring anything.</p>
+    </div>
+  </section>
+
+  <!-- 02 -->
+  <section id="board" class="sec">
+    <span class="sec-num">02</span>
+    <h2>Deadline board</h2>
+    <p class="lede">Named firms with dates I could confirm on a primary or well-sourced page. Status recalculates against today. Everything here still needs a check on the employer's own site before you apply — offices and schools run their own calendars.</p>
+
+    <div class="board">
+      <div class="brow head"><span>Firm &amp; role</span><span>Date</span><span>Status</span></div>
+
+      <div class="brow">
+        <div><span class="firm">Bain &amp; Company</span><span class="role">Associate Consultant Intern, Summer 2027 — second window. <a href="https://www.bain.com/careers/work-with-us/internships-programs/associate-consultant-internship/" target="_blank" rel="noopener">Bain careers</a></span></div>
+        <span class="dt">31 Aug 2026</span>
+        <span class="chip" data-deadline="2026-08-31">—</span>
+      </div>
+
+      <div class="brow">
+        <div><span class="firm">Bain &amp; Company</span><span class="role">Associate Consultant Intern, Summer 2027 — first window.</span></div>
+        <span class="dt">29 Mar 2026</span>
+        <span class="chip" data-deadline="2026-03-29">—</span>
+      </div>
+
+      <div class="brow">
+        <div><span class="firm">McKinsey &amp; Company</span><span class="role">Summer Business Analyst intern, common U.S. undergraduate deadline. <a href="https://www.mckinsey.com/careers/students" target="_blank" rel="noopener">McKinsey students</a></span></div>
+        <span class="dt">29 Mar 2026</span>
+        <span class="chip" data-deadline="2026-03-29">—</span>
+      </div>
+
+      <div class="brow">
+        <div><span class="firm">McKinsey &amp; Company</span><span class="role">Full-time Business Analyst, 2027 start — for December 2026 to August 2027 graduates.</span></div>
+        <span class="dt">11 Aug 2026</span>
+        <span class="chip" data-deadline="2026-08-11">—</span>
+      </div>
+
+      <div class="brow">
+        <div><span class="firm">BCG</span><span class="role">Summer Associate, Class of 2027 — U.S. and Canada application. <a href="https://careers.bcg.com/global/en/on-campus/united-states-associate-job-opportunities" target="_blank" rel="noopener">BCG on-campus</a></span></div>
+        <span class="dt">Passed</span>
+        <span class="chip c-closed">Closed</span>
+      </div>
+
+      <div class="brow">
+        <div><span class="firm">BCG</span><span class="role">Sophomore Summer Associate, Class of 2029 — reported as expected rather than confirmed.</span></div>
+        <span class="dt">Sep 2026 (exp.)</span>
+        <span class="chip c-watch">Watch</span>
+      </div>
+
+      <div class="brow">
+        <div><span class="firm">Big 4 — Deloitte, PwC, EY, KPMG</span><span class="role">Advisory, consulting and assurance internships. Rolling, by service line and location.</span></div>
+        <span class="dt">Aug–Nov 2026</span>
+        <span class="chip c-open">Open wave</span>
+      </div>
+
+      <div class="brow">
+        <div><span class="firm">Google</span><span class="role">Software engineering intern, Summer 2027 — historically a short window.</span></div>
+        <span class="dt">~mid-Oct 2026</span>
+        <span class="chip c-watch">Watch</span>
+      </div>
+
+      <div class="brow">
+        <div><span class="firm">Quant funds — Two Sigma, Citadel, Jane Street and peers</span><span class="role">Quantitative research, trading and developer internships. Fast turnaround.</span></div>
+        <span class="dt">From Aug 2026</span>
+        <span class="chip c-open">Open wave</span>
+      </div>
+
+      <div class="brow">
+        <div><span class="firm">Canadian bank student programs</span><span class="role">Co-ops and summer roles across RBC, BMO, CIBC, TD, Scotiabank and National Bank. See section 05.</span></div>
+        <span class="dt">Sep 2026–Jan 2027</span>
+        <span class="chip c-watch">Watch</span>
+      </div>
+    </div>
+
+    <div class="callout neutral">
+      <span class="k">How to read this</span>
+      <p>"Closed" means the window I could verify has passed — it does not mean the firm has stopped hiring. Firms re-post, add office-specific rounds, and run school-exclusive processes that never appear on a national page. "Watch" means a window is expected but I have not seen it confirmed on the firm's own site.</p>
+    </div>
+  </section>
+
+  <!-- 03 -->
+  <section id="tech" class="sec">
+    <span class="sec-num">03</span>
+    <h2>Tech, AI, data and quant trackers</h2>
+    <p class="lede">Use two or three, not ten. Duplicate listings across trackers are normal and not a sign of a fresh posting. The official company page always wins.</p>
+
+    <div class="cards">
+      <div class="card">
+        <span class="tag">Daily · broadest SWE feed</span>
+        <h4><a href="https://github.com/speedyapply/2027-SWE-College-Jobs" target="_blank" rel="noopener">SpeedyApply — 2027 SWE College Jobs</a></h4>
+        <dl>
+          <dt>Best for</dt><dd>A broad software engineering and new-grad feed with separate U.S. and international lists.</dd>
+          <dt>Coverage</dt><dd>SWE internships and new-grad roles, updated daily. Around 8,000 stars, so postings surface fast.</dd>
+          <dt>Watch-out</dt><dd class="warn">Some entries are not truly Summer 2027 or carry eligibility restrictions. Open the original posting.</dd>
+        </dl>
+      </div>
+
+      <div class="card">
+        <span class="tag">New this cycle</span>
+        <h4><a href="https://github.com/speedyapply/2027-AI-College-Jobs" target="_blank" rel="noopener">SpeedyApply — 2027 AI/ML College Jobs</a></h4>
+        <dl>
+          <dt>Best for</dt><dd>Machine learning, research and AI infrastructure roles that get buried in a general SWE list.</dd>
+          <dt>Coverage</dt><dd>AI/ML internships and new-grad roles with posted hourly rates, updated daily.</dd>
+          <dt>Watch-out</dt><dd class="warn">Skews heavily toward PhD and graduate-level research roles. Filter by degree level before you invest time.</dd>
+        </dl>
+      </div>
+
+      <div class="card">
+        <span class="tag">Community · US + Canada</span>
+        <h4><a href="https://github.com/vanshb03/Summer2027-Internships" target="_blank" rel="noopener">Summer 2027 Internships</a></h4>
+        <dl>
+          <dt>Best for</dt><dd>A crowdsourced list scoped explicitly to the U.S., Canada and remote — one of the few that does not treat Canada as an afterthought.</dd>
+          <dt>Coverage</dt><dd>Summer, fall and spring 2027 tech internships and co-ops.</dd>
+          <dt>Watch-out</dt><dd class="warn">Community-maintained, so open/closed status lags. Verify before applying.</dd>
+        </dl>
+      </div>
+
+      <div class="card">
+        <span class="tag">Broad · multi-function</span>
+        <h4><a href="https://github.com/zapplyjobs/Internships-2027" target="_blank" rel="noopener">Zapply — Internships 2027</a></h4>
+        <dl>
+          <dt>Best for</dt><dd>Searching beyond software: business, operations, health, marketing, finance and research.</dd>
+          <dt>Coverage</dt><dd>Multi-function internship listings updated in real time from employer feeds.</dd>
+          <dt>Watch-out</dt><dd class="warn">Largely U.S.-oriented and the volume is overwhelming. Filter aggressively or you will spend the evening scrolling.</dd>
+        </dl>
+      </div>
+
+      <div class="card">
+        <span class="tag">Workflow · autofill</span>
+        <h4><a href="https://simplify.jobs/jobs/internships" target="_blank" rel="noopener">Simplify Internships</a></h4>
+        <dl>
+          <dt>Best for</dt><dd>Search, autofill, role discovery and application tracking in a single platform.</dd>
+          <dt>Coverage</dt><dd>Multiple industries with curated lists and role-family filters.</dd>
+          <dt>Watch-out</dt><dd class="warn">Convenient is not complete. Keep alerts running on employer and school portals as well.</dd>
+        </dl>
+      </div>
+
+      <div class="card">
+        <span class="tag alt">Pay research</span>
+        <h4><a href="https://www.levels.fyi/internships/" target="_blank" rel="noopener">Levels.fyi Internships</a></h4>
+        <dl>
+          <dt>Best for</dt><dd>Researching intern compensation, housing stipends and company-specific history before you negotiate or rank offers.</dd>
+          <dt>Coverage</dt><dd>Salary reports, role requirements and selected application links.</dd>
+          <dt>Watch-out</dt><dd class="warn">Figures may be from prior cycles or other locations. It is not a live deadline tracker.</dd>
+        </dl>
+      </div>
+    </div>
+
+    <h3>Using trackers without wasting your evening</h3>
+    <ol class="steps">
+      <li><b>Subscribe, do not refresh</b><span>Turn on GitHub watch notifications, RSS or email alerts for the two feeds you actually trust. Manually reloading a repo is how people lose a week.</span></li>
+      <li><b>Build role-family alerts, not company alerts</b><span>"Software engineer intern 2027," "data science intern 2027," "quantitative developer intern," "hardware intern," "process engineering intern." Companies you have not heard of are where the odds are.</span></li>
+      <li><b>Check eligibility before you tailor</b><span>Location, graduation window, work authorization, sponsorship, academic term and degree level can disqualify you in ten seconds. Do that check first, not after writing a cover letter.</span></li>
+      <li><b>Apply on the employer's own site</b><span>Aggregator copies can be cached, redirected or stale. If the official application exists, use it.</span></li>
+      <li><b>Log the open date, not just the deadline</b><span>Under rolling review, when a role opened predicts your odds better than when it closes.</span></li>
+    </ol>
+  </section>
+
+  <!-- 04 -->
+  <section id="canada" class="sec">
+    <span class="sec-num">04</span>
+    <h2>Canada-specific channels</h2>
+    <p class="lede">The best Canadian internship may never appear in a global GitHub list. If you are studying here, these are not optional extras — for a lot of students they are the primary channel.</p>
+
+    <div class="cards">
+      <div class="card">
+        <span class="tag alt">Canada-first · daily</span>
+        <h4><a href="https://github.com/hanzili/canada_sde_intern_position" target="_blank" rel="noopener">Canadian Student Internships &amp; Co-ops</a></h4>
+        <dl>
+          <dt>Best for</dt><dd>Daily-updated Canadian student roles across tech, engineering, business, finance and sciences — including four- and eight-month co-op terms that U.S. lists ignore entirely.</dd>
+          <dt>Coverage</dt><dd>Listings with term length, monthly pay in CAD and start month.</dd>
+          <dt>Watch-out</dt><dd class="warn">Open/closed status is not updated daily. Check the posting yourself.</dd>
+        </dl>
+      </div>
+
+      <div class="card">
+        <span class="tag alt">Canada · student brands</span>
+        <h4><a href="https://talentegg.ca/" target="_blank" rel="noopener">TalentEgg</a></h4>
+        <dl>
+          <dt>Best for</dt><dd>Canadian internships, co-ops, rotational programs and employer content aimed at students.</dd>
+          <dt>Coverage</dt><dd>Broad Canadian employer base with student-specific framing.</dd>
+          <dt>Watch-out</dt><dd class="warn">Useful but not exhaustive — plenty of employers never post there.</dd>
+        </dl>
+      </div>
+
+      <div class="card">
+        <span class="tag alt">Canada · eligibility detail</span>
+        <h4><a href="https://ca.prosple.com/" target="_blank" rel="noopener">Prosple Canada</a></h4>
+        <dl>
+          <dt>Best for</dt><dd>Student programs listed with eligibility, closing dates and employer profiles.</dd>
+          <dt>Coverage</dt><dd>Graduate and internship programs across industries.</dd>
+          <dt>Watch-out</dt><dd class="warn">Confirm the application is still open — listings can outlive the window.</dd>
+        </dl>
+      </div>
+
+      <div class="card">
+        <span class="tag alt">Government</span>
+        <h4><a href="https://www.jobbank.gc.ca/" target="_blank" rel="noopener">Job Bank</a></h4>
+        <dl>
+          <dt>Best for</dt><dd>Government and broad-industry opportunities well outside the elite pipelines.</dd>
+          <dt>Coverage</dt><dd>National listings, filterable by student or intern and by location.</dd>
+          <dt>Watch-out</dt><dd class="warn">Search quality varies. Filter by student/intern and location or you will drown.</dd>
+        </dl>
+      </div>
+
+      <div class="card">
+        <span class="tag alt">Aggregator</span>
+        <h4><a href="https://www.eluta.ca/" target="_blank" rel="noopener">Eluta</a></h4>
+        <dl>
+          <dt>Best for</dt><dd>Jobs pulled directly from Canadian employer sites rather than reposted.</dd>
+          <dt>Coverage</dt><dd>Wide Canadian employer index.</dd>
+          <dt>Watch-out</dt><dd class="warn">Some links are duplicates or already filled.</dd>
+        </dl>
+      </div>
+
+      <div class="card">
+        <span class="tag alt">Your unfair advantage</span>
+        <h4><a href="https://clnx.utoronto.ca/" target="_blank" rel="noopener">Your school portal — CLNx and equivalents</a></h4>
+        <dl>
+          <dt>Best for</dt><dd>School-exclusive postings, on-campus recruiting, resume drops and employer events.</dd>
+          <dt>Coverage</dt><dd>Roles that never appear publicly, with a far smaller applicant pool.</dd>
+          <dt>Watch-out</dt><dd class="warn">Deadlines routinely differ from the public posting. Check weekly, not monthly.</dd>
+        </dl>
+      </div>
+    </div>
+
+    <div class="callout">
+      <span class="k">The Canadian timing trap</span>
+      <p>Do not map the U.S. junior-summer calendar onto Canadian co-op hiring. Many Canadian employers recruit by academic work term, which means a role you assume is gone in September may not post until November. Track both calendars separately or you will panic on the wrong schedule.</p>
+    </div>
+  </section>
+
+  <!-- 05 -->
+  <section id="finance" class="sec">
+    <span class="sec-num">05</span>
+    <h2>Finance and banking</h2>
+    <p class="lede">Separate "high finance" timelines from ordinary Canadian bank co-op hiring. They are genuinely different cycles and treating them as one is the single most common mistake I see.</p>
+
+    <div class="cards" style="grid-template-columns:1fr">
+      <div class="card">
+        <span class="tag">High finance · database</span>
+        <h4><a href="https://www.adventiscg.com/class-2028-recruiting-hub" target="_blank" rel="noopener">Adventis — Class of 2028 / Summer 2027 Hub</a></h4>
+        <dl>
+          <dt>Best for</dt><dd>Investment banking, capital markets, private equity and other competitive front-office programs, with expected posting months for firms that have not yet opened.</dd>
+          <dt>Coverage</dt><dd>776 Summer 2027 postings from 109 firms tracked through end of July 2026, with roughly 600–650 more expected over the following six months.</dd>
+          <dt>Watch-out</dt><dd class="warn">Counts and forecasts are directional and U.S.-weighted. Confirm each firm, office and role on the official site.</dd>
+        </dl>
+      </div>
+    </div>
+
+    <h3>Canadian bank career pages — check these directly</h3>
+    <div class="tblwrap">
+      <table>
+        <thead><tr><th>Bank</th><th>What sits there</th></tr></thead>
+        <tbody>
+          <tr><td><strong><a href="https://jobs.rbc.com/ca/en/students-graduates" target="_blank" rel="noopener">RBC</a></strong></td><td>Co-ops, capital markets programs and early tech talent streams.</td></tr>
+          <tr><td><strong><a href="https://jobs.bmo.com/ca/en/students" target="_blank" rel="noopener">BMO</a></strong></td><td>Student roles plus school-specific capital markets guidance.</td></tr>
+          <tr><td><strong><a href="https://www.cibc.com/en/about-cibc/careers/students-and-graduates.html" target="_blank" rel="noopener">CIBC</a></strong></td><td>Campus postings, co-ops and rotational programs.</td></tr>
+          <tr><td><strong><a href="https://careers.td.com/student-new-grads/early-talent-programs/" target="_blank" rel="noopener">TD</a></strong></td><td>Business, risk, technology, finance and wealth internships.</td></tr>
+          <tr><td><strong><a href="https://www.scotiabank.com/careers/en/careers/careers-students-and-new-grads.html" target="_blank" rel="noopener">Scotiabank</a></strong></td><td>Student and new-grad programs across banking and technology.</td></tr>
+          <tr><td><strong><a href="https://emplois.bnc.ca/en_CA/careers/studentsandintership" target="_blank" rel="noopener">National Bank</a></strong></td><td>Internships, summer jobs and capital markets programs.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout neutral">
+      <span class="k">Disclosure</span>
+      <p>I previously worked at CIBC (May 2025 – August 2026) in a process engineering role. It is not a market-facing position and I have no involvement in campus recruiting or hiring decisions there. CIBC is listed here because it is one of the six major Canadian banks, on the same basis as the other five, and nothing on this page reflects the views of my employer.</p>
+    </div>
+
+    <div class="callout">
+      <span class="k">Finance timing</span>
+      <p>If you are targeting investment banking or sales and trading for Summer 2027, apply to anything live now and monitor for re-posts — firms genuinely do add second waves. If you are targeting broader Canadian bank co-ops, keep checking through the fall and into January, because many teams hire by work term rather than on the U.S. junior-summer calendar. And if you are a first or second year, section 08 matters more to you than this one.</p>
+    </div>
+  </section>
+
+  <!-- 06 -->
+  <section id="consulting" class="sec">
+    <span class="sec-num">06</span>
+    <h2>Consulting: exact status matters</h2>
+    <p class="lede">There is no universal "MBB deadline," and anyone who publishes one is guessing. Each firm, school, office and degree type can run a different calendar.</p>
+
+    <div class="tblwrap">
+      <table>
+        <thead><tr><th>Firm</th><th>Status</th><th>What the source says</th><th>Your move</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><strong><a href="https://www.bain.com/careers/work-with-us/internships-programs/associate-consultant-internship/" target="_blank" rel="noopener">Bain</a></strong></td>
+            <td><strong>Second window closing</strong></td>
+            <td>Bain introduced two Associate Consultant Intern windows for the 2027 cycle — 29 March and 31 August 2026 — and reviews applications in batches after each. Reporting from a former interviewer suggests a majority of interview slots fill from the first window.</td>
+            <td>Submit by 31 August if eligible, then check your office-specific page.</td>
+          </tr>
+          <tr>
+            <td><strong><a href="https://www.mckinsey.com/careers/students" target="_blank" rel="noopener">McKinsey</a></strong></td>
+            <td><strong>Intern window passed</strong></td>
+            <td>The Summer Business Analyst intern window ran 1 January to 29 March 2026. The U.S. full-time Business Analyst application ran 1 July to 11 August 2026 for December 2026 – August 2027 graduates. Regional and campus deadlines can differ.</td>
+            <td>Check your school and office pages; watch for the next cycle opening earlier again.</td>
+          </tr>
+          <tr>
+            <td><strong><a href="https://careers.bcg.com/global/en/on-campus/united-states-associate-job-opportunities" target="_blank" rel="noopener">BCG</a></strong></td>
+            <td><strong>Undergrad window passed</strong></td>
+            <td>The Summer Associate window for the Class of 2027 has closed, with Canadian applications included in the same process. A sophomore-level Summer Associate round is reported as expected around September 2026.</td>
+            <td>If you are Class of 2029, watch the sophomore page weekly through September.</td>
+          </tr>
+          <tr>
+            <td><strong>Big 4</strong></td>
+            <td><strong>Main wave now</strong></td>
+            <td>Deloitte, PwC, EY and KPMG typically open advisory and consulting internships across August to November 2026, with postings differing by service line and location.</td>
+            <td>This is the live consulting lane. Apply within the first week of a posting.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <ul class="checks">
+      <li><span><b>School portals are not a footnote</b>Consulting firms publish university-specific events, resume drops and deadlines that never reach the national careers page. For a lot of students this is the only realistic door.</span></li>
+      <li><span><b>Prepare before the posting opens</b>Resume, behavioural stories and case basics should be ready in advance. MBB windows can be a few weeks wide, which is not enough time to start from zero.</span></li>
+      <li><span><b>Use third-party deadline pages as alarms only</b>Management Consulted and Simplify are useful discovery layers. The firm's own page determines the real deadline, every time.</span></li>
+      <li><span><b>Assume next year is earlier again</b>MBB deadlines have moved one to two months earlier in each of the last several cycles. If you are planning for 2028, do not anchor on this year's dates.</span></li>
+    </ul>
+  </section>
+
+  <!-- 07 -->
+  <section id="engineering" class="sec">
+    <span class="sec-num">07</span>
+    <h2>Mechanical, hardware and core engineering</h2>
+    <p class="lede">General SWE trackers systematically under-cover core engineering, which means less competition and worse discovery. Build separate alerts for these functions.</p>
+
+    <div class="tblwrap">
+      <table>
+        <thead><tr><th>Role family</th><th>Search terms to save as alerts</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Mechanical &amp; design</strong></td><td>mechanical engineering intern · product design intern · CAD intern · design verification intern · GD&amp;T intern</td></tr>
+          <tr><td><strong>Manufacturing &amp; operations</strong></td><td>manufacturing engineering intern · process engineering intern · industrial engineering intern · continuous improvement intern · supply chain engineering intern</td></tr>
+          <tr><td><strong>Controls &amp; robotics</strong></td><td>controls intern · mechatronics intern · robotics intern · automation intern · embedded systems intern · PLC intern</td></tr>
+          <tr><td><strong>Energy &amp; thermal</strong></td><td>thermal engineering intern · battery intern · HVAC intern · energy systems intern · CFD intern · power systems intern</td></tr>
+          <tr><td><strong>Hardware &amp; test</strong></td><td>hardware engineering intern · test engineering intern · reliability intern · systems integration intern · validation intern</td></tr>
+          <tr><td><strong>Civil &amp; structural</strong></td><td>civil engineering intern · structural engineering intern · transportation engineering intern · geotechnical intern</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout">
+      <span class="k">Where these roles actually live</span>
+      <p>Aerospace, defence, automotive, utilities and industrial employers rarely appear on the trackers students share with each other. Go direct to the careers pages of ten employers in your sector, set alerts on all of them, and check your school portal weekly. That list of ten will out-perform any aggregator for core engineering.</p>
+    </div>
+  </section>
+
+  <!-- 08 -->
+  <section id="underclass" class="sec">
+    <span class="sec-num">08</span>
+    <h2>First and second years</h2>
+    <p class="lede">If you graduate in 2029, your cycle is not far away — it is starting now. Sophomore programs change names, eligibility and availability constantly, so search the official page each cycle rather than recycling an old list.</p>
+
+    <div class="callout">
+      <span class="k">The number that should get your attention</span>
+      <p>Adventis expects Summer 2028 finance applications to begin appearing in August or September 2026, pick up through the fall and surge from November through January — with roughly 1,200 postings anticipated across the full cycle. It also anticipates around 160 sophomore Summer 2027 postings over the next eight months and roughly 50 early insight programs launching through early spring 2027. If you are in first or second year, that is your calendar, and it has already begun.</p>
+    </div>
+
+    <div class="tblwrap">
+      <table>
+        <thead><tr><th>Program</th><th>What it is</th><th>Current note</th></tr></thead>
+        <tbody>
+          <tr><td><strong><a href="https://github.com/zapplyjobs/underclassmen-internships" target="_blank" rel="noopener">Underclassmen internships list</a></strong></td><td>A curated list of internships, externships and fellowships open specifically to CS first and second years.</td><td>Actively maintained. The single best starting point if you are early and think nothing is open to you.</td></tr>
+          <tr><td><strong><a href="https://github.com/zapplyjobs/Research-Internships-for-Undergraduates" target="_blank" rel="noopener">Undergraduate research internships</a></strong></td><td>Research internships and summer programs worldwide, including NASA, CERN and Max Planck.</td><td>Strong option for international students — many research programs have clearer eligibility rules than corporate ones.</td></tr>
+          <tr><td><strong><a href="https://www.nvidia.com/en-us/about-nvidia/careers/university-recruiting/" target="_blank" rel="noopener">NVIDIA Ignite</a></strong></td><td>A 12-week pre-internship program for current first- and second-year students.</td><td>Verified on NVIDIA's university recruiting page.</td></tr>
+          <tr><td><strong><a href="https://www.capitalonecareers.com/get-ahead-with-early-career-programs-for-students" target="_blank" rel="noopener">Capital One Early Programs</a></strong></td><td>Summits and early internships for first and second years across analyst, tech and product tracks.</td><td>Primarily U.S.-based. Check location and work authorization carefully.</td></tr>
+          <tr><td><strong><a href="https://www.goldmansachs.com/careers/students/programs-and-internships/americas/possibilities-series" target="_blank" rel="noopener">Goldman Sachs Possibilities Series</a></strong></td><td>A first-year exploratory program covering financial services careers.</td><td>The Spring 2026 round closed. Monitor the official programs page for the next cycle.</td></tr>
+          <tr><td><strong><a href="https://summerofcode.withgoogle.com/" target="_blank" rel="noopener">Google Summer of Code</a></strong></td><td>A mentored open-source contribution program lasting 12+ weeks.</td><td>Genuinely valuable experience, but it is not a traditional Google internship and should not be described as one on a resume.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>The honest framing for first and second years: you are not going to win a competitive junior-summer seat right now, and you do not need to. What you need is one piece of real evidence — a shipped project, a research term, a small-company internship, a program on this list — that makes your junior-year application concrete instead of aspirational.</p>
+  </section>
+
+  <!-- 09 -->
+  <section id="intl" class="sec">
+    <span class="sec-num">09</span>
+    <h2>If you are an international student</h2>
+    <p class="lede">This is the section most recruiting guides skip. Work authorization is not a footnote at the end of your application — it determines which half of the postings are real for you, and finding that out early saves entire weekends.</p>
+
+    <ul class="checks">
+      <li><span><b>Filter by authorization before you filter by anything else</b>A posting that says "must be authorized to work without current or future sponsorship" is a no, regardless of how good the fit is. Building that check into step one of your workflow is the highest-leverage thing in this whole guide for you.</span></li>
+      <li><span><b>Never infer sponsorship from a tracker</b>Trackers frequently mislabel or omit sponsorship status. Read the employer's own wording on the posting, and answer application questions truthfully — a wrong answer here follows you.</span></li>
+      <li><span><b>Know your own status precisely</b>Whether you can work off-campus, how many hours during a study term, whether a co-op work permit is required for your program, and how your permit interacts with a full-time summer term. Get this from your institution's international student advising office, not from a group chat. Rules change.</span></li>
+      <li><span><b>A Canadian co-op work permit is usually program-tied</b>If your degree requires a work placement, the co-op permit process is separate from your study permit and takes time. Start it well before you have an offer in hand, not after.</span></li>
+      <li><span><b>Weight Canadian employers more heavily than your peers do</b>The U.S. postings on most trackers will disproportionately exclude you. Section 04 is where your realistic volume lives — plus school-exclusive postings, which are open to you on the same terms as everyone else in your program.</span></li>
+      <li><span><b>Research programs and open-source have cleaner rules</b>Academic and research placements often have eligibility criteria that are explicit rather than buried, which makes them faster to qualify yourself against.</span></li>
+      <li><span><b>Do not disclose more than the form asks</b>Answer the authorization questions accurately and completely, and leave it there. Your cover letter is not the place to pre-emptively explain your immigration status.</span></li>
+    </ul>
+
+    <div class="callout neutral">
+      <span class="k">Not immigration advice</span>
+      <p>I am an international student, not an immigration consultant or lawyer. Everything above is a research and prioritization workflow. For anything that determines your actual status, go to your institution's designated international student advisors or a licensed professional, and verify against official government sources.</p>
+    </div>
+  </section>
+
+  <!-- 10 -->
+  <section id="alerts" class="sec">
+    <span class="sec-num">10</span>
+    <h2>Set up alerts that actually work</h2>
+    <p class="lede">Under rolling review, the gap between a role going live and you finding out is the whole game. An alert closes that gap from weeks to hours and takes about a minute to set up.</p>
+
+    <ul class="checks">
+      <li><span><b>Employer alerts</b>Create accounts and job alerts on the careers pages of your top 20–30 employers. This is tedious for one evening and then works for a year.</span></li>
+      <li><span><b>Platform alerts</b>LinkedIn, Simplify, TalentEgg, Prosple and your school portal, all using the same role-family keywords so results stay comparable.</span></li>
+      <li><span><b>GitHub and RSS</b>Watch the two trackers you trust rather than refreshing them. Notifications land in your inbox; refreshing lands in your evening.</span></li>
+      <li><span><b>Calendar blocks</b>Two 20-minute scans a week now, three a week through September and October. Put them in the calendar or they will not happen.</span></li>
+      <li><span><b>Email hygiene</b>One professional address, checked daily including spam, with employer domains and assessment providers whitelisted. Online assessments expire, and they land in spam more often than you would think.</span></li>
+    </ul>
+  </section>
+
+  <!-- 11 -->
+  <section id="system" class="sec">
+    <span class="sec-num">11</span>
+    <h2>The application operating system</h2>
+    <p class="lede">The difference between "I saw the role" and "I applied well" is a repeatable workflow. Seven steps, same every time.</p>
+
+    <ol class="steps">
+      <li><b>Discover</b><span>A tracker, employer page, school portal or referral surfaces the role. Log it immediately, even if you do not act today.</span></li>
+      <li><b>Verify</b><span>Confirm it is live, eligible, correctly located and matched to your graduation window. For international students, authorization check goes here.</span></li>
+      <li><b>Prioritize</b><span>Classify A, B or C — dream fit, strong fit, or low probability and low interest. Your A list should be short enough that you can genuinely tailor for it.</span></li>
+      <li><b>Tailor</b><span>Adjust the top third of your resume, your skills line and two or three bullets to the role family. Not the whole document, and not five keyword swaps.</span></li>
+      <li><b>Apply</b><span>For rolling or unstated deadlines, submit within 24–72 hours of discovery. Not at the final deadline, which under rolling review is often after the pipeline is full.</span></li>
+      <li><b>Log</b><span>Open date, deadline type, application date, status, contact and next action. Six fields, one row, thirty seconds.</span></li>
+      <li><b>Follow up</b><span>Networking gives you context and visibility. It does not replace applying, and a referral to a role you never submitted to is worth nothing.</span></li>
+    </ol>
+  </section>
+
+  <!-- 12 -->
+  <section id="tracker" class="sec">
+    <span class="sec-num">12</span>
+    <h2>Minimum viable application tracker</h2>
+    <p class="lede">A spreadsheet is enough. These columns are what prevent missed assessment deadlines and accidental duplicate submissions, which are the two failure modes that actually cost people interviews.</p>
+
+    <div class="tblwrap">
+      <table>
+        <thead><tr><th>Identity</th><th>Timing</th><th>Pipeline</th><th>Follow-up</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>Company<br>Role<br>Location<br>Application link<br>Role family<br>Sponsorship OK?</td>
+            <td>Open date<br>Deadline<br>Deadline type<br>Date applied<br>Days from open</td>
+            <td>Status<br>Assessment due<br>Interview stage<br>Outcome<br>Reason / notes</td>
+            <td>Contact<br>Last touchpoint<br>Next action<br>Follow-up date<br>Referral status</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout">
+      <span class="k">Deadline types — the field people skip</span>
+      <p><strong>Fixed</strong> is a hard close date. <strong>Priority</strong> means earlier review or preferred consideration. <strong>Rolling</strong> means reviewed as received. <strong>Unstated</strong> means assume rolling and move within 72 hours. Recording which type you are dealing with is what turns a list into a strategy.</p>
+    </div>
+  </section>
+
+  <!-- 13 -->
+  <section id="resume" class="sec">
+    <span class="sec-num">13</span>
+    <h2>Resume readiness</h2>
+    <p class="lede">Your resume needs to be finished before the wave, not during it. Every hour spent rewriting it in October is an hour you are not applying.</p>
+
+    <ul class="checks">
+      <li><span><b>One page, single column</b>For most undergraduate applications, unless the employer explicitly asks otherwise. Two columns break more parsers than people realize.</span></li>
+      <li><span><b>A strong top third</b>Education, most relevant experience and role-specific skills visible without scrolling. Assume six seconds of attention on the first pass.</span></li>
+      <li><span><b>Quantified bullets</b>Lead with the action, name the tool or method, close with impact or scale. "Built" is weaker than "built X in Y, cutting Z by N%."</span></li>
+      <li><span><b>Role-family versions</b>Maintain separate finance/strategy, software/data and engineering/operations variants. Three files, not thirty.</span></li>
+      <li><span><b>No fake tailoring</b>Swapping five keywords without changing the evidence underneath is not tailoring, and experienced reviewers can tell.</span></li>
+      <li><span><b>File hygiene</b>Firstname_Lastname_Resume.pdf, every hyperlink tested, exported as PDF so formatting survives the upload.</span></li>
+    </ul>
+  </section>
+
+  <!-- 14 -->
+  <section id="queries" class="sec">
+    <span class="sec-num">14</span>
+    <h2>Search strings to save</h2>
+    <p class="lede">Save these as alerts rather than running them by hand. Swap the bracketed fields for your city, program or target firm.</p>
+
+    <div class="query">
+      <div><span class="ql">General</span><span class="qt">"Summer 2027" AND (intern OR co-op) AND [city or field]</span></div>
+      <button class="copy" type="button">Copy</button>
+    </div>
+    <div class="query">
+      <div><span class="ql">Canada co-op</span><span class="qt">(co-op OR internship) AND ("Winter 2027" OR "Summer 2027") AND [Toronto OR Ontario]</span></div>
+      <button class="copy" type="button">Copy</button>
+    </div>
+    <div class="query">
+      <div><span class="ql">Finance</span><span class="qt">("2027 Summer Analyst" OR "Capital Markets Intern") AND [Toronto OR Canada]</span></div>
+      <button class="copy" type="button">Copy</button>
+    </div>
+    <div class="query">
+      <div><span class="ql">Consulting</span><span class="qt">("Summer Associate" OR "Consulting Intern" OR "Business Analyst Intern") AND 2027</span></div>
+      <button class="copy" type="button">Copy</button>
+    </div>
+    <div class="query">
+      <div><span class="ql">Tech &amp; data</span><span class="qt">("Software Engineer Intern" OR "Data Science Intern" OR "Machine Learning Intern") AND 2027</span></div>
+      <button class="copy" type="button">Copy</button>
+    </div>
+    <div class="query">
+      <div><span class="ql">Engineering</span><span class="qt">("Mechanical Engineering Intern" OR "Manufacturing Engineering Intern" OR "Controls Intern") AND 2027</span></div>
+      <button class="copy" type="button">Copy</button>
+    </div>
+    <div class="query">
+      <div><span class="ql">Sponsorship-aware</span><span class="qt">"Summer 2027" intern ("visa sponsorship" OR "will sponsor" OR "sponsorship available") [city]</span></div>
+      <button class="copy" type="button">Copy</button>
+    </div>
+    <div class="query">
+      <div><span class="ql">Company-specific</span><span class="qt">site:company-domain.com/careers (intern OR co-op) "2027"</span></div>
+      <button class="copy" type="button">Copy</button>
+    </div>
+  </section>
+
+  <!-- 15 -->
+  <section id="qc" class="sec">
+    <span class="sec-num">15</span>
+    <h2>Quality control before you apply</h2>
+    <p class="lede">Fast applications only help when the application is accurate and you are actually eligible. Ninety seconds of checking beats an hour of tailoring for a role you cannot take.</p>
+
+    <ul class="checks">
+      <li><span><b>Eligibility</b>Graduation window, degree level, location, term length, GPA requirements, and whether the posting accepts international students.</span></li>
+      <li><span><b>Work authorization</b>Read the employer's own wording. Do not infer sponsorship from a tracker, and answer application questions truthfully.</span></li>
+      <li><span><b>Duplicate roles</b>The same job appears under multiple cities and requisition IDs. Avoid accidental duplicate submissions unless the employer explicitly permits multiple locations.</span></li>
+      <li><span><b>Scam check</b>Apply through an employer domain or a trusted school portal. Treat interviews conducted over personal messaging apps, requests for money, and cheque or equipment schemes as disqualifying.</span></li>
+      <li><span><b>Assessment deadlines</b>The application deadline and the online assessment deadline are frequently different dates. Log both the moment you apply.</span></li>
+      <li><span><b>Save the evidence</b>Print the posting to PDF before it closes. You will want the exact wording when you prepare for the interview three months later.</span></li>
+    </ul>
+
+    <div class="callout">
+      <span class="k">Bottom line</span>
+      <p>Start now, but do not panic. Front-office finance and MBB are largely past for Summer 2027, and pretending otherwise helps nobody. Big tech, AI, quant, Big 4, core engineering and the entire Canadian co-op calendar are ahead of you. The winning combination has not changed: early discovery, official verification, a finished resume, and disciplined tracking.</p>
+    </div>
+  </section>
+
+  <!-- 16 -->
+  <section id="register" class="sec">
+    <span class="sec-num">16</span>
+    <h2>Verification register</h2>
+    <p class="lede">Primary sources were prioritized for firm deadlines and program status. Third-party sources are labelled as discovery tools rather than authorities. Where I could not confirm something on a primary page, the page says "expected" rather than stating it as fact.</p>
+
+    <div class="tblwrap">
+      <table class="reg">
+        <thead><tr><th>#</th><th>Source</th><th>Checked</th><th>What it supports</th></tr></thead>
+        <tbody>
+          <tr><td>01</td><td><a href="https://www.adventiscg.com/class-2028-recruiting-hub" target="_blank" rel="noopener">Adventis — Class of 2028 Hub</a></td><td>30 Aug 2026</td><td>776 postings across 109 firms through end of July 2026; ~24 more firms and 600–650 more postings expected.</td></tr>
+          <tr><td>02</td><td><a href="https://www.adventiscg.com/class-2029-recruiting-hub" target="_blank" rel="noopener">Adventis — Class of 2029 Hub</a></td><td>30 Aug 2026</td><td>Summer 2028 postings beginning Aug–Sep 2026; ~1,200 anticipated; ~160 sophomore and ~50 early insight programs.</td></tr>
+          <tr><td>03</td><td><a href="https://www.bain.com/careers/work-with-us/internships-programs/associate-consultant-internship/" target="_blank" rel="noopener">Bain — Associate Consultant Internship</a></td><td>30 Aug 2026</td><td>Two ACI windows for the 2027 cycle: 29 March and 31 August 2026; batch review after each.</td></tr>
+          <tr><td>04</td><td><a href="https://www.mckinsey.com/careers/students" target="_blank" rel="noopener">McKinsey — Students</a></td><td>30 Aug 2026</td><td>Summer BA intern window 1 Jan – 29 Mar 2026; full-time BA 1 Jul – 11 Aug 2026.</td></tr>
+          <tr><td>05</td><td><a href="https://careers.bcg.com/global/en/on-campus/united-states-associate-job-opportunities" target="_blank" rel="noopener">BCG — On-campus</a></td><td>30 Aug 2026</td><td>Class of 2027 Summer Associate window closed; Canadian applications in the same process.</td></tr>
+          <tr><td>06</td><td><a href="https://simplify.jobs/blog/summer-2027-internship-timeline" target="_blank" rel="noopener">Simplify — Summer 2027 timeline</a></td><td>30 Aug 2026</td><td>Directional industry windows; Sep–Oct peak; rolling-deadline guidance.</td></tr>
+          <tr><td>07</td><td><a href="https://github.com/speedyapply/2027-SWE-College-Jobs" target="_blank" rel="noopener">SpeedyApply — 2027 SWE</a></td><td>30 Aug 2026</td><td>Active daily-updated SWE tracker with U.S. and international lists.</td></tr>
+          <tr><td>08</td><td><a href="https://github.com/speedyapply/2027-AI-College-Jobs" target="_blank" rel="noopener">SpeedyApply — 2027 AI/ML</a></td><td>30 Aug 2026</td><td>Active AI/ML tracker with posted rates; skews graduate-level.</td></tr>
+          <tr><td>09</td><td><a href="https://github.com/vanshb03/Summer2027-Internships" target="_blank" rel="noopener">Summer 2027 Internships</a></td><td>30 Aug 2026</td><td>Community tracker scoped to U.S., Canada and remote.</td></tr>
+          <tr><td>10</td><td><a href="https://github.com/zapplyjobs/Internships-2027" target="_blank" rel="noopener">Zapply — Internships 2027</a></td><td>30 Aug 2026</td><td>Active multi-function real-time tracker.</td></tr>
+          <tr><td>11</td><td><a href="https://github.com/hanzili/canada_sde_intern_position" target="_blank" rel="noopener">Canadian student internships &amp; co-ops</a></td><td>30 Aug 2026</td><td>Daily-updated Canadian roles with term length and CAD pay.</td></tr>
+          <tr><td>12</td><td><a href="https://github.com/zapplyjobs/underclassmen-internships" target="_blank" rel="noopener">Underclassmen internships</a></td><td>30 Aug 2026</td><td>Programs open to CS first and second years.</td></tr>
+          <tr><td>13</td><td><a href="https://www.nvidia.com/en-us/about-nvidia/careers/university-recruiting/" target="_blank" rel="noopener">NVIDIA University Recruiting</a></td><td>30 Aug 2026</td><td>Ignite description and underclassman eligibility.</td></tr>
+          <tr><td>14</td><td><a href="https://www.goldmansachs.com/careers/students/programs-and-internships/americas/possibilities-series" target="_blank" rel="noopener">Goldman Sachs Possibilities Series</a></td><td>30 Aug 2026</td><td>First-year program; Spring 2026 round closed.</td></tr>
+          <tr><td>15</td><td><a href="https://summerofcode.withgoogle.com/" target="_blank" rel="noopener">Google Summer of Code</a></td><td>30 Aug 2026</td><td>Open-source contributor program, not a traditional internship.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout">
+      <span class="k">Important</span>
+      <p>Recruiting pages change without notice, and several dates on this page are labelled "expected" because a third party reported them rather than the firm publishing them. Re-verify every date on the employer's own site before you apply, and before you repeat any of it to someone else.</p>
+    </div>
+
+    <div class="follow">
+      <h3>This page is maintained, not published once</h3>
+      <p>Statuses recalculate daily and I update the register whenever a window opens or closes. If it helped, the useful thing you can do is follow along — that is where the updates go first.</p>
+      <div class="cta-row" style="margin-top:24px">
+        <a class="btn btn-primary" href="https://instagram.com/byaaryaman" target="_blank" rel="noopener">Follow @byaaryaman</a>
+        <a class="btn btn-ghost" href="/recruiting-calendar">Open the recruiting calendar</a>
+      </div>
+    </div>
+
+    <div class="morepages">
+      <a class="mp" href="/recruiting-calendar"><span class="mt">Companion</span><b>Recruiting calendar</b><span>Deadlines organized by graduation year.</span></a>
+      <a class="mp" href="/job-simulations"><span class="mt">Free</span><b>Job simulations</b><span>Employer-built programs that give you something concrete to put on a resume.</span></a>
+      <a class="mp" href="/conferences"><span class="mt">Free</span><b>Conference scholarships</b><span>Funded conferences that most students never hear about.</span></a>
+      <a class="mp" href="/before-you-land"><span class="mt">Guide</span><b>Pre-arrival checklist</b><span>What to sort out before you land, if you are coming to study here.</span></a>
+    </div>
+
+  </section>
+
+  </div>
+</div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <p><strong>About this page.</strong> Written and maintained by Aaryaman Singh, an engineering student at the University of Toronto. It reflects publicly available information as checked on the dates in the register above, and is offered as a research workflow — not as career, immigration, financial or legal advice. Nothing here reflects the views of any employer.</p>
+    <p>Third-party trackers are listed as discovery tools. I am not affiliated with, and receive nothing from, any tracker, firm or employer named on this page.</p>
+    <p class="fmeta">Last content review 30 Aug 2026 · Statuses recalculate on load · <a href="https://instagram.com/byaaryaman" target="_blank" rel="noopener">@byaaryaman</a></p>
+  </div>
+</footer>
+<script is:inline src="/playbook.js"></script>
+</body>
+</html>
