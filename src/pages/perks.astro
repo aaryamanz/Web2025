@@ -1,0 +1,594 @@
+---
+const pageTitle = 'What Your Student Email Actually Unlocks — Verified 2026 List | Aaryaman Singh'
+const pageDescription =
+  "Every perk your school email unlocks, checked against the official page, with the regional catches most lists get wrong. Work out what you're leaving unclaimed before your email expires."
+const pageUrl = 'https://aaryamansingh.com/perks'
+const ogTitle = 'What Your Student Email Actually Unlocks'
+const ogDescription =
+  '22 verified student perks, the regional catches most lists get wrong, and what to do before your email dies.'
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{pageTitle}</title>
+<meta name="description" content={pageDescription}>
+<meta name="author" content="Aaryaman Singh">
+<link rel="canonical" href={pageUrl}>
+<meta property="og:title" content={ogTitle}>
+<meta property="og:description" content={ogDescription}>
+<meta property="og:type" content="article">
+<meta property="og:url" content={pageUrl}>
+<meta property="og:image" content="https://aaryamansingh.com/social-preview-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/perks.css">
+</head>
+<body>
+<header class="masthead">
+  <div class="wrap">
+    <a class="brand" href="/"><span class="dot" aria-hidden="true"></span>Aaryaman Singh</a>
+    <div class="stamp">Checked <b id="today-stamp">30 Aug 2026</b></div>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Student perks · verified list</p>
+    <h1>Everything behind your school email <em>expires with it</em></h1>
+    <p class="deck">Twenty-two perks, each one checked against the company's own page rather than copied from another list. Including the <strong>regional catches</strong> most roundups get wrong — the biggest one this year locks Canadian students out of an offer nearly every list says they can claim.</p>
+
+    <div class="clock">
+      <div class="clock-top">
+        <div>
+          <label for="gradMonth">When do you graduate?</label>
+          <div class="selects">
+            <select id="gradMonth" aria-label="Graduation month"></select>
+            <select id="gradYear" aria-label="Graduation year"></select>
+          </div>
+        </div>
+        <div class="readout">
+          <span class="big" id="daysLeft">—</span>
+          <span class="cap" id="daysCap">days of student email left</span>
+        </div>
+      </div>
+      <p class="clock-note" id="clockNote">Pick your graduation date. Most of these need an active student email at the moment you claim them, and a few need annual re-verification after that.</p>
+    </div>
+
+    <div class="cta-row">
+      <a class="btn btn-primary" href="#ai">Start with the AI tools</a>
+      <a class="btn btn-ghost" href="https://instagram.com/byaaryaman" target="_blank" rel="noopener">Follow @byaaryaman</a>
+    </div>
+  </div>
+</div>
+
+<div class="tallybar">
+  <div class="wrap">
+    <span class="tallytxt"><b id="claimCount">0</b> of 22 claimed</span>
+    <span class="meter" aria-hidden="true"><i id="meterFill"></i></span>
+    <span class="tallytxt">≈ <b id="claimValue">$0</b> of list value</span>
+    <button class="resetbtn" id="resetBtn" type="button">Reset</button>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <!-- 01 AI -->
+  <section id="ai" class="sec">
+    <div class="sec-head">
+      <span class="sec-num">01</span>
+      <h2>AI tools</h2>
+      <p class="lede">The fastest-moving category on this page, and the one where copied lists go wrong quickest. Every offer here changed in 2026.</p>
+    </div>
+
+    <div class="callout warn">
+      <span class="k">Read this before the first card</span>
+      <p>Google relaunched its student offer on 19 August 2026 after the previous one closed. The new one gives U.S. students a free year of AI Pro and students in 140+ other markets a free year of AI Plus — but <strong>Canada is excluded outright</strong>, along with Albania, Bolivia, Hong Kong, Macau and Tunisia. That exclusion sits in Google's own support documentation, not in the announcement headline, which is why most roundups miss it.</p>
+      <p>If you are studying in Canada, the direct route does not work. A separate Google offer distributed through Handshake did cover Canadian students, but it was described as running only through the end of summer, so treat it as expired unless your Handshake account still shows it.</p>
+    </div>
+
+    <div class="perks" id="grid-ai">
+
+      <div class="perk" data-value="240">
+        <div class="perk-top">
+          <h4><a href="https://gemini.google.com/students" target="_blank" rel="noopener">Google AI Pro / AI Plus</a></h4>
+          <span class="val">$240/yr</span>
+        </div>
+        <dl>
+          <dt>What you get</dt><dd>A free year. U.S. students get AI Pro — 4× Gemini usage limits, 5 TB storage, Gemini in Gmail and Docs. Students in 140+ other markets get AI Plus — 2× limits and 400 GB.</dd>
+          <dt>How to claim</dt><dd>Sign in with a <em>personal</em> Google account, not your school Workspace one, then verify enrolment. Redeem by 31 December 2026.</dd>
+          <dt>The catch</dt><dd class="alert">Canada, Albania, Bolivia, Hong Kong, Macau and Tunisia are excluded. A payment method is required at sign-up and the plan auto-renews at $19.99/month unless you cancel. Set the reminder now.</dd>
+        </dl>
+        <button class="claimbtn" type="button"><span class="box"></span>Mark claimed</button>
+      </div>
+
+      <div class="perk" data-value="120">
+        <div class="perk-top">
+          <h4><a href="https://education.github.com/pack" target="_blank" rel="noopener">GitHub Copilot Student</a></h4>
+          <span class="val">$120/yr</span>
+        </div>
+        <dl>
+          <dt>What you get</dt><dd>Unlimited code completions in your IDE plus a monthly allowance of GitHub AI credits for chat, agent mode, code review and the CLI.</dd>
+          <dt>How to claim</dt><dd>Comes through the Student Developer Pack — one verification covers both.</dd>
+          <dt>The catch</dt><dd class="catch">GitHub paused new student sign-ups in April 2026 citing compute demand, then reopened them as a dedicated Student plan. Check the current state on the page rather than trusting any list, including this one. Premium models are not hand-selectable on the free tier, and agent runs burn the credit allowance fast.</dd>
+        </dl>
+        <button class="claimbtn" type="button"><span class="box"></span>Mark claimed</button>
+      </div>
+
+      <div class="perk" data-value="120">
+        <div class="perk-top">
+          <h4><a href="https://www.perplexity.ai/students" target="_blank" rel="noopener">Perplexity Pro</a></h4>
+          <span class="val">$120/yr</span>
+        </div>
+        <dl>
+          <dt>What you get</dt><dd>Unlimited Pro searches, file upload and the stronger reasoning models, at roughly half the standard price for verified students.</dd>
+          <dt>How to claim</dt><dd>Education verification with your school email.</dd>
+          <dt>The catch</dt><dd class="catch">The referral-bonus programme that handed out extra free months ended 31 May 2026. Fully free student offers have run at various points and tend to reappear at semester start — claim whatever is live rather than waiting for a better one.</dd>
+        </dl>
+        <button class="claimbtn" type="button"><span class="box"></span>Mark claimed</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 02 developer -->
+  <section id="dev" class="sec">
+    <div class="sec-head">
+      <span class="sec-num">02</span>
+      <h2>Developer tools and cloud</h2>
+      <p class="lede">Claim the GitHub Student Developer Pack first. It is a single verification that unlocks most of the rest of this section, and several offers below are only reachable through it.</p>
+    </div>
+
+    <div class="perks">
+
+      <div class="perk" data-value="700">
+        <div class="perk-top">
+          <h4><a href="https://education.github.com/pack" target="_blank" rel="noopener">GitHub Student Developer Pack</a></h4>
+          <span class="val">$700+/yr</span>
+        </div>
+        <dl>
+          <dt>What you get</dt><dd>One verification, 100+ partner offers: GitHub Pro, the full JetBrains suite, DigitalOcean and Azure credits, a free domain with SSL from Namecheap, DataCamp, GitKraken and more.</dd>
+          <dt>How to claim</dt><dd>Verify at education.github.com/pack with a school email, student ID or enrolment document. Approvals usually land within about 72 hours.</dd>
+          <dt>The catch</dt><dd class="catch">The pack stays active roughly two years before you re-verify. Apply with documents that clearly show your real name and a current date, or you will be sent back round.</dd>
+        </dl>
+        <button class="claimbtn" type="button"><span class="box"></span>Mark claimed</button>
+      </div>
+
+      <div class="perk" data-value="289">
+        <div class="perk-top">
+          <h4><a href="https://www.jetbrains.com/community/education/#students" target="_blank" rel="noopener">JetBrains — every IDE</a></h4>
+          <span class="val">$289/yr</span>
+        </div>
+        <dl>
+          <dt>What you get</dt><dd>IntelliJ IDEA Ultimate, PyCharm, WebStorm, GoLand, DataGrip, CLion — the full professional lineup, not the community editions.</dd>
+          <dt>How to claim</dt><dd>Through the Student Pack, or directly with a school email.</dd>
+          <dt>The catch</dt><dd class="catch">Renews annually while you stay enrolled. Educational licences are for learning, not paid client work.</dd>
+        </dl>
+        <button class="claimbtn" type="button"><span class="box"></span>Mark claimed</button>
+      </div>
+
+      <div class="perk" data-value="100">
+        <div class="perk-top">
+          <h4><a href="https://azure.microsoft.com/free/students" target="_blank" rel="noopener">Azure for Students</a></h4>
+          <span class="val">$100</span>
+        </div>
+        <dl>
+          <dt>What you get</dt><dd>$100 in credit for 12 months plus more than 25 always-free services across compute, networking, storage and databases. No credit card required.</dd>
+          <dt>How to claim</dt><dd>Verify with your school email. It also opens access to developer tools through the Azure Education Hub.</dd>
+          <dt>The catch</dt><dd class="catch">Microsoft's own documentation is blunt about this: when the credit runs out or the 12 months end, the subscription is cancelled. Shut down anything you are not actively using — idle services are how free tiers get eaten.</dd>
+        </dl>
+        <button class="claimbtn" type="button"><span class="box"></span>Mark claimed</button>
+      </div>
+
+      <div class="perk" data-value="200">
+        <div class="perk-top">
+          <h4><a href="https://www.digitalocean.com/github-students" target="_blank" rel="noopener">DigitalOcean credit</a></h4>
+          <span class="val">$200</span>
+        </div>
+        <dl>
+          <dt>What you get</dt><dd>$200 in hosting credit — enough to run a portfolio site, a side project and a database for a long time.</dd>
+          <dt>How to claim</dt><dd>Redeem inside the Student Developer Pack.</dd>
+          <dt>The catch</dt><dd class="catch">Time-limited once you activate it, so redeem it when you have something to deploy rather than on the day you get the pack.</dd>
+        </dl>
+        <button class="claimbtn" type="button"><span class="box"></span>Mark claimed</button>
+      </div>
+
+      <div class="perk" data-value="100">
+        <div class="perk-top">
+          <h4><a href="https://aws.amazon.com/education/awseducate/" target="_blank" rel="noopener">AWS Educate and free tier</a></h4>
+          <span class="val">$100+</span>
+        </div>
+        <dl>
+          <dt>What you get</dt><dd>Training content, labs and a generous free tier — real infrastructure for hosting projects and training models.</dd>
+          <dt>How to claim</dt><dd>Register with your school email.</dd>
+          <dt>The catch</dt><dd class="catch">The free tier is not the same thing as free. Set a billing alarm on day one; the classic student horror story is a training job left running over a weekend.</dd>
+        </dl>
+        <button class="claimbtn" type="button"><span class="box"></span>Mark claimed</button>
+      </div>
+
+      <div class="perk" data-value="15">
+        <div class="perk-top">
+          <h4><a href="https://nc.me/" target="_blank" rel="noopener">Free domain and SSL</a></h4>
+          <span class="val">$15/yr</span>
+        </div>
+        <dl>
+          <dt>What you get</dt><dd>A free domain with an SSL certificate through Namecheap, via the Student Pack.</dd>
+          <dt>How to claim</dt><dd>Redeem inside the pack.</dd>
+          <dt>The catch</dt><dd class="catch">Free for the first year, then it renews at normal price. Worth it anyway — a personal domain outlives every other perk here.</dd>
+        </dl>
+        <button class="claimbtn" type="button"><span class="box"></span>Mark claimed</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 03 engineering -->
+  <section id="engineering" class="sec">
+    <div class="sec-head">
+      <span class="sec-num">03</span>
+      <h2>Engineering and productivity software</h2>
+      <p class="lede">The biggest headline numbers on this page live here, and they need the most honest handling — see the tally in section 06 for why.</p>
+    </div>
+
+    <div class="perks">
+
+      <div class="perk" data-value="1700">
+        <div class="perk-top">
+          <h4><a href="https://www.autodesk.com/education/edu-software/overview" target="_blank" rel="noopener">Autodesk education licence</a></h4>
+          <span class="val">$1,700/yr list</span>
+        </div>
+        <dl>
+          <dt>What you get</dt><dd>AutoCAD, Fusion 360, Revit, Maya, 3ds Max and 100+ other Autodesk products, free for a year and renewable while you stay enrolled.</dd>
+          <dt>How to claim</dt><dd>Verify with your school email at autodesk.com/education.</dd>
+          <dt>The catch</dt><dd class="catch">Education licences are for learning only. Using one for paid client work breaches the terms, and files carry an educational watermark that follows them downstream.</dd>
+        </dl>
+        <button class="claimbtn" type="button"><span class="box"></span>Mark claimed</button>
+      </div>
+
+      <div class="perk" data-value="900">
+        <div class="perk-top">
+          <h4><a href="https://www.mathworks.com/academia/tah-support-program/students.html" target="_blank" rel="noopener">MATLAB and Simulink</a></h4>
+          <span class="val">$900/yr list</span>
+        </div>
+        <dl>
+          <dt>What you get</dt><dd>The full suite plus most toolboxes, where your university holds a campus-wide licence through MathWorks. Most engineering schools do.</dd>
+          <dt>How to claim</dt><dd>Search "[your school] MATLAB portal" — it runs through your institution, not through MathWorks directly.</dd>
+          <dt>The catch</dt><dd class="catch">Tied to your institution's licence, so it dies the moment you stop being enrolled. Export any scripts and models you want to keep.</dd>
+        </dl>
+        <button class="claimbtn" type="button"><span class="box"></span>Mark claimed</button>
+      </div>
+
+      <div class="perk" data-value="100">
+        <div class="perk-top">
+          <h4><a href="https://www.microsoft.com/en-us/education/products/office" target="_blank" rel="noopener">Microsoft 365 Education</a></h4>
+          <span class="val">$100/yr</span>
+        </div>
+        <dl>
+          <dt>What you get</dt><dd>Word, Excel, PowerPoint, OneNote and Teams — the full desktop applications, not the cut-down web versions — plus 1 TB of OneDrive storage.</dd>
+          <dt>How to claim</dt><dd>Enter your school email on Microsoft's education page. Verification is usually instant if your institution qualifies.</dd>
+          <dt>The catch</dt><dd class="alert">The OneDrive storage deactivates when you graduate. Back it up before your email dies, not after — this is the single most common way students lose years of work.</dd>
+        </dl>
+        <button class="claimbtn" type="button"><span class="box"></span>Mark claimed</button>
+      </div>
+
+      <div class="perk" data-value="144">
+        <div class="perk-top">
+          <h4><a href="https://www.figma.com/education/" target="_blank" rel="noopener">Figma Education</a></h4>
+          <span class="val">$144/yr</span>
+        </div>
+        <dl>
+          <dt>What you get</dt><dd>The full Figma Professional plan free for verified students and educators — unlimited projects, version history, advanced prototyping.</dd>
+          <dt>How to claim</dt><dd>Verify at figma.com/education.</dd>
+          <dt>The catch</dt><dd class="catch">Needs periodic re-verification. Export or transfer ownership of anything you want to keep before you lose the plan.</dd>
+        </dl>
+        <button class="claimbtn" type="button"><span class="box"></span>Mark claimed</button>
+      </div>
+
+      <div class="perk" data-value="120">
+        <div class="perk-top">
+          <h4><a href="https://www.notion.com/product/notion-for-education" target="_blank" rel="noopener">Notion Plus</a></h4>
+          <span class="val">$120/yr</span>
+        </div>
+        <dl>
+          <dt>What you get</dt><dd>The Plus plan free with a school email — unlimited pages and blocks, unlimited file uploads, collaboration.</dd>
+          <dt>How to claim</dt><dd>Sign up with your school email. There is no third-party verification step; the email alone does it.</dd>
+          <dt>The catch</dt><dd class="catch">One of the few perks with a genuine afterlife — the education plan has covered alumni addresses where the domain still qualifies, so check before you assume it's gone.</dd>
+        </dl>
+        <button class="claimbtn" type="button"><span class="box"></span>Mark claimed</button>
+      </div>
+
+      <div class="perk" data-value="120">
+        <div class="perk-top">
+          <h4><a href="https://www.canva.com/education/" target="_blank" rel="noopener">Canva Pro</a></h4>
+          <span class="val">$120/yr</span>
+        </div>
+        <dl>
+          <dt>What you get</dt><dd>Premium templates, brand kits, background remover, magic resize and 100 GB of storage.</dd>
+          <dt>How to claim</dt><dd>Verify through Canva's education page.</dd>
+          <dt>The catch</dt><dd class="catch">Eligibility is broader for teachers than students at some tiers — check which plan you actually land on before you build a workflow around it.</dd>
+        </dl>
+        <button class="claimbtn" type="button"><span class="box"></span>Mark claimed</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 04 reading -->
+  <section id="reading" class="sec">
+    <div class="sec-head">
+      <span class="sec-num">04</span>
+      <h2>Reading and research</h2>
+      <p class="lede">The most underclaimed category by a distance. Your university already paid for these — the access exists whether or not you activate it.</p>
+    </div>
+
+    <div class="perks">
+
+      <div class="perk" data-value="500">
+        <div class="perk-top">
+          <h4>WSJ and New York Times</h4>
+          <span class="val">$500/yr list</span>
+        </div>
+        <dl>
+          <dt>What you get</dt><dd>Full digital subscriptions to both, paid for campus-wide by most universities. Almost nobody activates them.</dd>
+          <dt>How to claim</dt><dd>Search "[your school] WSJ activation" or "[your school] NYT access" — it is normally a library page where you register with your school email.</dd>
+          <dt>The catch</dt><dd class="catch">Many schools make you re-activate every year. If yours doesn't offer it, your city's public library card very often does — that one survives graduation.</dd>
+        </dl>
+        <button class="claimbtn" type="button"><span class="box"></span>Mark claimed</button>
+      </div>
+
+      <div class="perk" data-value="400">
+        <div class="perk-top">
+          <h4>Your library's database subscriptions</h4>
+          <span class="val">$400+/yr list</span>
+        </div>
+        <dl>
+          <dt>What you get</dt><dd>Depending on the institution: industry reports, financial data terminals, standards libraries, academic journals and professional course platforms.</dd>
+          <dt>How to claim</dt><dd>Open your library's e-resources or databases index and read the whole list once. It takes twenty minutes and most students never do it.</dd>
+          <dt>The catch</dt><dd class="catch">Access is by institution, so it varies enormously and vanishes at graduation. Download anything you will want later while you still can.</dd>
+        </dl>
+        <button class="claimbtn" type="button"><span class="box"></span>Mark claimed</button>
+      </div>
+
+      <div class="perk" data-value="0">
+        <div class="perk-top">
+          <h4><a href="https://www.coursera.org/" target="_blank" rel="noopener">Coursera aid and edX audits</a></h4>
+          <span class="val">Varies</span>
+        </div>
+        <dl>
+          <dt>What you get</dt><dd>Coursera financial aid can cover certificate fees entirely, and edX lets you audit most courses free.</dd>
+          <dt>How to claim</dt><dd>Apply for financial aid per course on Coursera; choose the audit track on edX.</dd>
+          <dt>The catch</dt><dd class="catch">Not strictly a student-email perk — these are open to anyone. Included because students routinely pay for certificates they could have had covered.</dd>
+        </dl>
+        <button class="claimbtn" type="button"><span class="box"></span>Mark claimed</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 05 everyday -->
+  <section id="everyday" class="sec">
+    <div class="sec-head">
+      <span class="sec-num">05</span>
+      <h2>Everyday money</h2>
+      <p class="lede">Smaller individually, but these are recurring costs you are probably already paying at full price.</p>
+    </div>
+
+    <div class="perks">
+
+      <div class="perk" data-value="84">
+        <div class="perk-top">
+          <h4><a href="https://www.spotify.com/us/student/" target="_blank" rel="noopener">Spotify Premium Student</a></h4>
+          <span class="val">$84/yr saved</span>
+        </div>
+        <dl>
+          <dt>What you get</dt><dd>Premium at roughly $5.99/month against $12.99 standard, bundled with Hulu in the U.S.</dd>
+          <dt>How to claim</dt><dd>Verify through Spotify's student programme with your school email.</dd>
+          <dt>The catch</dt><dd class="catch">Re-verify annually. There is a grace period after your final verification lapses before the price jumps.</dd>
+        </dl>
+        <button class="claimbtn" type="button"><span class="box"></span>Mark claimed</button>
+      </div>
+
+      <div class="perk" data-value="70">
+        <div class="perk-top">
+          <h4><a href="https://www.amazon.com/prime/student" target="_blank" rel="noopener">Amazon Prime Student</a></h4>
+          <span class="val">$70/yr saved</span>
+        </div>
+        <dl>
+          <dt>What you get</dt><dd>Six months completely free, then about half the standard Prime price, for up to four years.</dd>
+          <dt>How to claim</dt><dd>Verify with your school email.</dd>
+          <dt>The catch</dt><dd class="catch">Converts to a discounted year of regular Prime at graduation rather than ending outright — there is typically a grace period of a few months.</dd>
+        </dl>
+        <button class="claimbtn" type="button"><span class="box"></span>Mark claimed</button>
+      </div>
+
+      <div class="perk" data-value="150">
+        <div class="perk-top">
+          <h4><a href="https://www.apple.com/us-edu/store" target="_blank" rel="noopener">Apple education pricing</a></h4>
+          <span class="val">$100–200</span>
+        </div>
+        <dl>
+          <dt>What you get</dt><dd>Around $100 off a MacBook Air and $50–200 off other Macs and iPads, plus the back-to-school promotion that usually runs June to September.</dd>
+          <dt>How to claim</dt><dd>Through the education store; verified via UNiDAYS in the U.S.</dd>
+          <dt>The catch</dt><dd class="catch">Accepted students count too, and so do newly accepted graduate students — so if you are continuing to a master's, eligibility does not actually lapse.</dd>
+        </dl>
+        <button class="claimbtn" type="button"><span class="box"></span>Mark claimed</button>
+      </div>
+
+      <div class="perk" data-value="60">
+        <div class="perk-top">
+          <h4><a href="https://www.myunidays.com/" target="_blank" rel="noopener">UNiDAYS and Student Beans</a></h4>
+          <span class="val">Varies</span>
+        </div>
+        <dl>
+          <dt>What you get</dt><dd>Two verification platforms that unlock student pricing across hundreds of retailers — clothing, tech, travel, food.</dd>
+          <dt>How to claim</dt><dd>Register once with your school email. Many brands verify exclusively through one of these two.</dd>
+          <dt>The catch</dt><dd class="catch">Availability is heavily regional; a brand offering 20% in one country may offer nothing in another.</dd>
+        </dl>
+        <button class="claimbtn" type="button"><span class="box"></span>Mark claimed</button>
+      </div>
+
+      <div class="perk" data-value="84">
+        <div class="perk-top">
+          <h4><a href="https://www.youtube.com/premium/student" target="_blank" rel="noopener">YouTube and Apple Music student</a></h4>
+          <span class="val">$84/yr saved</span>
+        </div>
+        <dl>
+          <dt>What you get</dt><dd>Student tiers on YouTube Premium and Apple Music, each around half the standard monthly price.</dd>
+          <dt>How to claim</dt><dd>Verify with your school email; Apple Music runs through UNiDAYS.</dd>
+          <dt>The catch</dt><dd class="catch">Available in selected countries only, and both require annual re-verification.</dd>
+        </dl>
+        <button class="claimbtn" type="button"><span class="box"></span>Mark claimed</button>
+      </div>
+
+      <div class="perk" data-value="0">
+        <div class="perk-top">
+          <h4><a href="https://www.bestbuy.com/site/misc/student-deals/" target="_blank" rel="noopener">Retailer student programmes</a></h4>
+          <span class="val">Varies</span>
+        </div>
+        <dl>
+          <dt>What you get</dt><dd>Free student membership tiers with rotating exclusive pricing — commonly $100–150 off laptops during back-to-school season.</dd>
+          <dt>How to claim</dt><dd>Verification is usually via SheerID with a school email.</dd>
+          <dt>The catch</dt><dd class="catch">Genuinely rotating, so the offer you saw last month may be gone. Worth checking before any large purchase rather than browsing idly.</dd>
+        </dl>
+        <button class="claimbtn" type="button"><span class="box"></span>Mark claimed</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 06 tally -->
+  <section id="tally" class="sec">
+    <div class="sec-head">
+      <span class="sec-num">06</span>
+      <h2>The honest tally</h2>
+      <p class="lede">You have probably seen a version of this list headlined "your student email is worth $5,000." That number is real only if you would otherwise have bought professional licences at list price — and no student was ever going to buy Autodesk at $1,700 a year.</p>
+    </div>
+
+    <p>So here it is split into two columns. The left is money that would genuinely have left your account. The right is list value: real, but theoretical.</p>
+
+    <div class="tblwrap">
+      <table>
+        <thead><tr><th>Perk</th><th>Cash you'd actually spend</th><th>List value</th></tr></thead>
+        <tbody>
+          <tr><td>Google AI (where eligible)</td><td class="num">$240</td><td class="num">$240</td></tr>
+          <tr><td>Microsoft 365</td><td class="num">$100</td><td class="num">$100</td></tr>
+          <tr><td>Spotify, Prime, YouTube</td><td class="num">$238</td><td class="num">$238</td></tr>
+          <tr><td>Notion, Figma, Canva</td><td class="num">$60</td><td class="num">$384</td></tr>
+          <tr><td>Cloud credits</td><td class="num">$40</td><td class="num">$300</td></tr>
+          <tr><td>JetBrains</td><td class="num">$0</td><td class="num">$289</td></tr>
+          <tr><td>Autodesk and MATLAB</td><td class="num">$0</td><td class="num">$2,600</td></tr>
+          <tr><td>WSJ, NYT and library databases</td><td class="num">$120</td><td class="num">$900</td></tr>
+          <tr class="total"><td>Total</td><td class="num">≈ $800 / year</td><td class="num">≈ $5,000 / year</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout">
+      <span class="k">Why this matters more than the big number</span>
+      <p>Roughly $800 a year is the figure worth acting on, and it is still a lot of money for a student. The licence column is worth claiming for a different reason: not because it saves you cash, but because having Fusion 360 or MATLAB or the full JetBrains suite on your machine changes what you can build — and what you can build is what ends up on your resume.</p>
+    </div>
+  </section>
+
+  <!-- 07 international -->
+  <section id="international" class="sec">
+    <div class="sec-head">
+      <span class="sec-num">07</span>
+      <h2>If you're outside the U.S.</h2>
+      <p class="lede">Nearly every list like this is written for American students and silently assumes it. Here is what actually changes.</p>
+    </div>
+
+    <ul class="checks">
+      <li><span><b>Check the exclusion list before you plan around an offer</b>Google's student terms exclude six countries outright, Canada among them. That detail sits in support documentation rather than the announcement, which is exactly why it propagates through dozens of lists uncorrected.</span></li>
+      <li><span><b>The tier you get depends on where your institution is</b>Google's offer gives U.S. students AI Pro and everyone else AI Plus. You do not get to choose, and the page reads the country set on your Google account.</span></li>
+      <li><span><b>Use a personal account, not your school Workspace one</b>If a student offer refuses you and your region is supported, a school-managed Google Workspace account is the usual cause. Switch to a personal address and retry.</span></li>
+      <li><span><b>Software perks travel better than consumer ones</b>Autodesk, MATLAB, JetBrains, Figma, GitHub and the cloud credits are broadly international. Streaming, retail and hardware discounts are the ones that thin out fastest outside the U.S.</span></li>
+      <li><span><b>Your library is the most reliable thing on this page</b>Institutional subscriptions do not care which country you are from — if you are enrolled, you have access on the same terms as everyone else in your programme.</span></li>
+    </ul>
+  </section>
+
+  <!-- 08 exit -->
+  <section id="exit" class="sec">
+    <div class="sec-head">
+      <span class="sec-num">08</span>
+      <h2>Before your email dies</h2>
+      <p class="lede">Put this in your calendar for the start of your final semester. It is fifteen minutes of work that saves people years of files.</p>
+    </div>
+
+    <ul class="checks">
+      <li><span><b>Back up OneDrive first</b>The 1 TB of storage deactivates with your account. This is the single most common way students lose coursework, projects and photographs permanently.</span></li>
+      <li><span><b>Export from every cloud service you used</b>Figma files, Notion workspaces, cloud projects, MATLAB scripts, CAD models. Transfer ownership to a personal account where the service allows it.</span></li>
+      <li><span><b>Screenshot your licences and confirmations</b>If you ever need to prove you held a licence legitimately — and for anything you built commercially, you might — that record only exists in an inbox that is about to close.</span></li>
+      <li><span><b>Forward what matters off the school address</b>Account recovery emails, verification confirmations, anything tied to a service you intend to keep. Change the email on those accounts before, not after.</span></li>
+      <li><span><b>Check which perks survive</b>A few genuinely do. Notion's education plan has covered qualifying alumni domains, Prime Student converts to a discounted year rather than ending, Apple's education store stays open if you are continuing to a master's, and your public library card replaces a good chunk of the news access.</span></li>
+      <li><span><b>Claim the slow ones now, not later</b>Anything requiring document review — the GitHub pack, institutional software portals — takes days. Starting these in your final month is how people miss them entirely.</span></li>
+    </ul>
+
+    <div class="callout warn">
+      <span class="k">The one-line version</span>
+      <p>Every perk on this page requires an active student email at the moment you claim it. The email stops working before you expect it to — often within weeks of your final term, not on graduation day.</p>
+    </div>
+  </section>
+
+  <!-- 09 register -->
+  <section id="register" class="sec">
+    <div class="sec-head">
+      <span class="sec-num">09</span>
+      <h2>What was checked, and where</h2>
+      <p class="lede">Offers in this category change monthly, so every claim here carries a date. Where a fact came from a company's own documentation rather than a roundup, that is noted — and where it didn't, that's noted too.</p>
+    </div>
+
+    <div class="tblwrap">
+      <table>
+        <thead><tr><th>Claim</th><th>Source type</th><th>Checked</th></tr></thead>
+        <tbody>
+          <tr><td>Google student offer relaunched 19 Aug 2026; U.S. gets AI Pro, 140+ markets get AI Plus; redeem by 31 Dec 2026</td><td>Google's own announcement</td><td class="num">30 Aug 2026</td></tr>
+          <tr><td>Canada, Albania, Bolivia, Hong Kong, Macau, Tunisia excluded</td><td>Google One support documentation</td><td class="num">30 Aug 2026</td></tr>
+          <tr><td>Azure for Students: $100 credit, 12 months, 25+ free services, cancels when exhausted</td><td>Microsoft Learn documentation</td><td class="num">30 Aug 2026</td></tr>
+          <tr><td>GitHub Copilot student sign-ups paused Apr 2026, since reopened as a Student plan</td><td>Third-party reporting — verify on the page</td><td class="num">30 Aug 2026</td></tr>
+          <tr><td>Perplexity referral-bonus programme ended 31 May 2026</td><td>Third-party reporting</td><td class="num">30 Aug 2026</td></tr>
+          <tr><td>Student Pack contents and roughly 2-year validity</td><td>Third-party roundups, cross-checked</td><td class="num">30 Aug 2026</td></tr>
+          <tr><td>Consumer pricing (Spotify, Prime, Apple, YouTube)</td><td>Third-party roundups; U.S. pricing</td><td class="num">30 Aug 2026</td></tr>
+          <tr><td>Autodesk and MATLAB list values</td><td>Third-party estimates — treat as approximate</td><td class="num">30 Aug 2026</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout neutral">
+      <span class="k">Be sceptical of the numbers, including mine</span>
+      <p>Every dollar figure on this page is an approximation, most are U.S. pricing, and several are list values nobody actually pays. They are here to help you prioritise, not to be quoted. The claim links go to the official page in each case — that page, not this one, is the authority on what you can currently get.</p>
+    </div>
+
+    <div class="follow">
+      <h3>This list gets maintained</h3>
+      <p>Student offers rotate constantly — three of the ones above changed materially in 2026 alone. I re-check the page and update the register when they move.</p>
+      <div class="cta-row" style="margin-top:22px">
+        <a class="btn btn-primary" href="https://instagram.com/byaaryaman" target="_blank" rel="noopener">Follow @byaaryaman</a>
+        <a class="btn btn-ghost" href="/playbook">The 2027 recruiting playbook</a>
+      </div>
+    </div>
+
+    <div class="morepages">
+      <a class="mp" href="/playbook"><span class="mt">Live status</span><b>2027 recruiting playbook</b><span>Which internship windows are open right now, and which already closed.</span></a>
+      <a class="mp" href="/job-simulations"><span class="mt">Free</span><b>Job simulations</b><span>Employer-built programs that give you something concrete for a resume.</span></a>
+      <a class="mp" href="/conferences"><span class="mt">Free</span><b>Conference scholarships</b><span>Funded conferences most students never hear about.</span></a>
+      <a class="mp" href="/before-you-land"><span class="mt">Guide</span><b>Pre-arrival checklist</b><span>What to sort out before you land, if you're coming to study here.</span></a>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    <p><strong>About this page.</strong> Written and maintained by Aaryaman Singh, an engineering student at the University of Toronto. It reflects publicly available information as checked on the dates above and is offered as a research shortcut, not as financial advice. I am not affiliated with, and receive nothing from, any company named here.</p>
+    <p>Educational licences carry usage restrictions. Several products listed are free for learning and coursework only, and using them for paid commercial work breaches their terms — check the licence before you invoice anyone.</p>
+    <p class="fmeta">Last reviewed 30 Aug 2026 · <a href="https://instagram.com/byaaryaman" target="_blank" rel="noopener">@byaaryaman</a></p>
+  </div>
+</footer>
+<script is:inline src="/perks.js"></script>
+</body>
+</html>
