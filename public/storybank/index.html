@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Interview Story Bank — five stories, twenty-five answers</title>
+<meta name="description" content="Write five real interview stories in bullets, then map them to twenty-five questions. Fillable, saves as you type, ends in a one-page bank you open before the call.">
+<meta name="theme-color" content="#E9E9E1">
+<meta property="og:title" content="The Interview Story Bank">
+<meta property="og:description" content="Five stories. Twenty-five answers. One page you actually use.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://aaryamansingh.com/storybank">
+<meta property="og:image" content="https://aaryamansingh.com/social-preview-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://aaryamansingh.com/storybank">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#E9E9E1;
+  --panel:#F5F5F0;
+  --ink:#17201C;
+  --soft:#5E6862;
+  --rule:#CDCFC4;
+  --rule-strong:#A9AC9E;
+  --accent:#3A2E7E;
+  --accent-tint:#E7E3F5;
+  --mark:#FFE566;
+  --measure:34rem;
+  --display:"Bricolage Grotesque",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  --text:"Newsreader",Georgia,"Times New Roman",serif;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--text);font-size:17px;line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+  padding-bottom:5.5rem;
+}
+@media(min-width:700px){body{font-size:18px;padding-bottom:6rem}}
+.wrap{max-width:var(--measure);margin:0 auto;padding:0 1.15rem}
+p{margin:0 0 1rem}
+a{color:var(--accent)}
+h1,h2,h3,.ui{font-family:var(--display);font-weight:600;letter-spacing:-.015em}
+h2{font-size:1.6rem;line-height:1.12;margin:0 0 .5rem;font-weight:800;letter-spacing:-.03em}
+h3{font-size:1.12rem;line-height:1.25;margin:0 0 .35rem;font-weight:600}
+.lede{color:var(--soft);margin:0 0 1.6rem}
+mark{background:linear-gradient(transparent 58%,var(--mark) 58%);color:inherit;padding:0 .06em}
+
+/* ---------- hero ---------- */
+header.hero{padding:2.6rem 0 1.4rem;border-bottom:1px solid var(--rule)}
+h1{font-size:2.5rem;line-height:.98;font-weight:800;letter-spacing:-.045em;margin:0 0 .55rem}
+@media(min-width:700px){h1{font-size:3.6rem}}
+@media(min-width:1000px){h1{font-size:4.2rem}header.hero{padding-top:4rem}.tagline{font-size:1.2rem}}
+.tagline{font-size:1.1rem;color:var(--soft);margin:0 0 1.8rem;max-width:24em}
+
+/* router */
+.router{border:1px solid var(--rule-strong);background:var(--panel);border-radius:5px;overflow:hidden}
+.router-head{display:flex;align-items:center;gap:.5rem;padding:.7rem .85rem .55rem}
+.router-head label{font-family:var(--display);font-size:.92rem;font-weight:600;color:var(--soft)}
+.router input{
+  width:100%;border:0;border-top:1px solid var(--rule);background:#fff;
+  font-family:var(--display);font-size:1.05rem;color:var(--ink);
+  padding:.75rem .85rem;outline:0;
+}
+.router input::placeholder{color:#9AA298}
+.router input:focus{box-shadow:inset 0 0 0 2px var(--accent)}
+.match{border-top:1px solid var(--rule);background:#fff;padding:.8rem .85rem 1rem;display:none}
+.match.on{display:block}
+.match .story-hit{font-family:var(--display);font-weight:800;font-size:1.28rem;letter-spacing:-.03em;line-height:1.1;margin:0 0 .2rem}
+.match .angle{font-size:.98rem;color:var(--soft);margin:0}
+.match .angle b{color:var(--ink);font-weight:500}
+.match .jump{display:inline-block;margin-top:.7rem;font-family:var(--display);font-size:.88rem;font-weight:600;color:var(--accent);text-decoration:none;border-bottom:1.5px solid var(--accent-tint);padding-bottom:1px}
+.match .jump:hover{border-bottom-color:var(--accent)}
+.chips{display:flex;flex-wrap:wrap;gap:.35rem;padding:.7rem .85rem .85rem;border-top:1px solid var(--rule)}
+.chip{
+  font-family:var(--display);font-size:.82rem;font-weight:500;
+  background:transparent;border:1px solid var(--rule-strong);color:var(--soft);
+  border-radius:100px;padding:.3rem .62rem;cursor:pointer;line-height:1.3;
+}
+.chip:hover,.chip:focus-visible{border-color:var(--accent);color:var(--accent)}
+.router-note{font-size:.88rem;color:var(--soft);margin:.7rem 0 0;font-style:italic}
+
+/* ---------- sections ---------- */
+section{padding:2.4rem 0;border-bottom:1px solid var(--rule)}
+.callout{background:var(--panel);border-left:3px solid var(--accent);padding:.9rem 1rem;margin:1.4rem 0;border-radius:0 4px 4px 0}
+.callout p:last-child,.callout ul:last-child{margin-bottom:0}
+.callout .ui{display:block;font-size:.95rem;font-weight:600;margin-bottom:.3rem}
+ul{margin:0 0 1rem;padding-left:1.15rem}
+li{margin-bottom:.42rem}
+li::marker{color:var(--rule-strong)}
+.defs{list-style:none;padding:0;margin:0 0 1rem;border-top:1px solid var(--rule)}
+.defs li{margin:0;border-bottom:1px solid var(--rule);padding:.62rem 0;display:grid;grid-template-columns:6.2rem 1fr;gap:.8rem;align-items:baseline}
+.defs .k{font-family:var(--display);font-weight:600;font-size:.92rem}
+.defs .v{font-size:.98rem;color:var(--soft)}
+.defs .v b{color:var(--ink);font-weight:500}
+
+/* ---------- fields ---------- */
+.field{margin:0 0 .95rem}
+.field > label{display:block;font-family:var(--display);font-size:.94rem;font-weight:600;margin-bottom:.12rem}
+.field .hint{display:block;font-size:.92rem;color:var(--soft);margin-bottom:.35rem;font-style:italic}
+textarea{
+  width:100%;background:#fff;border:1px solid var(--rule-strong);border-radius:4px;
+  font-family:var(--display);font-size:1rem;line-height:1.45;color:var(--ink);
+  padding:.6rem .7rem;resize:none;overflow:hidden;min-height:3.1rem;display:block;
+}
+textarea:focus{outline:0;border-color:var(--accent);box-shadow:0 0 0 2px var(--accent-tint)}
+textarea.tall{min-height:5.6rem}
+textarea::placeholder{color:#A7ADA4}
+
+/* ---------- story builders ---------- */
+.story{border-top:2px solid var(--ink);padding-top:1.15rem;margin-top:2rem}
+.story:first-of-type{margin-top:1.4rem}
+.story-top{display:flex;align-items:flex-start;justify-content:space-between;gap:.8rem;width:100%;background:none;border:0;padding:0;text-align:left;cursor:pointer;color:inherit;font:inherit}
+.story-top h3{font-size:1.42rem;font-weight:800;letter-spacing:-.03em;margin:0}
+.story-what{font-size:.98rem;color:var(--soft);margin:.25rem 0 0}
+.state{
+  flex:0 0 auto;font-family:var(--display);font-size:.74rem;font-weight:600;
+  border:1px solid var(--rule-strong);border-radius:100px;padding:.16rem .5rem;color:var(--soft);
+  white-space:nowrap;margin-top:.25rem;
+}
+.state[data-state="started"]{border-color:var(--accent);color:var(--accent)}
+.state[data-state="written"]{background:var(--mark);border-color:var(--ink);color:var(--ink)}
+.story-body{padding-top:1.1rem}
+.story[data-open="false"] .story-body{display:none}
+.answers{margin:0 0 1.2rem}
+.answers .ui{font-size:.92rem;font-weight:600;color:var(--soft);display:block;margin-bottom:.3rem}
+.answers ul{margin:0;padding-left:1.05rem}
+.answers li{font-size:.97rem;margin-bottom:.24rem}
+.two-up{display:grid;gap:1.1rem;margin-top:1.2rem}
+@media(min-width:640px){.two-up{grid-template-columns:1fr 1fr;gap:1.4rem}}
+.two-up h4{font-family:var(--display);font-size:.98rem;font-weight:600;margin:0 0 .35rem}
+.two-up ul{margin:0;padding-left:1.05rem}
+.two-up li{font-size:.95rem;color:var(--soft);margin-bottom:.3rem}
+.followups li{font-style:italic}
+
+/* ---------- question map ---------- */
+.mapfilter{display:flex;flex-wrap:wrap;gap:.35rem;margin:0 0 1rem}
+.qgroup{border-top:1px solid var(--rule);padding:.9rem 0 .2rem}
+.qgroup > .ui{font-family:var(--display);font-weight:800;font-size:1.05rem;letter-spacing:-.02em;display:block;margin-bottom:.5rem}
+.qrow{display:grid;grid-template-columns:1fr;gap:.05rem;padding:.42rem 0;border-bottom:1px dotted var(--rule)}
+.qrow:last-child{border-bottom:0}
+.qrow .q{font-size:.99rem}
+.qrow .a{font-family:var(--display);font-size:.86rem;color:var(--soft)}
+@media(min-width:620px){.qrow{grid-template-columns:1fr 13rem;gap:1rem;align-items:baseline}.qrow .a{text-align:right}}
+.qrow.hide{display:none}
+.qgroup.hide{display:none}
+
+/* ---------- proof table ---------- */
+.proof{border-top:1px solid var(--rule);margin-top:1.2rem}
+.proof-row{border-bottom:1px solid var(--rule);padding:.95rem 0}
+.proof-row > .ui{display:block;font-size:1.02rem;font-weight:800;letter-spacing:-.02em;margin-bottom:.5rem}
+.proof-grid{display:grid;gap:.6rem}
+@media(min-width:640px){.proof-grid{grid-template-columns:1.4fr 1fr 1fr}}
+.proof-grid .field{margin:0}
+.proof-grid label{font-size:.86rem;color:var(--soft)}
+
+/* ---------- quality check ---------- */
+.check{border-bottom:1px solid var(--rule);padding:.8rem 0}
+.check-q{display:flex;align-items:flex-start;justify-content:space-between;gap:.8rem}
+.check-q p{margin:0;font-size:1rem}
+.toggle{display:flex;gap:.25rem;flex:0 0 auto}
+.toggle button{
+  font-family:var(--display);font-size:.8rem;font-weight:600;cursor:pointer;
+  border:1px solid var(--rule-strong);background:transparent;color:var(--soft);
+  border-radius:3px;padding:.22rem .5rem;
+}
+.toggle button[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.fix{display:none;margin:.6rem 0 0;font-size:.95rem;color:var(--soft);padding-left:.8rem;border-left:2px solid var(--mark)}
+.fix.on{display:block}
+
+/* ---------- prep steps ---------- */
+ol.prep{list-style:none;counter-reset:s;padding:0;margin:0}
+ol.prep li{counter-increment:s;display:grid;grid-template-columns:1.9rem 1fr auto;gap:.6rem;align-items:baseline;padding:.62rem 0;border-bottom:1px solid var(--rule);margin:0}
+ol.prep li::before{content:counter(s);font-family:var(--display);font-weight:800;font-size:1.05rem;color:var(--rule-strong)}
+ol.prep .t{font-family:var(--display);font-size:.85rem;color:var(--soft);white-space:nowrap}
+.total{font-family:var(--display);font-size:.9rem;color:var(--soft);margin:.7rem 0 0;text-align:right}
+
+/* ---------- one-pager ---------- */
+#onepager{background:var(--panel);border:1px solid var(--rule-strong);border-radius:5px;padding:1rem;margin:1.2rem 0}
+.op-row{border-bottom:1px solid var(--rule);padding:.7rem 0}
+.op-row:last-child{border-bottom:0}
+.op-row .ui{display:block;font-family:var(--display);font-weight:800;font-size:.95rem;letter-spacing:-.02em}
+.op-row .ex{margin:.15rem 0 0;font-size:1rem}
+.op-row .pf{margin:.15rem 0 0;font-size:.93rem;color:var(--soft)}
+.op-row .pf b{color:var(--ink);font-weight:500}
+.op-empty{color:#9AA298;font-style:italic}
+.btnrow{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1rem}
+.btn{
+  font-family:var(--display);font-size:.92rem;font-weight:600;cursor:pointer;
+  background:var(--ink);color:var(--paper);border:1px solid var(--ink);
+  border-radius:4px;padding:.55rem .9rem;text-decoration:none;display:inline-block;
+}
+.btn.ghost{background:transparent;color:var(--ink)}
+.btn:hover{background:var(--accent);border-color:var(--accent);color:#fff}
+
+/* ---------- sticky bar ---------- */
+.bar{
+  position:fixed;left:0;right:0;bottom:0;z-index:40;
+  background:var(--ink);color:var(--paper);
+  padding:.6rem 1.15rem calc(.6rem + env(safe-area-inset-bottom));
+  display:flex;align-items:center;justify-content:space-between;gap:.8rem;
+}
+.bar .count{font-family:var(--display);font-size:.9rem;font-weight:500;line-height:1.2}
+.bar .count b{font-weight:800}
+.bar .track{display:block;width:6.5rem;height:3px;background:#39423D;margin-top:.35rem;border-radius:2px;overflow:hidden}
+.bar .fill{display:block;height:100%;width:0;background:var(--mark);transition:width .35s ease}
+.bar a{
+  font-family:var(--display);font-size:.9rem;font-weight:600;color:var(--ink);
+  background:var(--mark);border-radius:4px;padding:.5rem .8rem;text-decoration:none;white-space:nowrap;
+}
+
+footer{padding:2.2rem 0 1rem;color:var(--soft);font-size:.92rem}
+footer a{font-family:var(--display);font-weight:600}
+.saved{font-size:.88rem;color:var(--soft);font-style:italic;min-height:1.2em;margin:.6rem 0 0}
+
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+/* ---------- print ---------- */
+@media print{
+  body{background:#fff;padding:0;font-size:11pt}
+  .bar,.router,.chips,.btnrow,header.hero .tagline,.saved{display:none!important}
+  body.print-op header.hero,
+  body.print-op footer,
+  body.print-op main > section:not(#bank),
+  body.print-op #bank .callout,
+  body.print-op #bank .btnrow,
+  body.print-op .saved{display:none!important}
+  #onepager{border:1px solid #000;background:#fff;page-break-inside:avoid}
+  section{border:0;padding:.6rem 0}
+  a{color:#000;text-decoration:none}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <h1>the interview story bank</h1>
+    <p class="tagline">five stories. twenty-five answers. one page you actually open before the call.</p>
+
+    <div class="router">
+      <div class="router-head"><label for="q">what did they ask you?</label></div>
+      <input id="q" type="text" autocomplete="off" spellcheck="false" placeholder="tell me about a time you failed…">
+      <div class="match" id="match" aria-live="polite">
+        <p class="story-hit" id="hit"></p>
+        <p class="angle" id="angle"></p>
+        <a class="jump" id="jump" href="#leadership">write this story</a>
+      </div>
+      <div class="chips" id="chips"></div>
+    </div>
+    <p class="router-note">twenty-five questions in here. all of them come back to the same five stories.</p>
+  </div>
+</header>
+
+<main>
+
+<section id="why">
+  <div class="wrap">
+    <h2>build five, answer twenty-five</h2>
+    <p>stop memorising fifty separate answers. write five real stories in bullets, then change which part you emphasise depending on what you are asked.</p>
+    <ul>
+      <li>one story per category. five in total, drawn from at least three different projects.</li>
+      <li>bullets only. enough to trigger memory, never enough to recite.</li>
+      <li>reuse a story across several questions by changing the emphasis, not the facts.</li>
+      <li>target 60&ndash;90 seconds per answer, then stop and let them ask follow-ups.</li>
+    </ul>
+    <div class="callout">
+      <span class="ui">the quick test</span>
+      <p>if anyone else on your team could tell the same story word for word, it is too generic. add the constraint you were under, the call you made, and what it cost you.</p>
+    </div>
+  </div>
+</section>
+
+<section id="framework">
+  <div class="wrap">
+    <h2>the framework</h2>
+    <p class="lede">star, plus the two parts most people leave out.</p>
+    <ul class="defs">
+      <li><span class="k">situation</span><span class="v">what was happening. two sentences, maximum.</span></li>
+      <li><span class="k">task</span><span class="v">what was specifically yours to own.</span></li>
+      <li><span class="k">action</span><span class="v"><b>what you personally did. roughly half your airtime.</b></span></li>
+      <li><span class="k">result</span><span class="v">what changed. a number, deadline, stakeholder, or before and after.</span></li>
+      <li><span class="k">reflection</span><span class="v">what you did differently afterwards.</span></li>
+    </ul>
+    <p>the boxes below are sized to match. <mark>action gets the most writing room on purpose.</mark></p>
+  </div>
+</section>
+
+<section id="opener">
+  <div class="wrap">
+    <h2>the two you'll definitely get</h2>
+    <p class="lede">these open almost every interview, and neither is a star story. write them once and the rest of the conversation gets easier.</p>
+
+    <h3>&ldquo;tell me about yourself&rdquo;</h3>
+    <p style="font-size:.95rem;color:var(--soft);margin-bottom:.9rem">60 to 90 seconds, three beats.</p>
+    <div class="field">
+      <label for="f-now">where you are now</label>
+      <span class="hint">your current role or programme and what you focus on. one sentence.</span>
+      <textarea id="f-now" data-field="intro.now" rows="2"></textarea>
+    </div>
+    <div class="field">
+      <label for="f-thread">the thread</label>
+      <span class="hint">the two or three moves that got you here, and why each one made sense at the time.</span>
+      <textarea id="f-thread" data-field="intro.thread" class="tall" rows="3"></textarea>
+    </div>
+    <div class="field">
+      <label for="f-room">why this room</label>
+      <span class="hint">what you want next, and why it is this role rather than a similar one.</span>
+      <textarea id="f-room" data-field="intro.room" rows="2"></textarea>
+    </div>
+
+    <h3 style="margin-top:1.8rem">&ldquo;why this role / why us&rdquo;</h3>
+    <p style="font-size:.95rem;color:var(--soft);margin-bottom:.9rem">three beats again.</p>
+    <div class="field">
+      <label for="f-role">the role</label>
+      <span class="hint">what the job actually does day to day. proof you read past the title.</span>
+      <textarea id="f-role" data-field="why.role" rows="2"></textarea>
+    </div>
+    <div class="field">
+      <label for="f-eviD">your evidence</label>
+      <span class="hint">where you have already done a smaller version of it. point at one of your five stories.</span>
+      <textarea id="f-eviD" data-field="why.evidence" rows="2"></textarea>
+    </div>
+    <div class="field">
+      <label for="f-want">what you want</label>
+      <span class="hint">what you are hoping to build or learn here. specific enough to be believable.</span>
+      <textarea id="f-want" data-field="why.want" rows="2"></textarea>
+    </div>
+
+    <div class="callout">
+      <span class="ui">the most common mistake</span>
+      <p>do not narrate your cv from top to bottom. they have it open in front of them. give them the thread that connects it instead.</p>
+    </div>
+  </div>
+</section>
+
+<section id="stories">
+  <div class="wrap">
+    <h2>your five stories</h2>
+    <p class="lede">bullets, not paragraphs. tap a story to open it &mdash; everything saves as you type.</p>
+    <div id="story-list"></div>
+  </div>
+</section>
+
+<section id="map">
+  <div class="wrap">
+    <h2>the question map</h2>
+    <p class="lede">map the question to the story before the interview, not during it. most questions are one of these five in disguise.</p>
+    <div class="mapfilter" id="mapfilter"></div>
+    <div id="maplist"></div>
+    <p class="router-note" style="margin-top:1.1rem">if a question genuinely fits none of the five, answer it directly and briefly. forcing a story into the wrong question is more obvious than not having one.</p>
+  </div>
+</section>
+
+<section id="proof">
+  <div class="wrap">
+    <h2>your proof points</h2>
+    <p class="lede">the number is the part they remember and the part you are most likely to fumble under pressure. write all five down once, then say them out loud.</p>
+    <div class="proof" id="proof-table"></div>
+    <div class="callout">
+      <span class="ui">three rules for numbers</span>
+      <ul>
+        <li>give the baseline. a number with nothing to compare it against sounds invented.</li>
+        <li>give the window. &ldquo;six hours a week&rdquo; and &ldquo;six hours, once&rdquo; are very different claims.</li>
+        <li>only use numbers you can defend if they ask how it was measured. a modest number you own beats a large one you cannot explain.</li>
+      </ul>
+    </div>
+    <div class="callout">
+      <span class="ui">no numbers? use one of these instead</span>
+      <p>scale (how many people, accounts, or files), stakeholders (who signed off), constraints (what deadline or budget), or a concrete before and after. &ldquo;nobody knew who owned it; afterwards, one person did&rdquo; is a real result.</p>
+    </div>
+  </div>
+</section>
+
+<section id="check">
+  <div class="wrap">
+    <h2>the quality check</h2>
+    <p class="lede">run each of your five stories through this before you practise out loud. most weak answers fail on the same three lines.</p>
+    <div id="checklist"></div>
+  </div>
+</section>
+
+<section id="prep">
+  <div class="wrap">
+    <h2>the 24-hour prep</h2>
+    <p class="lede">in order. two hours, once, beats re-reading your cv six times.</p>
+    <ol class="prep">
+      <li><span>read the job description. highlight the four to six behaviours the role actually rewards.</span><span class="t">15 min</span></li>
+      <li><span>choose your five stories. check they are not all from the same project.</span><span class="t">10 min</span></li>
+      <li><span>fill the star boxes in bullets only. do not write paragraphs.</span><span class="t">45 min</span></li>
+      <li><span>add one proof point per story and test it against the three rules.</span><span class="t">15 min</span></li>
+      <li><span>say each story out loud once, timed. cut anything past 90 seconds.</span><span class="t">20 min</span></li>
+      <li><span>write two questions that show you understand the role, not ones you could google.</span><span class="t">15 min</span></li>
+    </ol>
+    <p class="total">2 hours, total</p>
+    <div class="callout">
+      <span class="ui">no work experience yet? you still have five stories</span>
+      <p>course projects and capstones, club or society roles, part-time and volunteer work, a side project nobody asked you to build, sport, or a family business all count. interviewers are testing judgment, not job titles. a story about a team project that nearly missed its deadline is worth more than a vague one about an internship.</p>
+    </div>
+  </div>
+</section>
+
+<section id="bank">
+  <div class="wrap">
+    <div id="print-region">
+      <h2>your one-pager</h2>
+      <p class="lede">this is the only page you should have open before an interview. it builds itself from what you wrote above.</p>
+      <div id="onepager"></div>
+    </div>
+    <div class="btnrow">
+      <button class="btn" id="print">save as pdf</button>
+      <button class="btn ghost" id="copy">copy as text</button>
+    </div>
+    <p class="saved" id="copied"></p>
+
+    <div class="callout" style="margin-top:1.8rem">
+      <span class="ui">the last ten minutes before you join</span>
+      <ul>
+        <li>have this page open, not the full workbook.</li>
+        <li>say your five proof points out loud once.</li>
+        <li>reread the question map so the mapping is already made.</li>
+        <li>decide your opening line for &ldquo;tell me about yourself&rdquo;, then stop rehearsing.</li>
+      </ul>
+    </div>
+    <div class="callout">
+      <span class="ui">final reminders</span>
+      <ul>
+        <li>answer the question that was asked. a forced story is more obvious than a short one.</li>
+        <li>spend more time on what you did than on what was happening around you.</li>
+        <li>say &ldquo;i&rdquo; for your part and &ldquo;we&rdquo; for the team's, and be clear which is which.</li>
+        <li>if you blank: pause, describe the situation, and the rest usually follows. calm beats fast.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>your answers stay in this browser. nothing is uploaded, nothing is sent anywhere.</p>
+    <p>made by <a href="https://instagram.com/byaaryaman" rel="noopener">@byaaryaman</a></p>
+  </div>
+</footer>
+</main>
+
+<div class="bar">
+  <span class="count"><b id="done">0</b> of 5 stories written<span class="track"><span class="fill" id="fill"></span></span></span>
+  <a href="#bank">open your one-pager</a>
+</div>
+
+<script>
+(function(){
+"use strict";
+
+/* ---------- storage: localStorage when available, memory when not ---------- */
+var mem = {};
+var store = {
+  get: function(k){ try{ var v = localStorage.getItem(k); return v === null ? mem[k] : v; }catch(e){ return mem[k]; } },
+  set: function(k,v){ mem[k] = v; try{ localStorage.setItem(k,v); }catch(e){} }
+};
+var KEY = "storybank.v1";
+var data = {};
+try{ data = JSON.parse(store.get(KEY) || "{}") || {}; }catch(e){ data = {}; }
+var saveTimer;
+function save(){
+  clearTimeout(saveTimer);
+  saveTimer = setTimeout(function(){ store.set(KEY, JSON.stringify(data)); }, 250);
+}
+
+/* ---------- content ---------- */
+var STORIES = [
+  { id:"leadership", name:"leadership", short:"leadership",
+    what:"a time you created direction, moved a group forward, or took ownership. a formal title is not required, and often makes the story weaker.",
+    answers:["tell me about a time you led a team.","tell me about a time you took initiative.","tell me about a time you influenced others without authority.","tell me about a time you stepped up without being asked."],
+    star:[
+      ["situation","what was stuck, drifting, or unclear before you stepped in?"],
+      ["task","what did you decide was yours to fix, and was anyone else going to fix it?"],
+      ["action","how did you get people moving? what did you decide, ask for, or change? name the harder call."],
+      ["result","what moved, and who else benefited?"],
+      ["reflection","what would you do earlier next time?"]
+    ],
+    stronger:["say what was broken before you arrived.","show how you aligned people, not just how you did the work yourself.","name one decision only you made."],
+    followups:["did anyone push back?","what if they had said no?","how did you know it worked?"]
+  },
+  { id:"failure", name:"failure / mistake", short:"failure",
+    what:"a real setback where your response shows judgment and accountability. interviewers are testing whether you can be honest under mild pressure.",
+    answers:["tell me about a time you failed.","tell me about a mistake you made.","tell me about difficult feedback you received.","tell me about a time something did not go to plan."],
+    star:[
+      ["situation","what were you responsible for, and what was riding on it?"],
+      ["task","what went wrong? say it plainly, in one sentence, without hedging."],
+      ["action","what did you do in the first hour after you realised? who did you tell, and how fast?"],
+      ["result","what did it actually cost, and what did you recover?"],
+      ["reflection","what did you change afterwards, and where is the proof it stuck?"]
+    ],
+    stronger:["own your part in the first ten seconds.","avoid strengths disguised as failures (\u201ci care too much\u201d).","end on evidence the lesson held, not on the lesson."],
+    followups:["whose fault was it, really?","what did your manager say?","has it happened again since?"]
+  },
+  { id:"conflict", name:"conflict", short:"conflict",
+    what:"a disagreement with a teammate, stakeholder, or manager that you handled without damage. the point is not that you won.",
+    answers:["tell me about a conflict on a team.","tell me about a difficult teammate.","tell me about a time you disagreed with someone senior.","how do you handle competing viewpoints?"],
+    star:[
+      ["situation","who disagreed with whom, and what was genuinely at stake for each side?"],
+      ["task","what outcome did you need, and what did they need?"],
+      ["action","what did you say first? what did you concede, and what did you hold?"],
+      ["result","what was decided, and what happened to the working relationship afterwards?"],
+      ["reflection","what would you raise sooner next time?"]
+    ],
+    stronger:["describe behaviour and interests, never personality.","show you understood their position before you argued yours.","say whether you fixed the work, the relationship, or both."],
+    followups:["what if they had refused?","do you still think you were right?","how is that relationship now?"]
+  },
+  { id:"ambiguity", name:"ambiguity", short:"ambiguity",
+    what:"a time the instructions were incomplete or the answer was unknown, and you had to build structure out of a messy problem.",
+    answers:["tell me about a time you worked with ambiguity.","tell me about a difficult problem you solved.","tell me about a time you had little direction.","how do you approach unfamiliar problems?"],
+    star:[
+      ["situation","what was unclear: the goal, the data, the method, or who owned it?"],
+      ["task","what did you have to produce, and by when?"],
+      ["action","how did you cut the problem down? what did you assume, test, or ask? what did you do when you got stuck?"],
+      ["result","what did you deliver, and how did you check it was right?"],
+      ["reflection","how would you scope it faster now?"]
+    ],
+    stronger:["show your first three moves, in order.","name an assumption you tested rather than trusted.","say how you decided what mattered first."],
+    followups:["what did you get wrong at first?","how did you validate that assumption?","what would you do with twice the time?"]
+  },
+  { id:"impact", name:"measurable impact", short:"impact",
+    what:"a story where your work produced a visible result: time saved, cost, accuracy, adoption, reach, quality, or risk reduced.",
+    answers:["tell me about your biggest accomplishment.","what project are you most proud of?","tell me about a time you improved something.","tell me about a time you created impact."],
+    star:[
+      ["situation","what was the baseline? what did \u201cbad\u201d look like in numbers, hours, or errors?"],
+      ["task","what were you asked to improve, and what were you not allowed to change?"],
+      ["action","what did you build, change, or convince someone of? be specific about your part."],
+      ["result","the number, the baseline it moved from, and the window it moved in."],
+      ["reflection","what made it stick after you moved on?"]
+    ],
+    stronger:["give the baseline, or the number means nothing.","separate your contribution from the team's.","if it is qualitative, make the before and after concrete."],
+    followups:["how was that measured?","what was your part versus the team's?","what did it cost to get there?"]
+  }
+];
+
+var MAP = [
+  ["tell me about a time you led a team","leadership","direction and buy-in","lead leading manage team"],
+  ["a time you took initiative","leadership","you saw it before being asked","initiative proactive own"],
+  ["influencing without authority","leadership","how you won the argument","influence persuade authority convince"],
+  ["a time you stepped up","leadership","ownership of the outcome","stepped up volunteer ownership"],
+  ["how do you motivate people?","leadership","what you actually said","motivate inspire encourage"],
+  ["tell me about a time you failed","failure","plain admission, then repair","fail failure failed"],
+  ["a mistake you made","failure","what it cost","mistake error wrong messed"],
+  ["difficult feedback you received","failure","what you changed","feedback criticism review weakness"],
+  ["something that did not go to plan","failure","speed of recovery","plan wrong setback"],
+  ["a time you missed a deadline","failure","who you told, and when","deadline late missed slipped"],
+  ["a conflict on a team","conflict","what was at stake for each side","conflict argument disagree fight"],
+  ["a difficult teammate","conflict","behaviour, never personality","difficult teammate colleague coworker"],
+  ["disagreeing with someone senior","conflict","how you raised it","senior manager boss disagree escalate"],
+  ["handling competing viewpoints","conflict","what you conceded","viewpoints opinions compromise"],
+  ["a time you had to say no","conflict","the alternative you offered","say no refuse decline pushback"],
+  ["working with ambiguity","ambiguity","how you scoped it","ambiguity unclear vague uncertain"],
+  ["a difficult problem you solved","ambiguity","your method, step by step","problem solve hard complex"],
+  ["having little direction","ambiguity","what you decided alone","direction guidance alone independent"],
+  ["approaching unfamiliar problems","ambiguity","your first three moves","unfamiliar new approach learn"],
+  ["competing priorities","ambiguity","what you deliberately dropped","priorities juggle multiple tasks time management"],
+  ["your biggest accomplishment","impact","baseline, then number","accomplishment achievement biggest best"],
+  ["the project you are proudest of","impact","why it mattered to someone else","proud proudest project"],
+  ["a time you improved something","impact","concrete before and after","improve better optimise efficiency"],
+  ["working under pressure","impact","the constraint, then the result","pressure stress tight crunch"],
+  ["going beyond what was asked","impact","evidence, not enthusiasm","beyond extra above expectations"]
+];
+
+var CHECKS = [
+  ["could only you tell this story?","add the constraint you were under and the call you made."],
+  ["is action at least half of what you say?","cut the setup. nobody has ever complained that the context was too short."],
+  ["is there one concrete proof point?","use scale, a deadline, or a stakeholder rather than inventing a percentage."],
+  ["can they tell what you did versus the team?","replace two \u201cwe\u201ds with \u201ci\u201d, and keep the ones that are honest."],
+  ["does the reflection name a change?","\u201ci learned to communicate better\u201d is not a reflection. what did you do differently the following week?"],
+  ["can you tell it in 90 seconds with no notes?","you have written a script, not a story bank. cut it back to bullets."]
+];
+
+function byId(id){ return STORIES.filter(function(s){ return s.id === id; })[0]; }
+function esc(s){ return String(s).replace(/[&<>"]/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]; }); }
+
+/* ---------- fields ---------- */
+function grow(el){ el.style.height = "auto"; el.style.height = (el.scrollHeight + 2) + "px"; }
+
+function bindField(el){
+  var key = el.getAttribute("data-field");
+  if (data[key]) el.value = data[key];
+  grow(el);
+  el.addEventListener("input", function(){
+    data[key] = el.value;
+    grow(el);
+    save();
+    document.querySelectorAll('[data-field="' + key + '"]').forEach(function(other){
+      if (other !== el && other.value !== el.value){ other.value = el.value; grow(other); }
+    });
+    refresh();
+  });
+}
+
+/* ---------- build stories ---------- */
+var list = document.getElementById("story-list");
+STORIES.forEach(function(s){
+  var wrap = document.createElement("div");
+  wrap.className = "story";
+  wrap.id = s.id;
+  wrap.setAttribute("data-open", "false");
+
+  var fields = s.star.map(function(f){
+    var key = "story." + s.id + "." + f[0];
+    var tall = f[0] === "action" ? " tall" : "";
+    return '<div class="field">' +
+      '<label for="fx-' + s.id + '-' + f[0] + '">' + f[0] + '</label>' +
+      '<span class="hint">' + esc(f[1]) + '</span>' +
+      '<textarea id="fx-' + s.id + '-' + f[0] + '" class="' + tall.trim() + '" data-field="' + key + '" rows="2"></textarea>' +
+      '</div>';
+  }).join("");
+
+  wrap.innerHTML =
+    '<button class="story-top" type="button" aria-expanded="false">' +
+      '<span><h3>' + esc(s.name) + '</h3><span class="story-what">' + esc(s.what) + '</span></span>' +
+      '<span class="state" data-for="' + s.id + '">empty</span>' +
+    '</button>' +
+    '<div class="story-body">' +
+      '<div class="answers"><span class="ui">this one story answers</span><ul>' +
+        s.answers.map(function(a){ return "<li>" + esc(a) + "</li>"; }).join("") +
+      '</ul></div>' +
+      fields +
+      '<div class="field"><label for="fx-' + s.id + '-example">the story in one line</label>' +
+      '<span class="hint">how you would name it out loud &mdash; this is what lands on your one-pager.</span>' +
+      '<textarea id="fx-' + s.id + '-example" data-field="story.' + s.id + '.example" rows="2"></textarea></div>' +
+      '<div class="two-up">' +
+        '<div><h4>make it stronger</h4><ul>' + s.stronger.map(function(x){ return "<li>" + esc(x) + "</li>"; }).join("") + '</ul></div>' +
+        '<div><h4>expect these follow-ups</h4><ul class="followups">' + s.followups.map(function(x){ return "<li>\u201c" + esc(x) + "\u201d</li>"; }).join("") + '</ul></div>' +
+      '</div>' +
+    '</div>';
+
+  list.appendChild(wrap);
+
+  var top = wrap.querySelector(".story-top");
+  top.addEventListener("click", function(){
+    var open = wrap.getAttribute("data-open") === "true";
+    wrap.setAttribute("data-open", open ? "false" : "true");
+    top.setAttribute("aria-expanded", open ? "false" : "true");
+    if (!open) wrap.querySelectorAll("textarea").forEach(grow);
+  });
+});
+
+/* ---------- proof table (bound to the same keys) ---------- */
+var proof = document.getElementById("proof-table");
+proof.innerHTML = STORIES.map(function(s){
+  return '<div class="proof-row"><span class="ui">' + esc(s.short) + '</span><div class="proof-grid">' +
+    '<div class="field"><label for="pp-' + s.id + '">the proof point</label><textarea id="pp-' + s.id + '" data-field="story.' + s.id + '.proof" rows="2"></textarea></div>' +
+    '<div class="field"><label for="pb-' + s.id + '">the baseline it moved from</label><textarea id="pb-' + s.id + '" data-field="story.' + s.id + '.baseline" rows="2"></textarea></div>' +
+    '<div class="field"><label for="pm-' + s.id + '">yours vs the team\'s</label><textarea id="pm-' + s.id + '" data-field="story.' + s.id + '.mine" rows="2"></textarea></div>' +
+    '</div></div>';
+}).join("");
+
+/* ---------- question map ---------- */
+var maplist = document.getElementById("maplist");
+maplist.innerHTML = STORIES.map(function(s){
+  var rows = MAP.filter(function(m){ return m[1] === s.id; }).map(function(m){
+    return '<div class="qrow" data-k="' + esc(m[0] + " " + m[3]) + '"><span class="q">' + esc(m[0]) + '</span><span class="a">' + esc(m[2]) + '</span></div>';
+  }).join("");
+  return '<div class="qgroup" data-story="' + s.id + '"><span class="ui">' + esc(s.name) + '</span>' + rows + '</div>';
+}).join("");
+
+var mf = document.getElementById("mapfilter");
+mf.innerHTML = '<button class="chip" data-f="all" aria-pressed="true">all 25</button>' +
+  STORIES.map(function(s){ return '<button class="chip" data-f="' + s.id + '">' + esc(s.short) + '</button>'; }).join("");
+mf.addEventListener("click", function(e){
+  var b = e.target.closest("[data-f]"); if (!b) return;
+  mf.querySelectorAll(".chip").forEach(function(c){ c.style.borderColor = ""; c.style.color = ""; });
+  b.style.borderColor = "var(--accent)"; b.style.color = "var(--accent)";
+  var f = b.getAttribute("data-f");
+  maplist.querySelectorAll(".qgroup").forEach(function(g){
+    g.classList.toggle("hide", f !== "all" && g.getAttribute("data-story") !== f);
+  });
+});
+
+/* ---------- quality check ---------- */
+var cl = document.getElementById("checklist");
+cl.innerHTML = CHECKS.map(function(c, i){
+  return '<div class="check"><div class="check-q"><p>' + esc(c[0]) + '</p>' +
+    '<span class="toggle"><button type="button" data-v="yes" aria-pressed="false">yes</button>' +
+    '<button type="button" data-v="no" aria-pressed="false">no</button></span></div>' +
+    '<p class="fix" id="fix-' + i + '">' + esc(c[1]) + '</p></div>';
+}).join("");
+cl.addEventListener("click", function(e){
+  var b = e.target.closest("button[data-v]"); if (!b) return;
+  var box = b.closest(".check");
+  box.querySelectorAll("button[data-v]").forEach(function(x){ x.setAttribute("aria-pressed", String(x === b)); });
+  box.querySelector(".fix").classList.toggle("on", b.getAttribute("data-v") === "no");
+});
+
+/* ---------- bind every field once the dom exists ---------- */
+document.querySelectorAll("textarea[data-field]").forEach(bindField);
+
+/* first story starts open so the shape of the task is visible */
+(function(){
+  var first = document.getElementById("leadership");
+  first.setAttribute("data-open", "true");
+  first.querySelector(".story-top").setAttribute("aria-expanded", "true");
+  first.querySelectorAll("textarea").forEach(grow);
+})();
+
+/* ---------- router ---------- */
+var input = document.getElementById("q");
+var match = document.getElementById("match");
+var hit = document.getElementById("hit");
+var angle = document.getElementById("angle");
+var jump = document.getElementById("jump");
+var chips = document.getElementById("chips");
+var demo = true;
+
+chips.innerHTML = ["tell me about a time you failed","a difficult teammate","working under pressure","competing priorities"]
+  .map(function(q){ return '<button class="chip" type="button">' + esc(q) + '</button>'; }).join("");
+
+function show(m){
+  var s = byId(m[1]);
+  hit.textContent = "use your " + s.name + " story";
+  angle.innerHTML = "emphasise: <b>" + esc(m[2]) + "</b>";
+  jump.setAttribute("href", "#" + s.id);
+  match.classList.add("on");
+}
+function lookup(v){
+  v = v.toLowerCase().trim();
+  if (!v){ match.classList.remove("on"); return; }
+  var best = null, bestScore = 0;
+  MAP.forEach(function(m){
+    var hay = (m[0] + " " + m[3]).toLowerCase();
+    var score = 0;
+    v.split(/\s+/).forEach(function(w){
+      if (w.length > 2 && hay.indexOf(w) > -1) score += w.length;
+    });
+    if (hay.indexOf(v) > -1) score += 40;
+    if (score > bestScore){ bestScore = score; best = m; }
+  });
+  if (best && bestScore > 2) show(best);
+  else {
+    hit.textContent = "no clean match";
+    angle.innerHTML = "answer it directly and briefly. <b>a forced story is more obvious than a short one.</b>";
+    jump.setAttribute("href", "#map");
+    match.classList.add("on");
+  }
+}
+input.addEventListener("input", function(){ demo = false; lookup(input.value); });
+input.addEventListener("focus", function(){ demo = false; });
+chips.addEventListener("click", function(e){
+  var b = e.target.closest("button"); if (!b) return;
+  demo = false;
+  input.value = b.textContent;
+  lookup(input.value);
+});
+
+/* one orchestrated moment on load: three questions route themselves, then it's yours */
+var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+if (reduce){
+  input.value = "tell me about a time you failed";
+  lookup(input.value);
+} else {
+  var script = ["tell me about a time you failed", "a difficult teammate", "working under pressure"];
+  var si = 0;
+  function typeOut(){
+    if (!demo) return;
+    var text = script[si], i = 0;
+    input.value = "";
+    (function step(){
+      if (!demo) return;
+      if (i <= text.length){
+        input.value = text.slice(0, i++);
+        setTimeout(step, 26);
+      } else {
+        lookup(text);
+        si++;
+        if (si < script.length) setTimeout(typeOut, 1500);
+        else setTimeout(function(){ if (demo) input.placeholder = "type any question…"; }, 900);
+      }
+    })();
+  }
+  setTimeout(typeOut, 550);
+}
+
+/* ---------- progress + one-pager ---------- */
+var onepager = document.getElementById("onepager");
+var doneEl = document.getElementById("done");
+var fillEl = document.getElementById("fill");
+
+function val(k){ return (data[k] || "").trim(); }
+function written(s){
+  var core = ["situation","task","action","result","reflection"].filter(function(f){ return val("story." + s.id + "." + f); }).length;
+  if (core === 0) return "empty";
+  if (core >= 4) return "written";
+  return "started";
+}
+
+function refresh(){
+  var n = 0;
+  STORIES.forEach(function(s){
+    var st = written(s);
+    if (st === "written") n++;
+    var chip = document.querySelector('.state[data-for="' + s.id + '"]');
+    if (chip){ chip.setAttribute("data-state", st); chip.textContent = st; }
+  });
+  doneEl.textContent = n;
+  fillEl.style.width = (n / 5 * 100) + "%";
+
+  var intro = [val("intro.now"), val("intro.thread"), val("intro.room")].filter(Boolean).join(" ");
+  var why = [val("why.role"), val("why.evidence"), val("why.want")].filter(Boolean).join(" ");
+  var anything = intro || why || STORIES.some(function(s){
+    return val("story." + s.id + ".example") || val("story." + s.id + ".action") || val("story." + s.id + ".proof");
+  });
+
+  if (!anything){
+    onepager.innerHTML = '<p class="op-empty" style="margin:0">nothing in the bank yet.</p>' +
+      '<p style="margin:.4rem 0 0">write your five stories above and this page fills itself in. ' +
+      '<a href="#stories">start with leadership</a>.</p>';
+    return;
+  }
+
+  var rows = STORIES.map(function(s){
+    var ex = val("story." + s.id + ".example") || val("story." + s.id + ".action");
+    var pf = val("story." + s.id + ".proof") || val("story." + s.id + ".result");
+    var also = MAP.filter(function(m){ return m[1] === s.id; }).length;
+    return '<div class="op-row"><span class="ui">' + esc(s.short) + '</span>' +
+      '<p class="ex' + (ex ? '' : ' op-empty') + '">' + esc(ex || "not written yet") + '</p>' +
+      (pf ? '<p class="pf">proof: <b>' + esc(pf) + '</b></p>' : '') +
+      (ex ? '<p class="pf">also answers ' + also + ' questions</p>' : '') + '</div>';
+  }).join("");
+
+  rows += '<div class="op-row"><span class="ui">tell me about yourself</span><p class="ex' + (intro ? '' : ' op-empty') + '">' + esc(intro || "not written yet") + '</p></div>';
+  rows += '<div class="op-row"><span class="ui">why this role</span><p class="ex' + (why ? '' : ' op-empty') + '">' + esc(why || "not written yet") + '</p></div>';
+  onepager.innerHTML = rows;
+}
+refresh();
+
+document.getElementById("print").addEventListener("click", function(){
+  document.body.classList.add("print-op");
+  window.print();
+});
+window.addEventListener("afterprint", function(){ document.body.classList.remove("print-op"); });
+
+document.getElementById("copy").addEventListener("click", function(){
+  var out = ["MY STORY BANK", ""];
+  STORIES.forEach(function(s){
+    out.push(s.short.toUpperCase());
+    out.push("  " + (val("story." + s.id + ".example") || val("story." + s.id + ".action") || "—"));
+    var pf = val("story." + s.id + ".proof");
+    if (pf) out.push("  proof: " + pf);
+    out.push("");
+  });
+  out.push("TELL ME ABOUT YOURSELF");
+  out.push("  " + ([val("intro.now"), val("intro.thread"), val("intro.room")].filter(Boolean).join(" ") || "—"));
+  out.push("");
+  out.push("WHY THIS ROLE");
+  out.push("  " + ([val("why.role"), val("why.evidence"), val("why.want")].filter(Boolean).join(" ") || "—"));
+  var text = out.join("\n");
+  var note = document.getElementById("copied");
+  function ok(){ note.textContent = "copied. paste it into your notes app."; setTimeout(function(){ note.textContent = ""; }, 3000); }
+  if (navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(text).then(ok, function(){ note.textContent = "copy blocked — select the text above instead."; });
+  } else {
+    var ta = document.createElement("textarea");
+    ta.value = text; document.body.appendChild(ta); ta.select();
+    try{ document.execCommand("copy"); ok(); }catch(e){ note.textContent = "copy blocked — select the text above instead."; }
+    document.body.removeChild(ta);
+  }
+});
+
+/* open a story when the router sends you there */
+document.addEventListener("click", function(e){
+  var a = e.target.closest('a[href^="#"]'); if (!a) return;
+  var t = document.querySelector(a.getAttribute("href"));
+  if (t && t.classList.contains("story") && t.getAttribute("data-open") === "false"){
+    t.setAttribute("data-open", "true");
+    t.querySelector(".story-top").setAttribute("aria-expanded", "true");
+    t.querySelectorAll("textarea").forEach(grow);
+  }
+});
+
+})();
+</script>
+</body>
+</html>
