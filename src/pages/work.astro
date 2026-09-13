@@ -1,0 +1,784 @@
+---
+import DefaultLayout from '../layouts/DefaultLayout.astro'
+---
+
+<DefaultLayout
+  title="The First Internship Playbook"
+  description="Getting the internship is the easy part. What to actually do once you get there — week by week, with the messages to send."
+>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Public+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+    rel="stylesheet"
+  />
+
+  <div class="work-playbook">
+    <div class="hero">
+      <div class="wrap">
+        <p class="mark">aaryamansingh.com &nbsp;/&nbsp; <b>the first internship playbook</b></p>
+
+        <h1><span>the first</span><span>internship</span><span>playbook</span></h1>
+        <p class="kicker">Getting the offer is one thing. Nobody teaches you how to actually be good once you're there.</p>
+
+        <div class="bar">
+          <div class="bar-track" id="track"></div>
+          <p class="tally">
+            <b><span id="count">0</span> of <span id="total">0</span></b> done
+            <button type="button" id="reset">clear</button>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <section class="intro wrap">
+      <p>Most interns spend week one trying to look like they already know everything. That's the wrong game. Nobody expects you to know the systems, the acronyms, or the org chart — they expect you to be easy to work with and easy to trust with more.</p>
+      <p>This is the whole arc of a first internship, in order, with the actual messages to send. Tick things off as you go; the page remembers where you are.</p>
+    </section>
+
+    <section class="phase" id="p0">
+      <div class="wrap">
+        <div class="phase-head">
+          <h2>before day one</h2>
+          <span class="phase-when">week 0</span>
+        </div>
+        <p class="phase-note">Low effort, high return. An hour here saves you most of week one.</p>
+        <ul class="items" data-phase="0">
+          <li><label class="item"><input type="checkbox" data-id="a1" /><span class="item-txt"><b>Work out who you report to and who you sit with</b><small>They're often not the same person. Find your manager and three teammates on LinkedIn so names aren't a blur on day one.</small></span></label></li>
+          <li><label class="item"><input type="checkbox" data-id="a2" /><span class="item-txt"><b>Write one sentence on what the team actually does</b><small>Not the company — the team. If you can't write it, that's your first question, and it's a good one to ask.</small></span></label></li>
+          <li><label class="item"><input type="checkbox" data-id="a3" /><span class="item-txt"><b>Open a notes file before you have anything to put in it</b><small>One file, dated entries. This becomes your update log, your performance review, and your resume bullets later.</small></span></label></li>
+          <li><label class="item"><input type="checkbox" data-id="a4" /><span class="item-txt"><b>Don't cram technically</b><small>You'll be taught the internal tools, and no course covers them. Learning them fast in week two beats pretending in week one.</small></span></label></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="phase" id="p1">
+      <div class="wrap">
+        <div class="phase-head">
+          <h2>week one</h2>
+          <span class="phase-when">week 1</span>
+        </div>
+        <p class="phase-note">You will produce almost nothing this week. That is correct and expected. Spend it on information.</p>
+        <ul class="items" data-phase="1">
+          <li><label class="item"><input type="checkbox" data-id="b1" /><span class="item-txt"><b>Ask your manager two questions on day one</b><small>"What does a good outcome for this internship look like to you?" and "How do you like to be updated?" Both answers shape everything after.</small></span></label></li>
+          <li><label class="item"><input type="checkbox" data-id="b2" /><span class="item-txt"><b>Write down every acronym you hear</b><small>You'll hear forty in week one and nobody repeats them. Keep a running list; look them up on your own time.</small></span></label></li>
+          <li><label class="item"><input type="checkbox" data-id="b3" /><span class="item-txt"><b>Book 15 minutes with three people on your team</b><small>Not networking. Just "I'm new, what do you actually work on?" People like explaining their job, and you'll learn the real org chart.</small></span></label></li>
+          <li><label class="item"><input type="checkbox" data-id="b4" /><span class="item-txt"><b>Don't stay late in week one</b><small>You'd be setting an expectation you have to hold for four months. Leave on time and be sharp instead.</small></span></label></li>
+          <li><label class="item"><input type="checkbox" data-id="b5" /><span class="item-txt"><b>Find out how work actually gets assigned</b><small>Ticket queue, standup, someone tapping you on the shoulder. Knowing the channel is how you get more of it later.</small></span></label></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="phase" id="p2">
+      <div class="wrap">
+        <div class="phase-head">
+          <h2>your first real task</h2>
+          <span class="phase-when">weeks 2–4</span>
+        </div>
+        <p class="phase-note">This is where most interns quietly lose a week building the wrong thing.</p>
+        <ul class="items" data-phase="2">
+          <li><label class="item"><input type="checkbox" data-id="c1" /><span class="item-txt"><b>Never leave the briefing without four things</b><small>What the finished output looks like, who it goes to, when it's due, and one example of a good version. Ask for the example — it's the one people forget to offer.</small></span></label></li>
+          <li><label class="item"><input type="checkbox" data-id="c2" /><span class="item-txt"><b>Use the 30-minute rule when you're stuck</b><small>Try it yourself for 30 minutes, write down what you tried, then ask. "I tried X and Y, X failed because Z" is a completely different message from "I'm stuck".</small></span></label></li>
+          <li><label class="item"><input type="checkbox" data-id="c3" /><span class="item-txt"><b>Send your first draft at 60%, not 95%</b><small>Finding out you built the wrong thing at 95% costs a week. At 60% it costs an hour. Say "sanity check before I go further" and send it.</small></span></label></li>
+          <li><label class="item"><input type="checkbox" data-id="c4" /><span class="item-txt"><b>Ask in the channel, not the DM</b><small>When the answer would help someone else, ask publicly. You look like you're contributing rather than consuming attention.</small></span></label></li>
+          <li><label class="item"><input type="checkbox" data-id="c5" /><span class="item-txt"><b>Repeat the task back before you start</b><small>One line: "So you want A, formatted as B, by Thursday, for C." Roughly a third of the time something in there is wrong.</small></span></label></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="phase" id="p3">
+      <div class="wrap">
+        <div class="phase-head">
+          <h2>making the work visible</h2>
+          <span class="phase-when">the middle</span>
+        </div>
+        <p class="phase-note">Good work nobody knows about counts for nothing at review time. This is the part people find awkward and skip.</p>
+        <ul class="items" data-phase="3">
+          <li><label class="item"><input type="checkbox" data-id="d1" /><span class="item-txt"><b>Keep a log of what you shipped and what it changed</b><small>Every Friday, three lines. What you finished, what it improved, who asked for it. In month four you will not remember month one.</small></span></label></li>
+          <li><label class="item"><input type="checkbox" data-id="d2" /><span class="item-txt"><b>Update your manager before they ask</b><small>Five lines, three headers: done, in progress, blocked. Weekly. Managers who never have to chase you give you better work.</small></span></label></li>
+          <li><label class="item"><input type="checkbox" data-id="d3" /><span class="item-txt"><b>Flag blockers the day they happen</b><small>Being blocked isn't failure. Being blocked for four days while your manager assumes it's on track is. Say it early, say it plainly.</small></span></label></li>
+          <li><label class="item"><input type="checkbox" data-id="d4" /><span class="item-txt"><b>When you finish early, say so and ask for more</b><small>"I'm done with X and have capacity — anything you want picked up?" This is how you get responsibility without asking for a title.</small></span></label></li>
+          <li><label class="item"><input type="checkbox" data-id="d5" /><span class="item-txt"><b>Find one thing nobody owns and quietly own it</b><small>A broken process, an undocumented step, a report someone builds by hand every week. Fixing it is how interns get remembered.</small></span></label></li>
+          <li><label class="item"><input type="checkbox" data-id="d6" /><span class="item-txt"><b>Ask for feedback at the halfway point, not the end</b><small>At the end it's a review. At the halfway point it's something you can still act on.</small></span></label></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="phase" id="p4">
+      <div class="wrap">
+        <div class="phase-head">
+          <h2>leaving with people wanting you back</h2>
+          <span class="phase-when">last 2 weeks</span>
+        </div>
+        <p class="phase-note">Start this earlier than feels natural. Many teams decide on returns before your final week.</p>
+        <ul class="items" data-phase="4">
+          <li><label class="item"><input type="checkbox" data-id="e1" /><span class="item-txt"><b>Write the handover doc</b><small>What you built, where it lives, how to run it, what's half-finished. Almost no intern does this and every manager notices the one who did.</small></span></label></li>
+          <li><label class="item"><input type="checkbox" data-id="e2" /><span class="item-txt"><b>Ask about returning while there's still time to matter</b><small>Ask your manager directly what the process looks like and when decisions get made. Asking in your last week is asking too late.</small></span></label></li>
+          <li><label class="item"><input type="checkbox" data-id="e3" /><span class="item-txt"><b>Turn your log into numbers</b><small>Hours saved, errors caught, time cut, volume handled. Rough and honest beats precise and invented — and you'll need them for every interview after this.</small></span></label></li>
+          <li><label class="item"><input type="checkbox" data-id="e4" /><span class="item-txt"><b>Line up two people who'd vouch for you</b><small>Ask while the work is fresh: "would you be open to being a reference?" A yes six months later is much harder to get.</small></span></label></li>
+          <li><label class="item"><input type="checkbox" data-id="e5" /><span class="item-txt"><b>Thank people specifically, not generically</b><small>Name the thing they helped with. Connect on LinkedIn the same week, not in December when you need something.</small></span></label></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="scripts" id="scripts">
+      <div class="wrap">
+        <div class="phase-head">
+          <h2>the messages</h2>
+          <span class="phase-when">copy + edit</span>
+        </div>
+        <p class="phase-note">Steal these. Change the names, keep the shape.</p>
+
+        <div class="script">
+          <h3>Day one, to your manager</h3>
+          <p class="why">Sets expectations before anyone sets them for you.</p>
+          <div class="box"><pre>Hi [name] — really glad to be starting.
+
+Two things so I can set myself up properly:
+
+1. What would a genuinely good outcome for this internship look like from your side?
+2. How do you prefer to be kept updated — a weekly written summary, or something looser?
+
+Happy to work to whatever's easiest for you.</pre></div>
+          <button class="copy" type="button">Copy</button>
+        </div>
+
+        <div class="script">
+          <h3>The Friday update</h3>
+          <p class="why">Five lines a week. The single highest-return habit on this page.</p>
+          <div class="box"><pre>Week of [date]
+
+Done
+– [thing], [what it changed]
+– [thing]
+
+In progress
+– [thing] — on track for [day]
+
+Blocked
+– [thing] — waiting on [person/access]. Let me know if there's a faster route.</pre></div>
+          <button class="copy" type="button">Copy</button>
+        </div>
+
+        <div class="script">
+          <h3>When you don't understand the task</h3>
+          <p class="why">Asks for the answer without announcing you're lost.</p>
+          <div class="box"><pre>Before I get going on this — want to make sure I've got it right.
+
+My understanding: you want [output], formatted as [format], by [day], for [audience].
+
+Two things I'm unsure on:
+– [specific question]
+– Is there an existing version I could look at as a reference?</pre></div>
+          <button class="copy" type="button">Copy</button>
+        </div>
+
+        <div class="script">
+          <h3>When you're actually stuck</h3>
+          <p class="why">After your 30 minutes. Shows the work, so it doesn't read as giving up.</p>
+          <div class="box"><pre>Hit a wall on [task] — wanted to flag it rather than sit on it.
+
+I've tried [X] and [Y]. [X] didn't work because [reason], and [Y] got me to [point] but not past it.
+
+Is there something obvious I'm missing, or is this one to bring to [person]?</pre></div>
+          <button class="copy" type="button">Copy</button>
+        </div>
+
+        <div class="script">
+          <h3>Asking for more responsibility</h3>
+          <p class="why">Framed as capacity, not ambition. Much easier to say yes to.</p>
+          <div class="box"><pre>I've wrapped [thing] and I've got some room this week.
+
+If there's anything on your plate you'd want taken off it — even something unglamorous — happy to pick it up. I'd also be keen to get closer to [area] if there's a way in.</pre></div>
+          <button class="copy" type="button">Copy</button>
+        </div>
+
+        <div class="script">
+          <h3>Asking for feedback that's actually useful</h3>
+          <p class="why">"Any feedback?" gets you "you're doing great." This doesn't.</p>
+          <div class="box"><pre>Could I get 10 minutes at some point this week?
+
+Specifically: if I were coming back in a more senior role, what's the one thing I'd need to be doing differently? Would rather hear it now while I can still act on it.</pre></div>
+          <button class="copy" type="button">Copy</button>
+        </div>
+
+        <div class="script">
+          <h3>The return offer conversation</h3>
+          <p class="why">Send this with weeks left, not days.</p>
+          <div class="box"><pre>I've really enjoyed working on [team] — [specific thing you liked, not generic].
+
+I wanted to ask directly: what does the process look like for coming back, and when do those decisions usually get made? Just want to make sure I'm not missing a step on my end.</pre></div>
+          <button class="copy" type="button">Copy</button>
+        </div>
+
+        <div class="script">
+          <h3>Last week, to someone who helped you</h3>
+          <p class="why">Specific beats warm. This is the one people remember in a year.</p>
+          <div class="box"><pre>Wrapping up this week — wanted to say thanks properly.
+
+The [specific thing] you walked me through in [month] changed how I approached basically everything after it. Genuinely appreciated it.
+
+Sending a LinkedIn request — would be great to stay in touch.</pre></div>
+          <button class="copy" type="button">Copy</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="mistakes wrap">
+      <div class="phase-head">
+        <h2>what actually loses people the return offer</h2>
+        <span class="phase-when">avoid</span>
+      </div>
+      <ol>
+        <li>Going quiet when something goes wrong, and hoping it resolves before anyone notices.</li>
+        <li>Sitting on a blocker for days because asking felt embarrassing.</li>
+        <li>Doing good work that nobody above your manager ever hears about.</li>
+        <li>Saying yes to everything, then delivering four things late instead of two things well.</li>
+        <li>Treating admin work as beneath you. Someone is watching how you handle the boring task.</li>
+        <li>Only talking to the other interns.</li>
+        <li>Pretending to understand in the moment, then rebuilding it wrong for a week.</li>
+        <li>Leaving on the last day with no documentation and no reference secured.</li>
+      </ol>
+    </section>
+
+    <section class="close wrap">
+      <h2>that's the whole thing</h2>
+      <p>Being good at the work and being good at being an intern are two different skills. Most people only find that out on the way out.</p>
+      <a class="follow" href="https://instagram.com/byaaryaman">Follow @byaaryaman</a>
+
+      <div class="more">
+        <p>Other things I keep updated:</p>
+        <ul>
+          <li><a href="/2027"><span>2027 recruiting playbook</span> <em>every deadline, sorted by date</em></a></li>
+          <li><a href="/storybank"><span>Interview story bank</span> <em>build your answers before you need them</em></a></li>
+          <li><a href="/simulations"><span>Virtual job simulations</span> <em>free, and they go on your resume</em></a></li>
+          <li><a href="/land"><span>Pre-arrival Canada checklist</span> <em>for international students</em></a></li>
+        </ul>
+      </div>
+    </section>
+  </div>
+</DefaultLayout>
+
+<script is:inline>
+(function(){
+  "use strict";
+
+  var KEY = "aas_work_playbook_v1";
+
+  var mem = {};
+  var store = {
+    read: function(){
+      try {
+        var raw = window.localStorage.getItem(KEY);
+        return raw ? JSON.parse(raw) : {};
+      } catch(e){ return mem; }
+    },
+    write: function(obj){
+      mem = obj;
+      try { window.localStorage.setItem(KEY, JSON.stringify(obj)); } catch(e){}
+    }
+  };
+
+  var PHASES = [
+    {id:"p0", label:"before\nday one"},
+    {id:"p1", label:"week\none"},
+    {id:"p2", label:"first\ntask"},
+    {id:"p3", label:"the\nmiddle"},
+    {id:"p4", label:"last\n2 weeks"}
+  ];
+
+  var boxes = Array.prototype.slice.call(document.querySelectorAll('.work-playbook label.item input'));
+  var track = document.getElementById('track');
+  var countEl = document.getElementById('count');
+  var totalEl = document.getElementById('total');
+  if (!track || !countEl || !totalEl) return;
+
+  totalEl.textContent = boxes.length;
+  track.innerHTML = '';
+
+  var segs = PHASES.map(function(p){
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'seg';
+    b.setAttribute('aria-label', 'Jump to ' + p.label.replace(/\n/g,' '));
+    var fill = document.createElement('span');
+    fill.className = 'seg-fill';
+    var i = document.createElement('i');
+    fill.appendChild(i);
+    var lab = document.createElement('span');
+    lab.className = 'seg-lab';
+    lab.textContent = p.label.replace(/\n/g, ' ');
+    b.appendChild(fill);
+    b.appendChild(lab);
+    b.addEventListener('click', function(){
+      var t = document.getElementById(p.id);
+      if (t) t.scrollIntoView({behavior:'smooth', block:'start'});
+    });
+    track.appendChild(b);
+    return {el:b, fill:i};
+  });
+
+  function phaseOf(input){
+    var ul = input.closest('ul.items');
+    return ul ? parseInt(ul.getAttribute('data-phase'), 10) : -1;
+  }
+
+  function render(animate){
+    var state = store.read();
+    var done = 0;
+    var per = PHASES.map(function(){ return {d:0, t:0}; });
+
+    boxes.forEach(function(cb){
+      var p = phaseOf(cb);
+      if (per[p]) per[p].t++;
+      if (cb.checked){
+        done++;
+        if (per[p]) per[p].d++;
+      }
+    });
+
+    countEl.textContent = done;
+
+    segs.forEach(function(s, idx){
+      var pct = per[idx] && per[idx].t ? (per[idx].d / per[idx].t) * 100 : 0;
+      if (animate === false) s.fill.style.transition = 'none';
+      s.fill.style.width = pct + '%';
+      if (animate === false){
+        void s.fill.offsetWidth;
+        s.fill.style.transition = '';
+      }
+      s.el.setAttribute('aria-current', pct === 100 && per[idx].t > 0 ? 'true' : 'false');
+    });
+
+    return state;
+  }
+
+  var saved = store.read();
+  boxes.forEach(function(cb){
+    var id = cb.getAttribute('data-id');
+    if (saved[id]) cb.checked = true;
+    cb.addEventListener('change', function(){
+      var s = store.read();
+      if (cb.checked) { s[id] = 1; } else { delete s[id]; }
+      store.write(s);
+      render(true);
+    });
+  });
+
+  render(false);
+
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!reduce){
+    segs.forEach(function(s){ s.fill.style.width = '0%'; });
+    window.requestAnimationFrame(function(){
+      window.setTimeout(function(){ render(true); }, 120);
+    });
+  }
+
+  var reset = document.getElementById('reset');
+  if (reset) {
+    reset.addEventListener('click', function(){
+      boxes.forEach(function(cb){ cb.checked = false; });
+      store.write({});
+      render(true);
+    });
+  }
+
+  Array.prototype.forEach.call(document.querySelectorAll('.work-playbook .copy'), function(btn){
+    btn.addEventListener('click', function(){
+      var pre = btn.parentNode.querySelector('pre');
+      if (!pre) return;
+      var text = pre.textContent;
+      var ok = function(){
+        btn.textContent = 'Copied';
+        btn.setAttribute('data-state','done');
+        window.setTimeout(function(){
+          btn.textContent = 'Copy';
+          btn.removeAttribute('data-state');
+        }, 1600);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(text).then(ok, function(){ fallback(text, ok); });
+      } else {
+        fallback(text, ok);
+      }
+    });
+  });
+
+  function fallback(text, ok){
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.setAttribute('readonly','');
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand('copy'); ok(); } catch(e){}
+    document.body.removeChild(ta);
+  }
+})();
+</script>
+
+<style is:global>
+  .work-playbook {
+    --ink: #111A33;
+    --ink-soft: #1B2647;
+    --paper: #FBFAF8;
+    --slate: #5A6480;
+    --rule: #E2E1DC;
+    --accent: #2E4BFF;
+    --accent-wash: #EDEFFF;
+    --done: #1F8A5F;
+    --max: 41rem;
+    --sans: "Public Sans", ui-sans-serif, system-ui, -apple-system, sans-serif;
+    --display: "Bricolage Grotesque", "Public Sans", ui-sans-serif, system-ui, sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 17px;
+    line-height: 1.62;
+    -webkit-font-smoothing: antialiased;
+    margin-top: -1px;
+  }
+
+  .work-playbook * { box-sizing: border-box; }
+  .work-playbook .wrap { max-width: var(--max); margin: 0 auto; padding: 0 1.35rem; }
+  .work-playbook a { color: var(--accent); }
+  .work-playbook a:focus-visible,
+  .work-playbook button:focus-visible,
+  .work-playbook input:focus-visible {
+    outline: 2.5px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 3px;
+  }
+
+  .work-playbook .hero {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 1.5rem 0 2rem;
+    padding-top: calc(1.5rem + env(safe-area-inset-top));
+  }
+  .work-playbook .mark {
+    font-family: var(--display);
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    color: #94A0C4;
+    margin: 0 0 2.6rem;
+  }
+  .work-playbook .mark b { color: var(--paper); font-weight: 600; }
+
+  .work-playbook h1 {
+    font-family: var(--display);
+    font-weight: 800;
+    font-size: clamp(2.5rem, 12vw, 3.9rem);
+    line-height: 0.95;
+    letter-spacing: -0.035em;
+    margin: 0;
+    color: var(--paper);
+  }
+  .work-playbook h1 span { display: block; }
+  .work-playbook .kicker {
+    font-size: 1.04rem;
+    line-height: 1.5;
+    color: #A9B4D4;
+    margin: 1.15rem 0 0;
+    max-width: 27ch;
+  }
+
+  .work-playbook .bar { margin: 2.3rem 0 0; }
+  .work-playbook .bar-track { display: flex; gap: 4px; }
+  .work-playbook .seg {
+    flex: 1 1 0;
+    background: none;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    text-align: left;
+    font: inherit;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .work-playbook .seg-fill {
+    position: relative;
+    height: 8px;
+    border-radius: 2px;
+    background: #2A3558;
+    overflow: hidden;
+  }
+  .work-playbook .seg-fill i {
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 0%;
+    background: var(--accent);
+    transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .work-playbook .seg-lab {
+    font-size: 0.66rem;
+    line-height: 1.25;
+    color: #8D99BE;
+    letter-spacing: 0.005em;
+  }
+  .work-playbook .seg[aria-current="true"] .seg-lab { color: var(--paper); }
+
+  .work-playbook .tally {
+    margin: 1.5rem 0 0;
+    font-size: 0.9rem;
+    color: #A9B4D4;
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+  }
+  .work-playbook .tally b {
+    color: var(--paper);
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+  }
+  .work-playbook .tally button {
+    background: none;
+    border: 0;
+    padding: 0;
+    color: #8D99BE;
+    font: inherit;
+    font-size: 0.82rem;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    cursor: pointer;
+    margin-left: auto;
+  }
+  .work-playbook .tally button:hover { color: var(--paper); }
+
+  .work-playbook .intro { padding: 2.6rem 0 0.5rem; }
+  .work-playbook .intro p { margin: 0 0 1.05rem; max-width: 60ch; color: var(--ink); }
+  .work-playbook .intro p:last-child { margin-bottom: 0; }
+  .work-playbook .intro strong { font-weight: 600; }
+
+  .work-playbook .phase { padding: 2.6rem 0 0.4rem; scroll-margin-top: 7rem; }
+  .work-playbook .phase-head {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    padding-bottom: 0.85rem;
+    border-bottom: 1.5px solid var(--ink);
+    margin-bottom: 1.5rem;
+  }
+  .work-playbook .phase-when {
+    font-family: var(--display);
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--slate);
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+  }
+  .work-playbook h2 {
+    font-family: var(--display);
+    font-weight: 800;
+    font-size: clamp(1.6rem, 6.5vw, 2.05rem);
+    line-height: 1.05;
+    letter-spacing: -0.028em;
+    margin: 0;
+    flex: 1;
+    color: var(--ink);
+  }
+  .work-playbook .phase-note {
+    color: var(--slate);
+    font-size: 0.98rem;
+    margin: -0.55rem 0 1.55rem;
+    max-width: 58ch;
+  }
+
+  .work-playbook ul.items { list-style: none; margin: 0; padding: 0; }
+  .work-playbook ul.items li { border-top: 1px solid var(--rule); }
+  .work-playbook ul.items li:first-child { border-top: 0; }
+
+  .work-playbook label.item {
+    display: flex;
+    gap: 0.9rem;
+    align-items: flex-start;
+    padding: 0.95rem 0;
+    cursor: pointer;
+    min-height: 44px;
+  }
+  .work-playbook label.item input {
+    appearance: none;
+    -webkit-appearance: none;
+    flex: 0 0 auto;
+    width: 21px;
+    height: 21px;
+    margin: 0.24rem 0 0;
+    border: 1.5px solid #B9BCC6;
+    border-radius: 5px;
+    background: #fff;
+    cursor: pointer;
+    display: grid;
+    place-content: center;
+  }
+  .work-playbook label.item input::after {
+    content: "";
+    width: 11px;
+    height: 6px;
+    border-left: 2.2px solid #fff;
+    border-bottom: 2.2px solid #fff;
+    transform: rotate(-45deg) scale(0);
+    transition: transform 0.14s ease;
+  }
+  .work-playbook label.item input:checked { background: var(--done); border-color: var(--done); }
+  .work-playbook label.item input:checked::after { transform: rotate(-45deg) scale(1); }
+  .work-playbook .item-txt { flex: 1; }
+  .work-playbook .item-txt b {
+    display: block;
+    font-weight: 600;
+    line-height: 1.45;
+    transition: color 0.18s ease;
+    color: var(--ink);
+  }
+  .work-playbook .item-txt small {
+    display: block;
+    font-size: 0.93rem;
+    line-height: 1.5;
+    color: var(--slate);
+    margin-top: 0.18rem;
+  }
+  .work-playbook label.item input:checked ~ .item-txt b {
+    color: var(--slate);
+    text-decoration: line-through;
+    text-decoration-color: #C3C7D2;
+  }
+
+  .work-playbook .scripts {
+    background: var(--ink);
+    color: var(--paper);
+    margin-top: 3.4rem;
+    padding: 2.8rem 0 3rem;
+  }
+  .work-playbook .scripts h2 { color: var(--paper); }
+  .work-playbook .scripts .phase-head { border-bottom-color: #33406B; }
+  .work-playbook .scripts .phase-when { color: #8D99BE; }
+  .work-playbook .scripts .phase-note { color: #A9B4D4; }
+
+  .work-playbook .script { margin: 0 0 1.6rem; }
+  .work-playbook .script:last-child { margin-bottom: 0; }
+  .work-playbook .script h3 {
+    font-family: var(--display);
+    font-size: 1.02rem;
+    font-weight: 600;
+    margin: 0 0 0.1rem;
+    letter-spacing: -0.01em;
+    color: var(--paper);
+  }
+  .work-playbook .script .why {
+    font-size: 0.9rem;
+    color: #8D99BE;
+    margin: 0 0 0.6rem;
+  }
+  .work-playbook .box {
+    background: #1B2647;
+    border: 1px solid #33406B;
+    border-radius: 8px;
+    padding: 0.95rem 1rem;
+  }
+  .work-playbook .box pre {
+    margin: 0;
+    font-family: var(--sans);
+    font-size: 0.95rem;
+    line-height: 1.58;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    color: #E6E9F5;
+  }
+  .work-playbook .copy {
+    margin-top: 0.75rem;
+    background: none;
+    border: 1px solid #45527F;
+    color: #C6CEE8;
+    font: inherit;
+    font-size: 0.86rem;
+    font-weight: 500;
+    padding: 0.4rem 0.85rem;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  .work-playbook .copy:hover { background: #243057; color: #fff; }
+  .work-playbook .copy[data-state="done"] { border-color: var(--done); color: #7BE0B0; }
+
+  .work-playbook .mistakes { padding: 3rem 0 0.5rem; }
+  .work-playbook .mistakes ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    counter-reset: m;
+  }
+  .work-playbook .mistakes li {
+    counter-increment: m;
+    display: flex;
+    gap: 0.9rem;
+    padding: 0.85rem 0;
+    border-top: 1px solid var(--rule);
+    color: var(--ink);
+  }
+  .work-playbook .mistakes li:first-child { border-top: 0; }
+  .work-playbook .mistakes li::before {
+    content: counter(m);
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: var(--accent);
+    flex: 0 0 1.1rem;
+    padding-top: 0.18rem;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .work-playbook .close {
+    margin-top: 3.2rem;
+    border-top: 1.5px solid var(--ink);
+    padding: 2.4rem 0 3.5rem;
+    padding-bottom: calc(3.5rem + env(safe-area-inset-bottom));
+  }
+  .work-playbook .close h2 { margin-bottom: 0.7rem; }
+  .work-playbook .close p { color: var(--slate); margin: 0 0 1.5rem; max-width: 52ch; }
+  .work-playbook .follow {
+    display: inline-block;
+    background: var(--ink);
+    color: var(--paper);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 0.85rem 1.5rem;
+    border-radius: 8px;
+  }
+  .work-playbook .follow:hover { background: var(--accent); color: var(--paper); }
+  .work-playbook .more {
+    margin: 2.2rem 0 0;
+    padding-top: 1.4rem;
+    border-top: 1px solid var(--rule);
+  }
+  .work-playbook .more p { font-size: 0.9rem; margin: 0 0 0.7rem; }
+  .work-playbook .more ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.55rem; }
+  .work-playbook .more a {
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.97rem;
+    display: flex;
+    gap: 0.6rem;
+    align-items: baseline;
+  }
+  .work-playbook .more a:hover span { text-decoration: underline; }
+  .work-playbook .more em {
+    font-style: normal;
+    color: var(--slate);
+    font-size: 0.9rem;
+  }
+
+  @media (min-width: 34rem) {
+    .work-playbook { font-size: 17.5px; }
+    .work-playbook .hero { padding: 2rem 0 2.6rem; }
+    .work-playbook .seg-lab { font-size: 0.74rem; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .work-playbook * { transition: none !important; animation: none !important; }
+  }
+</style>
