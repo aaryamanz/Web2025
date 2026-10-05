@@ -1,0 +1,654 @@
+---
+import DefaultLayout from '../layouts/DefaultLayout.astro'
+---
+
+<DefaultLayout
+  title="Five free certificates nobody's posting about"
+  description="Five genuinely free certificates from Databricks, CFI, Hugging Face, Microsoft and Bloomberg, with the catch for each. Checked October 2026."
+>
+  <div class="certs-page">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,500;0,600;1,500&family=Figtree:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <div class="certs-wrap">
+      <div class="certs-head">
+        <h1>Five free certificates nobody&rsquo;s posting about</h1>
+        <p class="lede">
+          Every one of these costs nothing to earn. Where there&rsquo;s a catch, it&rsquo;s spelled out below, so you
+          know before you start. Mark each one as you finish it.
+        </p>
+        <div class="tally" aria-live="polite">
+          <div class="seals" aria-hidden="true">
+            <span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span><span
+              class="pip"></span>
+          </div>
+          <p>
+            <span id="count">0 of 5 earned</span><small id="nudge">Start with Databricks. It takes about an hour.</small
+            >
+          </p>
+        </div>
+      </div>
+
+      <ol class="certs">
+        <li class="cert" data-id="databricks">
+          <span class="num" aria-hidden="true">1</span>
+          <div>
+            <h2>Generative AI Fundamentals</h2>
+            <p class="issuer">Databricks Academy</p>
+            <p class="desc">
+              A short on-demand intro to generative AI, where it&rsquo;s used in real companies, and how it connects to
+              AI agents. Watch the videos, pass a short quiz, done.
+            </p>
+            <dl>
+              <dt>Time</dt><dd>About an hour</dd>
+              <dt>You get</dt><dd>An official Databricks badge for LinkedIn and your résumé</dd>
+            </dl>
+            <div class="catch">
+              <strong>The catch:</strong> the badge expires after two years, so treat it as a fast signal, not permanent
+              one.
+            </div>
+            <div class="actions">
+              <a
+                class="go"
+                href="https://databricks.com/learn/training/generative-ai-fundamentals-accreditation"
+                target="_blank"
+                rel="noopener">Go to Databricks Academy</a
+              >
+              <button class="earn" type="button" aria-pressed="false">Mark as earned</button>
+            </div>
+          </div>
+          <span class="seal" aria-hidden="true"></span>
+        </li>
+
+        <li class="cert" data-id="cfi">
+          <span class="num" aria-hidden="true">2</span>
+          <div>
+            <h2>Careers in Finance</h2>
+            <p class="issuer">Corporate Finance Institute</p>
+            <p class="desc">
+              A map of the whole finance industry told through Tesla&rsquo;s journey: investment banking, FP&amp;A,
+              commercial lending, private equity and hedge funds, and how they depend on each other.
+            </p>
+            <dl>
+              <dt>Time</dt><dd>About an hour and a half, self-paced</dd>
+              <dt>You get</dt><dd>A clear picture of which finance path fits you, and real interview prep</dd>
+            </dl>
+            <div class="catch">
+              <strong>The catch:</strong> this is CFI&rsquo;s one fully free course. The rest of their catalog is preview
+              only.
+            </div>
+            <div class="actions">
+              <a
+                class="go"
+                href="https://corporatefinanceinstitute.com/course/careers-in-finance/"
+                target="_blank"
+                rel="noopener">Go to CFI</a
+              >
+              <button class="earn" type="button" aria-pressed="false">Mark as earned</button>
+            </div>
+          </div>
+          <span class="seal" aria-hidden="true"></span>
+        </li>
+
+        <li class="cert" data-id="huggingface">
+          <span class="num" aria-hidden="true">3</span>
+          <div>
+            <h2>AI Agents Course</h2>
+            <p class="issuer">Hugging Face</p>
+            <p class="desc">
+              How AI agents actually work, and how to build your own with current libraries. The certification is
+              completely free.
+            </p>
+            <dl>
+              <dt>Time</dt><dd>Self-paced. Unit 1 is the quick win</dd>
+              <dt>You get</dt><dd>
+                A Fundamentals certificate after Unit 1 and its quiz, and a full certificate after one use-case
+                assignment and the final challenge
+              </dd>
+            </dl>
+            <div class="catch"><strong>The catch:</strong> you need basic Python. This is the builder pick.</div>
+            <div class="actions">
+              <a
+                class="go"
+                href="https://huggingface.co/learn/agents-course/unit0/introduction"
+                target="_blank"
+                rel="noopener">Go to Hugging Face</a
+              >
+              <button class="earn" type="button" aria-pressed="false">Mark as earned</button>
+            </div>
+          </div>
+          <span class="seal" aria-hidden="true"></span>
+        </li>
+
+        <li class="cert" data-id="microsoft">
+          <span class="num" aria-hidden="true">4</span>
+          <div>
+            <h2>Microsoft Applied Skills</h2>
+            <p class="issuer">Microsoft Learn</p>
+            <p class="desc">
+              Hands-on lab assessments where you complete real tasks in a live environment instead of answering multiple
+              choice.
+            </p>
+            <dl>
+              <dt>Time</dt><dd>A two-hour lab of roughly 12 to 16 tasks, plus prep</dd>
+              <dt>You get</dt><dd>A Microsoft-verified credential that doesn&rsquo;t expire</dd>
+            </dl>
+            <div class="catch">
+              <strong>The catch:</strong> several AI Applied Skills retire in 2026. Check the retirement date on the
+              credential&rsquo;s page before you start.
+            </div>
+            <div class="actions">
+              <a class="go" href="https://learn.microsoft.com/credentials" target="_blank" rel="noopener"
+                >Go to Microsoft Learn</a
+              >
+              <button class="earn" type="button" aria-pressed="false">Mark as earned</button>
+            </div>
+          </div>
+          <span class="seal" aria-hidden="true"></span>
+        </li>
+
+        <li class="cert" data-id="bloomberg">
+          <span class="num" aria-hidden="true">5</span>
+          <div>
+            <h2>Bloomberg Market Concepts</h2>
+            <p class="issuer">Bloomberg for Education</p>
+            <p class="desc">
+              Bloomberg&rsquo;s self-paced intro to economics, currencies, fixed income and equities, taught on the
+              Bloomberg Terminal. One of the most recognized finance credentials a student can add.
+            </p>
+            <dl>
+              <dt>Time</dt><dd>About 8 to 10 hours</dd>
+              <dt>You get</dt><dd>A Bloomberg certificate of completion</dd>
+            </dl>
+            <div class="catch">
+              <strong>The catch:</strong> online access costs around $150 to $249. It&rsquo;s free when you do it on a
+              Bloomberg Terminal at your university, so ask your business school or library where theirs are.
+            </div>
+            <div class="actions">
+              <a class="go" href="https://portal.bloombergforeducation.com/register" target="_blank" rel="noopener"
+                >Register with Bloomberg</a
+              >
+              <button class="earn" type="button" aria-pressed="false">Mark as earned</button>
+            </div>
+          </div>
+          <span class="seal" aria-hidden="true"></span>
+        </li>
+      </ol>
+
+      <section class="after">
+        <h2>Putting them on your résumé</h2>
+        <p>List each one under Licenses &amp; Certifications as name, issuer, month and year:</p>
+        <p class="example">Generative AI Fundamentals, Databricks, Oct 2026</p>
+        <p>On LinkedIn, paste the credential link so a recruiter can verify it in one click.</p>
+      </section>
+
+      <section class="follow">
+        <p>
+          Free tiers change fast. I check these before I post them, so following is how you catch the next one before it
+          gets paywalled.
+        </p>
+        <a class="go" href="https://www.instagram.com/byaaryaman/" target="_blank" rel="noopener">Follow @byaaryaman</a>
+      </section>
+
+      <div class="certs-footer">
+        <p>Links and pricing checked October 2026.</p>
+        <p>Aaryaman Singh</p>
+      </div>
+    </div>
+  </div>
+</DefaultLayout>
+
+<style is:global>
+  .certs-page {
+    --paper: #f6f7fb;
+    --sheet: #ffffff;
+    --ink: #191b45;
+    --body-text: #34375a;
+    --muted: #6a6e8c;
+    --rule: #dcdfee;
+    --indigo: #3f43d1;
+    --indigo-press: #2f32a8;
+    --gold: #9c6510;
+    --gold-soft: #f6ebd6;
+    --on-indigo: #ffffff;
+    --serif: 'Spectral', 'Iowan Old Style', 'Palatino Linotype', Georgia, serif;
+    --sans: 'Figtree', 'Segoe UI', system-ui, -apple-system, sans-serif;
+
+    background: var(--paper);
+    color: var(--body-text);
+    font-family: var(--sans);
+    font-size: 17px;
+    line-height: 1.6;
+  }
+
+  html.darkmode .certs-page {
+    --paper: #12132b;
+    --sheet: #1a1c3a;
+    --ink: #eef0ff;
+    --body-text: #c9cce6;
+    --muted: #9296b8;
+    --rule: #2e3159;
+    --indigo: #8e92ff;
+    --indigo-press: #a9acff;
+    --gold: #e2b25c;
+    --gold-soft: #3a3020;
+    --on-indigo: #12132b;
+  }
+
+  .certs-page *,
+  .certs-page *::before,
+  .certs-page *::after {
+    box-sizing: border-box;
+  }
+
+  .certs-page a {
+    color: var(--indigo);
+  }
+
+  .certs-page :focus-visible {
+    outline: 3px solid var(--indigo);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  .certs-wrap {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 56px 24px 72px;
+  }
+
+  .certs-wrap .certs-head h1 {
+    font-family: var(--serif);
+    font-weight: 600;
+    color: var(--ink);
+    font-size: clamp(2.3rem, 7vw, 3.4rem);
+    line-height: 1.04;
+    letter-spacing: -0.015em;
+    margin: 0 0 20px;
+  }
+
+  .certs-wrap .certs-head .lede {
+    font-size: 1.1rem;
+    max-width: 34em;
+    margin: 0 0 28px;
+  }
+
+  .certs-page .tally {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    padding: 14px 18px;
+    background: var(--sheet);
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+  }
+
+  .certs-page .tally .seals {
+    display: flex;
+    gap: 6px;
+  }
+
+  .certs-page .tally .pip {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 1.5px dashed var(--muted);
+    transition:
+      background 0.25s,
+      border-color 0.25s;
+  }
+
+  .certs-page .tally .pip.on {
+    background: var(--gold);
+    border: 1.5px solid var(--gold);
+  }
+
+  .certs-page .tally p {
+    margin: 0;
+    color: var(--ink);
+    font-weight: 500;
+  }
+
+  .certs-page .tally small {
+    display: block;
+    color: var(--muted);
+    font-weight: 400;
+    font-size: 0.85rem;
+  }
+
+  .certs-page ol.certs {
+    list-style: none;
+    margin: 56px 0 0;
+    padding: 0;
+  }
+
+  .certs-page .cert {
+    position: relative;
+    display: grid;
+    grid-template-columns: 44px 1fr;
+    column-gap: 8px;
+    padding: 36px 0;
+    border-top: 1px solid var(--rule);
+  }
+
+  .certs-page .cert:last-child {
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .certs-page .num {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 1.5rem;
+    color: var(--muted);
+    line-height: 1.2;
+  }
+
+  .certs-page .cert h2 {
+    font-family: var(--serif);
+    font-weight: 600;
+    color: var(--ink);
+    font-size: 1.6rem;
+    line-height: 1.2;
+    margin: 0 0 2px;
+    padding-right: 76px;
+  }
+
+  .certs-page .issuer {
+    color: var(--muted);
+    font-size: 0.95rem;
+    margin: 0 0 14px;
+  }
+
+  .certs-page .cert .desc {
+    margin: 0 0 18px;
+  }
+
+  .certs-page dl {
+    margin: 0 0 22px;
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 8px 18px;
+  }
+
+  .certs-page dt {
+    color: var(--muted);
+    font-size: 0.92rem;
+    padding-top: 1px;
+  }
+
+  .certs-page dd {
+    margin: 0;
+    color: var(--body-text);
+  }
+
+  .certs-page .catch {
+    margin: -6px 0 22px;
+    padding: 12px 14px;
+    background: var(--gold-soft);
+    border-radius: 8px;
+    color: var(--body-text);
+  }
+
+  .certs-page .catch strong {
+    color: var(--gold);
+    font-weight: 600;
+  }
+
+  .certs-page .actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .certs-page .go {
+    display: inline-block;
+    text-decoration: none;
+    background: var(--indigo);
+    color: var(--on-indigo);
+    font-weight: 600;
+    padding: 12px 20px;
+    border-radius: 8px;
+    transition: background 0.15s;
+  }
+
+  .certs-page .go:hover {
+    background: var(--indigo-press);
+    color: var(--on-indigo);
+  }
+
+  .certs-page .earn {
+    font: inherit;
+    font-weight: 500;
+    cursor: pointer;
+    color: var(--ink);
+    background: transparent;
+    border: 1.5px solid var(--rule);
+    border-radius: 8px;
+    padding: 10.5px 16px;
+    transition:
+      border-color 0.15s,
+      background 0.15s;
+  }
+
+  .certs-page .earn:hover {
+    border-color: var(--muted);
+  }
+
+  .certs-page .earn[aria-pressed='true'] {
+    border-color: var(--gold);
+    color: var(--gold);
+  }
+
+  .certs-page .seal {
+    position: absolute;
+    top: 30px;
+    right: 0;
+    width: 68px;
+    height: 68px;
+    opacity: 0;
+    transform: scale(1.6) rotate(-30deg);
+    pointer-events: none;
+  }
+
+  .certs-page .cert.earned .seal {
+    opacity: 1;
+    transform: scale(1) rotate(-12deg);
+    transition:
+      transform 0.38s cubic-bezier(0.2, 1.6, 0.4, 1),
+      opacity 0.18s ease-out;
+  }
+
+  .certs-page .seal svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  .certs-page .after {
+    margin-top: 64px;
+  }
+
+  .certs-page .after h2 {
+    font-family: var(--serif);
+    font-weight: 600;
+    color: var(--ink);
+    font-size: 1.5rem;
+    margin: 0 0 10px;
+  }
+
+  .certs-page .after p {
+    margin: 0 0 14px;
+  }
+
+  .certs-page .example {
+    font-family: var(--serif);
+    font-style: italic;
+    color: var(--ink);
+    font-size: 1.08rem;
+  }
+
+  .certs-page .follow {
+    margin-top: 48px;
+    padding: 28px 24px;
+    background: var(--sheet);
+    border: 1px solid var(--rule);
+    border-radius: 12px;
+  }
+
+  .certs-page .follow p {
+    margin: 0 0 16px;
+    color: var(--ink);
+    font-size: 1.05rem;
+  }
+
+  .certs-page .certs-footer {
+    margin-top: 40px;
+    color: var(--muted);
+    font-size: 0.88rem;
+  }
+
+  .certs-page .certs-footer p {
+    margin: 0 0 6px;
+  }
+
+  @media (max-width: 520px) {
+    .certs-wrap {
+      padding: 40px 20px 56px;
+    }
+
+    .certs-page .cert {
+      grid-template-columns: 1fr;
+    }
+
+    .certs-page .num {
+      margin-bottom: 4px;
+    }
+
+    .certs-page .seal {
+      top: 24px;
+      width: 58px;
+      height: 58px;
+    }
+
+    .certs-page .cert h2 {
+      padding-right: 64px;
+    }
+
+    .certs-page dl {
+      grid-template-columns: 1fr;
+      gap: 2px;
+    }
+
+    .certs-page dd {
+      margin-bottom: 8px;
+    }
+
+    .certs-page .actions {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .certs-page .go,
+    .certs-page .earn {
+      text-align: center;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .certs-page .cert.earned .seal {
+      transition: opacity 0.2s;
+      transform: rotate(-12deg);
+    }
+
+    .certs-page .seal {
+      transform: rotate(-12deg);
+    }
+  }
+</style>
+
+<script is:inline>
+  (function () {
+    var root = document.querySelector('.certs-page');
+    if (!root || root.dataset.init === '1') return;
+    root.dataset.init = '1';
+
+    var KEY = 'aaryaman-certificates-v1';
+    var memory = {};
+    function load() {
+      try {
+        var raw = localStorage.getItem(KEY);
+        return raw ? JSON.parse(raw) : {};
+      } catch (e) {
+        return memory;
+      }
+    }
+    function save(state) {
+      memory = state;
+      try {
+        localStorage.setItem(KEY, JSON.stringify(state));
+      } catch (e) {}
+    }
+
+    var sealSVG =
+      '<svg viewBox="0 0 100 100" role="img"><g fill="currentColor">' +
+      (function () {
+        var pts = [],
+          n = 24;
+        for (var i = 0; i < n * 2; i++) {
+          var r = i % 2 ? 44 : 49,
+            a = (Math.PI * i) / n;
+          pts.push((50 + r * Math.cos(a)).toFixed(1) + ',' + (50 + r * Math.sin(a)).toFixed(1));
+        }
+        return '<polygon points="' + pts.join(' ') + '"/>';
+      })() +
+      '</g><circle cx="50" cy="50" r="35" fill="none" stroke="var(--sheet)" stroke-width="2"/>' +
+      '<path d="M35 51 l10 10 l20 -22" fill="none" stroke="var(--sheet)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
+    var certs = Array.prototype.slice.call(root.querySelectorAll('.cert'));
+    var pips = root.querySelectorAll('.pip');
+    var countEl = root.querySelector('#count');
+    var nudgeEl = root.querySelector('#nudge');
+    var state = load();
+
+    certs.forEach(function (li) {
+      var seal = li.querySelector('.seal');
+      seal.style.color = 'var(--gold)';
+      seal.innerHTML = sealSVG;
+    });
+
+    function render() {
+      var done = 0;
+      certs.forEach(function (li) {
+        var on = !!state[li.dataset.id];
+        li.classList.toggle('earned', on);
+        var btn = li.querySelector('.earn');
+        btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+        btn.textContent = on ? 'Earned' : 'Mark as earned';
+        if (on) done++;
+      });
+      for (var i = 0; i < pips.length; i++) pips[i].classList.toggle('on', i < done);
+      countEl.textContent = done + ' of 5 earned';
+      nudgeEl.textContent =
+        done === 0
+          ? 'Start with Databricks. It takes about an hour.'
+          : done === 5
+            ? 'All five. Go update your LinkedIn.'
+            : 5 - done + ' to go.';
+    }
+
+    certs.forEach(function (li) {
+      li.querySelector('.earn').addEventListener('click', function () {
+        state[li.dataset.id] = !state[li.dataset.id];
+        save(state);
+        render();
+      });
+    });
+
+    render();
+  })();
+</script>
