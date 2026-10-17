@@ -1,0 +1,694 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Free Certifications Worth It — Aaryaman Singh</title>
+<meta name="description" content="5 free certifications from OpenAI, GitHub, Anthropic, Oracle and Snowflake that are actually worth putting on your resume. Every link checked October 2026.">
+<link rel="canonical" href="https://aaryamansingh.com/certs">
+<meta property="og:title" content="5 free certifications that are actually worth it">
+<meta property="og:description" content="OpenAI, GitHub, Anthropic, Oracle, Snowflake. What each one proves, how to get it free, and how to list it.">
+<meta property="og:url" content="https://aaryamansingh.com/certs">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0b0d12">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0b0d12; --bg2:#0f1219; --card:#12161f; --card2:#171c27;
+  --line:#222837; --line2:#2c3446;
+  --ink:#eef0f5; --ink2:#c3c9d6; --mute:#8790a3; --faint:#5d6578;
+  --amber:#f5b544; --amber-soft:rgba(245,181,68,.12);
+  --gold:#f5b544; --blue:#7aa7ff; --blue-soft:rgba(122,167,255,.12);
+  --slate:#a6b0c3; --slate-soft:rgba(166,176,195,.10);
+  --green:#5ad1a0; --green-soft:rgba(90,209,160,.12);
+  --r:18px; --r2:12px;
+  --display:"Bricolage Grotesque",system-ui,sans-serif;
+  --body:"Inter",system-ui,-apple-system,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:clip}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
+::selection{background:var(--amber);color:#111}
+.wrap{max-width:880px;margin:0 auto;padding:0 20px}
+@media (min-width:720px){.wrap{padding:0 32px}}
+
+/* top bar */
+.top{display:flex;justify-content:space-between;align-items:center;padding:22px 0}
+.top .name{font-family:var(--display);font-weight:700;font-size:15px;letter-spacing:-.01em;text-decoration:none}
+.top .handle{font-family:var(--mono);font-size:12px;color:var(--mute);text-decoration:none;border:1px solid var(--line);padding:6px 10px;border-radius:999px;transition:.2s}
+.top .handle:hover{color:var(--ink);border-color:var(--line2)}
+
+/* hero */
+.hero{position:relative;padding:48px 0 40px}
+.hero::before{content:"";position:absolute;inset:-120px -20px auto;height:520px;background:radial-gradient(600px 300px at 50% 30%,rgba(245,181,68,.10),transparent 70%);pointer-events:none;z-index:-1}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--amber);display:inline-flex;align-items:center;gap:8px}
+.eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--amber);box-shadow:0 0 0 4px rgba(245,181,68,.18)}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(40px,9vw,76px);line-height:.98;letter-spacing:-.035em;margin:18px 0 18px}
+h1 em{font-style:normal;color:var(--amber)}
+.lede{font-size:18px;color:var(--ink2);max-width:600px}
+.lede b{color:var(--ink);font-weight:600}
+.brands{display:flex;flex-wrap:wrap;gap:8px;margin:28px 0 30px}
+.brands span{font-family:var(--display);font-weight:700;font-size:14px;padding:8px 14px;border-radius:999px;background:var(--card);border:1px solid var(--line);color:var(--ink2)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:var(--r2);padding:14px 14px 12px}
+.stat .n{font-family:var(--display);font-weight:800;font-size:26px;letter-spacing:-.02em;line-height:1}
+.stat .l{font-size:12px;color:var(--mute);margin-top:6px;line-height:1.35}
+.checked{margin-top:18px;font-size:13px;color:var(--mute);display:flex;align-items:center;gap:8px}
+.checked svg{flex:none}
+
+/* sticky progress */
+.prog{position:sticky;top:0;z-index:20;background:rgba(11,13,18,.82);backdrop-filter:saturate(140%) blur(14px);-webkit-backdrop-filter:saturate(140%) blur(14px);border-bottom:1px solid var(--line);transform:translateY(-100%);transition:transform .3s ease}
+.prog.show{transform:none}
+.prog .wrap{display:flex;align-items:center;gap:14px;height:52px}
+.prog .t{font-family:var(--mono);font-size:12px;color:var(--ink2);white-space:nowrap}
+.prog .t b{color:var(--amber)}
+.bar{flex:1;height:6px;border-radius:99px;background:var(--line);overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--amber),#ffd27a);border-radius:99px;transition:width .5s cubic-bezier(.2,.8,.2,1)}
+.prog nav{display:none;gap:4px}
+@media (min-width:720px){.prog nav{display:flex}}
+.prog nav a{font-size:12px;color:var(--mute);text-decoration:none;padding:6px 9px;border-radius:8px;transition:.15s}
+.prog nav a:hover,.prog nav a.on{color:var(--ink);background:var(--card)}
+
+/* sections */
+section{padding:56px 0 8px}
+.sh{display:flex;align-items:baseline;gap:14px;margin-bottom:10px}
+.sh .num{font-family:var(--mono);font-size:12px;color:var(--amber)}
+h2{font-family:var(--display);font-weight:800;font-size:clamp(28px,5.4vw,40px);letter-spacing:-.03em;line-height:1.05}
+.sub{color:var(--mute);max-width:620px;margin-bottom:26px}
+
+/* tiers */
+.tiers{display:grid;gap:10px}
+@media (min-width:720px){.tiers{grid-template-columns:repeat(3,1fr)}}
+.tier{border:1px solid var(--line);border-radius:var(--r);padding:18px;background:var(--card)}
+.tier .tag{margin-bottom:12px}
+.tier h3{font-family:var(--display);font-size:18px;font-weight:700;letter-spacing:-.01em;margin-bottom:6px}
+.tier p{font-size:14px;color:var(--ink2)}
+.tier .who{font-size:12px;color:var(--mute);margin-top:12px;font-family:var(--mono)}
+.tag{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:11px;letter-spacing:.04em;text-transform:uppercase;padding:5px 9px;border-radius:999px;font-weight:500}
+.tag::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor}
+.tag.t1{color:var(--gold);background:var(--amber-soft)}
+.tag.t2{color:var(--blue);background:var(--blue-soft)}
+.tag.t3{color:var(--slate);background:var(--slate-soft)}
+
+/* cert cards */
+.certs{display:grid;gap:14px}
+.cert{position:relative;border:1px solid var(--line);border-radius:var(--r);background:linear-gradient(180deg,var(--card2),var(--card));overflow:hidden;transition:border-color .25s,transform .25s}
+.cert:hover{border-color:var(--line2)}
+.cert.done{border-color:rgba(90,209,160,.45)}
+.cert .head{display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:start;padding:20px 20px 0}
+.cert .no{font-family:var(--display);font-weight:800;font-size:38px;line-height:.9;color:var(--faint);letter-spacing:-.04em;min-width:34px}
+.cert.done .no{color:var(--green)}
+.cert .brand{font-family:var(--mono);font-size:12px;color:var(--mute);text-transform:uppercase;letter-spacing:.06em}
+.cert h3{font-family:var(--display);font-weight:700;font-size:22px;letter-spacing:-.02em;line-height:1.15;margin:4px 0 10px}
+.cert .tags{display:flex;flex-wrap:wrap;gap:6px}
+.chk{appearance:none;-webkit-appearance:none;width:30px;height:30px;border-radius:9px;border:1.5px solid var(--line2);background:var(--bg2);cursor:pointer;display:grid;place-items:center;transition:.2s;flex:none}
+.chk:hover{border-color:var(--mute)}
+.chk:checked{background:var(--green);border-color:var(--green)}
+.chk:checked::after{content:"";width:9px;height:15px;border:solid #0b0d12;border-width:0 2.5px 2.5px 0;transform:rotate(45deg) translate(-1px,-2px)}
+.chk:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
+.cert .body{padding:16px 20px 20px}
+.cert .why{font-size:15px;color:var(--ink2);margin-bottom:16px}
+.cert .why b{color:var(--ink);font-weight:600}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r2);overflow:hidden;margin-bottom:16px}
+.facts div{background:var(--bg2);padding:10px 12px}
+.facts .k{font-size:11px;color:var(--mute);text-transform:uppercase;letter-spacing:.05em;font-family:var(--mono)}
+.facts .v{font-size:14px;font-weight:600;margin-top:2px;line-height:1.3}
+.steps{list-style:none;counter-reset:s;margin-bottom:16px}
+.steps li{counter-increment:s;position:relative;padding:0 0 10px 32px;font-size:14.5px;color:var(--ink2)}
+.steps li::before{content:counter(s);position:absolute;left:0;top:1px;width:21px;height:21px;border-radius:50%;background:var(--card2);border:1px solid var(--line2);font-family:var(--mono);font-size:11px;display:grid;place-items:center;color:var(--ink)}
+.steps li b{color:var(--ink);font-weight:600}
+.flag{display:flex;gap:10px;font-size:13.5px;color:var(--ink2);background:var(--amber-soft);border:1px solid rgba(245,181,68,.22);border-radius:var(--r2);padding:10px 12px;margin-bottom:16px}
+.flag::before{content:"!";flex:none;width:18px;height:18px;border-radius:50%;background:var(--amber);color:#111;font-weight:700;font-size:12px;display:grid;place-items:center;margin-top:1px}
+.resume{display:flex;align-items:center;gap:10px;border:1px dashed var(--line2);border-radius:var(--r2);padding:10px 10px 10px 14px;margin-bottom:16px}
+.resume .lab{font-family:var(--mono);font-size:10.5px;color:var(--mute);text-transform:uppercase;letter-spacing:.06em}
+.resume .txt{font-size:13.5px;flex:1;min-width:0;line-height:1.4}
+.copy{flex:none;font-family:var(--body);font-size:12.5px;font-weight:600;color:var(--ink);background:var(--card2);border:1px solid var(--line2);border-radius:9px;padding:7px 11px;cursor:pointer;transition:.15s}
+.copy:hover{border-color:var(--mute)}
+.copy.ok{color:#0b0d12;background:var(--green);border-color:var(--green)}
+.links{display:flex;flex-wrap:wrap;gap:8px}
+.btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:600;font-size:14px;padding:11px 16px;border-radius:11px;transition:.18s}
+.btn.pri{background:var(--amber);color:#14110a}
+.btn.pri:hover{background:#ffc75e;transform:translateY(-1px)}
+.btn.sec{border:1px solid var(--line2);color:var(--ink)}
+.btn.sec:hover{border-color:var(--mute)}
+.btn svg{width:14px;height:14px}
+.cert.twist{border-color:rgba(245,181,68,.35)}
+.cert.twist::before{content:"the student-only one";position:absolute;top:0;right:0;font-family:var(--mono);font-size:10.5px;text-transform:uppercase;letter-spacing:.06em;color:#14110a;background:var(--amber);padding:5px 10px;border-bottom-left-radius:10px}
+.cert.twist .head{padding-top:30px}
+
+/* plan */
+.plan{position:relative;border-left:1px solid var(--line2);margin-left:8px}
+.step{position:relative;padding:0 0 26px 26px}
+.step::before{content:"";position:absolute;left:-6px;top:6px;width:11px;height:11px;border-radius:50%;background:var(--bg);border:2px solid var(--amber)}
+.step .when{font-family:var(--mono);font-size:12px;color:var(--amber);text-transform:uppercase;letter-spacing:.06em}
+.step h4{font-family:var(--display);font-weight:700;font-size:19px;letter-spacing:-.01em;margin:3px 0 4px}
+.step p{font-size:14.5px;color:var(--ink2)}
+
+/* resume mock */
+.mock{border-radius:var(--r);background:#f6f4ef;color:#1b1d22;padding:22px 22px 18px;font-family:Georgia,"Times New Roman",serif;box-shadow:0 30px 60px -30px rgba(0,0,0,.6)}
+.mock .hd{font-family:var(--body);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;border-bottom:1.5px solid #1b1d22;padding-bottom:5px;margin-bottom:10px}
+.mock ul{list-style:none}
+.mock li{font-size:14px;padding:3px 0;display:flex;justify-content:space-between;gap:12px}
+.mock li span:last-child{color:#6a6d75;white-space:nowrap;font-size:13px}
+.mock .note{font-family:var(--body);font-size:11.5px;color:#6a6d75;margin-top:10px}
+.rules{display:grid;gap:10px;margin-top:16px}
+@media (min-width:720px){.rules{grid-template-columns:1fr 1fr}}
+.rule{border:1px solid var(--line);border-radius:var(--r2);padding:14px 16px;background:var(--card)}
+.rule b{display:block;font-family:var(--display);font-size:16px;margin-bottom:3px;letter-spacing:-.01em}
+.rule p{font-size:14px;color:var(--ink2)}
+.rule.no b{color:#ff8f8f}
+.rule.yes b{color:var(--green)}
+
+/* bonus */
+.bonus{display:grid;gap:10px}
+@media (min-width:720px){.bonus{grid-template-columns:1fr 1fr}}
+.bc{display:block;text-decoration:none;border:1px solid var(--line);border-radius:var(--r2);padding:16px;background:var(--card);transition:.18s}
+.bc:hover{border-color:var(--line2);transform:translateY(-2px)}
+.bc .brand{font-family:var(--mono);font-size:11px;color:var(--mute);text-transform:uppercase;letter-spacing:.06em}
+.bc h4{font-family:var(--display);font-weight:700;font-size:17px;letter-spacing:-.01em;margin:3px 0 6px;display:flex;justify-content:space-between;gap:10px}
+.bc h4 svg{flex:none;width:14px;height:14px;margin-top:5px;color:var(--mute)}
+.bc p{font-size:13.5px;color:var(--ink2);margin-bottom:10px}
+
+/* register */
+.reg{width:100%;border-collapse:collapse;font-size:13.5px}
+.reg th{text-align:left;font-family:var(--mono);font-size:11px;font-weight:500;color:var(--mute);text-transform:uppercase;letter-spacing:.05em;padding:0 10px 10px 0;border-bottom:1px solid var(--line2)}
+.reg td{padding:12px 10px 12px 0;border-bottom:1px solid var(--line);vertical-align:top;color:var(--ink2)}
+.reg td:first-child{color:var(--ink);font-weight:500}
+.reg a{color:var(--ink2);text-underline-offset:3px;text-decoration-color:var(--line2)}
+.reg a:hover{color:var(--amber)}
+.st{font-family:var(--mono);font-size:10.5px;text-transform:uppercase;letter-spacing:.04em;padding:3px 7px;border-radius:6px;white-space:nowrap}
+.st.ok{color:var(--green);background:var(--green-soft)}
+.st.ag{color:var(--amber);background:var(--amber-soft)}
+@media (max-width:620px){
+  .reg thead{display:none}
+  .reg tr{display:block;border-bottom:1px solid var(--line);padding:12px 0}
+  .reg td{display:block;border:0;padding:2px 0}
+}
+
+/* footer */
+.cta{margin:64px 0 0;border:1px solid var(--line);border-radius:22px;padding:28px 22px;background:radial-gradient(400px 200px at 100% 0%,rgba(245,181,68,.10),transparent 70%),var(--card);text-align:left}
+.cta h3{font-family:var(--display);font-weight:800;font-size:28px;letter-spacing:-.03em;line-height:1.05;margin-bottom:8px}
+.cta p{color:var(--ink2);margin-bottom:18px;max-width:520px}
+.more{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.more a{font-size:13px;color:var(--mute);text-decoration:none;border:1px solid var(--line);padding:7px 11px;border-radius:999px;transition:.15s}
+.more a:hover{color:var(--ink);border-color:var(--line2)}
+footer{padding:36px 0 48px;font-size:12.5px;color:var(--faint);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+
+/* done toast */
+.toast{position:fixed;left:50%;bottom:22px;transform:translate(-50%,24px);opacity:0;visibility:hidden;background:var(--ink);color:#0b0d12;font-weight:600;font-size:14px;padding:12px 18px;border-radius:12px;box-shadow:0 20px 40px -10px rgba(0,0,0,.6);transition:transform .35s cubic-bezier(.2,.8,.2,1);z-index:50;max-width:calc(100% - 32px);text-align:center}
+.toast.show{transform:translate(-50%,0);opacity:1;visibility:visible}
+.toast{transition:transform .35s cubic-bezier(.2,.8,.2,1),opacity .25s,visibility .25s}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}.rv{opacity:1;transform:none}html{scroll-behavior:auto}}
+@media (max-width:420px){
+  .facts div{padding:9px 10px}
+  .facts .k{font-size:10px}
+  .facts .v{font-size:13px}
+  .stat .n{font-size:22px}
+  .cert .head{grid-template-columns:auto 1fr;}
+  .cert .head .chk{grid-column:2;justify-self:start;margin-top:4px;display:none}
+  .mobile-chk{display:flex!important}
+}
+.mobile-chk{display:none;align-items:center;gap:10px;margin:0 0 16px;font-size:14px;color:var(--ink2);cursor:pointer}
+@media print{.prog,.toast,.links,.copy,.chk,.mobile-chk{display:none!important}body{background:#fff;color:#111}}
+</style>
+</head>
+<body>
+
+<div class="prog" id="prog" aria-hidden="true">
+  <div class="wrap">
+    <span class="t"><b id="pc">0</b> / 5 done</span>
+    <div class="bar"><i id="pb"></i></div>
+    <nav id="pnav">
+      <a href="#tiers">tiers</a>
+      <a href="#five">the five</a>
+      <a href="#order">order</a>
+      <a href="#resume">resume</a>
+      <a href="#bonus">bonus</a>
+    </nav>
+  </div>
+</div>
+
+<div class="wrap">
+  <header class="top">
+    <a class="name" href="/">aaryaman singh</a>
+    <a class="handle" href="https://instagram.com/byaaryaman" target="_blank" rel="noopener">@byaaryaman</a>
+  </header>
+
+  <div class="hero">
+    <span class="eyebrow"><span class="dot"></span>the list you commented for</span>
+    <h1>5 free certifications that are <em>actually worth it</em></h1>
+    <p class="lede">Most "free certificate" lists are watch-a-video, get-a-PDF. These are different: <b>two are real proctored exams, one is graded on your actual lab work</b>, and two are quick credentials from the two biggest names in AI. All five cost $0.</p>
+    <div class="brands" aria-label="Brands covered">
+      <span>OpenAI</span><span>GitHub</span><span>Anthropic</span><span>Oracle</span><span>Snowflake</span>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="n">$0</div><div class="l">total cost if you follow the steps</div></div>
+      <div class="stat"><div class="n">2</div><div class="l">proctored certification exams</div></div>
+      <div class="stat"><div class="n">5</div><div class="l">lines for your resume and LinkedIn</div></div>
+    </div>
+    <p class="checked">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#5ad1a0" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+      Every link and free status checked October 17, 2026. Free offers change, so the sources are at the bottom.
+    </p>
+  </div>
+
+  <!-- 01 tiers -->
+  <section id="tiers">
+    <div class="sh rv"><span class="num">01</span><h2>Not all certificates are equal</h2></div>
+    <p class="sub rv">Recruiters can tell the difference. Here's how these five stack up, so you know what you're actually putting on your resume.</p>
+    <div class="tiers">
+      <div class="tier rv">
+        <span class="tag t1">Proctored exam</span>
+        <h3>Certification</h3>
+        <p>You sit a timed exam and need a passing score. This is the one that carries the most weight.</p>
+        <div class="who">GitHub · Oracle</div>
+      </div>
+      <div class="tier rv">
+        <span class="tag t2">Lab-graded</span>
+        <h3>Skill badge</h3>
+        <p>You do real work in the product, and an automated grader checks it before the badge is issued. Proof you can do it, not just that you watched it.</p>
+        <div class="who">Snowflake</div>
+      </div>
+      <div class="tier rv">
+        <span class="tag t3">Course + assessment</span>
+        <h3>Certificate of completion</h3>
+        <p>Finish the course, pass a final assessment. Fast, and the brand name does a lot of work. List it as a course, not a certification.</p>
+        <div class="who">OpenAI · Anthropic</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 the five -->
+  <section id="five">
+    <div class="sh rv"><span class="num">02</span><h2>The five</h2></div>
+    <p class="sub rv">Tick each one off as you finish it. Your progress saves on this device.</p>
+
+    <div class="certs">
+
+      <!-- 1 OpenAI -->
+      <article class="cert rv" data-id="openai">
+        <div class="head">
+          <div class="no">1</div>
+          <div>
+            <div class="brand">OpenAI Academy</div>
+            <h3>AI Foundations</h3>
+            <div class="tags"><span class="tag t3">Course + assessment</span></div>
+          </div>
+          <input type="checkbox" class="chk" aria-label="Mark OpenAI AI Foundations as done">
+        </div>
+        <div class="body">
+          <label class="mobile-chk"><input type="checkbox" class="chk" aria-label="Mark OpenAI AI Foundations as done"> mark as done</label>
+          <p class="why">The fastest win on this list. A beginner course on how AI and large language models actually work and how to use ChatGPT well. <b>The OpenAI name is the whole point</b>: it's the brand every recruiter recognizes right now.</p>
+          <div class="facts">
+            <div><div class="k">Cost</div><div class="v">Free</div></div>
+            <div><div class="k">Time</div><div class="v">~70 min</div></div>
+            <div><div class="k">You get</div><div class="v">Course badge</div></div>
+          </div>
+          <ol class="steps">
+            <li>Sign in to <b>OpenAI Academy</b> with your ChatGPT account.</li>
+            <li>Work through <b>AI Foundations</b>.</li>
+            <li>Pass the <b>final assessment</b> (reported as 20 questions, 80% to pass) to unlock the badge.</li>
+          </ol>
+          <div class="flag">This is an OpenAI Academy course badge, not "OpenAI Certifications" (that program is invite-only for Enterprise and Edu workspaces). Label it accurately and nobody can call you out.</div>
+          <div class="resume">
+            <div style="flex:1;min-width:0"><div class="lab">resume line</div><div class="txt">AI Foundations — OpenAI Academy (2026)</div></div>
+            <button class="copy" data-copy="AI Foundations — OpenAI Academy (2026)">Copy</button>
+          </div>
+          <div class="links">
+            <a class="btn pri" href="https://academy.openai.com/public/courses/ai-foundations-dnq5w" target="_blank" rel="noopener">Start the course <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+            <a class="btn sec" href="https://academy.openai.com/pages/courses" target="_blank" rel="noopener">All OpenAI courses</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 2 GitHub -->
+      <article class="cert twist rv" data-id="github">
+        <div class="head">
+          <div class="no">2</div>
+          <div>
+            <div class="brand">GitHub · exam GH-900</div>
+            <h3>GitHub Foundations</h3>
+            <div class="tags"><span class="tag t1">Proctored exam</span></div>
+          </div>
+          <input type="checkbox" class="chk" aria-label="Mark GitHub Foundations as done">
+        </div>
+        <div class="body">
+          <label class="mobile-chk"><input type="checkbox" class="chk" aria-label="Mark GitHub Foundations as done"> mark as done</label>
+          <p class="why">A real certification exam on Git and GitHub, the tools every tech, data and quant team uses. Normally you pay for the exam. <b>Verified students get a voucher that covers it.</b> That's the whole hack.</p>
+          <div class="facts">
+            <div><div class="k">Cost</div><div class="v">$0 for students</div></div>
+            <div><div class="k">Pass mark</div><div class="v">700+</div></div>
+            <div><div class="k">You get</div><div class="v">Certification</div></div>
+          </div>
+          <ol class="steps">
+            <li>Get verified on <b>GitHub Education</b> with your school email (this unlocks the Student Developer Pack).</li>
+            <li>Find the <b>Foundations certificate</b> offer tile in the pack and request your voucher.</li>
+            <li>Study with the free <b>Microsoft Learn paths</b> (Part 1 and Part 2). The heaviest topic is Git and GitHub basics, at 25–30% of the exam.</li>
+            <li>Book the exam and enter the voucher code at registration.</li>
+          </ol>
+          <div class="flag">Vouchers are "while supplies last." Grab yours first, then study. You need a verified student account.</div>
+          <div class="resume">
+            <div style="flex:1;min-width:0"><div class="lab">resume line</div><div class="txt">GitHub Foundations (GH-900) — GitHub (2026)</div></div>
+            <button class="copy" data-copy="GitHub Foundations (GH-900) — GitHub (2026)">Copy</button>
+          </div>
+          <div class="links">
+            <a class="btn pri" href="https://education.github.com/experiences/foundations_certificate" target="_blank" rel="noopener">Get student voucher <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+            <a class="btn sec" href="https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-900" target="_blank" rel="noopener">Study guide</a>
+            <a class="btn sec" href="https://learn.microsoft.com/en-us/training/paths/github-foundations/" target="_blank" rel="noopener">Free prep path</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 3 Anthropic -->
+      <article class="cert rv" data-id="anthropic">
+        <div class="head">
+          <div class="no">3</div>
+          <div>
+            <div class="brand">Anthropic Academy</div>
+            <h3>AI Fluency: Framework &amp; Foundations</h3>
+            <div class="tags"><span class="tag t3">Course + assessment</span></div>
+          </div>
+          <input type="checkbox" class="chk" aria-label="Mark Anthropic AI Fluency as done">
+        </div>
+        <div class="body">
+          <label class="mobile-chk"><input type="checkbox" class="chk" aria-label="Mark Anthropic AI Fluency as done"> mark as done</label>
+          <p class="why">From the company behind Claude. This one teaches you how to <b>work with</b> AI well, not just what it is, which is the skill employers actually ask about in interviews now. Pairs perfectly with #1.</p>
+          <div class="facts">
+            <div><div class="k">Cost</div><div class="v">Free</div></div>
+            <div><div class="k">Format</div><div class="v">Self-paced</div></div>
+            <div><div class="k">You get</div><div class="v">Certificate</div></div>
+          </div>
+          <ol class="steps">
+            <li>Register free on <b>Anthropic Academy</b>.</li>
+            <li>Finish <b>AI Fluency: Framework &amp; Foundations</b>.</li>
+            <li>Take the <b>final assessment</b> to receive your certificate of completion.</li>
+            <li>Student? Stack <b>AI Fluency for Students</b> on top. It covers using AI for learning and career planning, and has its own certificate.</li>
+          </ol>
+          <div class="resume">
+            <div style="flex:1;min-width:0"><div class="lab">resume line</div><div class="txt">AI Fluency: Framework &amp; Foundations — Anthropic (2026)</div></div>
+            <button class="copy" data-copy="AI Fluency: Framework &amp; Foundations — Anthropic (2026)">Copy</button>
+          </div>
+          <div class="links">
+            <a class="btn pri" href="https://anthropic.skilljar.com/ai-fluency-framework-foundations" target="_blank" rel="noopener">Start the course <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+            <a class="btn sec" href="https://anthropic.skilljar.com/ai-fluency-for-students" target="_blank" rel="noopener">For students</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 4 Oracle -->
+      <article class="cert rv" data-id="oracle">
+        <div class="head">
+          <div class="no">4</div>
+          <div>
+            <div class="brand">Oracle · exam 1Z0-1085-26</div>
+            <h3>OCI 2026 Foundations Associate</h3>
+            <div class="tags"><span class="tag t1">Proctored exam</span></div>
+          </div>
+          <input type="checkbox" class="chk" aria-label="Mark Oracle OCI Foundations as done">
+        </div>
+        <div class="body">
+          <label class="mobile-chk"><input type="checkbox" class="chk" aria-label="Mark Oracle OCI Foundations as done"> mark as done</label>
+          <p class="why">A real cloud certification from one of the biggest enterprise tech companies, and right now <b>both the training and the exam are free</b>. Cloud fundamentals show up in tech, consulting and bank tech roles alike.</p>
+          <div class="facts">
+            <div><div class="k">Cost</div><div class="v">Free exam</div></div>
+            <div><div class="k">Format</div><div class="v">40 Q · 60 min</div></div>
+            <div><div class="k">Pass mark</div><div class="v">65%</div></div>
+          </div>
+          <ol class="steps">
+            <li>Create a free <b>Oracle MyLearn</b> account.</li>
+            <li>Work through the free learning path <b>Become an OCI Foundations Associate (2026)</b>.</li>
+            <li>Register for exam <b>1Z0-1085-26</b>. Make sure it's the -26 version; the old -25 exam retired in June 2026.</li>
+          </ol>
+          <div class="flag">The price should show as free at registration. If it doesn't, stop and check before paying anything. Oracle has run this as a limited-time offer before.</div>
+          <div class="resume">
+            <div style="flex:1;min-width:0"><div class="lab">resume line</div><div class="txt">Oracle Cloud Infrastructure 2026 Foundations Associate — Oracle (2026)</div></div>
+            <button class="copy" data-copy="Oracle Cloud Infrastructure 2026 Foundations Associate — Oracle (2026)">Copy</button>
+          </div>
+          <div class="links">
+            <a class="btn pri" href="https://learn.oracle.com/ols/learning-path/become-an-oci-foundations-associate-2026/163512/163541" target="_blank" rel="noopener">Start the free path <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 5 Snowflake -->
+      <article class="cert rv" data-id="snowflake">
+        <div class="head">
+          <div class="no">5</div>
+          <div>
+            <div class="brand">Snowflake · Hands-On Essentials</div>
+            <h3>Badge 1: Data Warehousing Workshop</h3>
+            <div class="tags"><span class="tag t2">Lab-graded</span></div>
+          </div>
+          <input type="checkbox" class="chk" aria-label="Mark Snowflake badge as done">
+        </div>
+        <div class="body">
+          <label class="mobile-chk"><input type="checkbox" class="chk" aria-label="Mark Snowflake badge as done"> mark as done</label>
+          <p class="why">Snowflake is the data platform behind a huge share of analytics teams. You don't get this badge by watching. <b>An automated grader checks your actual lab work</b> before it's issued. That's what makes it worth more than a completion PDF.</p>
+          <div class="facts">
+            <div><div class="k">Cost</div><div class="v">Free</div></div>
+            <div><div class="k">Time</div><div class="v">8–12 hrs</div></div>
+            <div><div class="k">Issued</div><div class="v">Within 24 hrs</div></div>
+          </div>
+          <ol class="steps">
+            <li>Enroll in <b>Data Warehousing Workshop</b> on Snowflake's learning site.</li>
+            <li><b>Don't create a trial account yet.</b> The course tells you exactly when to make one.</li>
+            <li>Watch the videos, pass the quizzes, finish the labs. The grader (called DORA) checks your work.</li>
+            <li>Badge lands within 24 hours. Then keep going: it's badge 1 of 6 in the track.</li>
+          </ol>
+          <div class="flag">The courses are free and Snowflake says "many" of the badges are too. Badge 1 is the one to start with.</div>
+          <div class="resume">
+            <div style="flex:1;min-width:0"><div class="lab">resume line</div><div class="txt">Hands-On Essentials: Data Warehousing Workshop — Snowflake (2026)</div></div>
+            <button class="copy" data-copy="Hands-On Essentials: Data Warehousing Workshop — Snowflake (2026)">Copy</button>
+          </div>
+          <div class="links">
+            <a class="btn pri" href="https://learn.snowflake.com/en/courses/OD-ESS-DWW" target="_blank" rel="noopener">Start badge 1 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+            <a class="btn sec" href="https://learn.snowflake.com/en/pages/hands-on-essentials-track" target="_blank" rel="noopener">Full track</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- 03 order -->
+  <section id="order">
+    <div class="sh rv"><span class="num">03</span><h2>The order I'd do them in</h2></div>
+    <p class="sub rv">Quick wins first so you have momentum, then the exams. About a month of evenings, start to finish.</p>
+    <div class="plan">
+      <div class="step rv">
+        <div class="when">Right now, before anything else</div>
+        <h4>Request the GitHub voucher</h4>
+        <p>It's while supplies last. Takes five minutes once you're verified. Study for it later, but lock it in today.</p>
+      </div>
+      <div class="step rv">
+        <div class="when">This weekend</div>
+        <h4>OpenAI + Anthropic</h4>
+        <p>Two credentials, two of the biggest AI names, done in an afternoon. Add them to LinkedIn the same day.</p>
+      </div>
+      <div class="step rv">
+        <div class="when">Week 1</div>
+        <h4>Snowflake badge 1</h4>
+        <p>8–12 hours of hands-on labs. Do an hour or two a night. This also teaches you SQL patterns you'll use in technical interviews.</p>
+      </div>
+      <div class="step rv">
+        <div class="when">Week 2–3</div>
+        <h4>GitHub Foundations exam</h4>
+        <p>Work through both Microsoft Learn paths, then book it. Spend the most time on Git basics.</p>
+      </div>
+      <div class="step rv" style="padding-bottom:0">
+        <div class="when">Week 3–4</div>
+        <h4>Oracle OCI Foundations</h4>
+        <p>Finish the free learning path and sit the exam. Confirm it still shows as free when you register.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 resume -->
+  <section id="resume">
+    <div class="sh rv"><span class="num">04</span><h2>How to list them</h2></div>
+    <p class="sub rv">Put them in their own section, strongest first. Here's what it should look like.</p>
+    <div class="mock rv">
+      <div class="hd">Certifications &amp; Courses</div>
+      <ul>
+        <li><span>GitHub Foundations (GH-900) — GitHub</span><span>2026</span></li>
+        <li><span>OCI 2026 Foundations Associate — Oracle</span><span>2026</span></li>
+        <li><span>Hands-On Essentials: Data Warehousing — Snowflake</span><span>2026</span></li>
+        <li><span>AI Fluency: Framework &amp; Foundations — Anthropic</span><span>2026</span></li>
+        <li><span>AI Foundations — OpenAI Academy</span><span>2026</span></li>
+      </ul>
+      <p class="note">Proctored exams first, then the lab-graded badge, then courses. Same order on LinkedIn.</p>
+    </div>
+    <div class="rules">
+      <div class="rule yes rv"><b>Do</b><p>Add each one to LinkedIn under Licenses &amp; certifications with the credential link, so anyone can verify it in one click.</p></div>
+      <div class="rule yes rv"><b>Do</b><p>Be ready to talk about one thing you learned from each. "I did the Snowflake labs, here's what I built" beats the line itself.</p></div>
+      <div class="rule no rv"><b>Don't</b><p>Call a course badge a "certification." Label OpenAI and Anthropic as courses. Recruiters notice, and honesty makes the real certs look stronger.</p></div>
+      <div class="rule no rv"><b>Don't</b><p>Let certs replace projects or experience. They're the tiebreaker that gets you a second look, not the main event.</p></div>
+    </div>
+  </section>
+
+  <!-- 05 bonus -->
+  <section id="bonus">
+    <div class="sh rv"><span class="num">05</span><h2>Want more? Stack these</h2></div>
+    <p class="sub rv">Same brands, next level up. All free as of this check.</p>
+    <div class="bonus">
+      <a class="bc rv" href="https://mylearn.oracle.com/ou/learning-path/become-an-oci-ai-foundations-associate/163544" target="_blank" rel="noopener">
+        <div class="brand">Oracle</div>
+        <h4>OCI AI Foundations Associate <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg></h4>
+        <p>A second free Oracle exam, focused on AI and machine learning basics. Easy add once you've done #4.</p>
+        <span class="tag t1">Proctored exam</span>
+      </a>
+      <a class="bc rv" href="https://mylearn.oracle.com" target="_blank" rel="noopener">
+        <div class="brand">Oracle</div>
+        <h4>OCI Architect Associate <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg></h4>
+        <p>The step up from Foundations. Reported free in 2026 (course and exam). Search it on Oracle MyLearn and confirm the price at registration.</p>
+        <span class="tag t1">Proctored exam</span>
+      </a>
+      <a class="bc rv" href="https://anthropic.skilljar.com/claude-code-in-action" target="_blank" rel="noopener">
+        <div class="brand">Anthropic</div>
+        <h4>Claude Code in Action <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg></h4>
+        <p>For anyone who codes. How to actually build with an AI coding agent, which every engineering team is adopting.</p>
+        <span class="tag t3">Course</span>
+      </a>
+      <a class="bc rv" href="https://academy.openai.com/pages/courses" target="_blank" rel="noopener">
+        <div class="brand">OpenAI Academy</div>
+        <h4>Applied AI Foundations · Agents and Workflows <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg></h4>
+        <p>The next two courses after AI Foundations: turning repeat tasks into AI workflows, then directing agents.</p>
+        <span class="tag t3">Course + assessment</span>
+      </a>
+      <a class="bc rv" href="https://learn.snowflake.com/en/pages/hands-on-essentials-track" target="_blank" rel="noopener">
+        <div class="brand">Snowflake</div>
+        <h4>Badges 2–6 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg></h4>
+        <p>Data Lake, Data Engineering, Data Science and more. Three badges also open the path toward Snowflake's SnowPro certification.</p>
+        <span class="tag t2">Lab-graded</span>
+      </a>
+      <a class="bc rv" href="https://learn.microsoft.com/en-us/training/paths/github-foundations-2/" target="_blank" rel="noopener">
+        <div class="brand">GitHub · Microsoft Learn</div>
+        <h4>GitHub Foundations, Part 2 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg></h4>
+        <p>The second half of the free official prep for GH-900. Don't book the exam until you've done both parts.</p>
+        <span class="tag t3">Free prep</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- 06 register -->
+  <section id="sources">
+    <div class="sh rv"><span class="num">06</span><h2>What I checked</h2></div>
+    <p class="sub rv"><span class="st ok">Official</span> means confirmed on the company's own page. <span class="st ag">Reported</span> means from a third-party guide, so double-check it.</p>
+    <table class="reg rv">
+      <thead><tr><th>Claim</th><th>Status</th><th>Source</th></tr></thead>
+      <tbody>
+        <tr><td>GitHub Foundations exam free for verified students, while supplies last</td><td><span class="st ok">Official</span></td><td><a href="https://education.github.com/experiences/foundations_certificate" target="_blank" rel="noopener">GitHub Education</a></td></tr>
+        <tr><td>GH-900 pass mark 700, skill weights</td><td><span class="st ok">Official</span></td><td><a href="https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-900" target="_blank" rel="noopener">Microsoft Learn study guide</a></td></tr>
+        <tr><td>Anthropic AI Fluency courses free, with certificate after final assessment</td><td><span class="st ok">Official</span></td><td><a href="https://anthropic.skilljar.com/ai-fluency-framework-foundations" target="_blank" rel="noopener">Anthropic Academy</a></td></tr>
+        <tr><td>Snowflake badge 1 free, 8–12 hrs, lab-graded, issued within 24 hrs</td><td><span class="st ok">Official</span></td><td><a href="https://learn.snowflake.com/en/courses/OD-ESS-DWW" target="_blank" rel="noopener">Snowflake Learn</a></td></tr>
+        <tr><td>OCI Foundations 1Z0-1085-26 exam free; 40 Q, 60 min, 65%</td><td><span class="st ag">Reported</span></td><td><a href="https://itknowledgelab.com/blog/oracle-oci-foundations-associate-free-certification-guide-2026" target="_blank" rel="noopener">IT Knowledge Lab</a> · <a href="https://www.practicetestsoftware.com/blog/oracle-certification-2026-program-changes/" target="_blank" rel="noopener">Practice Test Software</a></td></tr>
+        <tr><td>OpenAI AI Foundations free, ~70 min, badge at 80% (not OpenAI Certifications)</td><td><span class="st ag">Reported</span></td><td><a href="https://bestaicertifications.com/openai-certification/" target="_blank" rel="noopener">Best AI Certifications</a> · <a href="https://www.analyticsvidhya.com/blog/2026/06/free-openai-ai-courses-with-certificates/" target="_blank" rel="noopener">Analytics Vidhya</a></td></tr>
+        <tr><td>OCI Architect Associate free in 2026</td><td><span class="st ag">Reported</span></td><td><a href="https://www.practicetestsoftware.com/blog/oracle-certification-2026-program-changes/" target="_blank" rel="noopener">Practice Test Software</a></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <div class="cta rv">
+    <h3>I post the stuff nobody tells you about recruiting.</h3>
+    <p>Free resources, internship deadlines, and what actually works, from someone going through it right now.</p>
+    <a class="btn pri" href="https://instagram.com/byaaryaman" target="_blank" rel="noopener">Follow @byaaryaman <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+    <div class="more">
+      <a href="/work">internship playbook</a>
+      <a href="/job-simulations">free job simulations</a>
+      <a href="/storybank">interview story bank</a>
+      <a href="/conferences">conference scholarships</a>
+    </div>
+  </div>
+
+  <footer>
+    <span>© 2026 Aaryaman Singh</span>
+    <span>Not affiliated with any company listed. Checked Oct 17, 2026.</span>
+  </footer>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+  var KEY='aaryaman-certs-v1', mem={};
+  var store={
+    get:function(){try{var v=localStorage.getItem(KEY);return v?JSON.parse(v):mem}catch(e){return mem}},
+    set:function(o){mem=o;try{localStorage.setItem(KEY,JSON.stringify(o))}catch(e){}}
+  };
+  var cards=[].slice.call(document.querySelectorAll('.cert'));
+  var total=cards.length, state=store.get();
+  var pc=document.getElementById('pc'), pb=document.getElementById('pb'), toast=document.getElementById('toast');
+  var tt;
+  function say(msg){toast.textContent=msg;toast.classList.add('show');clearTimeout(tt);tt=setTimeout(function(){toast.classList.remove('show')},2400)}
+  function render(){
+    var n=0;
+    cards.forEach(function(c){
+      var on=!!state[c.dataset.id]; if(on)n++;
+      c.classList.toggle('done',on);
+      c.querySelectorAll('.chk').forEach(function(b){b.checked=on});
+    });
+    pc.textContent=n; pb.style.width=(n/total*100)+'%';
+    return n;
+  }
+  cards.forEach(function(c){
+    c.querySelectorAll('.chk').forEach(function(b){
+      b.addEventListener('change',function(){
+        state[c.dataset.id]=b.checked; store.set(state);
+        var n=render();
+        if(b.checked){ say(n===total?'All 5 done. Go update your LinkedIn.':n+' of 5 done. Keep going.') }
+      });
+    });
+  });
+  render();
+
+  // copy
+  function copyText(t){
+    if(navigator.clipboard&&window.isSecureContext){return navigator.clipboard.writeText(t)}
+    return new Promise(function(res,rej){
+      var a=document.createElement('textarea');a.value=t;a.setAttribute('readonly','');a.style.position='fixed';a.style.opacity='0';
+      document.body.appendChild(a);a.select();
+      try{document.execCommand('copy')?res():rej()}catch(e){rej(e)}
+      document.body.removeChild(a);
+    });
+  }
+  document.querySelectorAll('.copy').forEach(function(b){
+    b.addEventListener('click',function(){
+      copyText(b.dataset.copy).then(function(){
+        b.textContent='Copied';b.classList.add('ok');
+        setTimeout(function(){b.textContent='Copy';b.classList.remove('ok')},1600);
+      },function(){say('Copy failed. Select the text instead.')});
+    });
+  });
+
+  // sticky progress + scrollspy
+  var prog=document.getElementById('prog'), hero=document.querySelector('.hero');
+  var links=[].slice.call(document.querySelectorAll('#pnav a'));
+  var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'))});
+  function onScroll(){
+    var y=window.scrollY;
+    prog.classList.toggle('show', y > hero.offsetTop+hero.offsetHeight-60);
+    var cur=-1;
+    secs.forEach(function(s,i){ if(s && s.getBoundingClientRect().top<120) cur=i });
+    links.forEach(function(a,i){a.classList.toggle('on',i===cur)});
+  }
+  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+
+  // reveal
+  var rv=[].slice.call(document.querySelectorAll('.rv'));
+  if('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});
+    rv.forEach(function(el){io.observe(el)});
+  } else { rv.forEach(function(el){el.classList.add('in')}) }
+})();
+</script>
+</body>
+</html>
