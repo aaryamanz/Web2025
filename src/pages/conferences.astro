@@ -1,0 +1,457 @@
+---
+const pageTitle = 'Conference Scholarships — flights, hotels & tickets, paid for | Aaryaman Singh'
+const pageDescription =
+  "The verified list of conference scholarships that cover flights, hotels and conference passes for students. Direct application links, what's covered, and who's eligible."
+const pageUrl = 'https://aaryamansingh.com/conferences'
+const notifyEmail = 'aaryaman710@gmail.com'
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{pageTitle}</title>
+<meta name="description" content={pageDescription}>
+<meta name="author" content="Aaryaman Singh">
+<link rel="canonical" href={pageUrl}>
+<meta property="og:title" content={pageTitle}>
+<meta property="og:description" content={pageDescription}>
+<meta property="og:type" content="website">
+<meta property="og:url" content={pageUrl}>
+<meta property="og:image" content="https://aaryamansingh.com/social-preview-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#14213D;
+    --paper:#FFFFFF;
+    --tarmac:#EDEFF3;
+    --amber:#F5A524;
+    --stamp-go:#2E7D5B;
+    --stamp-us:#B4432F;
+    --muted:#5B6478;
+    --hairline:#D7DBE4;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Archivo',system-ui,-apple-system,sans-serif;
+    background:var(--tarmac);
+    color:var(--ink);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  .mono{font-family:'Space Mono',monospace}
+  .wrap{max-width:680px;margin:0 auto;padding:0 20px}
+
+  header{
+    background:var(--ink);
+    color:#fff;
+    padding:40px 0 44px;
+  }
+  .board-row{
+    display:flex;justify-content:space-between;align-items:center;
+    font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.12em;
+    text-transform:uppercase;color:#9AA3B8;margin-bottom:28px;
+    border-bottom:1px solid rgba(255,255,255,.12);padding-bottom:12px;
+  }
+  .board-row .live{color:var(--amber)}
+  h1{
+    font-weight:900;font-size:clamp(30px,7.5vw,46px);line-height:1.06;
+    letter-spacing:-.01em;margin-bottom:14px;
+  }
+  h1 em{font-style:normal;color:var(--amber)}
+  .sub{color:#C9CFDC;font-size:16px;max-width:52ch}
+  .sub strong{color:#fff;font-weight:600}
+
+  .primer{padding:32px 0 8px}
+  .primer p{color:var(--muted);font-size:15px;max-width:58ch;margin-bottom:10px}
+  .primer p strong{color:var(--ink)}
+
+  .sec-label{
+    font-family:'Space Mono',monospace;font-size:11px;font-weight:700;
+    letter-spacing:.16em;text-transform:uppercase;color:var(--muted);
+    margin:36px 0 14px;display:flex;align-items:center;gap:10px;
+  }
+  .sec-label::after{content:"";flex:1;height:1px;background:var(--hairline)}
+
+  .ticket{
+    background:var(--paper);
+    border:1px solid var(--hairline);
+    border-radius:14px;
+    margin-bottom:22px;
+    overflow:hidden;
+    box-shadow:0 1px 3px rgba(20,33,61,.06);
+  }
+  .route{
+    display:flex;justify-content:space-between;align-items:baseline;
+    padding:14px 18px 0;
+    font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.08em;
+    color:var(--muted);text-transform:uppercase;
+  }
+  .route .dest{color:var(--ink);font-weight:700}
+  .ticket-main{padding:10px 18px 16px}
+  .ticket h2{font-size:20px;font-weight:900;letter-spacing:-.01em;margin-bottom:2px}
+  .sponsor{font-size:13px;color:var(--muted);margin-bottom:12px}
+  .covers{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+  .tag{
+    font-family:'Space Mono',monospace;font-size:12px;
+    background:var(--tarmac);border:1px solid var(--hairline);
+    border-radius:6px;padding:4px 9px;color:var(--ink);white-space:nowrap;
+  }
+  .ticket p.note{font-size:14px;color:var(--muted);max-width:56ch}
+  .meta{
+    display:flex;flex-wrap:wrap;gap:10px;align-items:center;
+    margin-top:14px;
+  }
+  .stamp{
+    font-family:'Space Mono',monospace;font-size:11px;font-weight:700;
+    letter-spacing:.1em;text-transform:uppercase;
+    border:1.5px solid currentColor;border-radius:4px;
+    padding:3px 8px;transform:rotate(-1.5deg);
+  }
+  .stamp.go{color:var(--stamp-go)}
+  .stamp.us{color:var(--stamp-us)}
+  .status{font-family:'Space Mono',monospace;font-size:12px;color:var(--muted)}
+  .status b{color:var(--ink);font-weight:700}
+
+  .stub{
+    border-top:2px dashed var(--hairline);
+    background:#FBFBF9;
+    display:flex;justify-content:space-between;align-items:center;
+    padding:12px 18px;gap:12px;
+  }
+  .stub .code{font-family:'Space Mono',monospace;font-size:11px;color:var(--muted);letter-spacing:.14em;text-transform:uppercase}
+  .apply{
+    display:inline-block;background:var(--ink);color:#fff;text-decoration:none;
+    font-weight:600;font-size:14px;padding:10px 18px;border-radius:8px;
+    white-space:nowrap;transition:background .15s ease;
+  }
+  .apply:hover{background:#1F2F55}
+  .apply:focus-visible{outline:3px solid var(--amber);outline-offset:2px}
+
+  .fund{
+    background:var(--ink);color:#fff;border-radius:14px;
+    padding:24px 20px;margin-bottom:22px;
+  }
+  .fund h2{font-size:20px;font-weight:900;margin-bottom:8px}
+  .fund h2 span{color:var(--amber)}
+  .fund p{font-size:14px;color:#C9CFDC;max-width:56ch;margin-bottom:12px}
+  .fund ol{list-style:none;counter-reset:step}
+  .fund ol li{
+    counter-increment:step;display:flex;gap:12px;align-items:baseline;
+    font-size:14px;color:#E7EAF1;padding:7px 0;border-top:1px solid rgba(255,255,255,.1);
+  }
+  .fund ol li::before{
+    content:counter(step,decimal-leading-zero);
+    font-family:'Space Mono',monospace;font-size:11px;color:var(--amber);
+  }
+
+  .tips{padding-bottom:6px}
+  .tips li{
+    list-style:none;font-size:14px;color:var(--muted);
+    padding:10px 0;border-top:1px solid var(--hairline);max-width:60ch;
+  }
+  .tips li strong{color:var(--ink)}
+
+  .verify{
+    font-family:'Space Mono',monospace;font-size:12px;color:var(--muted);
+    background:var(--paper);border:1px solid var(--hairline);border-radius:10px;
+    padding:14px 16px;margin:28px 0;line-height:1.7;
+  }
+  .verify b{color:var(--ink)}
+
+  footer{background:var(--ink);color:#fff;margin-top:44px;padding:36px 0 44px}
+  .cta-box h3{font-size:19px;font-weight:900;margin-bottom:6px}
+  .cta-box p{font-size:14px;color:#C9CFDC;margin-bottom:14px;max-width:48ch}
+  .email-row{display:flex;gap:8px;flex-wrap:wrap}
+  .email-row input[type="email"]{
+    flex:1;min-width:200px;font-family:inherit;font-size:14px;
+    padding:11px 14px;border-radius:8px;border:1px solid rgba(255,255,255,.25);
+    background:rgba(255,255,255,.08);color:#fff;
+  }
+  .email-row input[type="email"]::placeholder{color:#8B94AB}
+  .email-row button{
+    font-family:inherit;font-weight:600;font-size:14px;cursor:pointer;
+    background:var(--amber);color:var(--ink);border:none;border-radius:8px;
+    padding:11px 18px;transition:filter .15s ease;
+  }
+  .email-row button:hover{filter:brightness(1.06)}
+  .email-row button:disabled{opacity:.7;cursor:wait;filter:none}
+  .hp{position:absolute;left:-9999px;opacity:0;height:0;width:0;overflow:hidden}
+  .form-status{
+    margin-top:12px;font-size:13px;min-height:1.2em;
+    font-family:'Space Mono',monospace;
+  }
+  .form-status[data-state="ok"]{color:#9BE7C4}
+  .form-status[data-state="err"]{color:#FFB4A8}
+  .credit{
+    margin-top:30px;padding-top:18px;border-top:1px solid rgba(255,255,255,.12);
+    font-family:'Space Mono',monospace;font-size:12px;color:#9AA3B8;line-height:2;
+  }
+  .credit a{color:#fff;text-decoration:none;border-bottom:1px solid var(--amber)}
+
+  @media (prefers-reduced-motion:no-preference){
+    .ticket{animation:lift .4s ease both}
+    @keyframes lift{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="board-row">
+      <span>@byaaryaman · departures</span>
+      <span class="live">last verified · jul 24 2026</span>
+    </div>
+    <h1>They'll pay for your <em>flight.</em><br>And the hotel. And the ticket.</h1>
+    <p class="sub">Conference scholarships are real, they're built for students, and most people never apply. Here's the verified list — <strong>what each one covers, who's eligible, and the direct link.</strong></p>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="primer">
+    <p><strong>Why bother?</strong> These aren't vacations. The career fairs at these conferences are where companies recruit in person — people walk out with interviews and offers. You get the trip paid for <em>and</em> you skip the online application pile.</p>
+    <p><strong>How to use this page:</strong> check the stamp on each ticket for eligibility, check the status line for timing, then apply through the official link on the stub. That's it.</p>
+  </section>
+
+  <div class="sec-label">Fully funded — the flagships</div>
+
+  <!-- AWS -->
+  <article class="ticket">
+    <div class="route"><span>YOU</span><span>→</span><span class="dest">LAS VEGAS · RE:INVENT</span></div>
+    <div class="ticket-main">
+      <h2>All Builders Welcome Grant</h2>
+      <div class="sponsor">Amazon Web Services · AWS re:Invent</div>
+      <div class="covers">
+        <span class="tag">✈ round-trip airfare</span>
+        <span class="tag">🏨 5 nights hotel</span>
+        <span class="tag">🎟 full conference pass</span>
+        <span class="tag">🤝 AWS mentorship</span>
+      </div>
+      <p class="note">The biggest cloud conference in the world, fully covered. Aimed at people in their first five years in tech — and this year's program explicitly includes university students preparing for a tech career. Must be 21+; international applicants arrange their own visa.</p>
+      <div class="meta">
+        <span class="stamp go">Global · 21+</span>
+        <span class="status"><b>Status:</b> 2026 window may have closed mid-July — check the link. Reopens annually in spring. Set the reminder now.</span>
+      </div>
+    </div>
+    <div class="stub">
+      <span class="code">ABW · AWS-26</span>
+      <a class="apply" href="https://aws.amazon.com/events/reinvent/experiences/all-builders-welcome/" target="_blank" rel="noopener">Apply on AWS</a>
+    </div>
+  </article>
+
+  <!-- Google -->
+  <article class="ticket">
+    <div class="route"><span>YOU</span><span>→</span><span class="dest">12+ MAJOR CONFERENCES</span></div>
+    <div class="ticket-main">
+      <h2>Google Conference Scholarships</h2>
+      <div class="sponsor">Google · multiple tech &amp; business conferences</div>
+      <div class="covers">
+        <span class="tag">✈ round-trip travel</span>
+        <span class="tag">🏨 hotel for travel dates</span>
+        <span class="tag">🎟 registration</span>
+        <span class="tag">💵 $100 stipend</span>
+      </div>
+      <p class="note">One application program, many conferences — past eligible lists have included Grace Hopper, SHPE, SACNAS and other major industry events. The North America program prioritizes groups historically excluded in tech, but Google's own language says all qualified students can apply. Applications are reviewed on a rolling basis by region.</p>
+      <div class="meta">
+        <span class="stamp go">US · Canada · Mexico</span>
+        <span class="status"><b>Status:</b> rolling, by region — decisions typically within ~4 weeks.</span>
+      </div>
+    </div>
+    <div class="stub">
+      <span class="code">GCS · ROLLING</span>
+      <a class="apply" href="https://www.google.com/about/careers/applications/buildyourfuture/scholarships/google-conference-scholarships" target="_blank" rel="noopener">See program &amp; apply</a>
+    </div>
+  </article>
+
+  <!-- Citadel -->
+  <article class="ticket">
+    <div class="route"><span>YOU</span><span>→</span><span class="dest">GHC · NEURIPS</span></div>
+    <div class="ticket-main">
+      <h2>Citadel Conference Travel Grant</h2>
+      <div class="sponsor">Citadel | Citadel Securities</div>
+      <div class="covers">
+        <span class="tag">✈ travel</span>
+        <span class="tag">🏨 accommodation</span>
+        <span class="tag">🎟 conference pass</span>
+      </div>
+      <p class="note">Fully funded attendance at some of the most competitive conferences in the world — recent cycles covered Grace Hopper Celebration and NeurIPS. Open to bachelor's, master's and PhD students in quantitative fields: CS, math, physics, statistics, engineering. Also one of the best backdoors to getting on a top quant firm's radar.</p>
+      <div class="meta">
+        <span class="stamp go">Check per cycle</span>
+        <span class="status"><b>Status:</b> opens per conference cycle — check the careers page for the current window.</span>
+      </div>
+    </div>
+    <div class="stub">
+      <span class="code">CTG · QUANT</span>
+      <a class="apply" href="https://www.citadel.com/careers/programs-and-events/conference-travel-grant/" target="_blank" rel="noopener">Apply on Citadel</a>
+    </div>
+  </article>
+
+  <!-- GHC -->
+  <article class="ticket">
+    <div class="route"><span>YOU</span><span>→</span><span class="dest">GRACE HOPPER CELEBRATION</span></div>
+    <div class="ticket-main">
+      <h2>GHC Scholars Program</h2>
+      <div class="sponsor">AnitaB.org · world's largest gathering of women in tech</div>
+      <div class="covers">
+        <span class="tag">✈ travel</span>
+        <span class="tag">🏨 accommodation</span>
+        <span class="tag">🎟 registration</span>
+        <span class="tag">🍽 meals</span>
+      </div>
+      <p class="note">Full ride to the biggest women-in-tech conference on earth — the career fair alone has hundreds of companies hiring on-site. For women and non-binary students in tech. Separate company-sponsored GHC scholarships (Microsoft, Goldman and others have run them) stack on top of this route — search "[company] Grace Hopper scholarship."</p>
+      <div class="meta">
+        <span class="stamp go">Intl. varies by year</span>
+        <span class="status"><b>Status:</b> applications typically open in spring for the fall conference — verify this year's window at the link.</span>
+      </div>
+    </div>
+    <div class="stub">
+      <span class="code">GHC · ANITAB</span>
+      <a class="apply" href="https://ghc.anitab.org/" target="_blank" rel="noopener">GHC official site</a>
+    </div>
+  </article>
+
+  <!-- Tapia -->
+  <article class="ticket">
+    <div class="route"><span>YOU</span><span>→</span><span class="dest">TAPIA CONFERENCE</span></div>
+    <div class="ticket-main">
+      <h2>Tapia Conference Scholarships</h2>
+      <div class="sponsor">CMD-IT · Richard Tapia Celebration of Diversity in Computing</div>
+      <div class="covers">
+        <span class="tag">✈ up to $600 travel</span>
+        <span class="tag">🏨 3 nights hotel</span>
+        <span class="tag">🎟 registration</span>
+      </div>
+      <p class="note">Registration fee, three nights of hotel (shared double room) and a reimbursable travel stipend up to $600 for accepted applicants. Open to community college, undergrad and grad students. Big recruiting presence from major tech companies.</p>
+      <div class="meta">
+        <span class="stamp us">US students only</span>
+        <span class="status"><b>Status:</b> 2026 deadline passed (early March) — next cycle opens ~winter. Calendar it.</span>
+      </div>
+    </div>
+    <div class="stub">
+      <span class="code">TAPIA · CMD-IT</span>
+      <a class="apply" href="https://tapiaconference.cmd-it.org/" target="_blank" rel="noopener">Tapia official site</a>
+    </div>
+  </article>
+
+  <div class="sec-label">The one everyone skips</div>
+
+  <section class="fund">
+    <h2>Your university's <span>travel fund</span></h2>
+    <p>Almost every university quietly budgets money to send students to conferences — and it goes unspent because nobody applies. This is the highest-probability option on this page.</p>
+    <ol>
+      <li>Search "[your school] conference travel grant" or "student travel fund" — check your faculty, your department, and your student union separately. They often each have one.</li>
+      <li>Email your department administrator one line: "Does the department have funding for students attending industry or academic conferences?" That email takes 30 seconds.</li>
+      <li>Apply early — most funds reimburse, so keep every receipt, and many review applications 30–60 days before the conference date.</li>
+    </ol>
+  </section>
+
+  <div class="sec-label">Before you apply — three things</div>
+
+  <ul class="tips">
+    <li><strong>Apply before you feel ready.</strong> These are built for students — the bar is lower than you think, and most people disqualify themselves by never applying.</li>
+    <li><strong>Tell a story, not a résumé.</strong> Most applications ask why attending would change your trajectory. Answer that question specifically — what you'd do there, who you need to meet — not with a list of achievements.</li>
+    <li><strong>Watch the limits.</strong> Some programs cap you at one funded conference per academic year, and most exclude people who already accepted a similar grant. Pick your best-fit conference first.</li>
+  </ul>
+
+  <div class="verify">
+    <b>A note on accuracy:</b> every program on this page was checked against official sources on the date stamped above. Deadlines and eligibility change every cycle — always confirm on the official page before booking anything. If something here is out of date, DM me @byaaryaman and I'll fix it.
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="cta-box">
+      <h3>Deadlines change. Get pinged when they do.</h3>
+      <p>Drop your email and I'll send updates when application windows open — nothing else.</p>
+      <form id="notify-form" class="email-row" action={`https://formsubmit.co/ajax/${notifyEmail}`} method="POST" novalidate>
+        <input type="hidden" name="_subject" value="Conference scholarship deadline alert signup">
+        <input type="hidden" name="_template" value="table">
+        <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <input type="email" name="email" placeholder="your@email.com" aria-label="Email address" required autocomplete="email">
+        <button type="submit" id="notify-submit">Notify me</button>
+      </form>
+      <p id="notify-status" class="form-status" role="status" aria-live="polite"></p>
+    </div>
+    <div class="credit">
+      made by <a href="https://instagram.com/byaaryaman" target="_blank" rel="noopener">@byaaryaman</a> — follow for more of these<br>
+      building <a href="https://getarcai.com" target="_blank" rel="noopener">ArcAI</a> · your money, handled by AI
+    </div>
+  </div>
+</footer>
+
+<script is:inline>
+  (function () {
+    var form = document.getElementById('notify-form');
+    var statusEl = document.getElementById('notify-status');
+    var submitBtn = document.getElementById('notify-submit');
+    if (!form || !statusEl || !submitBtn) return;
+
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      var emailInput = form.querySelector('input[name="email"]');
+      var honey = form.querySelector('input[name="_honey"]');
+      var email = emailInput && emailInput.value ? emailInput.value.trim() : '';
+
+      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        statusEl.dataset.state = 'err';
+        statusEl.textContent = 'Enter a valid email address.';
+        return;
+      }
+
+      if (honey && honey.value) {
+        statusEl.dataset.state = 'ok';
+        statusEl.textContent = "You're on the list.";
+        form.reset();
+        return;
+      }
+
+      submitBtn.disabled = true;
+      statusEl.dataset.state = '';
+      statusEl.textContent = 'Sending…';
+
+      fetch(form.action, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json'
+        },
+        body: JSON.stringify({
+          email: email,
+          _subject: 'Conference scholarship deadline alert signup',
+          _template: 'table',
+          source: 'aaryamansingh.com/conferences'
+        })
+      })
+        .then(function (res) {
+          if (!res.ok) throw new Error('Request failed');
+          return res.json().catch(function () { return {}; });
+        })
+        .then(function () {
+          statusEl.dataset.state = 'ok';
+          statusEl.textContent = "You're on the list. Watch your inbox.";
+          form.reset();
+        })
+        .catch(function () {
+          statusEl.dataset.state = 'err';
+          statusEl.textContent = 'Something went wrong — try again in a minute.';
+        })
+        .finally(function () {
+          submitBtn.disabled = false;
+        });
+    });
+  })();
+</script>
+
+</body>
+</html>

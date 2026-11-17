@@ -1,8 +1,22 @@
 export const workExperience = [
   {
+    role: 'Undergraduate Researcher',
+    company: 'University of Toronto',
+    period: 'July 2026 - Present',
+    location: 'Toronto, ON · Hybrid',
+    description:
+      'Decision Systems & Control Group: Applying Wasserstein distributionally robust optimization to strategic asset allocation'
+  },
+  {
+    role: 'Finance Director',
+    company: 'University of Toronto Consulting Association',
+    period: 'March 2026 - Present',
+    location: 'Toronto, ON'
+  },
+  {
     role: 'Analyst: E2E Optimization & Process Engineering',
     company: 'CIBC',
-    period: 'May 2025 - Present',
+    period: 'May 2025 - August 2026',
     location: 'Toronto, ON'
   },
   {

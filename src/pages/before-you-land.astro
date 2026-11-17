@@ -1,0 +1,728 @@
+---
+const pageTitle = 'Before You Land — Canada Pre-Arrival Checklist | Aaryaman Singh'
+const pageDescription =
+  'The full pre-arrival checklist for international students moving to Canada. Everything to sort before you get on the plane.'
+const pageUrl = 'https://aaryamansingh.com/before-you-land'
+const irccUrl = 'https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada.html'
+const cbsaCurrencyUrl = 'https://www.cbsa-asfc.gc.ca/travel-voyage/ttd-vdd-eng.html'
+const cbsaBringUrl = 'https://www.cbsa-asfc.gc.ca/travel-voyage/bring-apporter-eng.html'
+const medicationUrl = 'https://www.canada.ca/en/health-canada/services/drugs-health-products/compliance-enforcement/importation-exportation/personal-use-health-products-guidance/document.html'
+const sinUrl = 'https://www.canada.ca/en/employment-social-development/services/sin/temporary-residents.html'
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{pageTitle}</title>
+<meta name="description" content={pageDescription}>
+<meta name="author" content="Aaryaman Singh">
+<link rel="canonical" href={pageUrl}>
+<meta property="og:title" content="Before You Land">
+<meta property="og:description" content="The pre-arrival checklist for international students moving to Canada. Free, no email needed.">
+<meta property="og:type" content="website">
+<meta property="og:url" content={pageUrl}>
+<meta property="og:image" content="https://aaryamansingh.com/social-preview-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#E9EBE6">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#E9EBE6;
+    --paper-2:#DFE3DB;
+    --ink:#141C18;
+    --ink-soft:#4E5A53;
+    --rule:#C3C9BE;
+    --stamp:#A82F26;
+    --stamp-soft:#F0DBD8;
+    --done:#2E6B4F;
+    --radius:3px;
+    --pad:clamp(18px,5vw,44px);
+  }
+
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Instrument Sans",system-ui,sans-serif;
+    font-size:16px;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  .wrap{max-width:760px;margin:0 auto;padding:0 var(--pad);}
+
+  .masthead{padding:clamp(38px,9vw,80px) 0 0;}
+
+  .eyebrow{
+    font-family:"Space Mono",monospace;
+    font-size:11px;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    display:flex;
+    justify-content:space-between;
+    gap:16px;
+    border-bottom:1px solid var(--rule);
+    padding-bottom:10px;
+    margin-bottom:clamp(24px,6vw,44px);
+  }
+
+  .masthead h1{
+    font-family:"Bricolage Grotesque",sans-serif;
+    font-weight:800;
+    font-size:clamp(44px,13vw,96px);
+    line-height:.86;
+    letter-spacing:-.035em;
+    margin:0 0 18px;
+  }
+  .masthead h1 em{
+    font-style:normal;
+    display:block;
+    color:var(--stamp);
+  }
+
+  .standfirst{
+    font-size:clamp(16px,4vw,19px);
+    color:var(--ink-soft);
+    max-width:52ch;
+    margin:0;
+  }
+
+  .progress-dock{
+    position:sticky;
+    top:0;
+    z-index:20;
+    background:var(--paper);
+    border-bottom:1px solid var(--rule);
+    margin-top:clamp(30px,7vw,54px);
+  }
+  .progress-inner{
+    max-width:760px;
+    margin:0 auto;
+    padding:11px var(--pad);
+    display:flex;
+    align-items:center;
+    gap:14px;
+  }
+  .track{
+    flex:1;
+    height:7px;
+    background:var(--paper-2);
+    border-radius:99px;
+    overflow:hidden;
+  }
+  .fill{
+    height:100%;
+    width:0%;
+    background:var(--done);
+    border-radius:99px;
+    transition:width .35s cubic-bezier(.2,.7,.3,1);
+  }
+  .count{
+    font-family:"Space Mono",monospace;
+    font-size:12px;
+    letter-spacing:.04em;
+    white-space:nowrap;
+    color:var(--ink-soft);
+  }
+  .count b{color:var(--ink);font-weight:700;}
+
+  .reset{
+    font-family:"Space Mono",monospace;
+    font-size:11px;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    background:none;
+    border:none;
+    color:var(--ink-soft);
+    cursor:pointer;
+    padding:4px 2px;
+    text-decoration:underline;
+    text-underline-offset:3px;
+  }
+  .reset:hover{color:var(--stamp);}
+  .reset:focus-visible{outline:2.5px solid var(--stamp);outline-offset:2px;}
+
+  main{padding-bottom:clamp(50px,10vw,90px);}
+
+  .stage{padding-top:clamp(42px,9vw,72px);}
+
+  .stage-head{
+    display:flex;
+    align-items:baseline;
+    gap:14px;
+    border-bottom:2px solid var(--ink);
+    padding-bottom:9px;
+    margin-bottom:6px;
+  }
+  .stage-num{
+    font-family:"Space Mono",monospace;
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:.1em;
+    color:var(--stamp);
+  }
+  .stage-head h2{
+    font-family:"Bricolage Grotesque",sans-serif;
+    font-weight:700;
+    font-size:clamp(22px,5.5vw,30px);
+    letter-spacing:-.02em;
+    line-height:1.05;
+    margin:0;
+    flex:1;
+  }
+  .stage-when{
+    font-family:"Space Mono",monospace;
+    font-size:10.5px;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    text-align:right;
+  }
+
+  .item{
+    display:grid;
+    grid-template-columns:26px 1fr;
+    gap:0 14px;
+    padding:20px 0;
+    border-bottom:1px solid var(--rule);
+    align-items:start;
+    cursor:pointer;
+  }
+
+  .box{
+    appearance:none;
+    -webkit-appearance:none;
+    width:22px;
+    height:22px;
+    margin:2px 0 0;
+    border:1.5px solid var(--ink);
+    border-radius:var(--radius);
+    background:transparent;
+    cursor:pointer;
+    display:grid;
+    place-content:center;
+    transition:background .18s ease,border-color .18s ease;
+  }
+  .box::after{
+    content:"";
+    width:11px;
+    height:6px;
+    border-left:2.2px solid var(--paper);
+    border-bottom:2.2px solid var(--paper);
+    transform:rotate(-45deg) scale(0);
+    transform-origin:center;
+    transition:transform .18s cubic-bezier(.3,1.4,.5,1);
+    margin-top:-2px;
+  }
+  .box:checked{background:var(--done);border-color:var(--done);}
+  .box:checked::after{transform:rotate(-45deg) scale(1);}
+  .box:focus-visible{outline:2.5px solid var(--stamp);outline-offset:3px;}
+
+  .body h3{
+    font-family:"Instrument Sans",sans-serif;
+    font-weight:600;
+    font-size:17px;
+    line-height:1.3;
+    margin:0 0 5px;
+    letter-spacing:-.01em;
+    transition:opacity .2s ease;
+  }
+  .body p{
+    margin:0 0 7px;
+    font-size:14.5px;
+    color:var(--ink-soft);
+    max-width:58ch;
+  }
+
+  .do{
+    font-family:"Space Mono",monospace;
+    font-size:12.5px;
+    line-height:1.5;
+    color:var(--ink);
+    background:var(--paper-2);
+    border-left:2px solid var(--ink);
+    padding:7px 11px;
+    display:block;
+    max-width:58ch;
+  }
+
+  .item:has(.box:checked) h3{opacity:.45;text-decoration:line-through;text-decoration-thickness:1.5px;}
+  .item:has(.box:checked) .body p,
+  .item:has(.box:checked) .do{opacity:.5;}
+
+  .flag{
+    display:inline-block;
+    font-family:"Space Mono",monospace;
+    font-size:10px;
+    letter-spacing:.07em;
+    text-transform:uppercase;
+    color:var(--stamp);
+    background:var(--stamp-soft);
+    padding:2.5px 7px;
+    border-radius:var(--radius);
+    margin-left:7px;
+    vertical-align:2px;
+    white-space:nowrap;
+  }
+
+  a{color:var(--ink);text-decoration-color:var(--stamp);text-underline-offset:2.5px;}
+  a:hover{color:var(--stamp);}
+  a:focus-visible{outline:2.5px solid var(--stamp);outline-offset:2px;border-radius:2px;}
+
+  .sources{
+    margin-top:clamp(42px,9vw,72px);
+    border:1.5px solid var(--ink);
+    border-radius:var(--radius);
+    padding:clamp(20px,5vw,28px);
+  }
+  .sources h2{
+    font-family:"Bricolage Grotesque",sans-serif;
+    font-weight:700;
+    font-size:19px;
+    letter-spacing:-.015em;
+    margin:0 0 8px;
+  }
+  .sources p{font-size:14.5px;color:var(--ink-soft);margin:0 0 14px;max-width:56ch;}
+  .sources ul{margin:0;padding:0;list-style:none;display:grid;gap:8px;}
+  .sources li{
+    font-family:"Space Mono",monospace;
+    font-size:12.5px;
+  }
+  .sources li span{color:var(--ink-soft);}
+
+  .outro{
+    margin-top:clamp(42px,9vw,72px);
+    padding-top:clamp(30px,7vw,48px);
+    border-top:2px solid var(--ink);
+  }
+  .outro h2{
+    font-family:"Bricolage Grotesque",sans-serif;
+    font-weight:800;
+    font-size:clamp(26px,7vw,40px);
+    line-height:1;
+    letter-spacing:-.03em;
+    margin:0 0 14px;
+    max-width:20ch;
+  }
+  .outro p{font-size:16px;color:var(--ink-soft);max-width:50ch;margin:0 0 22px;}
+
+  .cta{
+    display:inline-block;
+    font-family:"Space Mono",monospace;
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:.09em;
+    text-transform:uppercase;
+    background:var(--ink);
+    color:var(--paper);
+    padding:15px 26px;
+    border-radius:var(--radius);
+    text-decoration:none;
+    transition:background .18s ease,transform .18s ease;
+  }
+  .cta:hover{background:var(--stamp);color:var(--paper);transform:translateY(-2px);}
+  .cta:focus-visible{outline:2.5px solid var(--stamp);outline-offset:3px;}
+
+  footer{
+    padding:clamp(34px,7vw,52px) 0 clamp(26px,5vw,40px);
+    font-family:"Space Mono",monospace;
+    font-size:11px;
+    letter-spacing:.09em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    display:flex;
+    justify-content:space-between;
+    gap:14px;
+    flex-wrap:wrap;
+  }
+
+  @media (max-width:520px){
+    .stage-when{display:none;}
+    .eyebrow{font-size:10px;}
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important;}
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="masthead">
+    <div class="eyebrow">
+      <span>byaaryaman</span>
+      <span>Pre-arrival &middot; Canada</span>
+    </div>
+    <h1>Before<br>you <em>land</em></h1>
+    <p class="standfirst">Everything worth sorting while you're still at home — where it's cheaper, faster, and the people who can help you are in your time zone.</p>
+  </header>
+</div>
+
+<div class="progress-dock">
+  <div class="progress-inner">
+    <div class="track"><div class="fill" id="fill"></div></div>
+    <span class="count"><b id="done">0</b>/<span id="total">0</span></span>
+    <button class="reset" id="reset" type="button">Reset</button>
+  </div>
+</div>
+
+<main class="wrap">
+
+  <section class="stage">
+    <div class="stage-head">
+      <span class="stage-num">01</span>
+      <h2>Money</h2>
+      <span class="stage-when">Start earliest</span>
+    </div>
+
+    <label class="item">
+      <input type="checkbox" class="box">
+      <div class="body">
+        <h3>Ask three banks what their newcomer student account actually includes</h3>
+        <p>Most major banks run a newcomer or international student program. What differs is whether you can start the application from outside Canada, what they waive, and for how long. Don't assume — the answer changes by bank and sometimes by branch.</p>
+        <span class="do">Ask each one: can I start this from abroad, what's waived, for how long, and what do I bring on arrival?</span>
+      </div>
+    </label>
+
+    <label class="item">
+      <input type="checkbox" class="box">
+      <div class="body">
+        <h3>Find out what "no fees" leaves out</h3>
+        <p>A waived monthly fee is not a free account. Incoming wires, out-of-network ATM withdrawals, transfer limits and currency conversion are usually charged separately, and that's where the money actually goes in your first term.</p>
+        <span class="do">Get the fee schedule in writing before you pick.</span>
+      </div>
+    </label>
+
+    <label class="item">
+      <input type="checkbox" class="box">
+      <div class="body">
+        <h3>Decide how your first big transfer arrives</h3>
+        <p>You'll need tuition or a housing deposit moved early. Bank wires, transfer services and student payment platforms differ on cost, speed and limits — and some take days you won't have.</p>
+        <span class="do">Pick your method, test it with a small amount, and know the arrival time.</span>
+      </div>
+    </label>
+
+    <label class="item">
+      <input type="checkbox" class="box">
+      <div class="body">
+        <h3>Know the currency declaration threshold <span class="flag">verify</span></h3>
+        <p>Canada requires you to declare cash and monetary instruments at or above a set amount when you enter. It applies to the total being carried, and failing to declare is a serious problem at the border, not a formality.</p>
+        <span class="do">Confirm the current threshold on the <a href={cbsaCurrencyUrl} target="_blank" rel="noopener">CBSA declaration page</a> before you pack cash.</span>
+      </div>
+    </label>
+
+    <label class="item">
+      <input type="checkbox" class="box">
+      <div class="body">
+        <h3>Get an eSIM live before you fly</h3>
+        <p>Every account you open in your first week wants a phone number for verification. Landing without one means doing your bank, your SIN and your school portal out of order, or over airport wifi.</p>
+        <span class="do">Activate it before departure and confirm it connects when you land.</span>
+      </div>
+    </label>
+
+    <label class="item">
+      <input type="checkbox" class="box">
+      <div class="body">
+        <h3>Tell your home bank you're leaving</h3>
+        <p>Foreign activity on a card with no travel notice gets frozen, usually at the worst possible moment. You also want to know your daily withdrawal limit in Canadian dollars before you're standing at an ATM.</p>
+        <span class="do">Set a travel notice and save the emergency number that works from abroad.</span>
+      </div>
+    </label>
+  </section>
+
+  <section class="stage">
+    <div class="stage-head">
+      <span class="stage-num">02</span>
+      <h2>Documents</h2>
+      <span class="stage-when">Week before</span>
+    </div>
+
+    <label class="item">
+      <input type="checkbox" class="box">
+      <div class="body">
+        <h3>Build the carry-on set</h3>
+        <p>Passport, your Port of Entry Letter of Introduction, your Letter of Acceptance, proof of funds, and any custodianship or financial documents. You don't receive your study permit before you fly — a border officer issues it when you arrive, based on these.</p>
+        <span class="do">One envelope. In your carry-on. Never in checked baggage.</span>
+      </div>
+    </label>
+
+    <label class="item">
+      <input type="checkbox" class="box">
+      <div class="body">
+        <h3>Build the cloud set</h3>
+        <p>Scan everything in the envelope, plus transcripts, medical records and any visa correspondence. Name the files properly — you will be searching this folder on your phone, in a queue, under pressure.</p>
+        <span class="do">Cloud folder plus an offline copy on your phone, in case there's no signal.</span>
+      </div>
+    </label>
+
+    <label class="item">
+      <input type="checkbox" class="box">
+      <div class="body">
+        <h3>Get certified translations while you're still home</h3>
+        <p>Anything not in English or French may need a certified translation — for your school, for a licence exchange, sometimes for a bank. Arranging this from another continent is slow and expensive.</p>
+        <span class="do">Translate and certify now, then scan into the cloud set.</span>
+      </div>
+    </label>
+
+    <label class="item">
+      <input type="checkbox" class="box">
+      <div class="body">
+        <h3>Order sealed transcripts and degree certificates</h3>
+        <p>You'll need official copies for graduate applications, some employers, and later immigration steps. Once you've left, chasing sealed copies out of your old institution becomes a months-long remote fight with someone who doesn't answer email.</p>
+        <span class="do">Order two sealed sets before you leave. Keep them unopened.</span>
+      </div>
+    </label>
+
+    <label class="item">
+      <input type="checkbox" class="box">
+      <div class="body">
+        <h3>Know what you'll be asked at the border</h3>
+        <p>Expect questions about your school, your program, how long you're staying and how you're funding it. None of it is a trick. The only thing that causes problems is answers that don't line up with the documents in your hand.</p>
+        <span class="do">Read your own application again on the plane. Confirm arrival steps on <a href={irccUrl} target="_blank" rel="noopener">IRCC's study-in-Canada page</a>.</span>
+      </div>
+    </label>
+  </section>
+
+  <section class="stage">
+    <div class="stage-head">
+      <span class="stage-num">03</span>
+      <h2>Health</h2>
+      <span class="stage-when">Before booking</span>
+    </div>
+
+    <label class="item">
+      <input type="checkbox" class="box">
+      <div class="body">
+        <h3>Find out which plan actually covers you <span class="flag">verify</span></h3>
+        <p>Health coverage in Canada is provincial, and international students sit differently in every province. Some are covered by the provincial plan, some by a mandatory university plan, some need private cover for a gap. It is not automatic anywhere.</p>
+        <span class="do">Ask your school's international office which plan applies to you specifically.</span>
+      </div>
+    </label>
+
+    <label class="item">
+      <input type="checkbox" class="box">
+      <div class="body">
+        <h3>Check for a waiting period</h3>
+        <p>Some provinces don't cover you from day one. If yours has a gap, you need interim private coverage for exactly that window — and the time to buy it is before you fly, not after something happens.</p>
+        <span class="do">Confirm the date your coverage starts, then fill the gap if there is one.</span>
+      </div>
+    </label>
+
+    <label class="item">
+      <input type="checkbox" class="box">
+      <div class="body">
+        <h3>Put the enrolment deadline in your calendar</h3>
+        <p>Where a university plan applies, enrolling or opting out is usually a hard deadline in your first weeks. Miss it and you can be uninsured for a term, or charged for a plan you didn't want.</p>
+        <span class="do">Get the exact date from your school and set the reminder now.</span>
+      </div>
+    </label>
+
+    <label class="item">
+      <input type="checkbox" class="box">
+      <div class="body">
+        <h3>Sort prescriptions with your doctor at home</h3>
+        <p>A Canadian pharmacy will not fill a foreign prescription, and getting a family doctor here takes far longer than most people expect. Your doctor at home is the only person who can bridge that gap, and only while you're still there.</p>
+        <span class="do">Ask for a supply, a written prescription, and a signed letter naming the medication and dosage.</span>
+      </div>
+    </label>
+
+    <label class="item">
+      <input type="checkbox" class="box">
+      <div class="body">
+        <h3>Pack medication correctly <span class="flag">verify</span></h3>
+        <p>Bringing medication into Canada for personal use has rules about original labelled packaging, documentation, and how much you can carry. Some things sold freely at home are controlled here.</p>
+        <span class="do">Check the current <a href={medicationUrl} target="_blank" rel="noopener">personal import rules (GUI-0116)</a>, and keep everything in original packaging in your carry-on.</span>
+      </div>
+    </label>
+
+    <label class="item">
+      <input type="checkbox" class="box">
+      <div class="body">
+        <h3>Handle dental and vision before you leave</h3>
+        <p>Neither is usually included in basic coverage. A cleaning, a check-up or new glasses at home is almost always cheaper than the same thing here, uninsured, in your first month.</p>
+        <span class="do">Book both before you fly and bring your current prescription.</span>
+      </div>
+    </label>
+  </section>
+
+  <section class="stage">
+    <div class="stage-head">
+      <span class="stage-num">04</span>
+      <h2>Housing</h2>
+      <span class="stage-when">6–8 weeks out</span>
+    </div>
+
+    <label class="item">
+      <input type="checkbox" class="box">
+      <div class="body">
+        <h3>Book temporary first, permanent later</h3>
+        <p>Signing a year-long lease for a place you've never seen, in a neighbourhood you don't know, from a country you're about to leave, is how most first-year regret happens. Two to four weeks of temporary housing buys you the ability to walk through places in person.</p>
+        <span class="do">Book short-term for your first weeks. Treat it as the cost of not getting trapped.</span>
+      </div>
+    </label>
+
+    <label class="item">
+      <input type="checkbox" class="box">
+      <div class="body">
+        <h3>Never send money for a place nobody has stood inside</h3>
+        <p>This is the most common way international students lose money before they even arrive. The listing looks real and the photos are real — they're just someone else's photos.</p>
+        <span class="do">You, or someone you actually know, sees it in person. No exceptions, however good the price is.</span>
+      </div>
+    </label>
+
+    <label class="item">
+      <input type="checkbox" class="box">
+      <div class="body">
+        <h3>Learn the scam pattern</h3>
+        <p>Rent well below market. A landlord who is conveniently abroad. Pressure to decide today because someone else is interested. Refusal to do a live video call. Payment by wire, crypto or gift card. Any two of these together and you walk away.</p>
+        <span class="do">Ask for a live video walkthrough where they open the front door and say your name.</span>
+      </div>
+    </label>
+
+    <label class="item">
+      <input type="checkbox" class="box">
+      <div class="body">
+        <h3>Know what a legitimate lease looks like where you're going <span class="flag">verify</span></h3>
+        <p>Tenancy law is provincial. Some provinces mandate a standard lease form, and the rules on deposits, rent increases and what a landlord can ask you for differ significantly between them.</p>
+        <span class="do">Read your province's tenancy board page before you sign anything.</span>
+      </div>
+    </label>
+
+    <label class="item">
+      <input type="checkbox" class="box">
+      <div class="body">
+        <h3>Ask which utilities "utilities included" includes</h3>
+        <p>It rarely means all of them. Heat, hydro, water and internet are billed differently, and through a Canadian winter, heat is not a small line item.</p>
+        <span class="do">Get the list in writing, and ask what last winter's bills looked like.</span>
+      </div>
+    </label>
+  </section>
+
+  <section class="stage">
+    <div class="stage-head">
+      <span class="stage-num">05</span>
+      <h2>The first 72 hours</h2>
+      <span class="stage-when">On arrival</span>
+    </div>
+
+    <label class="item">
+      <input type="checkbox" class="box">
+      <div class="body">
+        <h3>Understand the order things unlock in</h3>
+        <p>Your study permit comes from the border officer. Your SIN application needs that permit. Getting paid needs the SIN. Bank activation needs ID and usually an address. A phone plan may want a credit history you don't have yet. Done out of order, each step blocks the next.</p>
+        <span class="do">Permit → SIN → bank activation → everything else.</span>
+      </div>
+    </label>
+
+    <label class="item">
+      <input type="checkbox" class="box">
+      <div class="body">
+        <h3>Check what needs an appointment <span class="flag">verify</span></h3>
+        <p>Some of this can be done online and some in person, and availability in September is worse than any other month of the year, because every international student in the country is doing the same thing in the same week.</p>
+        <span class="do">Check the current <a href={sinUrl} target="_blank" rel="noopener">SIN process for temporary residents</a> and book anything bookable before you land.</span>
+      </div>
+    </label>
+
+    <label class="item">
+      <input type="checkbox" class="box">
+      <div class="body">
+        <h3>Register with your school's international office</h3>
+        <p>They are the only people whose entire job is this exact situation, they've seen your problem a thousand times, and most students never speak to them until something has already gone wrong.</p>
+        <span class="do">Introduce yourself in week one, before you need anything.</span>
+      </div>
+    </label>
+  </section>
+
+  <section class="sources">
+    <h2>Where to check the things marked "verify"</h2>
+    <p>Rules, thresholds and processes change, and they change without anyone telling you. Anything with a date, a dollar figure or an hour limit should come from the source — including from this page.</p>
+    <ul>
+      <li><a href={irccUrl} target="_blank" rel="noopener">canada.ca — study in Canada</a> <span>— study permits, work rules, PGWP</span></li>
+      <li><a href={cbsaCurrencyUrl} target="_blank" rel="noopener">cbsa-asfc.gc.ca — declare currency</a> <span>— CAN$10,000+ cash and monetary instruments</span></li>
+      <li><a href={cbsaBringUrl} target="_blank" rel="noopener">cbsa-asfc.gc.ca — what you can bring</a> <span>— personal goods, food, gifts</span></li>
+      <li><a href={medicationUrl} target="_blank" rel="noopener">Health Canada GUI-0116</a> <span>— bringing medication for personal use</span></li>
+      <li><a href={sinUrl} target="_blank" rel="noopener">canada.ca — SIN for temporary residents</a> <span>— apply for a SIN after you have your permit</span></li>
+      <li>Your school's international office <span>— coverage, deadlines, anything specific to you</span></li>
+    </ul>
+  </section>
+
+  <section class="outro">
+    <h2>The list doesn't stop at the airport</h2>
+    <p>Banking, credit, health, your first job — the part after you land is longer than the part before it. That's what I post.</p>
+    <a class="cta" href="https://instagram.com/byaaryaman" target="_blank" rel="noopener">Follow on Instagram</a>
+  </section>
+
+  <footer>
+    <span>byaaryaman</span>
+    <span>Not legal or immigration advice</span>
+  </footer>
+
+</main>
+
+<script is:inline>
+(function(){
+  var KEY = "land-checklist-v1";
+  var boxes = Array.prototype.slice.call(document.querySelectorAll(".box"));
+  var fill = document.getElementById("fill");
+  var doneEl = document.getElementById("done");
+  var totalEl = document.getElementById("total");
+  var resetBtn = document.getElementById("reset");
+
+  totalEl.textContent = boxes.length;
+
+  boxes.forEach(function(b,i){
+    b.id = "item-" + i;
+    var h = b.parentElement.querySelector("h3");
+    if(h) b.setAttribute("aria-label", h.textContent.replace(/verify$/,"").trim());
+  });
+
+  function read(){
+    try { return JSON.parse(localStorage.getItem(KEY)) || {}; }
+    catch(e){ return {}; }
+  }
+
+  function write(state){
+    try { localStorage.setItem(KEY, JSON.stringify(state)); }
+    catch(e){ /* private browsing: boxes still work, they just won't persist */ }
+  }
+
+  function paint(){
+    var n = boxes.filter(function(b){ return b.checked; }).length;
+    doneEl.textContent = n;
+    fill.style.width = (boxes.length ? (n / boxes.length) * 100 : 0) + "%";
+  }
+
+  var saved = read();
+  boxes.forEach(function(b){ if(saved[b.id]) b.checked = true; });
+  paint();
+
+  boxes.forEach(function(b){
+    b.addEventListener("change", function(){
+      var s = read();
+      if(b.checked){ s[b.id] = 1; } else { delete s[b.id]; }
+      write(s);
+      paint();
+    });
+  });
+
+  resetBtn.addEventListener("click", function(){
+    boxes.forEach(function(b){ b.checked = false; });
+    write({});
+    paint();
+  });
+})();
+</script>
+
+</body>
+</html>
