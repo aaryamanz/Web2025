@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Free certificates nobody's posting about | byaaryaman</title>
+<meta name="description" content="Every free certificate from the byaaryaman reels, with links, time to finish and what you get.">
+<meta property="og:title" content="Free certificates nobody's posting about">
+<meta property="og:description" content="The full list from the reels, with links. Checked November 2026.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;0,6..96,700;1,6..96,500&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #EAF1EC;      /* security-paper green */
+    --paper-deep: #DCE7E0;
+    --ink: #12372B;        /* engraving green */
+    --ink-soft: #46645A;
+    --seal: #B8892B;       /* foil gold */
+    --seal-dark: #8A6519;
+    --white: #FFFFFF;
+    --radius-stub: 14px;
+    --serif: "Bodoni Moda", Georgia, serif;
+    --sans: "Public Sans", system-ui, -apple-system, sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 17px;
+    line-height: 1.55;
+  }
+  a { color: inherit; }
+  :focus-visible { outline: 3px solid var(--seal); outline-offset: 3px; border-radius: 4px; }
+
+  .wrap { max-width: 720px; margin: 0 auto; padding: 0 20px; }
+
+  /* Hero: engraved guilloche field with a foil $0 seal */
+  .hero {
+    position: relative;
+    overflow: hidden;
+    padding: 56px 0 44px;
+    border-bottom: 1px solid rgba(18, 55, 43, 0.18);
+    background:
+      repeating-radial-gradient(circle at 85% 30%, transparent 0 9px, rgba(18, 55, 43, 0.07) 9px 10px),
+      repeating-radial-gradient(circle at 10% 110%, transparent 0 13px, rgba(18, 55, 43, 0.05) 13px 14px),
+      var(--paper);
+  }
+  .hero .wrap { position: relative; }
+  .handle {
+    display: inline-block;
+    font-weight: 600;
+    font-size: 15px;
+    text-decoration: none;
+    color: var(--ink-soft);
+    margin-bottom: 18px;
+  }
+  .handle:hover { color: var(--ink); text-decoration: underline; }
+  h1 {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: clamp(40px, 10vw, 68px);
+    line-height: 1.02;
+    letter-spacing: -0.01em;
+    margin: 0;
+    max-width: 11ch;
+  }
+  .lede {
+    margin: 20px 0 0;
+    max-width: 34ch;
+    font-size: 18px;
+    color: var(--ink-soft);
+  }
+
+  .seal {
+    position: absolute;
+    right: 20px;
+    top: -8px;
+    width: 128px;
+    height: 128px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background:
+      radial-gradient(circle, var(--seal) 0 52%, transparent 53%),
+      repeating-conic-gradient(var(--seal) 0 5deg, var(--seal-dark) 5deg 10deg);
+    box-shadow: 0 0 0 4px var(--paper), 0 0 0 5px var(--seal-dark);
+    transform: rotate(-12deg);
+    animation: stamp 700ms cubic-bezier(.2, .9, .3, 1.2) 200ms both;
+  }
+  .seal span {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: 40px;
+    color: var(--white);
+    line-height: 1;
+    text-shadow: 0 1px 0 var(--seal-dark);
+  }
+  @keyframes stamp {
+    from { opacity: 0; transform: rotate(-30deg) scale(1.35); }
+    to   { opacity: 1; transform: rotate(-12deg) scale(1); }
+  }
+  @media (max-width: 560px) {
+    .seal { width: 92px; height: 92px; top: -20px; right: 16px; }
+    .seal span { font-size: 30px; }
+  }
+
+  /* Filters */
+  .filters {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    background: rgba(234, 241, 236, 0.94);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border-bottom: 1px solid rgba(18, 55, 43, 0.12);
+  }
+  .filters .wrap {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    scrollbar-width: none;
+  }
+  .filters .wrap::-webkit-scrollbar { display: none; }
+  .chip {
+    flex: none;
+    font: 500 15px/1 var(--sans);
+    color: var(--ink);
+    background: transparent;
+    border: 1.5px solid var(--ink);
+    border-radius: 999px;
+    padding: 9px 15px;
+    cursor: pointer;
+  }
+  .chip[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+
+  /* Lists */
+  section { padding: 40px 0 8px; }
+  h2 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 1.15;
+    margin: 0 0 6px;
+  }
+  .section-note { margin: 0 0 22px; color: var(--ink-soft); font-size: 16px; }
+
+  ol, ul.plain { list-style: none; margin: 0; padding: 0; }
+
+  /* Each entry is a certificate stub: number on a perforated tab, details on the body */
+  .stub {
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    background: var(--white);
+    border-radius: var(--radius-stub);
+    margin-bottom: 14px;
+    border: 1px solid rgba(18, 55, 43, 0.14);
+  }
+  .stub[hidden] { display: none; }
+  .tab {
+    display: grid;
+    place-items: start center;
+    padding-top: 20px;
+    border-right: 2px dashed var(--paper-deep);
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: 30px;
+    color: var(--seal-dark);
+  }
+  .bonus .tab { font-size: 22px; font-style: italic; font-weight: 500; }
+  .body { padding: 18px 20px 20px; min-width: 0; }
+  .issuer { margin: 0; font-size: 14px; font-weight: 600; color: var(--ink-soft); }
+  .stub h3 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 23px;
+    line-height: 1.2;
+    margin: 2px 0 8px;
+  }
+  .stub p.what { margin: 0 0 14px; font-size: 16px; }
+  .facts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 18px;
+    margin: 0 0 16px;
+    font-size: 14px;
+    color: var(--ink-soft);
+  }
+  .facts dt { display: inline; font-weight: 600; color: var(--ink); }
+  .facts dd { display: inline; margin: 0 0 0 4px; }
+  .facts div { white-space: nowrap; }
+  .cost-partial dd { color: var(--seal-dark); font-weight: 600; }
+
+  .go {
+    display: inline-block;
+    font: 600 15px/1 var(--sans);
+    text-decoration: none;
+    color: var(--white);
+    background: var(--ink);
+    padding: 12px 18px;
+    border-radius: 8px;
+  }
+  .go:hover { background: #0B2A20; }
+
+  .empty { display: none; padding: 8px 0 24px; color: var(--ink-soft); }
+  .empty.show { display: block; }
+
+  footer {
+    margin-top: 32px;
+    padding: 32px 0 48px;
+    border-top: 1px solid rgba(18, 55, 43, 0.18);
+    font-size: 15px;
+    color: var(--ink-soft);
+  }
+  footer p { margin: 0 0 10px; max-width: 52ch; }
+  footer a { font-weight: 600; color: var(--ink); }
+
+  @media (max-width: 420px) {
+    .stub { grid-template-columns: 48px 1fr; }
+    .tab { font-size: 24px; }
+    .body { padding: 16px 16px 18px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .seal { animation: none; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <a class="handle" href="https://www.instagram.com/byaaryaman/">@byaaryaman</a>
+    <h1>Free certificates nobody's posting about</h1>
+    <p class="lede">Every certificate from the reels, with the link, how long it takes and what you walk away with.</p>
+    <div class="seal" aria-hidden="true"><span>$0</span></div>
+  </div>
+</header>
+
+<nav class="filters" aria-label="Filter certificates by topic">
+  <div class="wrap">
+    <button class="chip" type="button" data-filter="all" aria-pressed="true">All</button>
+    <button class="chip" type="button" data-filter="ai" aria-pressed="false">AI</button>
+    <button class="chip" type="button" data-filter="data" aria-pressed="false">Data</button>
+    <button class="chip" type="button" data-filter="finance" aria-pressed="false">Finance</button>
+    <button class="chip" type="button" data-filter="cloud" aria-pressed="false">Cloud</button>
+    <button class="chip" type="button" data-filter="consulting" aria-pressed="false">Consulting</button>
+  </div>
+</nav>
+
+<main class="wrap">
+
+  <section aria-labelledby="part2">
+    <h2 id="part2">Part 2</h2>
+    <p class="section-note">The newest reel, in the same order as the video.</p>
+    <ol>
+      <li class="stub" data-tags="ai">
+        <div class="tab" aria-hidden="true">1</div>
+        <div class="body">
+          <p class="issuer">Anthropic</p>
+          <h3>Anthropic Academy (Claude)</h3>
+          <p class="what">Free self-paced courses on using and building with Claude, from AI Fluency to Claude Code. Each one ends with a certificate of completion.</p>
+          <dl class="facts">
+            <div><dt>Time</dt><dd>1 to 4 hrs per course</dd></div>
+            <div><dt>Cost</dt><dd>Free</dd></div>
+            <div><dt>Start with</dt><dd>AI Fluency or Claude 101</dd></div>
+          </dl>
+          <a class="go" href="https://anthropic.skilljar.com/" target="_blank" rel="noopener">Open Anthropic Academy</a>
+        </div>
+      </li>
+
+      <li class="stub" data-tags="data">
+        <div class="tab" aria-hidden="true">2</div>
+        <div class="body">
+          <p class="issuer">Snowflake</p>
+          <h3>Hands-On Essentials</h3>
+          <p class="what">Short workshops where you build real databases and queries. Your lab work is auto-graded, and passing earns a Credly badge for LinkedIn.</p>
+          <dl class="facts">
+            <div><dt>Time</dt><dd>Badge 1 in under 8 hrs</dd></div>
+            <div><dt>Cost</dt><dd>Free, no card needed</dd></div>
+            <div><dt>Start with</dt><dd>Badge 1: Data Warehousing</dd></div>
+          </dl>
+          <a class="go" href="https://learn.snowflake.com/en/pages/hands-on-essentials-track" target="_blank" rel="noopener">Open the Snowflake track</a>
+        </div>
+      </li>
+
+      <li class="stub" data-tags="consulting">
+        <div class="tab" aria-hidden="true">3</div>
+        <div class="body">
+          <p class="issuer">McKinsey.org</p>
+          <h3>Forward Program</h3>
+          <p class="what">A 10 week online program on problem solving, communication and digital skills. Finishing Core Skills earns a certificate and a digital badge.</p>
+          <dl class="facts">
+            <div><dt>Time</dt><dd>About 2 hrs a week</dd></div>
+            <div><dt>Cost</dt><dd>Free</dd></div>
+            <div><dt>Note</dt><dd>Runs in cohorts, so apply for the next intake</dd></div>
+          </dl>
+          <a class="go" href="https://www.mckinsey.com/forward" target="_blank" rel="noopener">Apply to Forward</a>
+        </div>
+      </li>
+
+      <li class="stub" data-tags="cloud">
+        <div class="tab" aria-hidden="true">4</div>
+        <div class="body">
+          <p class="issuer">Amazon Web Services</p>
+          <h3>AWS Educate</h3>
+          <p class="what">Free cloud and AI courses with hands-on labs. Courses with a lab give you a shareable digital badge.</p>
+          <dl class="facts">
+            <div><dt>Time</dt><dd>A few hrs per badge</dd></div>
+            <div><dt>Cost</dt><dd>Free, no card needed</dd></div>
+          </dl>
+          <a class="go" href="https://aws.amazon.com/educate" target="_blank" rel="noopener">Open AWS Educate</a>
+        </div>
+      </li>
+
+      <li class="stub" data-tags="data ai">
+        <div class="tab" aria-hidden="true">5</div>
+        <div class="body">
+          <p class="issuer">Kaggle (Google)</p>
+          <h3>Kaggle Learn</h3>
+          <p class="what">Short courses in Python, SQL and machine learning, with coding exercises right in the browser and a certificate for each course.</p>
+          <dl class="facts">
+            <div><dt>Time</dt><dd>3 to 4 hrs per course</dd></div>
+            <div><dt>Cost</dt><dd>Free</dd></div>
+            <div><dt>Start with</dt><dd>Python, then Intro to Machine Learning</dd></div>
+          </dl>
+          <a class="go" href="https://www.kaggle.com/learn" target="_blank" rel="noopener">Open Kaggle Learn</a>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <section aria-labelledby="part1">
+    <h2 id="part1">Part 1</h2>
+    <p class="section-note">The reel that started it.</p>
+    <ol>
+      <li class="stub" data-tags="ai data">
+        <div class="tab" aria-hidden="true">1</div>
+        <div class="body">
+          <p class="issuer">Databricks</p>
+          <h3>Generative AI Fundamentals</h3>
+          <p class="what">About an hour of on-demand videos on GenAI and AI agents, then a short quiz. Pass it and you get an official Databricks badge.</p>
+          <dl class="facts">
+            <div><dt>Time</dt><dd>About 1 hr</dd></div>
+            <div><dt>Cost</dt><dd>Free</dd></div>
+          </dl>
+          <a class="go" href="https://www.databricks.com/learn/training/generative-ai-fundamentals-accreditation" target="_blank" rel="noopener">Open Databricks training</a>
+        </div>
+      </li>
+
+      <li class="stub" data-tags="finance">
+        <div class="tab" aria-hidden="true">2</div>
+        <div class="body">
+          <p class="issuer">Corporate Finance Institute</p>
+          <h3>CFI courses</h3>
+          <p class="what">Finance, accounting and modeling courses. You can preview every course for free; full course certificates sit behind a paid plan.</p>
+          <dl class="facts">
+            <div class="cost-partial"><dt>Cost</dt><dd>Free previews, certificates paid</dd></div>
+          </dl>
+          <a class="go" href="https://corporatefinanceinstitute.com/" target="_blank" rel="noopener">Open CFI</a>
+        </div>
+      </li>
+
+      <!-- Part 1, item 3 goes here: copy one of the <li class="stub"> blocks above and fill it in -->
+
+      <li class="stub" data-tags="cloud ai">
+        <div class="tab" aria-hidden="true">4</div>
+        <div class="body">
+          <p class="issuer">Microsoft</p>
+          <h3>Microsoft Applied Skills</h3>
+          <p class="what">Hands-on lab assessments that each prove one specific skill, like building AI agents or securing identities. Pass and you get a credential you can share.</p>
+          <dl class="facts">
+            <div><dt>Time</dt><dd>45 min to 2 hrs per lab</dd></div>
+            <div><dt>Cost</dt><dd>Free</dd></div>
+          </dl>
+          <a class="go" href="https://learn.microsoft.com/en-us/credentials/applied-skills" target="_blank" rel="noopener">Browse Applied Skills</a>
+        </div>
+      </li>
+
+      <li class="stub" data-tags="finance">
+        <div class="tab" aria-hidden="true">5</div>
+        <div class="body">
+          <p class="issuer">Bloomberg</p>
+          <h3>Bloomberg Market Concepts (BMC)</h3>
+          <p class="what">An intro to markets through the Bloomberg Terminal, covering economics, currencies, fixed income and equities, with a certificate of completion.</p>
+          <dl class="facts">
+            <div><dt>Time</dt><dd>8 to 12 hrs</dd></div>
+            <div class="cost-partial"><dt>Cost</dt><dd>Free through many universities, including U of T</dd></div>
+          </dl>
+          <a class="go" href="https://www.bloomberg.com/professional/product/bloomberg-market-concepts/" target="_blank" rel="noopener">Open BMC</a>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <section aria-labelledby="bonus">
+    <h2 id="bonus">Bonus</h2>
+    <p class="section-note">Two more that didn't make the videos.</p>
+    <ul class="plain">
+      <li class="stub bonus" data-tags="ai">
+        <div class="tab" aria-hidden="true">+</div>
+        <div class="body">
+          <p class="issuer">IBM SkillsBuild</p>
+          <h3>AI Fundamentals</h3>
+          <p class="what">A free IBM course on how AI works and how to use it responsibly. Pass the module quizzes with 80% or higher to earn a Credly badge.</p>
+          <dl class="facts">
+            <div><dt>Time</dt><dd>About 9 hrs</dd></div>
+            <div><dt>Cost</dt><dd>Free</dd></div>
+          </dl>
+          <a class="go" href="https://skillsbuild.org/students/badges" target="_blank" rel="noopener">Open IBM SkillsBuild</a>
+        </div>
+      </li>
+
+      <li class="stub bonus" data-tags="data">
+        <div class="tab" aria-hidden="true">+</div>
+        <div class="body">
+          <p class="issuer">Alteryx</p>
+          <h3>Alteryx Essentials Certificate</h3>
+          <p class="what">A free entry-level exam on analytics basics and the Alteryx platform. It replaced the old Alteryx micro-credentials in January 2026.</p>
+          <dl class="facts">
+            <div><dt>Cost</dt><dd>Free</dd></div>
+          </dl>
+          <a class="go" href="https://community.alteryx.com/t5/Analytics/Discover-the-New-Alteryx-Academy/ba-p/1428835" target="_blank" rel="noopener">Read about Essentials</a>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <p class="empty" id="empty">Nothing in this topic yet. Pick another filter or see all.</p>
+
+  <footer>
+    <p>Prices and details were checked in November 2026. Providers change their offers, so check the link before you start.</p>
+    <p>Want the next list first? Follow <a href="https://www.instagram.com/byaaryaman/">@byaaryaman</a> on Instagram.</p>
+  </footer>
+</main>
+
+<script>
+  (function () {
+    var chips = document.querySelectorAll('.chip');
+    var stubs = document.querySelectorAll('.stub');
+    var sections = document.querySelectorAll('main section');
+    var empty = document.getElementById('empty');
+
+    function apply(filter) {
+      var shown = 0;
+      stubs.forEach(function (s) {
+        var match = filter === 'all' || s.getAttribute('data-tags').split(' ').indexOf(filter) !== -1;
+        s.hidden = !match;
+        if (match) shown++;
+      });
+      sections.forEach(function (sec) {
+        sec.hidden = !sec.querySelector('.stub:not([hidden])');
+      });
+      empty.classList.toggle('show', shown === 0);
+    }
+
+    chips.forEach(function (chip) {
+      chip.addEventListener('click', function () {
+        chips.forEach(function (c) { c.setAttribute('aria-pressed', 'false'); });
+        chip.setAttribute('aria-pressed', 'true');
+        apply(chip.getAttribute('data-filter'));
+      });
+    });
+  })();
+</script>
+</body>
+</html>
